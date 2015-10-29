@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="guestbook">
+	<title>Guestbook</title>
+	<summary>Allows to create guestbook section.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.1</version>
+	<date>2013-08-28</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<adminpages>
+		<page block="plugins" menus="main">Manage Guestbook</page>
+	</adminpages>
+	
+	<configgroup name="guestbook">Guestbook Configuration</configgroup>
+	
+	<config group="guestbook" name="div_guestbook" type="divider" description="Guestbook Plugin"><![CDATA[Guestbook Plugin]]></config>
+	<config group="guestbook" name="gb_account_submissions_only" type="radio" description="Allow submissions for accounts only" multiplevalues="0,1">0</config>
+	<config group="guestbook" name="gb_auto_approval" type="radio" description="Messages auto approval" multiplevalues="0,1">0</config>
+	<config group="guestbook" name="gb_min_chars" type="text" description="Min number of chars for messages">20</config>
+	<config group="guestbook" name="gb_max_chars" type="text" description="Max number of chars for messages">999</config>
+	<config group="guestbook" name="gb_messages_per_page" type="text" description="Number of messages per page">10</config>
+	
+	<pages>
+		<page name="guestbook" menus="main" title="Guestbook" status="active" uniqueurl="mod/guestbook/" nofollow="0"><![CDATA[]]></page>
+	</pages>
+
+	<phrases>
+		<phrase key="add_message" category="common" code="en">Add Message</phrase>
+		<phrase key="edit_message" category="common" code="en">Edit Message</phrase>
+		<phrase key="guestbook" category="common" code="en">Guestbook</phrase>
+		<phrase key="message_author" category="common" code="en">Message Author</phrase>
+		<phrase key="author_url" category="common" code="en">Author Site</phrase>
+		<phrase key="leave_message" category="common" code="en">Leave Message</phrase>
+		<phrase key="message_added" category="common" code="en">Message Added</phrase>
+		<phrase key="message_update" category="common" code="en">Message Updated</phrase>
+		<phrase key="manage_guestbook" category="common" code="en">Manage Guestbook</phrase>
+		<phrase key="edit_guestbook" category="common" code="en">Edit Guestbook</phrase>
+		<phrase key="guestbook_no_messages" category="common" code="en">No messages in the guestbook.</phrase>
+		<phrase key="messages" category="common" code="en">Messages</phrase>
+		<phrase key="message" category="common" code="en">Message</phrase>
+		<phrase key="new_message" category="common" code="en">New message</phrase>
+		
+		<phrase key="message_approval" category="frontend" code="en">Your message is waiting for approval.</phrase>
+		<phrase key="error_gb" category="frontend" code="en">Make sure you entered valid guestbook message.</phrase>
+		<phrase key="error_gb_author" category="frontend" code="en">Make sure you entered valid guestbook message author.</phrase>
+		<phrase key="error_gb_email" category="frontend" code="en">Make sure you entered valid author email.</phrase>
+		<phrase key="error_max_gb" category="frontend" code="en">Your message length should be less than {maxLength} symbols.</phrase>
+		<phrase key="error_min_gb" category="frontend" code="en">Your message length should be more than {minLength} symbols.</phrase>
+		<phrase key="error_gb_logged" category="frontend" code="en">You should be logged in to leave messages in our guestbook.</phrase>
+	</phrases>
+
+	<installsql>
+		<sql>
+			<![CDATA[			
+				CREATE TABLE `{prefix}guestbook` (
+				  `id` int(8) NOT NULL auto_increment,
+				  `account_id` int(8) NOT NULL default '0',
+				  `author_name` varchar(100) NOT NULL default '',
+				  `body` text NOT NULL,
+				  `email` varchar(100) NOT NULL default '',
+				  `ip_address` varchar(15) NOT NULL default '',
+				  `date` date NOT NULL default '0000-00-00',
+				  `status` enum('approval','active') NOT NULL default 'approval',
+				  `sess_id` varchar(150) NOT NULL default '',
+				  `author_url` varchar(150) default NULL,
+				  PRIMARY KEY  (`id`)
+				) {mysql_version};
+			]]>
+		</sql>
+	</installsql>
+
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+				DROP TABLE IF EXISTS `{prefix}guestbook`;
+			]]>
+		</sql>
+	</uninstallsql>
+</plugin>

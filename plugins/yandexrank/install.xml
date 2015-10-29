@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="yandexrank">
+	<title>Yandex Rank</title>
+	<summary>Display Yandex rank for listings.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-02-20</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+	
+	<hooks>
+		<hook name="beforeListingAdded">
+			<![CDATA[
+global $listing, $eSyndiCat;
+
+$eSyndiCat->loadPluginClass("YandexRank", 'yandexrank', "esyn");
+$esynYandexRank = new esynYandexRank();
+
+$listing['yandex_rank'] = intval($esynYandexRank->getYandexRank($listing['domain']));
+			]]>	
+		</hook>
+		<hook name="adminDatabaseConsistency" type="smarty">
+			<![CDATA[
+<li style="margin:5px;">
+	<span style="display:block; float:left; width:210px; margin-right:10px;"><b>{$esynI18N.recount_ya_rank}</b>:</span>
+	<a href="controller.php?file=database&amp;page=consistency&amp;type=recountyandex" id="yandexrank_recountyandex">{$esynI18N.recount_ya_rank|upper}</a>
+</li>
+			]]>
+		</hook>
+		<hook name="phpAdminDatabaseConsistencyType" type="php">
+			<![CDATA[
+if ($_GET['type'] == 'recountyandex')
+{
+	include(IA_PLUGINS.'yandexrank'.IA_DS.'admin'.IA_DS.'index.php');
+}
+			]]>
+		</hook>
+		<hook name="tplAdminDatabaseBeforeFooter" type="smarty">
+			<![CDATA[
+{if 'consistency' == $smarty.get.page}
+	{include file=$smarty.const.IA_PLUGINS|cat:"yandexrank"|cat:$smarty.const.IA_DS|cat:"admin"|cat:$smarty.const.IA_DS|cat:"templates"|cat:$smarty.const.IA_DS|cat:"index.tpl"}
+	
+	{include_file js="plugins/yandexrank/js/admin/index"}
+{/if}
+			]]>
+		</hook>
+		<hook name="viewListingAfterMainFieldsDisplay" type="smarty">
+			<![CDATA[
+<dt>{lang key='ya_rank'}</dt>
+<dd>{$listing.yandex_rank}</dd>
+			]]>
+		</hook>
+	</hooks>
+	
+	<phrases>
+		<phrase key="ya_rank" category="common" code="en"><![CDATA[Yandex Rank]]></phrase>
+		<phrase key="recount_ya_rank" category="admin" code="en"><![CDATA[Recount Yandex Rank]]></phrase>
+	</phrases>
+	
+	<installsql>
+		<sql>
+			<![CDATA[
+ALTER TABLE `{prefix}listings` ADD `yandex_rank` VARCHAR( 100 ) NULL DEFAULT '0';
+			]]>
+		</sql>
+	</installsql>
+	
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+ALTER TABLE `{prefix}listings` DROP `yandex_rank`;
+			]]>
+		</sql>
+	</uninstallsql>
+</plugin>

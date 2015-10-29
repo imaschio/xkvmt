@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="video">
+	<title>Video</title>
+	<summary>The plugin allows to show video and play MP3 files.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-02-04</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<hooks>
+		<hook name="viewListingBeforeFooter" type="smarty">
+			<![CDATA[
+{if $listing.video_file}
+	{ia_block caption='Video/Audio'}
+		<div id="listing_video">{$config.video_layer}</div>
+	{/ia_block}
+
+	{ia_add_js}
+		jwplayer('listing_video').setup(
+		{
+			'flashplayer': '{$smarty.const.IA_URL}plugins/video/templates/flvplayer.swf',
+			'backcolor': '{$config.video_bgcolor}',
+			'frontcolor': '{$config.video_frontcolor}',
+			'lightcolor': '{$config.video_lightcolor}',
+			'screencolor': '{$config.video_screencolor}',
+			'allowfullscreen': {if $config.video_fullscreen}'true'{else}'false'{/if},
+			'controlbar': '{$config.video_controlbar}',
+			'playlist.position': '{$config.video_playlist_pos}',
+			'playlist.size': '{$config.video_playlist_size}',
+			'autostart': '{if $config.video_autostart}true{else}false{/if}',
+			'repeat': '{if $config.video_repeat}true{else}false{/if}',
+			'width': '{$config.video_width}',
+			'height': '{$config.video_height}',
+			'bufferlength': '{$config.video_bufferlength}',
+			'volume': '{$config.video_volume}',
+			'playlist': [
+				{
+					'streamer': 'rtmp://rtmp.server.com/application',
+					'file': 'http://youtu.be/PN03LPvXENw',
+					'provder': 'youtube'
+				},
+				{
+					'streamer': 'rtmp://rtmp.server.com/application',
+					'file': 'http://www.youtube.com/watch?v=g8OZsJokBB0',
+					'provder': 'youtube'
+				},
+				{
+					'streamer': 'rtmp://rtmp.server.com/application',
+					'file': 'http://youtu.be/BsHGU1e30OY',
+					'provder': 'youtube'
+				}
+			]
+		});
+	{/ia_add_js}
+{/if}
+
+{ia_print_js files='plugins/video/js/jwplayer.js'}
+			]]>
+		</hook>
+
+        <hook name="tplAdminSuggestListingAfterIncludeJs" type="smarty">
+			<![CDATA[
+{include_file js="plugins/video/js/admin/suggest-listing"}
+			]]>
+		</hook>
+
+        <hook name="suggestListingBeforeFooter" type="smarty">
+			<![CDATA[
+{ia_print_js files='plugins/video/js/frontend/suggest-listing'}
+			]]>
+		</hook>
+
+        <hook name="suggestListingDataValidation">
+			<![CDATA[
+global $listing;
+
+if (isset($listing['youtubevideo']) && !empty($listing['youtubevideo']))
+{
+	if (is_array($listing['youtubevideo']))
+	{
+		$temp = array();
+		foreach ($listing['youtubevideo'] as $url)
+		{
+			$url = trim(str_replace('http://', '', $url));
+
+			if (!empty($url))
+			{
+				$content = esynUtil::getPageContent($url);
+			}
+		}
+		$listing['youtubevideo'] = implode(',', $temp);
+	}
+	else
+	{
+		$error = true;
+		$msg[] = $esynI18N['error_youtube'];
+	}
+}
+			]]>
+		</hook>
+	</hooks>
+	
+	<fields>
+		<field name="video_file" title="Video file" type="storage" pages="suggest,edit" file_types="mp3,flv,rtmp,jpg,swf,png,gif" show_as="checkbox" recursive="1" fileprefix="video_"><![CDATA[]]></field>
+		<field name="video_preview" title="Video preview" type="image" pages="suggest,edit" image_height="300" image_width="400" file_prefix="vimg_" show_as="checkbox" recursive="1"><![CDATA[]]></field>
+        <field name="video_title" title="Video title" type="text" pages="suggest,edit" length="50" default=""><![CDATA[Please add Video title here]]></field>
+        <field name="video_description" title="Video description" type="textarea" length="150" pages="suggest,edit" default=""><![CDATA[Please add Video description here]]></field>
+        <field name="youtubevideo" title="Youtube Video" type="text" pages="suggest" default=""><![CDATA[Please add Youtube link here]]></field>
+	</fields>
+
+	<phrases>
+		<phrase key="field_video_file" category="common" code="en" plugin="video">Video File</phrase>
+		<phrase key="field_video_preview" category="common" code="en" plugin="video">Video Preview Image</phrase>
+        <phrase key="youtube_no_more_video" category="common" code="en">No more video allowed.</phrase>
+		<phrase key="error_youtube" category="common" code="en">Incorrect YouTube link. Please enter valid link or leave field empty.</phrase>
+		<phrase key="youtube_are_you_sure_remove_video" category="admin" code="en">Are sure you want to remove this video?.</phrase>
+	</phrases>
+
+	<configgroup name="video">Video</configgroup>
+	
+	<config group="video" name="video_devider" type="divider">Video Configuration</config>
+    <config group="video" name="video_controlbar" type="select" description="Controlbar position" multiplevalues="top,bottom,over,none">bottom</config>
+    <config group="video" name="video_playlist_pos" type="select" description="Playllist position" multiplevalues="top,bottom,over,none,right,left">right</config>
+	<config group="video" name="video_fullscreen" type="radio" description="Allow fullscreen" multiplevalues="1,0">1</config>
+	<config group="video" name="video_repeat" type="radio" description="Repeat" multiplevalues="1,0">0</config>
+	<config group="video" name="video_smoothing" type="radio" description="Smoothing" multiplevalues="1,0">1</config>
+	<config group="video" name="video_autostart" type="radio" description="Autostart" multiplevalues="1,0">0</config>
+	<config group="video" name="video_showeq" type="radio" description="Show a fake equalizer" multiplevalues="1,0">0</config>
+	<config group="video" name="video_largecontrols" type="radio" description="Make the controlbar twice as large" multiplevalues="1,0">0</config>
+	<config group="video" name="video_display_logo" type="radio" description="Watermark logo" multiplevalues="1,0">1</config>
+	<config group="video" name="video_layer" type="text" description="Label"> &lt;a href="http://www.macromedia.com/go/getflashplayer"&gt;Get the Flash Player&lt;/a&gt; to see the video.</config>
+	<config group="video" name="video_width" type="text" description="Width">500</config>
+	<config group="video" name="video_height" type="text" description="Height">400</config>
+    <config group="video" name="video_playlist_size" type="text" description="Playlist size">70</config>
+	<config group="video" name="video_player_version" type="text" description="Required version of flash player">9</config>
+	<config group="video" name="video_backcolor" type="text" description="Backgroundcolor of the player">FFFFFF</config>
+	<config group="video" name="video_frontcolor" type="text" description="Texts / buttons color of the player">EEEEEE</config>
+	<config group="video" name="video_lightcolor" type="text" description="Rollover/ active color of the player">333333</config>
+	<config group="video" name="video_bgcolor" type="text" description="Background color of the movie">333333</config>
+	<config group="video" name="video_screencolor" type="text" description="Color of the display background screen">FFFFFF</config>
+	<config group="video" name="video_bufferlength" type="text" description="Number of seconds an FLV should be buffered ahead before the player starts it">3</config>
+	<config group="video" name="video_volume" type="text" description="Volume">80</config>
+
+    <config group="video" name="video_youtube" type="divider" value="YouTube Configuration">YouTube Configuration</config>
+	<config group="video" name="youtube_number_video" type="text" description="Number of allowed videos">1</config>
+</plugin>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="facebook">
+	<title>Facebook</title>
+	<summary>Facebook social plugin</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.1</version>
+	<date>2013-09-20</date>
+	<compatibility>3.0</compatibility>
+  	<status>active</status>
+
+	<phrases>
+		<phrase key="fb_admin_id" category="tooltip" code="en">Facebook user IDs, comma separated</phrase>
+		<phrase key="fb_login" category="frontend" code="en">Facebook Login</phrase>
+	</phrases>
+  
+	<config group="miscellaneous" name="facebook" type="divider" description="FaceBook Plugin Options">FaceBook Plugin Options</config>
+	<config group="miscellaneous" name="fb_like" type="radio" multiplevalues="0,1" description="Show Like button">1</config>
+	<config group="miscellaneous" name="fb_like_faces" type="radio" multiplevalues="0,1" description="Show faces for Like button">1</config>
+	<config group="miscellaneous" name="fb_comments" type="radio" multiplevalues="0,1" description="Enable Facebook comments">1</config>
+    <config group="miscellaneous" name="fb_comments_width" type="text" description="Comments width">400</config>
+	<config group="miscellaneous" name="fb_app_id" type="text" description="Application ID">296861757087170</config>
+	<config group="miscellaneous" name="fb_app_secret" type="text" description="Application Secret">bc424c8915a837e1e06cc27418342075</config>
+	<config group="miscellaneous" name="fb_num_comment" type="text" description="Number of comments to display">15</config>
+	<config group="miscellaneous" name="fb_admin_id" type="text" description="Comments Admins"><![CDATA[ ]]></config>
+  
+	<hooks>
+		<hook name="theVeryStart" type="php" file="plugins/facebook/hook.php"><![CDATA[]]></hook>
+
+		<hook name="headSection" type="smarty">
+			<![CDATA[
+<meta property="og:title" content="{$title}" />
+<meta property="og:url" content="{$smarty.const.CURRENT_URL|escape:"html"}" />
+{if $config.site_logo}
+	<meta property="og:image" content="{$smarty.const.IA_URL}uploads/{$config.site_logo}" />
+{/if}
+{if $config.fb_admin_id}
+	<meta property="fb:admins" content="{$config.fb_admin_id}" />
+{/if}
+{if $config.fb_app_id}
+	<meta property="fb:app_id" content="{$config.fb_app_id}" />
+{/if}
+{if 'view_listing' eq $smarty.const.IA_REALM}
+	<meta property="og:description" content="{$listing.description|truncate:250|escape:"html"}" />
+{/if}
+
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<div id="fb-root"></div>
+
+{ia_print_js files="plugins/facebook/js/handler"}
+			]]>
+		</hook>
+		<hook name="tplFrontHeaderAfterRSS" type="smarty"><![CDATA[
+{if empty($esynAccountInfo)}
+	<li>
+		<a class="fb-login" href="#" style="background:url(plugins/facebook/templates/img/fb.gif) no-repeat #5F78AB 2px 2px; color:#FFF; padding:3px 5px 3px 20px; margin-top:7px; font-size:14px;">{lang key='fb_login'}</a>
+	</li>
+{/if}
+		]]></hook>
+	</hooks>
+
+	<blocks>
+		<block name="facebook" title="Facebook" showheader="0" position="bottom" type="php" lang="en" status="active" sticky="1" external="1"><![CDATA[]]></block>
+	</blocks>
+
+	<install>
+		<code><![CDATA[
+global $esynAdmin;
+$sql = "SHOW COLUMNS FROM `{$esynAdmin->mPrefix}accounts` LIKE 'fb_id'";
+$exist = $esynAdmin->getAll($sql);
+
+if (empty($exist))
+{
+	$esynAdmin->query("ALTER TABLE `{$esynAdmin->mPrefix}accounts` ADD `fb_id` VARCHAR( 15 ) NULL COMMENT 'registered with FaceBook'");
+}
+		]]></code>
+	</install>
+</plugin>

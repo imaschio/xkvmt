@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<plugin name="comments">
+	<title>Comments</title>
+	<summary>The plugin allows visitors adding comments to listings.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.3</version>
+	<date>2015-01-13</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<adminpages>
+		<page block="plugins" menus="main">Manage Comments</page>
+	</adminpages>
+
+	<phrases>
+		<phrase key="wrote_on" category="common" code="en">wrote on</phrase>
+		<phrase key="check_news" category="common" code="en">check news</phrase>
+		<phrase key="check_article" category="common" code="en">check article</phrase>
+		<phrase key="check_listing" category="common" code="en">check listing</phrase>
+		<phrase key="comments" category="common" code="en">Comments</phrase>
+		<phrase key="comment_author" category="common" code="en">Comment Author</phrase>
+		<phrase key="author_email" category="common" code="en">Author Email</phrase>
+		<phrase key="author_url" category="common" code="en">Author URL</phrase>
+		<phrase key="leave_comment" category="common" code="en">Leave Comment</phrase>
+		<phrase key="all_comments" category="admin" code="en">All Comments</phrase>
+		<phrase key="comment" category="common" code="en">Comment</phrase>
+		<phrase key="no_comments" category="common" code="en">No Comments.</phrase>
+		<phrase key="comment_added" category="common" code="en">Comment added.</phrase>
+		<phrase key="comment_waits_approve" category="common" code="en">Your comment should be approved by administrator.</phrase>
+		<phrase key="manage_comments" category="admin" code="en">Manage Comments</phrase>
+		<phrase key="are_you_sure_to_delete_selected_comments" category="admin" code="en">Are you sure you want to delete selected comments?</phrase>
+		<phrase key="are_you_sure_to_delete_this_comment" category="admin" code="en">Are you sure you want to delete this comment?</phrase>
+		<phrase key="edit_comment" category="admin" code="en">Edit comment</phrase>
+		<phrase key="error_comment" category="frontend" code="en">Make sure you entered valid comment.</phrase>
+		<phrase key="error_comment_author" category="frontend" code="en">Make sure you entered valid comment author.</phrase>
+		<phrase key="error_comment_email" category="frontend" code="en">Make sure you entered valid author email.</phrase>
+		<phrase key="error_max_comment" category="frontend" code="en">Your comment length should be less than {maxLength} symbols.</phrase>
+		<phrase key="error_min_comment" category="frontend" code="en">Your comment length should be more than {minLength} symbols.</phrase>
+		<phrase key="listings_error_comment_logged" category="frontend" code="en">You should be logged in to comment listings.</phrase>
+		<phrase key="articles_error_comment_logged" category="frontend" code="en">You should be logged in to comment articles.</phrase>
+		<phrase key="news_error_comment_logged" category="frontend" code="en">You should be logged in to comment news.</phrase>
+		<phrase key="articles_comments_submission_disabled" category="frontend" code="en">Comments submission for articles is disabled by adminstrator.</phrase>
+		<phrase key="listings_comments_submission_disabled" category="frontend" code="en">Comments submission for listings is disabled by adminstrator.</phrase>
+		<phrase key="news_comments_submission_disabled" category="frontend" code="en">Comments submission for news is disabled by adminstrator.</phrase>
+		<phrase key="comment_rate_this" category="frontend" code="en">Rate this</phrase>
+		<phrase key="comment_rating" category="frontend" code="en">Rating</phrase>
+		<phrase key="not_set" category="frontend" code="en">not set</phrase>
+		<phrase key="vote_cast" category="frontend" code="en">Vote cast</phrase>
+		<phrase key="votes_cast" category="frontend" code="en">Votes cast</phrase>
+		<phrase key="thanks_for_voting" category="frontend" code="en">Thanks for voting</phrase>
+
+		<phrase key="tpl_notif_comment_added_subject" category="email" code="en">Comment has been added to {dir_title}</phrase>
+		<phrase key="tpl_notif_comment_added_body" category="email" code="en"><![CDATA[
+<h3>Dear {admin_name},</h3>
+
+<p>New comment has been added. Please check Admin Panel > Manage Comments section.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+]]>
+		</phrase>
+	</phrases>
+
+	<configgroup name="comments">Comments Configuration</configgroup>
+
+	<config group="comments" name="comments_listings" type="divider" description="Listings Comments and Rating Configuration">Listings Comments and Rating Configuration</config>
+	<config group="comments" name="comments_allow_listings_submission" type="radio" description="Allow listings comments submission" multiplevalues="1,0" value="1">1</config>
+	<config group="comments" name="comments_listings_accounts" type="radio" description="Allows to comment listings for guests" multiplevalues="1,0" value="1">1</config>
+	<config group="comments" name="comments_listings_html" type="radio" description="Allows WYSIWYG for listing comments" multiplevalues="1,0">0</config>
+	<config group="comments" name="comments_listings_approval" type="radio" description="Listing comments auto approval" multiplevalues="1,0">0</config>
+	<config group="comments" name="comments_listings_min_chars" type="text" description="Min number of chars for listing comment">10</config>
+	<config group="comments" name="comments_listings_max_chars" type="text" description="Max number of chars for listing comment">300</config>
+	<config group="comments" name="comments_listings_rating" type="radio" description="Listings Rating" multiplevalues="1,0">1</config>
+	<config group="comments" name="comments_listings_rating_block_max" type="text" description="Maximum rating for listings rating block">10</config>
+	<config group="comments" name="comments_listings_rate_period" type="text" description="Rate period for IP (in days) for Listings">1</config>
+
+	<config group="comments" name="comments_articles" type="divider" description="Premium Articles Comments and Ratings Configuration">Articles Comments and Ratings Configuration</config>
+	<config group="comments" name="comments_allow_articles_submission" type="radio" description="Allow article comments submission" multiplevalues="1,0" value="1">1</config>
+	<config group="comments" name="comments_articles_accounts" type="radio" description="Allows to comment articles for guests" multiplevalues="1,0" value="1">1</config>
+	<config group="comments" name="comments_articles_html" type="radio" description="Allows WYSIWYG for articles comments" multiplevalues="1,0">0</config>
+	<config group="comments" name="comments_articles_approval" type="radio" description="Articles comments auto approval" multiplevalues="1,0">0</config>
+	<config group="comments" name="comments_articles_min_chars" type="text" description="Min number of chars for article comment">10</config>
+	<config group="comments" name="comments_articles_max_chars" type="text" description="Max number of chars for article comment">300</config>
+	<config group="comments" name="comments_articles_rating" type="radio" description="Articles Rating" multiplevalues="1,0">1</config>
+	<config group="comments" name="comments_articles_rating_block_max" type="text" description="Maximum rating for articles rating block">10</config>
+	<config group="comments" name="comments_articles_rate_period" type="text" description="Rate period for IP (in days) for Articles">1</config>
+
+	<config group="comments" name="comments_news" type="divider" description="News Comments and Ratings Configuration">News Comments and Ratings Configuration</config>
+	<config group="comments" name="comments_allow_news_submission" type="radio" description="Allow news comments submission" multiplevalues="1,0" value="1">1</config>
+	<config group="comments" name="comments_news_accounts" type="radio" description="Allows to comment news for guests" multiplevalues="1,0" value="1">1</config>
+	<config group="comments" name="comments_news_html" type="radio" description="Allows WYSIWYG for news comments" multiplevalues="1,0">0</config>
+	<config group="comments" name="comments_news_approval" type="radio" description="News comments auto approval" multiplevalues="1,0">0</config>
+	<config group="comments" name="comments_news_min_chars" type="text" description="Min number of chars for news comment">10</config>
+	<config group="comments" name="comments_news_max_chars" type="text" description="Max number of chars for news comment">300</config>
+	<config group="comments" name="comments_news_rating" type="radio" description="News Rating" multiplevalues="1,0">1</config>
+	<config group="comments" name="comments_news_rating_block_max" type="text" description="Maximum rating for news rating block">10</config>
+	<config group="comments" name="comments_news_rate_period" type="text" description="Rate period for IP (in days) for News">1</config>
+
+	<config group="comments" name="comments_other" type="divider" description="Other Comments Configuration">Other Comments Configuration</config>
+	<config group="comments" name="comments_num_latest_comments" type="text" description="Number of latest comments in block">5</config>
+	<config group="comments" name="comments_rating" type="radio" description="Comments Rating" multiplevalues="1,0">1</config>
+	<config group="comments" name="comments_rating_max" type="text" description="Maximum rating for comments">10</config>
+
+	<config group="mail" name="notif_comment_added" multiplevalues="0,1" type="hidden">1</config>
+
+	<blocks>
+		<block name="latest_comments" title="Latest Comments" showheader="1" collapsible="1" status="active" lang="en" position="right" type="smarty" sticky="1" external="1"><![CDATA[]]></block>
+
+		<block title="Comments" showheader="0" collapsible="1" status="active" lang="en" position="bottom" type="smarty" pages="view_listing,view_article,view_news">
+			<![CDATA[
+{include file=$smarty.const.IA_PLUGINS|cat:"comments/templates/comments.tpl"}
+			]]>
+		</block>
+
+		<block name="rating" title="Rating" showheader="1" collapsible="1" status="active" lang="en" position="bottom" type="smarty" pages="view_listing,view_article,view_news" external="1"><![CDATA[]]></block>
+	</blocks>
+
+	<hooks>
+		<hook name="listingDisplayPanelLinks" type="smarty">
+			<![CDATA[
+<span><i class="icon-comment icon-blue"></i> {$lang.comments}: {$listing.num_comments}</span>
+			]]>
+		</hook>
+
+		<hook name="viewListingAfterMainFieldsDisplay" type="smarty">
+			<![CDATA[
+<dt>{$lang.comments}</dt>
+<dd>{$total_comments}</dd>
+			]]>
+		</hook>
+
+		<hook name="statisticsBlock" type="smarty">
+			<![CDATA[
+{if isset($num_total_comments)}
+	<tr>
+		<td>{$lang.comments}:</td>
+		<td class="text-right">{$num_total_comments}</td>
+	</tr>
+{/if}
+			]]>
+		</hook>
+
+		<hook name="bootstrap" file="plugins/comments/includes/hook.bootstrap.php"><![CDATA[]]></hook>
+
+		<hook name="beforeBlocksLoad" file="plugins/comments/includes/hook.beforeBlocksLoad.php"><![CDATA[]]></hook>
+
+		<hook name="afterGetListingList" file="plugins/comments/includes/hook.count.php"><![CDATA[]]></hook>
+		<hook name="phpFrontListingsAfterGetListings" file="plugins/comments/includes/hook.count.php"><![CDATA[]]></hook>
+		<hook name="afterGetAdvSearchResult" file="plugins/comments/includes/hook.count.php"><![CDATA[]]></hook>
+		<hook name="afterGetSearchResult" file="plugins/comments/includes/hook.count.php"><![CDATA[]]></hook>
+
+		<hook name="headSection" type="smarty">
+			<![CDATA[
+{include_file css="plugins/comments/templates/css/style"}
+			]]>
+		</hook>
+
+	</hooks>
+
+	<installsql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}comments` (
+	`id` int(8) NOT NULL auto_increment,
+	`item_id` int(8) NOT NULL default '0',
+	`account_id` int(8) NOT NULL default '0',
+	`author` varchar(100) NOT NULL default '',
+	`url` varchar(100) NOT NULL default '',
+	`body` text NOT NULL,
+	`email` varchar(100) NOT NULL default '',
+	`ip_address` varchar(15) NOT NULL default '',
+	`rating` varchar(50) NOT NULL default '',
+	`date` datetime NOT NULL default '0000-00-00 00:00:00',
+	`status` enum('inactive', 'active') NOT NULL default 'inactive',
+	`sess_id` varchar(32) NOT NULL default '',
+	`item` VARCHAR( 50 ) NOT NULL default 'listings',
+	PRIMARY KEY  (`id`),
+	KEY `item_id` (`item_id`)
+) {mysql_version};
+			]]>
+		</sql>
+
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}votes` (
+	`item_id` int(8) NOT NULL default '0',
+	`item` VARCHAR( 50 ) NOT NULL default 'listings',
+	`vote_value` tinyint(4) NOT NULL default '0',
+	`ip_address` varchar(15) NOT NULL,
+	`date` datetime NOT NULL default '0000-00-00 00:00:00',
+	KEY `ip_address` (`ip_address`),
+	KEY `item_id` (`item_id`)
+) {mysql_version};
+			]]>
+		</sql>
+	</installsql>
+
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+DROP TABLE `{prefix}comments`;
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+DROP TABLE `{prefix}votes`;
+			]]>
+		</sql>
+	</uninstallsql>
+</plugin>

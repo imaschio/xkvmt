@@ -1,0 +1,18 @@
+.faq-section {
+	margin-bottom: 20px;
+}
+.faq-block {
+	margin-left: 20px;
+}
+.faq-block .js-toggle-answer {
+	text-decoration: none;
+	border-bottom: 1px dashed #4da5d1;
+}
+.faq-answer {
+	display: none;
+}
+.faq-section h4 span {
+	font-weight: normal;
+	color: #ccc;
+	font-style: italic;
+}

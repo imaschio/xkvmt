@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="webthumbnail">
+	<title>WebThumbnail</title>
+	<summary>This plugin generates webthumbnail screenshots for the listings.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.3</version>
+	<date>2014-07-02</date>
+	<compatibility>3.0</compatibility>
+  	<status>active</status>
+
+	<config group="miscellaneous" name="webthumbnail_separator" type="divider" description="WebThumbnail">WebThumbnail</config>
+	<config group="miscellaneous" name="webthumbnail_height" type="text" description="Thumbnail height"><![CDATA[200]]></config>
+	<config group="miscellaneous" name="webthumbnail_width" type="text" description="Thumbnail width"><![CDATA[200]]></config>
+	<config group="miscellaneous" name="webthumbnail_format" type="select" multiplevalues="png,jpg,gif" description="Output image format">gif</config>
+	<config group="miscellaneous" name="webthumbnail_browser" type="select" multiplevalues="chrome,firefox,opera" description="Type of a browser">firefox</config>
+
+	<tooltips>
+		<tooltip key="webthumbnail_height"><![CDATA[ The width of a thumbnail in pixels, values from 200 up to 500. ]]></tooltip>
+		<tooltip key="webthumbnail_width"><![CDATA[ The height of a thumbnail in pixels, values from 200 up to 500. ]]></tooltip>
+		<tooltip key="webthumbnail_format"><![CDATA[ Output image format, possible values: png, jpg, gif ]]></tooltip>
+		<tooltip key="webthumbnail_browser"><![CDATA[ Type of a browser, possible values: chrome, firefox, opera ]]></tooltip>
+	</tooltips>
+
+	<hooks>
+		<hook name="viewListing" type="php">
+			<![CDATA[
+global $listing, $eSyndiCat, $esynSmarty;
+
+if ('webthumbnail' == $eSyndiCat->mConfig['thumbshots_name'] && !empty($listing['domain']))
+{
+	// thumbnail file path
+	$path = IA_TMP . 'webthumbnails' ;
+
+	// create thumbnails directory in case it does not exist
+	if (!file_exists($path) || !is_dir($path))
+	{
+		@mkdir($path);
+	}
+
+	// thumbnail filename
+	$thumbname = $listing['domain'] . '.' . $eSyndiCat->mConfig['webthumbnail_format'];
+
+	// create thumbnail if no thumbnail created
+	if (!file_exists($path . IA_DS . $thumbname))
+	{
+		// define webthumbnail class
+		$eSyndiCat->loadPluginClass("Webthumbnail", "webthumbnail", "esyn", false);
+		$esynWebthumbnail = new esynWebthumbnail('http://'.$listing['domain']);
+
+		$esynWebthumbnail
+			->setWidth($eSyndiCat->mConfig['webthumbnail_width'])
+			->setHeight($eSyndiCat->mConfig['webthumbnail_height'])
+			->captureToFile($path . IA_DS . $thumbname);
+	}
+}
+			]]>
+		</hook>
+	</hooks>
+
+	<install>
+		<code>
+			<![CDATA[
+global $esynConfig;
+
+// thumbnail file path
+$path = IA_TMP . 'webthumbnails' ;
+
+// create thumbnails directory in case it does not exist
+if (!file_exists($path) || !is_dir($path))
+{
+	@mkdir($path);
+}
+
+$esynConfig->setTable('config');
+$current_values = $esynConfig->one("`multiple_values`", "`name` = 'thumbshots_name'");
+$esynConfig->resetTable();
+
+if (!empty($current_values))
+{
+	$values = explode(',', $current_values);
+}
+
+$values[] = 'webthumbnail';
+
+$num_values = count($values);
+$updated_values = join(',', $values);
+
+$esynConfig->setTable('config');
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'thumbshots_name'");
+
+if (1 == $num_values)
+{
+	$esynConfig->update(array('value' => 'webthumbnail'), "`name` = 'thumbshots_name'");
+}
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</install>
+
+	<uninstall>
+		<code>
+			<![CDATA[
+global $esynConfig;
+
+$esynConfig->setTable('config');
+$current_values = $esynConfig->one("`multiple_values`", "`name` = 'thumbshots_name'");
+$esynConfig->resetTable();
+
+$values = explode(',', $current_values);
+
+if (!empty($values))
+{
+	foreach($values as $key => $value)
+	{
+		if ('webthumbnail' == $value)
+		{
+			unset($values[$key]);
+		}
+	}
+}
+
+$updated_values = join(',', $values);
+
+$esynConfig->setTable('config');
+
+if (empty($values))
+{
+	$esynConfig->update(array('value' => ''), "`name` = 'thumbshots_name'");
+}
+
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'thumbshots_name'");
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</uninstall>
+</plugin>

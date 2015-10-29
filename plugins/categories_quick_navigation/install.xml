@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<plugin name="categories_quick_navigation">
+	<title>Categories Qucik Navigation</title>
+	<summary>Plugin adds a block designed to suggest categories based on entered word.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.1.0</version>
+	<date>2013-08-15</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+	
+	<blocks>
+		<block title="Categories Navigation" name="categories-nav" showheader="1" collapsible="1" lang="en" status="active" position="left" type="smarty" sticky="1" external="1"><![CDATA[]]></block>
+	</blocks>
+
+	<phrases>
+		<phrase key="cat_nav_help" category="frontend" code="en"><![CDATA[What category are you looking for?]]>
+		</phrase>
+	</phrases>
+</plugin>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<plugin name="calendar">
+	<title>Calendar</title>
+	<summary>This mod searched listings by date. Allows to see how many listings were submitted on a given day.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-09-26</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<htaccess>
+		<rules section="1" addto="bottom">
+			<![CDATA[
+# mod_rewrite rules for listing by date
+RewriteRule ^date/(.*)/(.*)/(.*)/$ controller.php?plugin=calendar&year=$1&month=$2&day=$3 [QSA,L]
+RewriteRule ^date/(.*)/(.*)/(.*)/page([0-9]+).html$ controller.php?plugin=calendar&year=$1&month=$2&day=$3&page=$4 [QSA,L]
+RewriteRule ^date/(.*)/(.*)/$ controller.php?plugin=calendar&year=$1&month=$2 [QSA,L]
+RewriteRule ^date/(.*)/(.*)/page([0-9]+).html$ controller.php?plugin=calendar&year=$1&month=$2&page=$3 [QSA,L]
+			]]>
+		</rules>
+	</htaccess>
+	
+	<pages>
+		<page menus="" title="Calendar" status="active" uniqueurl="" nofollow="1" name="calendar"><![CDATA[]]></page>
+	</pages>
+
+	<phrases>
+		<phrase key="calendar" category="frontend" code="en">Calendar</phrase>
+		<phrase key="listing_by_date" category="frontend" code="en">Listings By Date</phrase>
+		<phrase key="listings_posted_on" category="frontend" code="en">Listings Posted On</phrase>
+	</phrases>
+
+	<blocks>
+		<block name="calendar" title="Calendar" showheader="1" collapsible="1" lang="en" position="right" type="php" sticky="1" status="active" external="1"><![CDATA[]]></block>
+	</blocks>
+	
+</plugin>

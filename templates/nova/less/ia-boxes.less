@@ -1,0 +1,151 @@
+// Boxes styles
+// -------------------------
+
+
+.box {
+  margin-bottom: 20px;
+  background: @boxBgColor;
+  border: 1px solid @boxBorderColor;
+
+  &.clear {
+    background: none;
+    border: 0 none;
+
+    h4 {
+      padding: 0;
+      border: 0 none;  
+    }
+
+    .box-content {
+      padding: 10px 0;
+    }
+  }
+
+  &.box-important {
+    h4 {
+      border-bottom: 1px solid @boxCaptionRedBorderColor;
+      color: @boxCaptionRedColor;
+    }
+  }
+
+  &.box-success {
+    h4 {
+      border-bottom: 1px solid @boxCaptionGreenBorderColor;
+      color: @boxCaptionGreenColor;
+    }
+  }
+
+  &.sponsored-box {
+    border: 1px solid #ffe8d0;
+
+    h4 {
+      border-bottom: 0 none;
+      color: rgba(255,132,0,.8);
+      background: #fff6ec;
+    }
+
+    .box-content {
+      background: #fff6ec;
+    }
+
+    .ia-item {
+      background: transparent;
+    }
+  }
+
+  h4 {
+    color: @boxCaptionColor;
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid @boxCaptionBorderColor;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  h5 {
+    font-weight: bold;
+  }
+
+  .box-content {
+    padding: 10px;
+    color: @boxTextColor;
+  }
+
+  form {
+    margin-bottom: 0;
+
+    .actions a {
+      text-decoration: underline;
+      font-size: 12px;
+      margin-right: 10px;
+      display: inline-block;
+    }
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+.box .ia-item {
+  margin-bottom: 14px;
+
+  .media-object {
+    width: 60px;
+  }
+
+  h5 {
+    margin: 0;
+  }
+
+}
+
+.box.no-header {
+  border: 0 none;
+
+  .box-content {
+    padding: 0;
+  }
+}
+
+// Box styles for backgrounds rather than white
+
+.section--dark .box {
+  background: none;
+  border: 0 none;
+
+  h4 {
+    color: lighten(@sectionDarkBgColor, 28%);
+    border: 0 none;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .box-content {
+    padding: 0;
+    color: lighten(@sectionDarkBgColor, 24%);
+  }
+
+  .media.ia-item {
+    background: transparent;
+  }
+
+  hr {
+    border-bottom: 1px solid transparent;
+    border-top: 1px dotted #444;
+  }
+
+  .minmax {
+    top: 0;
+  }
+}
+
+.box .ia-listings h4.media-heading {
+  margin: 0 0 5px;
+  font-weight: normal;
+  border-bottom: 0 none;
+  padding: 0;
+  font-size: 16px;
+  text-transform: none;
+}

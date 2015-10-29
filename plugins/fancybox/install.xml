@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="fancybox">
+	<title>fancyBox</title>
+	<summary>Plugin will add lightbox effect to images based on Fancybox javascript library.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-02-17</date>
+	<status>active</status>
+	<compatibility>3.0</compatibility>
+
+	<config group="miscellaneous" name="fancybox_divider" type="divider" description="fancyBox configuration" order="508">fancyBox</config>
+	<config group="miscellaneous" name="fancybox_slide_transition" type="select" multiplevalues="elastic,fade" description="fancyBox slide effect" order="509">elastic</config>
+	<config group="miscellaneous" name="fancybox_open_transition" type="select" multiplevalues="elastic,fade" description="fancyBox open/close effect" order="510">fade</config>
+	<config group="miscellaneous" name="fancybox_slide_speed" type="select" multiplevalues="fast,slow,normal" description="fancyBox slide speed" order="511">fast</config>
+	<config group="miscellaneous" name="fancybox_open_speed" type="select" multiplevalues="fast,slow,normal" description="fancyBox open/close speed" order="512">fast</config>
+
+	<hooks>
+		<hook name="headSection" type="smarty">
+			<![CDATA[
+{if 'fancybox' == $config.lightbox_name}
+	{ia_print_css files='plugins/fancybox/js/jquery.fancybox'}
+{/if}
+			]]>
+		</hook>
+
+		<hook name="beforeCloseTag" type="smarty">
+			<![CDATA[
+{if 'fancybox' == $config.lightbox_name}
+	{ia_print_js files='plugins/fancybox/js/jquery.fancybox.pack'}
+
+	{ia_add_js}
+	$(document).ready(function()
+	{
+		$('a[rel^="ia_lightbox"]').fancybox(
+		{
+			nextEffect: '{$config.fancybox_slide_transition}',
+			prevEffect: '{$config.fancybox_slide_transition}',
+			openEffect: '{$config.fancybox_open_transition}',
+			closeEffect: '{$config.fancybox_open_transition}',
+			nextSpeed: '{$config.fancybox_slide_speed}',
+			prevSpeed: '{$config.fancybox_slide_speed}',
+			openSpeed: '{$config.fancybox_open_speed}',
+			closeSpeed: '{$config.fancybox_open_speed}'
+		});
+	});
+	{/ia_add_js}
+{/if}
+			]]>
+		</hook>
+	</hooks>
+
+	<install>
+		<code>
+			<![CDATA[
+global $esynConfig;
+
+$esynConfig->setTable('config');
+$current_values = $esynConfig->one("`multiple_values`", "`name` = 'lightbox_name'");
+$esynConfig->resetTable();
+
+if ($current_values)
+{
+	$values = explode(',', $current_values);
+}
+
+$values[] = 'fancybox';
+
+$updated_values = implode(',', $values);
+
+$esynConfig->setTable('config');
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'lightbox_name'");
+if (1 == count($values))
+{
+	$esynConfig->update(array('value' => 'fancybox'), "`name` = 'lightbox_name'");
+}
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</install>
+
+	<uninstall>
+		<code>
+			<![CDATA[
+global $esynConfig;
+
+$esynConfig->setTable('config');
+$current_values = $esynConfig->one("`multiple_values`", "`name` = 'lightbox_name'");
+$values = explode(',', $current_values);
+if (!empty($values))
+{
+	foreach($values as $key => $value)
+	{
+		if ('fancybox' == $value)
+		{
+			unset($values[$key]);
+		}
+	}
+}
+$updated_values = join(',', $values);
+
+if (empty($values))
+{
+	$esynConfig->update(array('value' => ''), "`name` = 'lightbox_name'");
+}
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'lightbox_name'");
+
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</uninstall>
+</plugin>

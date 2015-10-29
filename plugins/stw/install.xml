@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="stw">
+	<title>ShrinkTheWeb</title>
+	<summary>ShrinkTheWeb.com thumbnails provider integration.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.1.2</version>
+	<date>2013-11-07</date>
+	<status>active</status>
+	<compatibility>3.1</compatibility>
+
+	<adminpages>
+		<page menus="header">Manage STW thumbnails</page>
+	</adminpages>
+
+	<phrases>
+		<phrase key="clear" category="admin" code="en">Clear</phrase>
+		<phrase key="manage_stw" category="admin" code="en">Manage STW thumbnails</phrase>
+		<phrase key="clear_system_thumbs" category="admin" code="en">Clear System Thumbnails</phrase>
+		<phrase key="clear_all_thumbs" category="admin" code="en">Clear All Thumbnails</phrase>
+	</phrases>
+
+	<configgroup name="stw">ShrinkTheWeb</configgroup>
+	<config group="stw" name="stw_divider" type="divider" description="ShrinkTheWeb configuration">ShrinkTheWeb configuration</config>
+	<config group="stw" name="stw_access_key" type="text" description="Access Key"><![CDATA[]]></config>
+	<config group="stw" name="stw_secret_key" type="text" description="Secret Key"><![CDATA[]]></config>
+	<config group="stw" name="stw_cache_days" type="text" description="Cache (days)">5</config>
+	<config group="stw" name="stw_size" type="select" multiplevalues="sm,lg,xlg" description="Size">lg</config>
+	<config group="stw" name="stw_branded" type="radio" description="Branded" multiplevalues="1,0" value="0">0</config>
+	<config group="stw" name="stw_custom_size" type="text" description="Custom size"></config>
+	<config group="stw" name="stw_full_length" type="radio" description="Full size capture" multiplevalues="1,0" value="0">0</config>
+	<config group="stw" name="stw_max_height" type="text" description="Max height"><![CDATA[]]></config>
+	<config group="stw" name="stw_custom_resolution" type="text" description="Native resolution"><![CDATA[]]></config>
+	<config group="stw" name="stw_wide_screen" type="text" description="Wide screen"><![CDATA[]]></config>
+	<config group="stw" name="stw_refresh_ondemand" type="radio" description="Refresh on demand" multiplevalues="1,0" value="0">0</config>
+	<config group="stw" name="stw_custom_delay" type="text" description="Delay">5</config>
+	<config group="stw" name="stw_custom_quality" type="text" description="Quality">95</config>
+
+	<hooks>
+		<hook name="theVeryStart" file="plugins/stw/includes/hook.theVeryStart.php"><![CDATA[]]></hook>
+		<hook name="headSection" type="smarty">
+			<![CDATA[
+{if 'stw' == $config.thumbshots_name}
+	<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$('.js-stw a').each(function(i, obj)
+		{
+			$.get(intelli.config.esyn_url + 'controller.php?plugin=stw&url=' + encodeURIComponent($(obj).attr('href')), function( data )
+			{
+				$(obj).append(data);
+			});
+		});
+	});
+	</script>
+	{ia_print_js files="plugins/stw/js/stwpopup/stwpopup"}
+{/if}
+			]]>
+		</hook>
+	</hooks>
+
+	<install>
+		<code>
+			<![CDATA[
+global $esynConfig;
+
+$esynConfig->setTable('config');
+$current_values = $esynConfig->one("`multiple_values`", "`name` = 'thumbshots_name'");
+$esynConfig->resetTable();
+
+if (!empty($current_values))
+{
+	$values = explode(',', $current_values);
+}
+
+$values[] = 'stw';
+
+$num_values = count($values);
+$updated_values = join(',', $values);
+
+$esynConfig->setTable('config');
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'thumbshots_name'");
+
+if (1 == $num_values)
+{
+	$esynConfig->update(array('value' => 'stw'), "`name` = 'thumbshots_name'");
+}
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</install>
+
+	<uninstall>
+		<code>
+			<![CDATA[
+global $esynConfig;
+
+$esynConfig->setTable('config');
+$current_values = $esynConfig->one("`multiple_values`", "`name` = 'thumbshots_name'");
+$esynConfig->resetTable();
+
+$values = explode(',', $current_values);
+
+if (!empty($values))
+{
+	foreach($values as $key => $value)
+	{
+		if ('stw' == $value)
+		{
+			unset($values[$key]);
+		}
+	}
+}
+
+$updated_values = join(',', $values);
+
+$esynConfig->setTable('config');
+
+if (empty($values))
+{
+	$esynConfig->update(array('value' => ''), "`name` = 'thumbshots_name'");
+}
+
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'thumbshots_name'");
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</uninstall>
+</plugin>

@@ -1,0 +1,10 @@
+.twitter {
+  font-family: Georgia, serif; font-size: 120%; }
+  .twitter .tweet_list { list-style-type: none; margin: 0; padding: 0; }
+    .twitter .tweet_list li { overflow: auto; margin: 5px 0; padding: .5em; font-size:11px; font-family: Arial }
+	.tweet_first { font-size: 14px !important; font-weight:bold; }
+	.twitter .tweet_list li a { color: #0C717A; }
+    .twitter .tweet_list .tweet_from { font-style: italic; font-size: 10px; float:right; }
+    .twitter .tweet_list .tweet_odd { background-color: #F4F9FF; }
+    .twitter .tweet_list .tweet_avatar { padding-right: .5em; float: left; }
+      .twitter .tweet_list .tweet_avatar img { vertical-align: middle; }

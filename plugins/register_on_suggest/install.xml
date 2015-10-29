@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="register_on_suggest">
+	<title>Register during suggest</title>
+	<summary>This is official plugin allows your visitors create account in during suggest</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.1</version>
+	<date>2013-04-23</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+	
+	<phrases>
+		<phrase key="create_account" category="common" code="en"><![CDATA[Create Account]]></phrase>
+	</phrases>
+	
+	<hooks>
+		<hook name="editListingForm" type="smarty">
+		<![CDATA[ 
+{if !$esynAccountInfo.id}
+	<div class="fieldset collapsible">
+	<h4 class="title">{$lang.create_account}</strong></h4>
+		<div class="content collapsible-content">
+			<label style="margin-bottom:10px;" for="create_account_suggest">
+				<input style="margin-top:-1px;" type="checkbox" name="create_account" value="1" id="create_account_suggest" 
+					{if (isset($smarty.post.suggest) and isset($smarty.post.create_account_suggest)) or (!isset($smarty.post.suggest) and !isset($smarty.post.create_account_suggest) )}
+						checked="checked" 
+					{/if}
+				/>
+			{$lang.create_account}</label>
+
+			<label for="f_new_login">{$lang.login}</label>
+			<input type="text" name="new_login" value="{if isset($smarty.post.new_login)}{$smarty.post.new_login}{/if}" id="f_new_login" size="25" class="text"/>
+
+			<label for="f_new_email">{$lang.email}</label>
+			<input type="text" name="new_email" value="{if isset($smarty.post.new_email)}{$smarty.post.new_email}{/if}" id="f_new_email" size="25" class="text"/>
+
+			<label for="f_new_pass">{$lang.password}</label>
+			<input type="password" name="new_pass" value="{if isset($account.new_pass)}{$account.new_pass|escape:"html"}{elseif isset($smarty.post.new_pass)}{$smarty.post.new_pass|escape:"html"}{/if}" id="f_new_pass" size="25" class="text"/>
+
+			<label for="f_new_pass2">{$lang.password_confirm}</label>
+			<input type="password" name="new_pass2" value="{if isset($account.new_pass2)}{$account.new_pass2|escape:"html"}{elseif isset($smarty.post.new_pass2)}{$smarty.post.new_pass2|escape:"html"}{/if}" id="f_new_pass2"  size="25"  class="text"/>
+
+		</div>	
+	</div>
+{/if}
+		]]>
+		</hook>
+		<hook name="editListingValidation">
+		<![CDATA[
+if(isset($_POST['create_account']) && $_POST['create_account'] == 1)
+{
+	$new_account = array();
+
+	global $new_account, $error, $msg, $esynI18N, $eSyndiCat;
+
+	$new_account['username'] = $_POST['new_login'];
+	$new_account['email'] 	= $_POST['new_email'];
+	$new_account['password']= $_POST['new_pass'];
+	$new_account['auto_generate'] = false;
+
+	$eSyndiCat->setTable('accounts');
+
+    if (empty($new_account['username']))
+	{
+		$error = true;
+		$msg[] = "<li>".$esynI18N['error_username_empty']."</li>";
+	}
+	elseif (!preg_match("/^[\w\s]{3,30}$/", $new_account['username']))
+	{
+		$error = true;
+		$msg[] = "<li>".$esynI18N['error_username_incorrect']."</li>";
+	}
+	elseif ($eSyndiCat->exists("`username`='".$new_account['username']."'"))
+	{
+		$error = true;
+		$msg[] = "<li>".$esynI18N['error_username_exists']."</li>";
+	}
+	$eSyndiCat->resetTable();
+	
+	if (empty($new_account['password']))
+	{
+		$error = true;
+		$msg[] = "<li>{$esynI18N['error_password_empty']}</li>";
+	}
+	else
+	{
+		if ($new_account['password'] != $_POST['new_pass2'])
+		{
+			$error = true;
+			$msg[] = "<li>{$esynI18N['error_password_match']}</li>";
+		}
+	}
+	if(empty($new_account['email']) or !esynValidator::isEmail($new_account['email']))
+	{
+		$error = true;
+		$msg[] = "<li>".$esynI18N['error_email_incorrect']."</li>";
+	}
+}
+		]]>
+		</hook>
+		<hook name="afterEditListing">
+			<![CDATA[
+global $mode, $new_account;
+if ("suggest" == $mode && !empty($new_account))
+{
+	global $eSyndiCat, $item, $data;
+
+	$eSyndiCat->factory("Account");
+	global $esynAccount;
+
+	$account_id = $esynAccount->registerAccount($new_account);
+
+	$eSyndiCat->setTable('listings');
+	$eSyndiCat->update(array("account_id" => $account_id, "id" => $data['id']));
+	$eSyndiCat->resetTable();
+
+	$item['account_id'] = $account_id;
+}
+			]]>
+		</hook>
+	</hooks>	
+</plugin>

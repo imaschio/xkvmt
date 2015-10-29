@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<plugin name="searches">
+	<title>Searches</title>
+	<summary>The plugin log search queries and add blocks:most searched and last searches.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.1</version>
+	<date>2013-05-06</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<adminpages>
+		<page block="plugins" menus="main">Manage search log</page>
+	</adminpages>
+
+	<config group="miscellaneous" name="searches_plugin" type="divider" description="Search log configuration" value=""><![CDATA[Search log configuration]]></config>
+	<config group="miscellaneous" name="search_msb_count" type="text" description="Count searches in block most searches">5</config>
+	<config group="miscellaneous" name="search_lsb_count" type="text" description="Count searches in block last searches">5</config>
+
+	<hooks>
+		<hook name="bootstrap" type="php">
+			<![CDATA[
+global $eSyndiCat, $esynConfig, $esynSmarty, $esynI18N;
+$eSyndiCat->setTable("searches");
+
+$limit = (int)$esynConfig->getConfig('search_msb_count');
+if($limit<=0||$limit>30) $limit = 1;
+
+$most_search = $eSyndiCat->all("*","search_result != '' ORDER BY search_count DESC",array(),0,$limit);
+$esynSmarty->assign('most_search', $most_search);
+
+
+$limit = (int)$esynConfig->getConfig('search_lsb_count');
+if($limit<=0||$limit>30) $limit = 1;
+
+$last_search = $eSyndiCat->all("*","search_result != '' ORDER BY last_search DESC",array(),0,$limit);
+$esynSmarty->assign('last_search', $last_search);
+
+
+$eSyndiCat->resetTable("searches");
+			]]>
+		</hook>
+		<hook name="headSection" type="smarty">
+			<![CDATA[
+{include_file css="plugins/searches/templates/css/style"}
+			]]>
+		</hook>
+		<hook name="afterGetSearchResult" type="php">
+			<![CDATA[
+$type_search = 'simple';
+include IA_PLUGINS.'searches'.IA_DS.'hooks'.IA_DS.'log.hook.php';
+			]]>
+		</hook>
+		<hook name="afterGetAdvSearchResult" type="php">
+			<![CDATA[
+$type_search = 'adv';
+include IA_PLUGINS.'searches'.IA_DS.'hooks'.IA_DS.'log.hook.php';
+			]]>
+		</hook>
+	</hooks>
+
+	<phrases>
+		<phrase key="searches" category="common" code="en">Searches Log</phrase>
+		<phrase key="manage_searches" category="common" code="en">Manage Search log</phrase>
+		<phrase key="count_result" category="common" code="en">Results</phrase>
+		<phrase key="count_search" category="common" code="en">Count</phrase>
+		<phrase key="searched" category="common" code="en">searched</phrase>
+		<phrase key="once" category="common" code="en">once</phrase>
+		<phrase key="time" category="common" code="en">time</phrase>
+		<phrase key="times" category="common" code="en">times</phrase>
+
+		<phrase key="search_word" category="admin" code="en">Search phrase</phrase>
+		<phrase key="search_count" category="admin" code="en">Search count</phrase>
+		<phrase key="search_result" category="admin" code="en">Result count</phrase>
+	</phrases>
+
+	<blocks>
+		<block name="most_searched" title="Most searched" collapsible="1" status="active" showheader="1" lang="en" position="left" type="smarty" sticky="1" external="1"><![CDATA[]]></block>
+		<block name="last_searches" title="Last searches" collapsible="1" status="active" showheader="1" lang="en" position="left" type="smarty" sticky="1" external="1"><![CDATA[]]></block>
+	</blocks>
+
+	<upgradesql version="1.2">
+		<sql>
+			<![CDATA[
+ALTER TABLE `{prefix}searches` CHANGE `search_result` `search_result` TEXT null;
+			]]>
+		</sql>
+	</upgradesql>
+	<!-- The SQL queries which will run when plugin installs -->
+	<installsql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}searches` (
+  `search_id` int(11) NOT NULL auto_increment,
+  `search_word` char(250) default NULL,
+  `search_count` int(11) default '1',
+  `search_result` text NULL,
+  `last_search` datetime default NULL,
+  PRIMARY KEY  (`search_id`)
+) {mysql_version};
+			]]>
+		</sql>
+	</installsql>
+
+	<!-- The SQL queries which will run when plugin uninstalls -->
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+DROP TABLE `{prefix}searches`;
+			]]>
+		</sql>
+	</uninstallsql>
+</plugin>

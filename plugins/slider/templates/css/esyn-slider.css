@@ -1,0 +1,39 @@
+.flexslider-esyn {
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+	border: 0;
+	margin: 0;
+}
+
+.flexslider-esyn .slides > li {
+	position: relative;
+}
+
+.flexslider-esyn li .caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,.7);
+	padding: 10px;
+	color: #fff;
+}
+
+.flexslider-esyn li .caption h3 {
+	color: #fff;
+	font-size: 22px;
+	line-height: 28px;
+	margin: 0;
+}
+.flexslider-esyn li .caption p {
+	color: #fff;
+	font-size: 12px;
+	line-height: 20px;
+	margin: 0;
+}

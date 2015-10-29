@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="spider">
+	<title>Spider</title>
+	<summary>This mod intended to extract link urls from web search engines to add them to your directory.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.1</version>
+	<date>2014-03-21</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<adminpages>
+		<page block="plugins" menus="main">Spider</page>
+	</adminpages>
+
+	<config group="miscellaneous" name="spider_div" type="divider" description="Spider Configuration">Spider Configuration</config>
+	<config group="miscellaneous" name="spider_google_api" type="text" description="Google Application ID"><![CDATA[]]></config>
+
+	<phrases>
+		<phrase key="google_api_key_missed" category="admin" code="en">Google API Key Missed. Please read installation info of the plugin for more information.</phrase>
+		<phrase key="bing_api_key_missed" category="admin" code="en">Bing API Key Missed. Please read installation info of the plugin for more information.</phrase>
+		<phrase key="import_selected_links" category="admin" code="en">Import selected links</phrase>
+		<phrase key="keywords_should_be_in" category="admin" code="en">Keywords should be in</phrase>
+		<phrase key="not_available_spider" category="admin" code="en"><![CDATA[A "allow_url_fopen" and "CURL extensions" is not available on your server. Spider will not work. Please contact your hosting company.]]></phrase>
+		<phrase key="import_to_one_cat" category="admin" code="en">Import selected links to one category</phrase>
+		<phrase key="number_of_links" category="admin" code="en">Number of links to request</phrase>
+		<phrase key="visit_this_site" category="admin" code="en">Visit this site</phrase>
+		<phrase key="manage_spider" category="admin" code="en">Manage Spider</phrase>
+		<phrase key="without_words" category="admin" code="en">Without words</phrase>
+		<phrase key="uncheck_all" category="admin" code="en">Uncheck All</phrase>
+		<phrase key="with_status" category="admin" code="en">with status</phrase>
+		<phrase key="check_all" category="admin" code="en">Check All</phrase>
+		<phrase key="anywhere" category="admin" code="en">Anywhere</phrase>
+		<phrase key="keywords" category="admin" code="en">Keywords</phrase>
+		<phrase key="continue" category="admin" code="en">Continue</phrase>
+		<phrase key="pagetext" category="admin" code="en">Pagetext</phrase>
+		<phrase key="google" category="admin" code="en">Google</phrase>
+		<phrase key="yahoo" category="admin" code="en">Yahoo</phrase>
+		<phrase key="arrow" category="admin" code="en">arrow</phrase>
+		<phrase key="about" category="admin" code="en">About</phrase>
+		<phrase key="found" category="admin" code="en">found</phrase>
+		<phrase key="bing" category="admin" code="en">Bing</phrase>
+		<phrase key="next" category="admin" code="en">Next</phrase>
+		<phrase key="prev" category="admin" code="en">Prev</phrase>
+	</phrases>
+</plugin>

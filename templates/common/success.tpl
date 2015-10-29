@@ -1,0 +1,1 @@
+<a href="{$smarty.const.IA_URL}">{lang key='click_here'}</a> {lang key='thank_text'}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="dmozex">
+	<title>DMOZeX</title>
+	<summary>This mod intended to extract listings from DMOZ to add them to your directory.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.1</version>
+	<date>2014-05-01</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<adminpages>
+		<page block="plugins" menus="main">DMOZeX</page>
+	</adminpages>
+
+	<phrases>
+		<phrase key="import_links_to" category="common" code="en">Import selected links to</phrase>
+		<phrase key="listing_exists" category="common" code="en">Listing with this URL is exists in your directory</phrase>
+		<phrase key="import_cats_to" category="common" code="en">Import selected categories to</phrase>
+		<phrase key="import_links" category="common" code="en">Import selected links</phrase>
+		<phrase key="import_cats" category="common" code="en">Import selected categories</phrase>
+		<phrase key="uncheck_all" category="common" code="en">Uncheck All</phrase>
+		<phrase key="with_status" category="common" code="en">with status</phrase>
+		<phrase key="check_all" category="common" code="en">Check All</phrase><phrase key="browser" category="admin" code="en">BROWSER</phrase>
+		<phrase key="dmozex" category="common" code="en">DMOZeX</phrase>
+		<phrase key="arrow" category="common" code="en">arrow</phrase>
+		<phrase key="root" category="common" code="en">ROOT</phrase>
+		<phrase key="dmoz" category="common" code="en">DMOZ</phrase>
+	</phrases>
+
+</plugin>

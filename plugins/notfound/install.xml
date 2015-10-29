@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<plugin name="notfound">
+	<title>NotFound.org</title>
+	<summary>Extends 404 error page with the notfound.org code.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-11-08</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<config group="miscellaneous" name="notfound_config" type="divider" description="Notfound.org"><![CDATA[ Notfound.org ]]></config>
+	<config group="miscellaneous" name="notfound_code" type="textarea" description="Notfound.org code"><![CDATA[Please generate notfound.org code and insert it here.]]></config>
+
+	<hooks>
+		<hook name="error">
+			<![CDATA[
+global $error, $esynSmarty, $esynConfig;
+
+$code = $esynConfig->getConfig('notfound_code');
+if (404 == $error && $code)
+{
+	$esynSmarty->assign('content', $code);
+}
+			]]>
+		</hook>
+	</hooks>
+</plugin>

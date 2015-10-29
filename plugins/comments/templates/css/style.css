@@ -1,0 +1,64 @@
+/* ExStars rating */
+div.exstar-fill
+{
+	width: 30px;
+	height: 30px;
+	background: url('../img/starrating.png') 0px -30px no-repeat;
+	cursor: pointer;
+	float: left;
+}
+div.exstar-voted-fill
+{
+	width: 30px;
+	height: 30px;
+	background: url('../img/starrating.png') 0px -60px repeat-x;
+	cursor: pointer;
+	float: left;
+}
+div.exstar-no-fill
+{
+	width: 30px;
+	height: 30px;
+	background: url('../img/starrating.png') top left repeat-x;
+	cursor: pointer;
+	float: left;
+}
+.cke_skin_kama .cke_charcount {
+   display:block;
+   float:right;
+   margin-top:5px;
+   margin-right:3px;
+   color:#60676A;
+}
+.cke_charcount span.cke_charcount_count,
+.cke_charcount span.cke_charcount_limit  {
+   font-style: italic;
+}
+
+#comment { margin:20px 0 0 0; }
+.notification.comment-notif { margin: 10px 0 10px 0 !important; }
+.error.comment-notif { margin: 10px 0 10px 0 !important; }
+.comment { border-bottom:1px solid #e3e3e3;	padding:15px 5px ; }
+.comment:hover { background: #f8f8f8; border-bottom:1px solid #ccc; }
+.comment-rating { float: right; }
+.comment-posted { margin: 0 0 5px 0; }
+.comment-author { font-weight: bold; color:#0066CC; }
+.comment-date {	font-weight: bold; }
+
+#comment_counter {
+	border: 0 none;
+	padding: 0;
+	margin: 0;
+	background: none;
+	font-size: 12px;
+	font-weight: bold;
+	width: auto;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+label.error {
+	color: red;
+	font-size:11px;
+	text-transform: lowercase;
+}

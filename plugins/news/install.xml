@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="news">
+	<title>News</title>
+	<summary>Allows to create news section.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.3</version>
+	<date>2014-07-15</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<adminpages>
+		<page block="plugins" menus="main">Manage News</page>
+	</adminpages>
+
+	<htaccess>
+		<rules section="1" addto="bottom">
+			<![CDATA[
+#mod_rewrite rules for news plugin
+RewriteRule ^news.html$ controller.php?plugin=news [QSA,L]
+RewriteRule ^news([0-9]+).html$ controller.php?plugin=news&page=$1 [QSA,L]
+RewriteRule ^news/([0-9]+)-(.*).html$ controller.php?plugin=news&id=$1&title=$2 [QSA,L]
+			]]>
+		</rules>
+	</htaccess>
+
+	<phrases>
+		<phrase key="delete_image" category="common" code="en">delete image</phrase>
+		<phrase key="news_image" category="common" code="en">News Thumbnail</phrase>
+		<phrase key="news_rss" category="frontend" code="en">News RSS</phrase>
+		<phrase key="manage_news" category="admin" code="en">Manage News</phrase>
+		<phrase key="news_added" category="admin" code="en">News added.</phrase>
+		<phrase key="news" category="common" code="en">News</phrase>
+		<phrase key="no_news" category="admin" code="en"><![CDATA[No news. <a href="controller.php?plugin=news&amp;do=add">Click here</a> to add news.]]></phrase>
+		<phrase key="view_news" category="common" code="en">View News</phrase>
+		<phrase key="view_all_news" category="frontend" code="en">View all news</phrase>
+		<phrase key="add_news" category="admin" code="en">Add News</phrase>
+		<phrase key="edit_news" category="admin" code="en">Edit News</phrase>
+		<phrase key="no_news" category="frontend" code="en">There is no any news.</phrase>
+	</phrases>
+
+	<configgroup name="news">News Configuration</configgroup>
+
+	<config group="news" name="news_plugin" type="divider" value="General">General</config>
+	<config group="news" name="news" type="radio" multiplevalues="1,0" description="News functionality">1</config>
+	<config group="news" name="news_number" type="text" description="Number of displayed news">3</config>
+	<config group="news" name="news_max" type="text" description="Number of chars in short description">200</config>
+	<config group="news" name="news_order" type="select" multiplevalues="alphabetic,date" description="News order by">date</config>
+	<config group="news" name="news_thumb_width" type="text" description="Width of news thumbnail">100</config>
+	<config group="news" name="news_thumb_height" type="text" description="Height of news thumbnail">100</config>
+	<config group="news" name="news_image_width" type="text" description="Width of news image">800</config>
+	<config group="news" name="news_image_height" type="text" description="Height of news image">600</config>
+
+	<blocks>
+		<block name="latest_news" title="Latest news" collapsible="1" status="active" showheader="1" lang="en" position="bottom" type="smarty" sticky="1" external="1"><![CDATA[]]></block>
+	</blocks>
+
+	<pages>
+		<page menus="main,bottom" title="News" name="news" status="active" uniqueurl="news.html" nofollow="0"><![CDATA[]]></page>
+		<page title="View News" name="view_news" status="active" nofollow="1"><![CDATA[]]></page>
+	</pages>
+
+	<hooks>
+		<hook name="bootstrap">
+		<![CDATA[
+global $esynConfig, $esynSmarty, $eSyndiCat;
+
+if ($esynConfig->getConfig('news'))
+{
+	$eSyndiCat->setTable("news");
+	$news = $eSyndiCat->all("`id`,`title`,`date`,`alias`,`body`,`image`",
+		"`status` = 'active' AND `lang` = '".IA_LANGUAGE."' ORDER BY `date` DESC",
+		$values = array(), 0, $esynConfig->getConfig('news_number'));
+	$eSyndiCat->resetTable();
+	$esynSmarty->assign('news', $news);
+}
+		]]>
+		</hook>
+
+		<hook name="feed">
+		<![CDATA[
+global $eSyndiCat,$from,$esynConfig,$out;
+
+if((is_array($from) && in_array('news', $from)) || ('news' == $from))
+{
+	require_once(IA_CLASSES.'esynUtf8.php');
+
+	esynUtf8::loadUTF8Core();
+	esynUtf8::loadUTF8Util('utf8_to_ascii');
+
+	$out .= '<title>' . $esynI18N['news'] . '</title>';
+	$out .= '<description>' . $esynConfig->getConfig('site') . " " . $esynI18N['news'] . '</description>';
+	$out .= '<link>' . IA_URL;
+	$out .= 'news.html';
+	$out .= '</link>';
+
+	$eSyndiCat->setTable('news');
+	$news = $eSyndiCat->all("*", "`status`='active' AND `lang` = '".IA_LANGUAGE."' ORDER BY `date` DESC");
+	$eSyndiCat->resetTable();
+
+	if(!empty($news))
+	{
+		foreach ($news as $key => $value)
+		{
+			$item['title'] = $value['title'];
+			$item['link'] = IA_URL . 'news/' . $value['id'] . '-' . $value['alias'] . '.html';
+
+			$img = !empty($value['image']) ? '<img src="'.IA_URL.'uploads'.IA_DS.$value['image'].'" alt="" />' : '' ;
+			$item['description'] = $img.$value['body'];
+			$item['date'] = $value['date'];
+
+			$out .= create_rss_item($item);
+		}
+	}
+}
+		]]>
+		</hook>
+
+		<hook name="adminGYSMTotalItems">
+		<![CDATA[
+global $esynConfig;
+
+if ($esynConfig->getConfig('news'))
+{
+	global $esynAdmin, $items;
+
+	$esynAdmin->setTable('news');
+	$items['news']= $esynAdmin->one("COUNT(`id`)", "`status`='active'");
+	$esynAdmin->resetTable();
+}
+		]]>
+		</hook>
+
+		<hook name="adminGYSMBuildMap" file="plugins/news/includes/hook.adminGYSMBuildMap.php"><![CDATA[]]></hook>
+
+		<hook name="headSection" type="smarty">
+		<![CDATA[
+<link rel="alternate" type="application/rss+xml" title="{$news.title|escape:'html'}" href="{$smarty.const.IA_URL}feed.php?from=news" />
+		]]>
+		</hook>
+	</hooks>
+
+	<installsql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}news` (
+	`id` int(4) NOT NULL auto_increment,
+	`title` varchar(150) NOT NULL default '',
+	`alias` varchar(50) NOT NULL default '',
+	`body` text NOT NULL,
+	`date` date NOT NULL default '0000-00-00',
+	`status` enum('inactive','active') NOT NULL default 'inactive',
+	`lang` char(2) NOT NULL default '',
+	`image` text NOT NULL default '',
+	PRIMARY KEY  (`id`),
+	KEY `lang` (`lang`),
+	FULLTEXT KEY `title` (`title`,`body`)
+) {mysql_version};
+			]]>
+		</sql>
+	</installsql>
+
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}news`;
+			]]>
+		</sql>
+	</uninstallsql>
+</plugin>

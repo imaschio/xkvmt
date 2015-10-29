@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="ipblocklist">
+	<title>IP Block List</title>
+	<summary>This plugin does not display frontend for banned IP address.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-09-25</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+	
+	<config group="miscellaneous" name="div_ipblocklist" type="divider" description="IP Block List Configuration"><![CDATA[IP Block List Configuration]]></config>
+	<config group="miscellaneous" name="enable_block_list" type="radio" description="Checking for banned IP" multiplevalues="1,0">1</config>
+	<config group="miscellaneous" name="ip_block_list" type="textarea" description="IP block list">
+		<![CDATA[
+These
+are
+your
+IP
+adress
+parted
+by
+new line
+		]]>
+	</config>
+	<config group="miscellaneous" name="ip_block_text" type="textarea" description="Block message">We are sorry. Your IP address is blocked.</config>
+
+	<hooks>
+		<hook name="theVeryStart" file="plugins/ipblocklist/includes/hook.theVeryStart.php"><![CDATA[]]></hook>
+	</hooks>
+</plugin>

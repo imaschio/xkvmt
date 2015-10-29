@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<plugin name="categories_boxes">
+	<title>Categories Boxes</title>
+	<summary>Displays top level categories in sidebar. Also displays Popular Categories block in sidebar.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.2</version>
+	<date>2013-10-09</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<hooks>
+		<hook name="bootstrap" type="php">
+			<![CDATA[
+global $eSyndiCat, $esynSmarty, $esynConfig;
+
+$eSyndiCat->setTable('categories');
+$boxes_categories['top'] = $eSyndiCat->all("*", "`level` = '1' AND `status` = 'active' ORDER BY `title` ASC LIMIT 0, ".$esynConfig->getConfig('num_top_cat'));
+$boxes_categories['popular'] = $eSyndiCat->all("*", "`parent_id` != '-1' AND `status` = 'active' ORDER BY `clicks` DESC LIMIT 0, ".$esynConfig->getConfig('num_popular_cat'));
+$eSyndiCat->resetTable();
+
+$esynSmarty->assign('boxes_categories', $boxes_categories);
+			]]>
+		</hook>
+	</hooks>
+	
+	<blocks>
+		<block title="Categories box" name="categories-box" lang="en" status="active" position="right" type="smarty" sticky="1" external="1"><![CDATA[]]></block>
+	</blocks>
+
+	<config group="categories" name="categories_boxes" type="divider" description="Categories Boxes">Categories Boxes</config>
+	<config group="categories" name="num_top_cat" type="text" description="Max number of top categories">10</config>
+	<config group="categories" name="num_popular_cat" type="text" description="Max number of popular categories">10</config>
+
+	<phrases>
+		<phrase key="no_categories" category="frontend" code="en">No top categories yet.</phrase>
+		<phrase key="categories_box_top" category="frontend" code="en">Top categories</phrase>
+		<phrase key="categories_box_popular" category="frontend" code="en">Popular categories</phrase>
+	</phrases>
+</plugin>

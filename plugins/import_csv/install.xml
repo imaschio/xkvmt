@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="import_csv">
+	<title>Import CSV</title>
+	<summary>This mod intended to extract listings from CSV files to add them to your directory.</summary>
+  	<author>Intelliants LLC<</author>
+  	<contributor>Intelliants LLC</contributor>
+	<version>3.0.3</version>
+  	<date>2013-08-30</date>
+  	<compatibility>3.0</compatibility>
+	<status>active</status>
+  	
+  	<adminpages>
+		<page block="plugins" menus="main">Import CSV</page>
+	</adminpages>
+	
+	<phrases>
+		<phrase key="imported_links_to" category="common" code="en">Import selected links to one category:</phrase>
+		<phrase key="for_tab_delimiter" category="common" code="en">For TAB delimiter enter \t</phrase>
+		<phrase key="error_upload_csv" category="common" code="en">Error upload CSV file</phrase>
+		<phrase key="listings_edded" category="common" code="en">Listings added</phrase>
+		<phrase key="uncheck_all" category="common" code="en">Uncheck All</phrase>
+		<phrase key="with_status" category="common" code="en">with status</phrase>
+		<phrase key="import_csv" category="common" code="en">Import CSV</phrase>
+		<phrase key="check_all" category="common" code="en">Check All</phrase>
+		<phrase key="delimiter" category="common" code="en">Delimiter</phrase>
+		<phrase key="csv_file" category="common" code="en">CSV File</phrase>
+		<phrase key="import" category="common" code="en">Import selected links</phrase>
+		<phrase key="parse" category="common" code="en">Parse</phrase>
+		<phrase key="arrow" category="common" code="en">arrow</phrase>
+		<phrase key="root" category="common" code="en">ROOT</phrase>
+	</phrases>
+	
+</plugin>

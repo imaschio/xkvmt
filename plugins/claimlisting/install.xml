@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="claimlisting">
+	<title>Claim Listing</title>
+	<summary>This plugin allows to claim a listing for the user and then assign an ownership for it. Later this user can modify that listing.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.2</version>
+	<date>2013-05-14</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<actions>
+		<action show="view_listing">claim</action>
+	</actions>
+
+	<hooks>
+		<hook name="viewListingBeforeFooter" type="smarty">
+			<![CDATA[
+{ia_print_js files='plugins/claimlisting/js/frontend/index'}
+
+{ia_add_js}
+	var logged = {($esynAccountInfo) ? 1 : 0};
+{/ia_add_js}
+			]]>
+		</hook>
+		
+		<hook name="listingDisplayToolbarActions" type="smarty">
+ 			<![CDATA[
+{if $esynAccountInfo && $esynAccountInfo.id != $listing.account_id}
+	<a href="{$smarty.const.IA_URL}mod/claimlisting/{$listing.id}" class="js-tooltip" title="{lang key='claim_this_link'}" rel="nofollow">
+		<i class="icon-wrench icon-white"></i>
+	</a>
+{/if}
+			]]>
+		</hook>
+		
+		<hook name="viewListingAfterHeading" type="smarty">
+ 			<![CDATA[
+{if $esynAccountInfo && $esynAccountInfo.id != $listing.account_id}
+	<p class="text-right"><a href="{$smarty.const.IA_URL}mod/claimlisting/{$listing.id}" rel="nofollow" class="btn btn-small btn-success">{lang key='claim_this_link'}</a></p>
+{/if}
+			]]> 
+		</hook>	
+	</hooks>
+	
+	<phrases>
+		<phrase key="its_your_listing" category="frontend" code="en"><![CDATA[This is already your listing. Click <a href="{url}">HERE</a> to edit it.]]></phrase>
+		<phrase key="esyndicat_action_claim" category="frontend" code="en"><![CDATA[Claim Listing]]></phrase>
+		<phrase key="validate_listing_owner" category="frontend" code="en"><![CDATA[Validate Listing Owner]]></phrase>
+		<phrase key="error_claim_code" category="frontend" code="en"><![CDATA[Error. Your code is not found.]]></phrase>
+		<phrase key="claim_this_link" category="frontend" code="en"><![CDATA[Claim Listing]]></phrase>
+		<phrase key="meta_validation" category="frontend" code="en"><![CDATA[Meta Validation Method]]></phrase>
+		<phrase key="file_validation" category="frontend" code="en"><![CDATA[File Validation Method]]></phrase>
+			
+		<phrase key="claim_text" category="frontend" code="en">
+			<![CDATA[
+<p>To edit your listing you should add the following code to {url} as it's shown below:</p>
+<pre><input size="82" type="text" readonly="readonly" class="span5 disabled" value="&lt;meta name='esyn-verification' content='{owner_code}' /&gt;" /></pre>
+			]]>
+		</phrase>			
+		<phrase key="claim_text2" category="frontend" code="en">
+			<![CDATA[
+<ul class="unstyled">
+	<li>Create a text file called {domain}.txt containing:<br>
+		<div class="well">{owner_code}</div>
+	</li>
+	<li>Upload it to {url}</li>
+</ul>
+<p>The full address is <a href="{url}/{domain}.txt">{url}/{domain}.txt</a>. This file can be removed after verification.</p>
+			]]>
+		</phrase>	 
+	</phrases>
+	
+	<pages>
+		<page status="active" uniqueurl="mod/claimlisting/" nofollow="1" name="claimlisting"><![CDATA[]]></page>
+	</pages>
+</plugin>

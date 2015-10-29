@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<plugin name="twitter">
+	<title>Twitter</title>
+	<summary>This plugin displays twitter feed on the listing details page.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.3</version>
+	<date>2014-06-26</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<hooks>
+		<hook name="headSection" type="smarty">
+			<![CDATA[
+{literal}
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+{/literal}
+			]]>
+		</hook>
+
+		<hook name="viewListingBeforeFooter" type="smarty">
+			<![CDATA[
+{if !empty($listing.twitter_username)}
+	<a class="twitter-timeline" href="https://twitter.com/{$listing.twitter_username}"
+		data-chrome="noscrollbar"
+		data-widget-id="{$config.twitter_widget_id}"
+		data-tweet-limit="{$config.number_of_tweets}"
+		data-theme="{$config.twitter_theme}"
+		data-screen-name="{$listing.twitter_username}"
+		lang="{$config.twitter_lang}">Tweets by @{$listing.twitter_username}</a>
+{/if}
+			]]>
+		</hook>
+	</hooks>
+
+	<config group="miscellaneous" name="twitter_divider" type="divider" description="Twitter"><![CDATA[ Twitter ]]></config>
+	<config group="miscellaneous" name="twitter_widget_id" type="text" description="Twitter Widget ID"><![CDATA[]]></config>
+	<config group="miscellaneous" name="twitter_theme" type="select" multiplevalues="light,dark" description="Twitter Theme">light</config>
+	<config group="miscellaneous" name="number_of_tweets" type="text" description="Number of tweets to display in box">5</config>
+	<config group="miscellaneous" name="twitter_lang" type="text" description="Twitter Language">EN</config>
+
+	<fields>
+		<field name="twitter_username" title="Twitter Username" type="text" editor="0" required="0" adminonly="0" pages="suggest,edit" section_key="" length="" default=""><![CDATA[ Please input twitter username without @ ]]></field>
+	</fields>
+
+	<phrases>
+		<phrase key="twitter_widget_id" category="tooltip" code="en"><![CDATA[Please refer to the plugin's "Installation" section for getting Twitter widget ID.]]>
+		</phrase>
+	</phrases>
+</plugin>

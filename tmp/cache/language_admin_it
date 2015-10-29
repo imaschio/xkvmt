@@ -1,0 +1,658 @@
+a:1402:{s:23:"esyndicat_action_delete";s:7:"Elimina";s:35:"are_you_sure_to_delete_this_comment";s:45:"Are you sure you want to delete this comment?";s:15:"manage_comments";s:15:"Manage Comments";s:40:"are_you_sure_to_delete_selected_comments";s:50:"Are you sure you want to delete selected comments?";s:21:"comment_waits_approve";s:49:"Your comment should be approved by administrator.";s:8:"wrote_on";s:8:"wrote on";s:10:"check_news";s:10:"check news";s:13:"check_article";s:13:"check article";s:13:"check_listing";s:13:"check listing";s:8:"comments";s:8:"Commenti";s:14:"comment_author";s:4:"Nome";s:12:"author_email";s:5:"Email";s:10:"author_url";s:10:"Author URL";s:13:"leave_comment";s:18:"Lascia un commento";s:12:"all_comments";s:12:"All Comments";s:7:"comment";s:9:"Messaggio";s:11:"no_comments";s:12:"No Comments.";s:13:"comment_added";s:14:"Comment added.";s:24:"page_title_listingstatus";s:21:"Controlla stato link
+";s:25:"admin_page_title_comments";s:15:"Manage Comments";s:13:"crossed_added";s:32:"Reticolazione è stato aggiunto.";s:15:"already_crossed";s:39:"Esiste già un collegamento incrociato.";s:14:"already_copied";s:43:"Quotazione già esiste in questa categoria.";s:6:"copied";s:9:" copiato.";s:12:"rating_reset";s:29:"Quotazione valutazione reset.";s:14:"featured_added";s:42:"L'elenco è stato aggiunto al primo piano.";s:16:"already_featured";s:26:"L'elenco è già presenti.";s:15:"crossed_removed";s:54:"La reticolazione è stato rimosso da questa categoria.";s:22:"banned_link_status_url";s:96:"This listing was banned on {date}. Please contact site adminisitrator if you have any questions.";s:25:"suspended_link_status_url";s:99:"This listing was suspended on {date}. Please contact site administrator in case you have questions.";s:22:"active_link_status_url";s:36:"This listing is active since {date}.";s:24:"approval_link_status_url";s:79:"Your listing is waiting for administrator approval. It was submitted on {date}.";s:31:"error_not_found_link_status_url";s:31:"No listing found with this URL.";s:27:"error_empty_link_status_url";s:29:"Please type correct link URL.";s:21:"check_link_status_url";s:8:"Link URL";s:26:"listing_status_description";s:102:"Ti preghiamo gentilmente di inserire l'URL del tuo sito per verificare in quale stato si trova adesso.";s:17:"check_link_status";s:34:"Controlla lo Stato dell'inserzione";s:9:"bad_words";s:92:"These types of words are banned and will not be processed. Please replace them in the fields";s:31:"tpl_notif_listing_upgraded_body";s:626:"<h3>Dear {admin_name},</h3>
+
+<p>Listing {listing_url} has been upgraded at <em><a href="{dir_url}">{dir_title}</a></em> (<em><a href="{dir_url}">{dir_url}</a></em>).</p>
+
+<p>Listing <em><a href="{listing_path}">{listing_title}</a></em> will be expired on <em>{expire_date}</em>Plan: <em>{listing_plan}</em><br />
+<br />
+Payment was made by {payment_system} payment system.<br />
+Transaction ID: <em>{transactionID}</em><br />
+Subscription ID: <em>{subscriptionID}</em></p>
+
+<p>.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+
+<p>&nbsp;</p>
+";s:40:"tpl_notif_listing_subscr_payment_subject";s:49:"We have received an installment payment of {cost}";s:37:"tpl_notif_listing_subscr_payment_body";s:596:"<h3>
+	Dear {admin_name},</h3>
+<p>
+	These are the attributes of a listing:<br />
+	Title:<em> {listing_title}</em><br />
+	URL: <em>{listing_url}</em><br />
+	Description:<em> {listing_description}</em><br />
+	Email: <em>{listing_email}</em><br />
+	Plan: <em>{listing_plan}</em><br />
+<br />
+	Payment was made by {payment_system} payment system.<br />
+ Transaction ID: <em>{transactionID}</em><br />
+	Subscription ID: <em>{subscriptionID}</em></p>
+<p>
+	______________________________<br />
+	Thank you,<br />
+	{dir_title} Administration Team<br />
+	{dir_url}<br />
+	{dir_email}</p>
+";s:36:"tpl_notif_listing_subscr_eot_subject";s:44:"Installment payment completed at {dir_title}";s:33:"tpl_notif_listing_subscr_eot_body";s:547:"<h3>
+	Dear {admin_name},</h3>
+<p>
+ 	This is a courtesy notice to inform you that {payment_system} subscription has expired.<br /></p>
+<p> These are the attributes of a listing:<br />
+	Title:<em> {listing_title}</em><br />
+	URL: <em>{listing_url}</em><br />
+	Description:<em> {listing_description}</em><br />
+	Email: <em>{listing_email}</em><br />
+	Plan: <em>{listing_plan}</em><br />
+<br />
+</p>
+<p>
+	______________________________<br />
+	Thank you,<br />
+	{dir_title} Administration Team<br />
+	{dir_url}<br />
+	{dir_email}</p>
+";s:33:"tpl_notif_listing_payment_subject";s:41:"Listing was made sponsored at {dir_title}";s:34:"tpl_notif_account_register_subject";s:42:"Account has been registered to {dir_title}";s:31:"tpl_notif_account_register_body";s:383:"<h3>Dear {admin_name},</h3>
+
+<p>Account has been registered to <em><a href="{dir_url}">{dir_title}</a></em>. Please check it.</p>
+
+<p>These are the attributes of the account:<br />
+Username:<em>{account_name}</em><br />
+Email:<em> {account_email}</em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} AdministrationTeam<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:12:"ategoriesmap";s:16:"Elenco categorie";s:14:"categories_map";s:16:"Elenco categorie";s:33:"tpl_notif_account_payment_subject";s:41:"Account was made sponsored at {dir_title}";s:35:"tpl_notif_account_confirmed_subject";s:41:"Account has been confirmed at {dir_title}";s:30:"tpl_notif_account_payment_body";s:459:"<h3>Dear {admin_name},</h3>
+
+<p>Account was made sponsored at <em><a href="{dir_url}">{dir_title}</a></em>. Please check it.</p>
+
+<p>These are the attributes of an account:<br />
+Username:<em> {account_name}</em><br />
+Email: <em>{account_email}</em><br />
+Status:<em> {account_status}</em><br />
+Plan: <em>{account_plan}</em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:32:"tpl_notif_account_confirmed_body";s:414:"<h3>Dear {admin_name},</h3><p>	Account has been confirmed at <em><a href="{dir_url}">{dir_title}</a></em>. Please check it.</p><p>	These are the attributes of the account:<br />	Username:<em> {account_name}</em><br />	Email:<em> {account_email}</em><br />	Status:<em> {account_status}</em></p><p>______________________________<br />Thank you,<br />{dir_title} AdministrationTeam<br />{dir_url}<br />{dir_email}</p>";s:13:"login_to_text";s:92:"Riempire i campi "Login" e "Password" con username e password.
+Quindi fare clic su "Login".";s:5:"login";s:6:"Accedi";s:19:"install_not_deleted";s:64:"ATTENZIONE!!! LA DIRECTORY DI INSTALLAZIONE NON È STATO RIMOSSO";s:18:"interface_language";s:21:"Lingua di interfaccia";s:8:"password";s:8:"Password";s:15:"forgot_password";s:21:"Password dimenticata?";s:9:"login_btn";s:6:"Accedi";s:16:"invalid_username";s:23:"Nome utente non valido.";s:16:"invalid_password";s:20:"Password non valida.";s:34:"tpl_listing_subscr_payment_subject";s:49:"Installment payment notification from {dir_title}";s:10:"management";s:8:"Gestione";s:13:"manage_admins";s:13:"Manage Admins";s:15:"manage_database";s:15:"Manage Database";s:15:"manage_accounts";s:15:"Manage Accounts";s:12:"manage_pages";s:12:"Manage Pages";s:13:"manage_fields";s:21:"Manage Listing Fields";s:28:"manage_fields_recommendation";s:58:"Si raccomanda di non aggiungere o cambiare i campi spesso.";s:15:"manage_language";s:15:"Manage language";s:12:"manage_plans";s:12:"Manage Plans";s:13:"changes_saved";s:24:"Changes have been saved.";s:11:"admin_panel";s:11:"Admin Panel";s:13:"configuration";s:13:"Configuration";s:8:"login_to";s:50:"Login per il pannello di amministrazione eSyndiCat";s:10:"plan_added";s:24:"Piano è stato aggiunto.";s:4:"edit";s:8:"Modifica";s:10:"error_name";s:21:"Nome non è corretto.";s:9:"site_home";s:13:"Home del sito";s:14:"directory_home";s:14:"Home directory";s:4:"help";s:5:"Guida";s:14:"phrase_manager";s:13:"Frasi Manager";s:13:"items_deleted";s:10:"Eliminato.";s:15:"category_locked";s:65:"La categoria è stata bloccata con successo per la presentazione.";s:6:"import";s:12:"Importazione";s:6:"export";s:12:"Esportazione";s:12:"save_changes";s:18:"Salva le modifiche";s:4:"home";s:4:"Home";s:17:"subject_incorrect";s:25:"Soggetto non è corretto.";s:14:"email_not_sent";s:56:"Attenzione: Non poteva consegnare il messaggio di posta.";s:10:"email_sent";s:14:"Email spedita.";s:4:"body";s:5:"Corpo";s:4:"from";s:2:"Da";s:14:"body_incorrect";s:22:"Corpo non è corretto.";s:2:"to";s:1:"A";s:7:"subject";s:7:"Oggetto";s:6:"author";s:6:"Autore";s:5:"email";s:5:"Email";s:8:"approval";s:12:"Approvazione";s:6:"active";s:6:"Attivo";s:10:"categories";s:9:"Categorie";s:8:"listings";s:10:"Inserzioni";s:6:"banned";s:7:"Vietato";s:6:"broken";s:5:"Rotto";s:9:"suspended";s:7:"Sospeso";s:8:"nonrecip";s:13:"Non reciproco";s:9:"sponsored";s:13:"Sponsorizzato";s:8:"featured";s:10:"In Vetrina";s:7:"partner";s:7:"Partner";s:16:"remove_sponsored";s:23:"Rimuovere sponsorizzati";s:15:"remove_featured";s:21:"Rimuovere dal Vetrina";s:14:"remove_partner";s:20:"Rimuovere il partner";s:2:"go";s:3:"Vai";s:8:"_select_";s:13:"-- Seleziona-";s:4:"cost";s:5:"Costo";s:11:"description";s:11:"Descrizione";s:5:"title";s:6:"Titolo";s:3:"add";s:8:"Aggiungi";s:8:"view_all";s:12:"Mostra tutti";s:6:"search";s:7:"Ricerca";s:11:"server_info";s:26:"Le informazioni del Server";s:6:"logout";s:6:"Logout";s:10:"edit_admin";s:10:"Edit Admin";s:11:"admin_added";s:42:"Nuovo admin è stato creato correttamente.";s:4:"date";s:4:"Data";s:4:"time";s:5:"Tempo";s:6:"status";s:5:"Stato";s:13:"select_action";s:18:"Selezionare azione";s:7:"approve";s:9:"Approvare";s:10:"disapprove";s:12:"Disapprovare";s:17:"field_description";s:11:"Descrizione";s:11:"field_email";s:5:"Email";s:16:"field_reciprocal";s:13:"URL reciproco";s:11:"field_thumb";s:14:"Aggiungi foto ";s:5:"plans";s:5:"Piani";s:8:"no_plans";s:146:"Non prevede sponsorizzati sono stati creati. Si prega di <a href="manage-plans.php?action=add">cliccare qui</a> per creare un piano sponsorizzato.";s:4:"days";s:6:"Giorni";s:5:"order";s:6:"Ordine";s:10:"save_order";s:16:"Salvare l'ordine";s:22:"error_plan_number_days";s:70:"Inserisci il numero corretto di giorni. Dovrebbe contenere solo cifre.";s:15:"error_plan_cost";s:67:"Si prega di ingresso costo corretto. Dovrebbe contenere solo cifre.";s:17:"error_description";s:32:"Description is a required field.";s:6:"delete";s:9:"Eliminare";s:11:"field_title";s:6:"Titolo";s:9:"field_url";s:8:"URL sito";s:12:"help_content";s:394:"Qualsiasi aiuto per quanto riguarda eSyndiCat Software può essere trovato qui:<br><br>1. <a href="http://www.esyndicat.com/forum/">eSyndiCat Support Forums</a><br><br>2. <a href="http://www.esyndicat.com/desk/">eSyndiCat Help Desk</a><br><br>3. <a href="http://www.esyndicat.com/desk/index.php?/Knowledgebase/List">conoscenza base</a><br><br>Non esitate a contattarci nel caso abbiate domande.";s:5:"reply";s:8:"Risposta";s:4:"move";s:8:"Spostare";s:13:"no_categories";s:153:"Nessuna categoria. <a href="controller.php?file=suggest-category&amp;id=[category_id]" style="font-weight: bold;">Clicca qui</a> per creare la categoria.";s:4:"path";s:8:"Percorso";s:17:"manage_categories";s:17:"Manage Categories";s:8:"accounts";s:6:"Utenti";s:10:"reciprocal";s:9:"Reciproco";s:6:"manage";s:6:"Manage";s:5:"total";s:6:"Totale";s:8:"category";s:9:"Categoria";s:7:"listing";s:10:"Quotazione";s:14:"manage_related";s:14:"Manage Related";s:14:"manage_crossed";s:14:"Manage Crossed";s:6:"browse";s:7:"Sfoglia";s:6:"create";s:6:"Creare";s:15:"copy_categories";s:23:"Sottocategorie di copia";s:17:"browse_categories";s:17:"Browse Categories";s:9:"set_order";s:21:"Ordine predeterminato";s:5:"level";s:7:"Livello";s:7:"account";s:5:"Conto";s:13:"account_added";s:24:"Conto è stato aggiunto.";s:15:"username_exists";s:27:"Nome utente già esistente.";s:19:"passwords_not_match";s:30:"Le password non corrispondono.";s:18:"password_incorrect";s:19:"Password è errata.";s:18:"username_incorrect";s:28:"Nome utente non è corretto.";s:16:"featured_removed";s:46:"L'inserzione è stata rimossa dal primo piano.";s:17:"sponsored_removed";s:47:"L'inserzione è stata rimossa da sponsorizzato.";s:15:"already_related";s:31:"Relativa categoria esiste già.";s:5:"moved";s:9:"Spostato.";s:13:"related_added";s:40:"È stata aggiunta la relativa categoria.";s:17:"already_sponsored";s:43:"Piano sponsorizzato ha ricevuto già prima.";s:13:"plan_assigned";s:39:"Piano sponsorizzato è stato assegnato.";s:17:"category_ununique";s:54:"Categoria non sarà piu ' utilizzare un unico modello.";s:13:"help_contents";s:8:"Sommario";s:13:"release_notes";s:16:"Note di rilascio";s:11:"system_info";s:23:"Informazioni di sistema";s:15:"about_esyndicat";s:15:"Circa eSyndiCat";s:6:"avatar";s:13:"Il tuo avatar";s:15:"title_incorrect";s:23:"Titolo non è corretto.";s:17:"category_unlocked";s:28:"Categoria è stato sbloccato";s:24:"unique_category_template";s:27:"Utilizzare un unico modello";s:15:"category_unique";s:43:"Categoria utilizzerà ora un unico modello.";s:12:"all_listings";s:17:"Tutti gli annunci";s:12:"all_accounts";s:17:"Tutti gli account";s:14:"all_categories";s:18:"Tutte le categorie";s:4:"done";s:5:"Fatto";s:15:"optimize_tables";s:22:"Ottimizzare le tabelle";s:17:"check_consistency";s:17:"Verifica coerenza";s:6:"common";s:6:"Common";s:14:"sql_management";s:14:"SQL Management";s:10:"expand_all";s:13:"Espandi tutto";s:12:"collapse_all";s:14:"Comprimi tutto";s:42:"are_you_sure_to_uninstall_selected_plugins";s:60:"Sei sicuro di che voler disinstallare il plugin selezionato?";s:11:"add_crossed";s:19:"Aggiungi incrociate";s:10:"no_related";s:290:"No categorie correlate. <a href="javascript:void(0)" onclick="$('#treeContainer').fadeIn();$('#action').val('relate');$('#labelcat0').disable();resetTree();return false;" style="font-weight: bold;">Fai clic qui</a> per aggiungere una categoria correlata a <strong>{category_title}</strong>.";s:6:"unlock";s:9:"Sbloccare";s:11:"add_related";s:18:"Aggiungi correlati";s:4:"lock";s:9:"Serratura";s:20:"subcategories_copied";s:43:"Tutte le sottocategorie sono state copiate.";s:15:"already_partner";s:37:"L'elenco è già aggiunto al partner.";s:13:"partner_added";s:38:"L'elenco è stato aggiunto ai partner.";s:15:"partner_removed";s:42:"L'inserzione è stata rimossa dal partner.";s:20:"category_path_exists";s:54:"Categoria con un valore di percorso simile esiste già";s:41:"are_you_sure_to_uninstall_selected_plugin";s:55:"Sei sicuro che si desidera disinstallare questo plugin?";s:21:"category_title_exists";s:52:"Categoria con un valore di titolo simile esiste già";s:11:"columns_num";s:17:"Numero di colonne";s:14:"category_added";s:31:"È stata aggiunta la categoria.";s:30:"tpl_payment_expiration_subject";s:41:"Payment is about to expire at {dir_title}";s:3:"yes";s:3:"Sì";s:2:"no";s:2:"No";s:6:"parent";s:5:"Padre";s:13:"meta_keywords";s:13:"Meta-keywords";s:16:"meta_description";s:16:"Meta-description";s:14:"neighbours_num";s:17:"Numero dei vicini";s:15:"incorrect_dates";s:12:"Date errate.";s:13:"partner_since";s:11:"Partner dal";s:6:"clicks";s:5:"Click";s:5:"_all_";s:14:"-- tutte le...";s:10:"recipients";s:11:"Destinatari";s:4:"send";s:5:"Invia";s:9:"filter_by";s:10:"Filtra per";s:5:"state";s:5:"Stato";s:8:"settings";s:12:"Impostazioni";s:17:"upgrade_completed";s:28:"L'aggiornamento è completo.";s:3:"ban";s:7:"Divieto";s:7:"deleted";s:9:"Eliminato";s:14:"featured_since";s:14:"In Vetrina dal";s:8:"no_pages";s:123:"Nessuna pagine sono state create. Si prega di <a href="manage-pages.php?action=add">cliccare qui</a> per creare una pagina.";s:6:"rating";s:11:"Valutazione";s:17:"root_cant_deleted";s:43:"Categoria radice non può essere eliminato.";s:13:"cant_open_sql";s:61:"Impossibile aprire il file con le istruzioni sql: {filename}.";s:7:"myfield";s:12:"Il mio campo";s:7:"disable";s:12:"Disabilitare";s:6:"enable";s:6:"Enable";s:8:"pagerank";s:8:"PageRank";s:7:"_state_";s:7:"-Stato-";s:8:"_action_";s:8:"-Azione-";s:8:"_status_";s:8:"-Status-";s:4:"some";s:6:"alcuni";s:12:"get_pagerank";s:17:"Ottenere Pagerank";s:20:"crosslisting_confirm";s:57:"Sei sicuro di che voler impostare come una reticolazione?";s:18:"incorrect_filetype";s:26:"Tipo di file non corretto.";s:25:"upload_correct_permission";s:107:"La destinazione non poteva copiare l'immagine caricata. Assicurarsi che lo script ha permesso di scrittura.";s:16:"reciprocal_valid";s:16:"Reciproco valido";s:14:"unknown_upload";s:59:"Errore sconosciuto apparso durante il caricamento del file.";s:17:"additional_fields";s:16:"Campi aggiuntivi";s:4:"rank";s:5:"Rango";s:11:"email_notif";s:25:"Inviare email di notifica";s:4:"view";s:5:"Vista";s:5:"admin";s:5:"Admin";s:14:"logout_content";s:255:"Disconnesso. <a href="../" style="font-weight: bold;">Clicca qui</a> per andare alla pagina iniziale della directory.<br>
+<a href="login.php" style="font-weight: bold;">Clicca qui</a> per andare al pannello di amministrazione di directory nuovamente.<br>";s:21:"incorrect_permissions";s:46:"Si prega di impostare autorizzazioni corrette.";s:26:"incorrect_password_confirm";s:44:"Assicurati che hai inserito conferma valida.";s:15:"incorrect_email";s:29:"Inserisci un e-mail corretta.";s:18:"incorrect_password";s:15:"Password errata";s:5:"added";s:9:"Aggiunto.";s:18:"incorrect_fullname";s:38:"Inserisci un nome corretto e completo.";s:6:"admins";s:14:"Amministratori";s:17:"username_or_email";s:19:"Nome utente o Email";s:8:"username";s:11:"Nome utente";s:8:"fullname";s:14:"Nome e cognome";s:7:"enabled";s:9:"Abilitato";s:16:"submission_notif";s:25:"Notifica di presentazione";s:16:"password_confirm";s:17:"Conferma password";s:13:"payment_notif";s:22:"Notifica del pagamento";s:11:"super_admin";s:11:"Super Admin";s:8:"disabled";s:8:"Disabili";s:17:"admin_permissions";s:27:"Permessi di amministrazione";s:7:"created";s:7:"Creato.";s:19:"assign_plan_listing";s:67:"Sono sicuro che si desidera assegnare questo piano alla quotazione?";s:15:"nothing_checked";s:58:"Si prega di controllare eventuali elementi per continuare.";s:15:"related_confirm";s:62:"Sono sicuro di che voler eliminare questa categoria correlata?";s:10:"select_all";s:16:"Seleziona tutto ";s:11:"select_none";s:19:"Selezionare Nessuno";s:13:"mysql_options";s:16:"Opzioni di MySQL";s:7:"options";s:7:"Opzioni";s:12:"table_dumped";s:58:"Tavolo {table} scaricato con successo nel file {filename}.";s:22:"directory_not_writable";s:75:"directory {dirname} non è scrivibile. Non è possibile salvare sul server.";s:3:"url";s:3:"URL";s:5:"menus";s:4:"Menu";s:10:"no_crossed";s:284:"Nessuna categoria incrociata. <a href="javascript:void(0);" onclick="$('#treeContainer').fadeIn();$('#action').val('cross');$('#labelcat0').disable();return false;" style="font-weight: bold;">Fai clic qui</a> per aggiungere la categoria incrociato a <strong>{category_title}</strong>.";s:15:"no_crossed_root";s:69:"Nessuna categoria incrociata può essere creata per categoria radice.";s:20:"copy_listing_confirm";s:68:"Sei sicuro di che voler copiare questo elenco di un'altra categoria?";s:20:"move_listing_confirm";s:53:"Sei sicuro di che voler spostare in questa categoria?";s:12:"copy_subcats";s:78:"Sei sicuro di che voler copiare tutte le sottocategorie di un'altra categoria?";s:15:"no_related_root";s:66:"No categorie correlate possono essere create per categoria radice.";s:18:"incorrect_name_url";s:48:"Nome errato. Si prega di compilare il campo URL.";s:11:"no_accounts";s:97:"Nessun account. <a href="manage-accounts.php?action=add">Fai clic qui</a> per aggiungere account.";s:5:"pages";s:6:"Pagine";s:4:"page";s:6:"Pagina";s:11:"bottom_menu";s:14:"Menu inferiore";s:8:"top_menu";s:15:"Menu principale";s:10:"show_menus";s:19:"Visualizza nel menu";s:8:"page_url";s:19:"Pagina unica chiave";s:12:"external_url";s:11:"URL esterno";s:13:"external_file";s:7:"Esterno";s:12:"account_menu";s:12:"Menu account";s:17:"page_external_url";s:18:"URL pagina esterna";s:13:"no_follow_url";s:13:"No Follow URL";s:12:"page_content";s:22:"Contenuto della pagina";s:18:"enter_external_url";s:22:"Inserisci URL esterno.";s:19:"page_content_sample";s:48:"Il contenuto della pagina dovrebbe essere qui...";s:14:"cant_write_sql";s:40:"Impossibile scrivere il file {filename}.";s:4:"data";s:4:"Dati";s:9:"structure";s:9:"Struttura";s:14:"add_drop_table";s:19:"Aggiungi DROP TABLE";s:31:"tpl_listing_subscr_payment_body";s:728:"<h3>
+	Dear {account_name},</h3>
+<p>
+ The installment payment was successful made for your listing, placed on <em><a href="{dir_url}">{dir_title}</a></em>. </p>
+<p>
+	These are the attributes of a listing:<br />
+	Title:<em> {listing_title}</em><br />
+	URL: <em>{listing_url}</em><br />
+	Description:<em> {listing_description}</em><br />
+	Email: <em>{listing_email}</em><br />
+	Plan: <em>{listing_plan}</em><br />
+<br />
+	Payment was made by {payment_system} payment system.<br />
+	Transaction ID: <em>{transactionID}</em><br />
+	Subscription ID: <em>{subscriptionID}</em></p>
+<p>
+	______________________________<br />
+	Thank you,<br />
+	{dir_title} Administration Team<br />
+	{dir_url}<br />
+	{dir_email}</p>
+";s:30:"tpl_listing_subscr_eot_subject";s:44:"Installment payment completed at {dir_title}";s:20:"cannot_create_folder";s:52:"Non è possibile creare cartelle per i file sitemap.";s:9:"classname";s:10:"Classe CSS";s:6:"change";s:11:"cambiamento";s:16:"listing_category";s:17:"Categoria Listing";s:11:"error_login";s:33:"Login o la password non è valido";s:16:"tab_title_search";s:5:"Cerca";s:18:"tab_content_search";s:1146:"<form action="controller.php?file=listings" method="get">
+<table>
+<tr>
+	<td width="120">Search Listings:&nbsp;</td>
+	<td>
+		<input type="hidden" name="file" value="listings" />
+		<input type="text" class="common question" size="23" name="quick_search" id="quick_search_listing" />
+		<input type="submit" class="common" value="Search" />
+	</td>
+</tr>
+</table>
+</form>
+
+<form action="controller.php?file=categories" method="get">
+<table>
+<tr>
+	<td width="120">Search Categories:&nbsp;</td>
+	<td>
+		<input type="hidden" name="file" value="categories" />
+		<input type="text" class="common question" size="23" name="quick_search" id="quick_search_category" />
+		<input type="submit" class="common" value="Search" />
+	</td>
+</tr>
+</table>
+</form>
+
+<form action="controller.php?file=accounts" method="get">
+<table>
+<tr>
+	<td width="120">Search Accounts:&nbsp;</td>
+	<td>
+		<input type="hidden" name="file" value="accounts" />
+		<input type="text" class="common question" size="23" name="quick_search" id="quick_search_account" />
+		<input type="submit" class="common" value="Search" />
+	</td>
+</tr>
+</table>
+</form>";s:27:"tpl_listing_subscr_eot_body";s:597:"<h3>
+	Dear {account_name},</h3>
+<p>
+ This is a courtesy notice to inform you that your {payment_system} subscription has expired.  <em><a href="{dir_url}">{dir_title}</a></em>. </p>
+<p>
+	These are the attributes of a listing:<br />
+	Title:<em> {listing_title}</em><br />
+	URL: <em>{listing_url}</em><br />
+	Description:<em> {listing_description}</em><br />
+	Email: <em>{listing_email}</em><br />
+	Plan: <em>{listing_plan}</em><br />
+<br />
+</p>
+<p>
+	______________________________<br />
+	Thank you,<br />
+	{dir_title} Administration Team<br />
+	{dir_url}<br />
+	{dir_email}</p>
+";s:19:"field_meta_keywords";s:13:"Meta Keywords";s:22:"field_meta_description";s:16:"Meta-description";s:26:"tpl_listing_submit_subject";s:46:"Your listing has been submitted to {dir_title}";s:29:"tpl_notif_tell_friend_subject";s:43:"{tf_from} sent {tf_to} a link to your site!";s:23:"tpl_listing_submit_body";s:527:"<h3>Dear {account_name},</h3>
+
+<p>We are glad to inform you that a link to {listing_url} has been submitted to <em><a href="{dir_url}">{dir_title}</a></em> ({dir_url}).</p>
+
+<p>After approval and activation, your URL will be listed at:</p>
+
+<p><a href="{listing_path}"><i>{listing_path}</i></a></p>
+
+<p>All the listings in our directory are direct, so they will improve your listing popularity.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:24:"tpl_listing_payment_body";s:647:"<h3>Dear {account_name},</h3>
+
+<p>Listing was made sponsored at <em><a href="{dir_url}">{dir_title}</a></em>.</p>
+
+<p>These are the attributes of a listing:<br />
+Title:<em> {listing_title}</em><br />
+URL: <em>{listing_url}</em><br />
+Description:<em> {listing_description}</em><br />
+Email: <em>{listing_email}</em><br />
+Plan: <em>{listing_plan}</em><br />
+<br />
+Payment was made by {payment_system} payment system.<br />
+Transaction ID: <em>{transactionID}</em><br />
+Subscription ID: <em>{subscriptionID}</em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:5:"error";s:6:"Errore";s:14:"listing_status";s:18:"Elenco dello stato";s:4:"last";s:6:"Ultima";s:23:"tpl_listing_modify_body";s:693:"<h3>Dear {account_name},</h3>
+
+<p>We are glad to inform you, that your listing to site {listing_url} has been modified.</p>
+
+<p>These are the new attributes of your listing:</p>
+
+<p>Title: <em>{listing_title}</em><br />
+URL: <em>{listing_url}</em><br />
+Description: <em>{listing_description}</em><br />
+Email: <em>{listing_email}</em><br />
+Rank: <em>{listing_rank}</em><br />
+Status: <em>{listing_status}</em><br />
+Crossed to: <em>{crossed_categories}</em></p>
+
+<p>You can view your listing here:</p>
+
+<p><em><a href="{listing_path}">{listing_path}</a></em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:26:"tpl_listing_delete_subject";s:46:"Your listing has been deleted from {dir_title}";s:17:"featured_listings";s:10:"In Vetrina";s:26:"tpl_listing_banned_subject";s:43:"Your listing has been banned at {dir_title}";s:23:"tpl_listing_delete_body";s:486:"<h3>	Dear {account_name},</h3><p>	Your listing {listing_url} has been deleted from <em><a href="{category_path}">{category_title}</a></em> category, probably because you did not place reciprocal listing(s) to <em><a href="{dir_url}">{dir_title}</a></em>. To see your listing again, please add a listing to our site and inform us.</p><p>	<em>{reason}</em></p><p>	______________________________<br />	Thank you, <br />	{dir_title} Administration Team<br />	{dir_url}<br />	{dir_email}</p>";s:14:"from_incorrect";s:51:"Si prega di specificare l'indirizzo nel campo "Da".";s:23:"tpl_listing_banned_body";s:318:"<h3>	Dear {account_name},</h3><p>	Your listing to {listing_url} has been banned at <em><a href="{dir_url}">{dir_title}</a></em>.</p><p>	If you have questions, please feel free to ask us.</p><p>	______________________________<br />	Thank you, <br />	{dir_title} Administration Team<br />	{dir_url}<br />	{dir_email}</p>";s:24:"tpl_listing_approve_body";s:459:"<h3>Dear {account_name},</h3>
+
+<p>Congratulations! Your listing {listing_url} has been approved for <em><a href="{dir_url}">{dir_title}</a></em>. You can view it at:</p>
+
+<p><em><a href="{listing_path}">{listing_path}</a></em></p>
+
+<p>All the listings in our directory are direct, so they will improve your listing popularity.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:32:"tpl_listing_admin_submit_subject";s:42:"Your listing has been added to {dir_title}";s:16:"header_incorrect";s:78:"Intestazione di inserzione è sconosciuto. Per favore controllare manualmente.";s:27:"tpl_listing_approve_subject";s:45:"Your listing has been approved at {dir_title}";s:5:"first";s:5:"Primo";s:27:"tpl_account_deleted_subject";s:44:"Your account has been deleted at {dir_title}";s:9:"all_words";s:15:"Tutte le parole";s:29:"tpl_listing_admin_submit_body";s:747:"<h3>Dear {account_name},</h3>
+
+<p>We are glad to inform you that a listing to {listing_url} has been added to <em><a href="{dir_url}">{dir_title}</a></em> ({dir_url}).</p>
+
+<p>These are the attributes of your listing:<br />
+Title: <em>{listing_title}</em><br />
+URL: <em>{listing_url}</em><br />
+Description:<em> {listing_description}</em><br />
+Email: <em>{listing_email}</em><br />
+Rank:<em> {listing_rank}</em></p>
+
+<p>You can view your listing here:</p>
+
+<p><em><a href="{listing_path}">{listing_path}</a></em></p>
+
+<p>All the listings in our directory are direct, so they will improve your listing popularity.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:24:"tpl_account_deleted_body";s:301:"<h3>Dear {account_name},</h3>
+
+<p>Your account has been deleted from</p>
+
+<p><em><a href="{dir_url}">{dir_title}</a></em></p>
+
+<p>Let us know if you have any questions.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:40:"tpl_account_confirm_change_email_subject";s:42:"Please confirm change email at {dir_title}";s:11:"change_plan";s:20:"Piano di cambiamento";s:31:"tpl_account_admin_register_body";s:838:"<h3>Dear Sir {account_name},</h3>
+
+<p>Your website {listing_url} has been added to <em><a href="{dir_url}">{dir_title}</a></em> ({dir_url}).</p>
+
+<p>This is the information we have added:</p>
+
+<p>Title: {listing_title}<br />
+Description: {listing_description}<br />
+URL: {listing_url}<br />
+Email: {listing_email}</p>
+
+<p>You can find your listing at <a href="{listing_path}"><i>{listing_path}</i></a></p>
+
+<p>If you would like to update your listing information or provide more complete contact information, etc, you can login using the following information:</p>
+
+<p>Your username: {account_name}<br />
+Your password: {account_pwd}</p>
+
+<p>Login page: <a href="{dir_url}login.php">{dir_url}login.php</a></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:11:"source_file";s:15:"file di origine";s:23:"listings_and_categories";s:22:"INSERZIONI E GATTO-IES";s:6:"repair";s:11:"riparazione";s:19:"categories_relation";s:22:"RELAZIONE DI CATEGORIE";s:7:"recount";s:11:"riconteggio";s:23:"categories_paths_repair";s:30:"riparazione categorie percorsi";s:21:"active_listings_count";s:26:"CONTE DI INSERZIONI ATTIVE";s:12:"user_default";s:23:"Predefinito dell'utente";s:17:"approval_listings";s:25:"In attesa di approvazione";s:12:"payment_done";s:232:"Grazie per il vostro pagamento. La transazione è stata completata e una ricevuta per l'acquisto è stato inviato via e-mail a voi. Una volta che l'amministratore approva l'inserzione apparirà come sponsorizzato nei nostri elenchi.";s:26:"upload_writable_permission";s:94:"Si prega di impostare autorizzazioni scrivibile per upload / directory. chmod 777 che carica /";s:7:"mark_as";s:19:"Contrassegnare come";s:5:"check";s:8:"Verifica";s:13:"config_groups";s:21:"Configurazione gruppi";s:18:"search_by_keywords";s:25:"Ricerca per Parole chiavi";s:14:"tab_title_help";s:5:"Aiuto";s:22:"admin_activity_expired";s:23:"Admin attività scadute";s:23:"listing_notif_will_send";s:33:"Email di notifica sarà inviata a";s:20:"listing_will_expired";s:19:"Quotazione scade il";s:19:"page_name_incorrect";s:29:"Nome pagina non sia corretta.";s:13:"reset_account";s:18:"Ripristina account";s:15:"account_created";s:34:"L'account è stato creato. Grazie!";s:7:"display";s:15:"Visualizzazione";s:16:"tab_content_help";s:642:"<h2>Useful Links:</h2>
+<a href="http://www.esyndicat.com/docs/glossary.html" target="_blank">Glossary Of Terms</a><br />
+<a href="http://www.esyndicat.com/downloads/get/eSyndiCat_acp_v2.3_manual.zip?action=download" target="_blank">Admin Panel Manual (zip file, 8.4M)</a><br />
+<a href="http://www.esyndicat.com/desk/" target="_blank">HelpDesk</a><br />
+<a href="http://www.esyndicat.com/docs/" target="_blank">Documentation</a><br /><br />
+
+If you have any questions please ask in the support <a href="http://www.esyndicat.com/forum/" target="_blank">forums</a> or <a href="http://www.esyndicat.com/desk/" target="_blank">helpdesk</a>.";s:16:"browse_locations";s:20:"Sfoglia le posizioni";s:9:"locations";s:9:"Posizioni";s:33:"admin_page_title_premium_business";s:9:"Posizioni";s:8:"location";s:9:"Posizione";s:15:"choose_location";s:22:"Scegliere la posizione";s:16:"manage_locations";s:16:"Manage locations";s:16:"listing_location";s:23:"Posizione di inserzione";s:15:"page_new_window";s:38:"Aprire la pagina in una nuova finestra";s:13:"edit_location";s:23:"Modificare la posizione";s:12:"add_location";s:18:"Aggiungi posizione";s:19:"location_path_empty";s:21:"Il percorso è vuoto.";s:12:"no_locations";s:164:"Nessuna località. <a href="controller.php?plugin=premium_business&do=add&id=[location_id]" style="font-weight: bold;">Clicca qui</a> per creare la nuova posizione.";s:14:"location_added";s:58:"La posizione di {location} è stato aggiunto con successo.";s:16:"location_updated";s:60:"La posizione di {location} è stata aggiornata con successo.";s:16:"location_removed";s:44:"La posizione di {location} è stato rimosso.";s:20:"location_title_empty";s:19:"Il titolo è vuoto.";s:6:"expire";s:7:"Scadono";s:6:"filter";s:6:"Filtro";s:18:"insert_error_occur";s:67:"Si verifica un errore mentre posizione {location} è l'inserimento.";s:18:"update_error_occur";s:65:"Si verifica un errore durante aggiornamento posizione {location}.";s:15:"location_exists";s:39:"La posizione di {location} esiste già.";s:36:"are_you_sure_to_delete_this_location";s:113:"Sei sicuro di che voler eliminare questa posizione? Tutte le relative posizioni figlio verranno eliminati troppo.";s:10:"view_slide";s:10:"View slide";s:14:"slides_deleted";s:25:"Slides have been deleted.";s:10:"edit_slide";s:10:"Edit Slide";s:13:"slide_deleted";s:23:"Slide has been deleted.";s:10:"slide_text";s:10:"Slide Text";s:11:"slide_title";s:14:"Title of slide";s:9:"add_slide";s:20:"Aggiungi diapositiva";s:11:"error_title";s:26:"Title is a required field.";s:33:"are_you_sure_to_delete_this_slide";s:43:"Are you sure you wish to delete this slide?";s:14:"slide_category";s:8:"Category";s:17:"slider_image_desc";s:148:"For better displaying of slider, please upload images with same width and height. Best proportions are 2x1. They may differ for different templates.";s:27:"page_title_search_locations";s:20:"Ricerca di posizioni";s:20:"page_title_locations";s:9:"Posizioni";s:20:"repair_locations_msg";s:36:"Posizioni sono riparati con successo";s:18:"locations_relation";s:18:"Posizioni rapporto";s:17:"featured_location";s:10:"In Vetrina";s:9:"full_path";s:21:"Il percorso completo:";s:26:"repair_locations_msg_error";s:51:"Errore sconosciuto mentre la riparazione posizioni.";s:8:"no_slide";s:90:"No slide. <a href="controller.php?plugin=slider&action=add">Click here</a> to add a slide.";s:6:"slides";s:6:"Slides";s:11:"slide_added";s:34:"Slide has been added successfully.";s:11:"lock_status";s:15:"Stato di blocco";s:13:"edit_category";s:18:"Modifica categoria";s:5:"slide";s:5:"Slide";s:15:"slider_category";s:15:"Slider category";s:9:"tab_title";s:9:"Tab title";s:12:"manage_slide";s:13:"Manage Slides";s:23:"admin_page_title_slider";s:13:"Manage Slides";s:30:"consistency_listing_categories";s:200:"Questo strumento verifica relazioni categorie & inserzioni ed elimina le inserzioni che hanno un valore non corretto category_id. Esso elimina elenchi che sono stati presentati in categorie eliminate.";s:27:"consistency_optimize_tables";s:65:"Questo strumento esegue standard MySQL ottimizzare tabella query.";s:25:"consistency_repair_tables";s:119:"Questo strumento esegue query di tabella di riparazione MySQL standard che per correggere gli errori in tabelle MySQL. ";s:28:"consistency_num_all_listings";s:122:"Raccontare tutte le inserzioni attive nella directory. Questa statistica è utilizzata nel blocco statistiche su frontend.";s:16:"restore_password";s:17:"Recupera password";s:12:"edit_listing";s:19:"Modifica inserzione";s:18:"related_categories";s:19:"Categorie correlate";s:20:"account_email_exists";s:40:"Esiste già un account con questa email.";s:12:"edit_account";s:16:"Modifica Profilo";s:31:"consistency_categories_relation";s:191:"Questo strumento verifica categorie & inserzioni relazioni e genera dipendenze corrette nelle tabelle di sistema. Eseguire questo se la migrazione dei dati o hanno struttura categorie errate.";s:4:"next";s:4:"Next";s:10:"statistics";s:11:"Statistiche";s:19:"page_title_tagcloud";s:9:"Tag Cloud";s:5:"limit";s:6:"Limite";s:4:"stop";s:7:"Fermata";s:28:"consistency_categories_paths";s:203:"Ricostruire il percorso SEO categorie basata sulla struttura nidificata. Il software automaticamente dovrebbe costruire percorsi annidati, ma si può ricostruire manualmente utilizzando questo strumento.";s:4:"each";s:4:"ogni";s:3:"run";s:8:"Eseguire";s:28:"consistency_categories_level";s:171:"Ricostruire il valore del livello di categorie nidificate. Questo strumento verifica per genitori/figli per una categoria e genera un valore corretto per il campo livello.";s:21:"info_export_huge_data";s:157:"Sembra che hai un sacco di annunci. Si consiglia di utilizzare strumenti di terze parti (phpMyAdmin, <a href="adminer.php">Adminer</a>) per esportare i dati.";s:19:"email_template_name";s:19:"Nome modello e-mail";s:21:"error_tpl_name_exists";s:43:"Modello di e-mail con tale nome esiste già";s:10:"send_email";s:13:"Inviare Email";s:25:"error_fill_email_tpl_name";s:32:"Riempire il nome template e-mail";s:14:"add_listing_to";s:14:"Add listing to";s:11:"save_as_new";s:16:"Salva come nuovo";s:16:"accounts_deleted";s:33:"Gli account sono stati eliminati.";s:15:"add_category_to";s:21:"Aggiungi categoria a ";s:12:"page_deleted";s:18:"Pagina cancellata.";s:15:"account_deleted";s:25:"Conti è stato eliminato.";s:21:"cross_listing_created";s:38:"Quotazione incrociati è stato creato.";s:10:"fetch_meta";s:22:"FETCH Meta-description";s:17:"changelog_roadmap";s:121:"vedere la <a href="http://dev.esyndicat.com/projects/esyndicat/roadmap" target="_blank">tabella di marcia</a> di sviluppo";s:15:"changelog_other";s:15:"Altre modifiche";s:18:"changelog_bugfixes";s:6:"Bugfix";s:18:"changelog_modified";s:13:"Miglioramenti";s:13:"apply_filters";s:14:"Applica filtri";s:15:"changelog_added";s:19:"Nuove funzionalità";s:9:"check_all";s:9:"Check All";s:16:"fields_for_admin";s:24:"Campi per amministratore";s:26:"categories_map_description";s:273:"Qui trovi tutte le categorie della nostra directory web. Scegli la sezione che identifica meglio il tuo sito - es. Blog dello Sport. Suggerisci il tuo sito nella sezione scelta. Non suggerire il sito nella ROOT ma in una categoria adeguata, altrimenti non verrà accettato.";s:17:"login_on_frontend";s:30:"Login come utente su frontend.";s:25:"resend_confirm_email_text";s:209:"Se non ricevi alcuna e-mail di conferma, controlla la cartella SPAM della tua casella di posta. Se non trovi alcuna email puoi sempre provare a fartela <a href="resend-confirm.php" rel="nofollow">rispedire</a>";s:23:"captcha_uninstall_error";s:72:"Non puoi disinstallare questo plugin se non hai un altro plugin captcha.";s:15:"click_to_upload";s:33:"Clicca qui per aggiungere foto...";s:11:"image_title";s:15:"Titolo immagine";s:5:"image";s:8:"Immagine";s:25:"admin_block_title_plugins";s:6:"Plugin";s:26:"admin_block_title_listings";s:10:"Inserzioni";s:28:"admin_block_title_categories";s:9:"Categorie";s:26:"admin_block_title_accounts";s:6:"Utenti";s:24:"admin_page_title_phpinfo";s:8:"PHP Info";s:24:"admin_block_title_common";s:6:"Common";s:25:"admin_page_title_listings";s:15:"Manage Listings";s:29:"admin_page_title_field_groups";s:19:"Manage Field Groups";s:31:"admin_page_title_listing_fields";s:21:"Manage Listing Fields";s:25:"admin_page_title_importer";s:8:"Importer";s:28:"admin_page_title_clear_cache";s:11:"Clear cache";s:24:"admin_page_title_sitemap";s:7:"Sitemap";s:29:"admin_page_title_edit_listing";s:19:"Modifica inserzione";s:31:"admin_page_title_category_icons";s:14:"Category Icons";s:31:"admin_page_title_create_listing";s:14:"Create Listing";s:30:"admin_page_title_edit_category";s:18:"Modifica categoria";s:23:"admin_page_title_visual";s:13:"Visual Manage";s:23:"admin_page_title_admins";s:13:"Manage Admins";s:20:"admin_page_title_rss";s:10:"Manage RSS";s:32:"admin_page_title_create_category";s:15:"Create Category";s:29:"admin_page_title_accounts_add";s:11:"Add Account";s:27:"admin_page_title_categories";s:17:"Manage Categories";s:23:"admin_page_title_browse";s:17:"Browse Categories";s:25:"admin_page_title_accounts";s:15:"Manage Accounts";s:22:"admin_page_title_plans";s:12:"Manage Plans";s:29:"admin_page_title_transactions";s:12:"Transactions";s:23:"admin_page_title_blocks";s:13:"Manage Blocks";s:22:"admin_page_title_pages";s:12:"Manage Pages";s:25:"admin_page_title_language";s:15:"Manage Language";s:26:"admin_page_title_templates";s:16:"Manage Templates";s:22:"admin_page_title_menus";s:12:"Manage Menus";s:24:"admin_page_title_plugins";s:14:"Manage Plugins";s:22:"admin_page_title_index";s:11:"Admin Panel";s:30:"admin_page_title_configuration";s:13:"Configuration";s:25:"admin_page_title_database";s:15:"Manage Database";s:32:"admin_page_title_email_templates";s:15:"Email Templates";s:16:"import_completed";s:55:"Importazione database è stata completata con successo.";s:13:"import_notice";s:55:"Importazione database è stata completata con successo.";s:23:"field_group_title_empty";s:26:"Il titolo {lang} è vuoto.";s:18:"field_groups_added";s:42:"Fieldgroup è stato aggiunto con successo.";s:19:"field_group_removed";s:41:"Fieldgroup è stato rimosso con successo.";s:43:"are_you_sure_to_delete_selected_field_group";s:57:"Sei sicuro di che voler eliminare selezionato fieldgroup?";s:20:"field_groups_removed";s:44:"Fieldgroups sono stati rimossi con successo.";s:44:"are_you_sure_to_delete_selected_field_groups";s:58:"Sei sicuro di che voler eliminare selezionato fieldgroups?";s:39:"are_you_sure_to_delete_this_field_group";s:52:"Sei sicuro di che voler eliminare questo fieldgroup?";s:12:"view_listing";s:18:"Visualizza profilo";s:15:"add_field_group";s:29:"Aggiungere il campo di gruppo";s:11:"search_page";s:17:"Pagina di ricerca";s:16:"edit_field_group";s:21:"Modifica campo gruppo";s:21:"esyn_version_mismatch";s:222:"File e disadattamento versioni di MySQL struttura. È necessario eseguire script di aggiornamento struttura MySQL. <a href="controller.php?file=database&page=import">Clicca qui</a> per avviare il processo di aggiornamento.";s:5:"group";s:6:"Gruppo";s:14:"category_moved";s:41:"Categoria è stato spostato con successo.";s:25:"field_group_title_general";s:8:"Generale";s:18:"select_field_group";s:22:"Seleziona campo gruppo";s:13:"show_in_group";s:21:"Visualizza nel gruppo";s:21:"tooltip_plan_category";s:69:"Il piano sarà accessibile solo all'interno di categorie selezionate.";s:24:"field_group_fields_empty";s:57:"È necessario assegnare almeno un campo elenco di gruppo.";s:16:"fields_for_group";s:16:"Campi per gruppo";s:12:"menu_removed";s:35:"Menu è stato rimosso con successo.";s:19:"manage_field_groups";s:19:"Manage Field Groups";s:16:"menu_title_empty";s:25:"Titolo del menu è vuoto.";s:25:"tooltip_plan_expire_notif";s:90:"Il numero di giorni prima della scadenza che sarà inviata un'e-mail di avviso all'utente.";s:30:"tooltip_plan_mark_after_submit";s:52:"Il tipo di inserzione sarà quello da questo elenco.";s:23:"tooltip_plan_multicross";s:99:"Il numero massimo di categorie, l'utente sarà in grado di presentare il listato allo stesso tempo.";s:17:"tooltip_plan_days";s:72:"Il numero di giorni che questo abbonamento sarà attivo fino al rinnovo.";s:24:"tooltip_plan_description";s:33:"Le indagini€ ™ Descrizione s.";s:17:"tooltip_plan_cost";s:19:"Il costo del piano.";s:23:"tooltip_plan_deep_links";s:113:"Il numero massimo di collegamenti secondari che quelli può essere presentate insieme al collegamento principale.";s:26:"tooltip_plan_show_on_pages";s:45:"Su quali pagine verrà mostrato questo piano.";s:23:"tooltip_fields_for_plan";s:56:"Scegliere quali campi saranno mostrati per questo piano.";s:18:"tooltip_plan_title";s:47:"Il titolo del progetto che verrà visualizzato.";s:13:"admin_deleted";s:41:"Admin selezionato correttamente eliminato";s:18:"error_invalid_path";s:32:"Percorso di categoria non valido";s:22:"manage_email_templates";s:22:"Manage Email Templates";s:27:"tpl_payment_expiration_body";s:483:"<h3>Dear {account_name},</h3>
+
+<p>Your listing <em><a href="{listing_path}">{listing_title}</a></em> will be expired on <em>{expire_date}</em>. You can click here to extend the sponsorship:</p>
+
+<p><em><a href="{dir_url}upgrade.php?id={listing_id}&amp;salt={salt}">{dir_url}upgrade.php?id={listing_id}&amp;salt={salt}</a></em></p>
+
+<p>{expire_action}</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:17:"tooltip_plan_type";s:58:"Il piano può essere applicato per un account o un elenco.";s:13:"cache_cleared";s:39:"Cache è stata cancellata con successo.";s:22:"empty_transaction_item";s:68:"In primo luogo si dovrebbe scegliere elemento per ottenere elementi.";s:27:"current_admin_status_change";s:54:"Non puoi cambiare lo status di amministratore attuale.";s:16:"php_tags_tooltip";s:71:"Please don't use PHP tags &lt;?php ?&gt; while inserting your php code.";s:18:"admin_email_exists";s:38:"Admin con questa email già esistente.";s:12:"item_element";s:17:"Elemento elemento";s:32:"are_you_sure_to_delete_this_menu";s:46:"Sei sicuro di che voler eliminare questo menu?";s:37:"are_you_sure_to_delete_selected_menus";s:54:"Sei sicuro di che voler eliminare il menu selezionato?";s:13:"menu_no_pages";s:49:"Si dovrebbe aggiungere almeno una pagina al menu.";s:16:"menu_name_exists";s:64:"Avete un menu con questo nome. Si prega di cambiare il suo nome.";s:21:"tooltip_expire_period";s:52:"Numero di giorni in un elenco che mantiene è attivo";s:12:"expire_notif";s:20:"Notifica di scadenza";s:5:"weeks";s:9:"settimane";s:5:"years";s:4:"anni";s:6:"months";s:4:"mesi";s:27:"tooltip_expire_notification";s:48:"Invia e-mail a [...] giorni prima della scadenza";s:17:"transaction_added";s:30:"Transazione è stato aggiunto.";s:14:"item_not_exist";s:20:"Elemento non esiste.";s:17:"page_title_logout";s:6:"Logout";s:14:"plan_not_exist";s:17:"Piano non esiste.";s:25:"email_templates_tags_info";s:119:"You can use these tags in your email templates. They will be changed to real information while sending email templates.";s:4:"vote";s:9:"Votazione";s:20:"email_templates_tags";s:20:"Email Templates Tags";s:15:"page_url_exists";s:62:"Avete una pagina con questo URL. Si prega di modificare l'URL.";s:16:"page_name_exists";s:67:"Avete una pagina con questo nome. Si prega di cambiare il suo nome.";s:12:"menu_created";s:34:"Menu è stato creato con successo.";s:22:"has_no_reciprocal_link";s:28:"non ha nessun link reciproco";s:11:"unique_name";s:90:"Valore nome deve essere univoco. Sono ammessi solo lettere latine, sottolineature e cifre.";s:12:"check_broken";s:15:"Controllo rotto";s:25:"listing_header_updated_to";s:51:"intestazione di quotazione è stato aggiornato alla";s:27:"listing_pagerank_updated_to";s:44:"Listato di pagerank è stato aggiornato alla";s:9:"sir_madam";s:9:"Sir/Madam";s:17:"block_name_exists";s:66:"Avete un blocco con questo nome. Si prega di cambiare il suo nome.";s:16:"manage_duplicate";s:17:"Manage Duplicates";s:10:"order_view";s:25:"Ordine di visualizzazione";s:20:"block_name_incorrect";s:32:"Nome del blocco non è corretto.";s:28:"error_while_rebuild_htaccess";s:57:"Errore si verifica durante la ricostruzione di. htaccess.";s:28:"you_should_reupload_htaccess";s:138:"Avete bisogno di ricaricare il file. htaccess. Potete scaricarlo <a href="controller.php?file=configuration&amp;download_htaccess">qui</a>";s:18:"image_title_length";s:25:"Immagine titolo lunghezza";s:19:"email_group_listing";s:22:"Elenco Email Templates";s:19:"email_group_account";s:22:"Modelli E-mail account";s:17:"email_group_other";s:23:"Altri modelli di E-mail";s:9:"plan_type";s:13:"Tipo di piano";s:20:"manage_listing_plans";s:20:"Manage Listing Plans";s:17:"email_group_notif";s:28:"Modelli di Email di notifica";s:20:"manage_account_plans";s:20:"Manage Account Plans";s:15:"fields_for_plan";s:15:"Campi per piano";s:11:"visual_mode";s:16:"Modalità visiva";s:19:"rank_listing_option";s:67:"Questo valore di rango Visualizza rating stelle per una quotazione.";s:20:"error_email_the_same";s:61:"Nuova email non deve corrispondere l'attuale indirizzo email.";s:16:"register_account";s:18:"Registrare Account";s:15:"upgrade_listing";s:19:"Aggiornare l'elenco";s:15:"not_assign_plan";s:25:"Non assegnare alcun piano";s:40:"are_you_sure_to_delete_selected_accounts";s:54:"Sei sicuro di che voler eliminare account selezionato?";s:15:"upgrade_account";s:21:"Aggiornamento Account";s:37:"are_you_sure_to_delete_selected_plans";s:52:"Sei sicuro di che voler eliminare piani selezionati?";s:32:"are_you_sure_to_delete_this_page";s:48:"Sei sicuro di che voler eliminare questa pagina?";s:28:"confirmation_category_option";s:95:"Questa opzione viene visualizzata una finestra di conferma quando si entra in questa categoria.";s:40:"are_you_sure_to_delete_selected_listings";s:98:"Sei sicuro di che voler cancellare inserzioni selezionate? Nota: non non c'è nessun annullamento!";s:11:"exact_match";s:12:"Frase esatta";s:22:"are_you_sure_to_logout";s:31:"Sei sicuro di che voler logout?";s:37:"are_you_sure_to_delete_selected_pages";s:53:"Sei sicuro di che voler eliminare pagine selezionate?";s:13:"incorrect_key";s:23:"Frase chiave è errata.";s:15:"incorrect_value";s:33:"Inserisci il valore della chiave.";s:36:"tpl_notif_listing_broken_report_body";s:318:"<h3>Dear {admin_name},</h3>
+
+<p>The following listing is reported as being broken:</p>
+
+<p>Listing ID: {listing_id}<br />
+Listing URL: {listing_url}<br />
+Listing Title: {listing_title}</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:17:"visible_for_admin";s:19:"Visibili solo admin";s:13:"field_default";s:28:"Valore predefinito del campo";s:11:"file_prefix";s:13:"Prefisso file";s:14:"add_item_value";s:24:"Aggiungi elemento valore";s:12:"image_height";s:16:"Altezza immagine";s:11:"image_width";s:18:"Larghezza immagine";s:9:"next_page";s:17:"Pagina successiva";s:6:"remove";s:9:"Rimuovere";s:2:"of";s:2:"di";s:10:"first_page";s:12:"Prima pagina";s:10:"item_value";s:15:"Elemento valore";s:9:"no_broken";s:25:"Nessuna inserzione rotta.";s:12:"no_sponsored";s:29:"Nessun annunci sponsorizzati.";s:13:"previous_page";s:17:"Pagina precedente";s:10:"no_partner";s:31:"Nessuna inserzione del partner.";s:9:"last_page";s:13:"Ultima pagina";s:10:"no_norecip";s:33:"Nessuna inserzione non reciproci.";s:11:"no_featured";s:29:"Nessuna inserzione In Vetrina";s:11:"no_listings";s:135:"Nessuna inserzione presente. <a href="suggest-listing.php?cid=0" style="font-weight: bold;">Clicca qui</a> per segnalare un nuovo sito.";s:20:"field_name_incorrect";s:81:"Nome del campo deve essere composto da lettere e numeri soltanto. Lunghezza 2-20.";s:12:"field_exists";s:18:"Campo esiste già.";s:22:"field_length_incorrect";s:55:"Lunghezza di campo non valido. Sono ammessi solo cifre.";s:10:"edit_field";s:19:"Modificare il campo";s:4:"name";s:4:"Nome";s:23:"field_default_incorrect";s:62:"È necessario scegliere un predefinito valori da quelli sopra.";s:15:"suggest_listing";s:13:"AGGIUNGI SITO";s:14:"required_field";s:18:"Campo obbligatorio";s:13:"show_on_pages";s:17:"Visualizza pagine";s:15:"listing_details";s:15:"Elenco dettagli";s:10:"field_type";s:13:"Tipo di campo";s:12:"field_length";s:18:"Lunghezza di campo";s:9:"add_field";s:14:"Aggiungi campo";s:11:"field_added";s:27:"È stato aggiunto il campo.";s:16:"show_query_again";s:28:"Mostrano ancora questa query";s:13:"clear_confirm";s:49:"Sei sicuro di che voler cancellare il tuo modulo?";s:15:"run_sql_queries";s:26:"Eseguire MySQL query/query";s:13:"tables_fields";s:13:"Tabelle/campi";s:5:"clear";s:5:"Clear";s:18:"choose_import_file";s:43:"Si prega di scegliere un file da importare.";s:6:"report";s:9:"Relazione";s:5:"close";s:8:"Chiudere";s:6:"target";s:12:"Destinazione";s:8:"position";s:9:"Posizione";s:15:"include_subcats";s:25:"Incluse le sottocategorie";s:5:"other";s:5:"Altri";s:11:"impressions";s:11:"Impressioni";s:4:"type";s:4:"Tipo";s:4:"save";s:7:"Salvare";s:11:"no_backlink";s:15:"Nessun backlink";s:15:"search_for_text";s:17:"Ricerca per testo";s:10:"search_for";s:12:"Cosa Cerchi?";s:30:"tpl_notif_listing_payment_body";s:700:"<h3>
+	Dear {admin_name},</h3>
+<p>
+	Listing was made sponsored at <em><a href="{dir_url}">{dir_title}</a></em>. Please check it.</p>
+<p>
+	These are the attributes of a listing:<br />
+	Title:<em> {listing_title}</em><br />
+	URL: <em>{listing_url}</em><br />
+	Description:<em> {listing_description}</em><br />
+	Email: <em>{listing_email}</em><br />
+	Plan: <em>{listing_plan}</em><br />
+<br />
+	Payment was made by {payment_system} payment system.<br />
+ Transaction ID: <em>{transactionID}</em><br />
+	Subscription ID: <em>{subscriptionID}</em></p>
+<p>
+	______________________________<br />
+	Thank you,<br />
+	{dir_title} Administration Team<br />
+	{dir_url}<br />
+	{dir_email}</p>
+";s:9:"remote_db";s:15:"Database remoto";s:11:"remote_user";s:18:"Nome utente remoto";s:7:"content";s:9:"Contenuto";s:18:"choose_file_upload";s:29:"Scegliere un file da caricare";s:17:"content_incorrect";s:32:"Contenuto non può essere vuoto.";s:4:"plan";s:5:"Piano";s:4:"copy";s:5:"Copia";s:14:"field_is_empty";s:19:""{field}" è vuoto.";s:14:"ascii_required";s:46:"Sono ammessi solo caratteri alfanumerici ASCII";s:11:"remote_host";s:31:"Host remoto (IP più preferito)";s:12:"search_where";s:4:"Dove";s:9:"search_in";s:2:"In";s:13:"all_languages";s:15:"Tutte le lingue";s:3:"key";s:6:"Chiave";s:11:"remote_pass";s:15:"Password remota";s:13:"remote_prefix";s:23:"Prefisso tabella remota";s:10:"import_box";s:12:"Importazione";s:12:"manage_cache";s:12:"Manage Cache";s:10:"phrase_var";s:26:"Nome di variabile di frase";s:15:"phrase_text_var";s:43:"Testo della frase e la frase nome variabile";s:11:"phrase_text";s:17:"Testo della frase";s:18:"import_from_server";s:42:"Importare il file di lingua dal tuo server";s:14:"import_from_pc";s:34:"Importare il file di lingua dal PC";s:5:"value";s:6:"Valore";s:45:"are_you_sure_to_remove_selected_from_featured";s:79:"Sei sicuro di che voler rimuovere il marchio vetrina da inserzioni selezionate?";s:30:"tpl_notif_category_submit_body";s:391:"<h3>Dear {admin_name},</h3>
+
+<p>Category has been submitted to <em><a href="{dir_url}">{dir_title}</a></em>. Please check it.</p>
+
+<p>These are the attributes of a category:<br />
+Title:<em> {category_title}</em><br />
+Category path: <em>{category_path}</em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:39:"tpl_notif_listing_broken_report_subject";s:38:"Broken Listing Reported at {dir_title}";s:7:"message";s:9:"Messaggio";s:29:"tpl_notif_listing_submit_body";s:464:"<h3>Dear {admin_name},</h3>
+
+<p>Listing has been submitted to <em><a href="{dir_url}">{dir_title}</a></em>. Please check it.</p>
+
+<p>These are the attributes of a listing:<br />
+Title:<em> {listing_title}</em><br />
+URL: <em>{listing_url}</em><br />
+Description: <em>{listing_description}</em><br />
+Email:<em> {listing_email}</em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:33:"tpl_notif_category_submit_subject";s:42:"Category has been submitted to {dir_title}";s:21:"error_email_incorrect";s:38:"Inserisci un indirizzo email corretto.";s:21:"error_listing_present";s:47:"La quotazione è già presente nella directory.";s:8:"previous";s:10:"Precedente";s:16:"partner_listings";s:21:"Inserzioni di partner";s:32:"tpl_notif_listing_submit_subject";s:41:"Listing has been submitted to {dir_title}";s:34:"tpl_notif_listing_upgraded_subject";s:40:"Listing has been upgraded at {dir_title}";s:27:"tpl_listing_payment_subject";s:41:"Listing was made sponsored at {dir_title}";s:13:"listing_added";s:13:"Pubblicato il";s:32:"tpl_account_change_email_subject";s:58:"Account email has been successfully changed at {dir_title}";s:32:"are_you_sure_to_remove_crosslink";s:66:"Sei sicuro di che voler rimuovere questo collegamento trasversale?";s:30:"are_you_sure_to_remove_partner";s:56:"Sei sicuro che non vuoi avere questo elenco come partner";s:35:"are_you_sure_to_delete_this_account";s:49:"Sei sicuro di che voler eliminare questo account?";s:44:"are_you_sure_to_delete_category_relationship";s:59:"Sei sicuro di che voler rimuovere il rapporto di categoria?";s:41:"are_you_sure_to_delete_this_listing_field";s:115:"Sei sicuro di che voler eliminare questo campo elenco? Nota: Colonna intera, compresi i suoi dati sarà cancellato!";s:32:"are_you_sure_to_delete_this_plan";s:47:"Sei sicuro di che voler rimuovere questo piano?";s:25:"tpl_listing_upgraded_body";s:438:"<h3>Dear {account_name},</h3>
+
+<p>Your listing {listing_url} has been upgraded at <em><a href="{dir_url}">{dir_title}</a></em> (<em><a href="{dir_url}">{dir_url}</a></em>).</p>
+
+<p>Your listing <em><a href="{listing_path}">{listing_title}</a></em> will be expired on <em>{expire_date}</em>.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+
+<p>&nbsp;</p>
+";s:28:"tpl_listing_upgraded_subject";s:45:"Your listing has been upgraded at {dir_title}";s:26:"tpl_listing_modify_subject";s:45:"Your listing has been modified at {dir_title}";s:40:"are_you_sure_to_delete_category_crossing";s:58:"Sei sicuro di che voler eliminare la categoria incrociata?";s:32:"are_you_sure_to_remove_sponsored";s:59:"Sei sicuro di che voler rimuovere il marchio sponsorizzato?";s:12:"listing_rank";s:15:"Quotazione Rank";s:21:"tpl_listing_move_body";s:382:"<h3>Dear {account_name},</h3>
+
+<p>We are glad to inform you, that your listing to site {listing_url} has been moved into another category.</p>
+
+<p>This is the new location of your listing:</p>
+
+<p><em><a href="{listing_path}">{listing_path}</a></em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:24:"tpl_listing_move_subject";s:42:"Your listing has been moved at {dir_title}";s:30:"tpl_listing_disapprove_subject";s:48:"Your listing has been disapproved at {dir_title}";s:27:"tpl_listing_disapprove_body";s:322:"<h3>Dear {account_name},</h3>
+
+<p>Your listing {listing_url} has been disapproved at<em> <a href="{dir_url}">{dir_title}</a></em>.</p>
+
+<p>If you have questions, please feel free to ask us.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:34:"tpl_account_admin_register_subject";s:38:"Thanks for registration at {dir_title}";s:29:"tpl_account_change_email_body";s:302:"<h3>Dear {account_name},</h3>
+
+<p>You have successfully changed an email address to <strong>{account_new_email}</strong> at <em><a href="{dir_url}">{dir_title}</a></em>.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:28:"tpl_account_approved_subject";s:45:"Your account has been approved at {dir_title}";s:18:"email_message_sent";s:37:"Vostro messaggio inviato proprio ora.";s:25:"tpl_account_approved_body";s:359:"<h3>Dear {account_name},</h3>
+
+<p>Your account has been approved at <em><a href="{dir_url}">{dir_title}</a></em>. Now you can log in to the directory: <em><a href="{dir_url}login.php">{dir_url}login.php</a></em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+
+<p>&nbsp;</p>
+";s:31:"tpl_account_disapproved_subject";s:48:"Your account has been disapproved at {dir_title}";s:32:"tpl_account_change_password_body";s:420:"<h3>Dear {account_name},</h3>
+
+<p>You have successfully changed a password at <em><a href="{dir_url}">{dir_title}</a></em>. Now you should use the following credentials to log in as account:</p>
+
+<p>username:<strong> {account_name}</strong><br />
+password: <strong>{account_pwd}</strong></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:35:"tpl_account_change_password_subject";s:61:"Account password has been successfully changed at {dir_title}";s:44:"tpl_account_confirm_restore_password_subject";s:35:"Please confirm email at {dir_title}";s:41:"tpl_account_confirm_restore_password_body";s:601:"<h3>Dear {account_name},</h3>
+
+<p>We have received new password request for your account ({account_name}) at <em><a href="{dir_url}">{dir_title}</a></em>.<br />
+<br />
+If this request was initiated by you, please click on following link to confirm your email:<br />
+<em><a href="{dir_url}confirm.php?action=restore_password&amp;account={account_id}&amp;r={account_key}">{dir_url}confirm.php?action=restore_password&amp;account={account_id}&amp;r={account_key}</a></em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:23:"tpl_account_banned_body";s:244:"<h3>Dear {account_name},</h3>
+
+<p>Your account has been banned at <em><a href="{dir_url}">{dir_title}</a></em>.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:26:"tpl_account_banned_subject";s:43:"Your account has been banned at {dir_title}";s:28:"tpl_account_disapproved_body";s:249:"<h3>Dear {account_name},</h3>
+
+<p>Your account has been disapproved at <em><a href="{dir_url}">{dir_title}</a></em>.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:37:"tpl_account_confirm_change_email_body";s:591:"<h3>	Dear {account_name},</h3><p>	We have received change email request for your account ({account_name}) at <em><a href="{dir_url}">{dir_title}</a></em>.<br />	<br />	If this request was initiated by you, please click on following link to confirm your email:<br />	<em><a href="{dir_url}confirm.php?action=change_email&amp;account={account_id}&amp;r={account_key}">{dir_url}confirm.php?action=change_email&amp;account={account_id}&amp;r={account_key}</a></em></p><p>	______________________________<br />	Thank you,<br />	{dir_title} Administration Team<br />	{dir_url}<br />	{dir_email}</p>";s:28:"tpl_account_register_subject";s:38:"Thanks for registration at {dir_title}";s:16:"categories_level";s:20:"Livello di categorie";s:25:"tpl_account_register_body";s:795:"<h3>Dear Sir/Madam,</h3>
+
+<p>Thanks for your registration at <em><a href="{dir_url}">{dir_title}</a></em>. Here is information you should use in order to login:</p>
+
+<p>Your username: <strong>{account_name}</strong><br />
+Your password: <strong>{account_pwd}</strong><br />
+Your activation key: <strong>{account_key}</strong></p>
+
+<p>To activate your account go to<em> <a href="{dir_url}register.php?user={account_name_url}&amp;key={account_key}&amp;action=confirm">{dir_url}register.php?user={account_name_url}&amp;key={account_key}&amp;action=confirm</a></em></p>
+
+<p>You may change your password later by editing your personal attributes in your account area.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:7:"section";s:15:"Sezione ricerca";s:15:"output_settings";s:22:"Impostazioni di output";s:12:"search_match";s:7:"Partita";s:5:"where";s:4:"Dove";s:17:"active_categories";s:19:"Categorie di attive";s:12:"start_search";s:14:"Inizia ricerca";s:12:"confirmation";s:8:"Conferma";s:2:"na";s:3:"n/a";s:19:"approval_categories";s:25:"Categorie di approvazione";s:15:"filter_by_state";s:16:"Filtra per stato";s:15:"active_listings";s:17:"Inserzioni attive";s:15:"active_accounts";s:14:"Account attivi";s:14:"search_account";s:15:"Ricerca Account";s:14:"create_account";s:14:"Creare Account";s:16:"filter_by_status";s:16:"Filtra per stato";s:18:"sponsored_listings";s:21:"Annunci sponsorizzati";s:17:"approval_accounts";s:19:"Approvazione utenti";s:13:"too_big_value";s:40:"Valore troppo grande per "<i>{name}</i>"";s:15:"search_listings";s:13:"Cerca annunci";s:10:"deep_links";s:21:"Collegamenti profondi";s:9:"edit_plan";s:14:"Modifica piano";s:8:"add_plan";s:14:"Aggiungi piano";s:13:"access_denied";s:122:"<p>Non hai il permesso di accedere a questa pagina su questo server.</p><a href="javascript:history.go(-1)">«Indietro</a>";s:11:"no_sections";s:113:"Sezioni non creati. Si prega di <a href="manage-sections.php?action=add">cliccare qui</a> per creare una sezione.";s:14:"admins_deleted";s:42:"Admins selezionata correttamente eliminato";s:9:"relevance";s:9:"Rilevanza";s:7:"perpage";s:15:"Per ogni pagina";s:12:"phrase_added";s:14:"Frase aggiunta";s:22:"are_you_sure_to_delete";s:33:"Sei sicuro di che voler eliminare";s:33:"are_you_sure_to_delete_this_block";s:48:"Sei sicuro di che voler eliminare questo blocco?";s:38:"are_you_sure_to_delete_selected_blocks";s:54:"Sei sicuro di che voler eliminare blocchi selezionati?";s:35:"are_you_sure_to_resend_confirmation";s:64:"Sei sicuro di che voler inviare nuovamente l'e-mail di conferma?";s:7:"loading";s:14:"Caricamento...";s:35:"are_you_sure_to_delete_this_listing";s:49:"Sei sicuro di che voler cancellare questo elenco?";s:38:"are_you_sure_to_delete_selected_admins";s:65:"Sei sicuro di che voler eliminare gli amministratori selezionati?";s:36:"are_you_sure_to_delete_this_category";s:119:"Sei sicuro di che voler eliminare questa categoria? Tutte le sue sottocategorie e inserzioni verranno eliminati troppo!";s:33:"are_you_sure_to_delete_this_admin";s:56:"Sei sicuro di che voler eliminare questo amministratore?";s:42:"are_you_sure_to_delete_selected_categories";s:127:"Sei sicuro di che voler eliminare le categorie selezionate? Tutte le sue sottocategorie e inserzioni verranno eliminati troppo!";s:20:"error_broken_listing";s:53:"Listing seems to be broken. Please check it manually.";s:16:"wrong_image_type";s:82:"Solo i tipi di immagine seguente sono consentiti (<i>{types}</i>) per campo {name}";s:37:"are_you_sure_to_this_listing_featured";s:52:"Sei sicuro che non vuoi avere questa lista optional?";s:31:"are_you_sure_to_remove_featured";s:62:"Sei sicuro che non vuoi avere questo inserzioni come optional?";s:36:"are_you_sure_to_this_listing_partner";s:68:"Sei sicuro che si desidera contrassegnare questo elenco come partner";s:8:"sections";s:18:"Sezioni di ricerca";s:13:"section_added";s:16:"Sezione aggiunta";s:14:"section_exists";s:14:"Sezione esiste";s:15:"manage_sections";s:22:"Manage Search sections";s:15:"fulltext_search";s:17:"Ricerca full-text";s:10:"file_types";s:107:"Permesso di tipi di file (valori separati da virgola (non includere il punto), esempio: pdf, doc, odf, mov)";s:8:"contains";s:8:"Contiene";s:14:"manage_plugins";s:14:"Manage Plugins";s:10:"searchable";s:11:"Ricercabile";s:14:"create_listing";s:14:"Create Listing";s:18:"suspended_listings";s:15:"Annunci sospesi";s:11:"whoisonline";s:20:"Chi è online adesso";s:12:"create_admin";s:12:"Creare Admin";s:6:"plugin";s:6:"Plugin";s:6:"blocks";s:7:"Blocchi";s:13:"admin_comment";s:17:"Commento di admin";s:6:"cancel";s:7:"Annulla";s:5:"reset";s:5:"Reset";s:18:"click_here_to_edit";s:29:"Fare clic qui per modificare.";s:8:"filename";s:13:"Nome del file";i:671;s:89:"Autorizzazione negata. Non hai abbastanza dell'autorizzazione per modificare tale elenco.";s:15:"recip_incorrect";s:76:"Per favore controllare manualmente. Link reciproco sembra essere non valido.";s:8:"add_menu";s:15:"Aggiungere Menu";s:9:"edit_menu";s:13:"Menu Modifica";s:19:"has_reciprocal_link";s:17:"ha link reciproco";s:27:"you_should_rebuild_htaccess";s:112:"Deve ricostruire il file. htaccess. Clicca <a href="#" class="rebuild">qui</a> per rigenerare il file. htaccess.";s:12:"manage_menus";s:12:"Manage Menus";s:18:"recommended_length";s:23:"Lunghezza consigliata: ";s:14:"htaccess_saved";s:50:"codice htaccess è stato registrato correttamente.";s:17:"listing_not_exist";s:44:"Non non c'è nessuna inserzione con tale ID.";s:17:"recommend_recount";s:192:"È fortemente raccomandato di raccontare le inserzioni prima di creare una sitemap del sito. Clicca <a href="controller.php?file=database&page=consistency">qui</a> per raccontare i palinsesti.";s:15:"feature_request";s:29:"Nuova funzionalità richiesta";s:13:"gzip_compress";s:17:"Comprimere a gzip";s:12:"message_body";s:19:"Corpo del messaggio";s:12:"custom_quote";s:23:"Modifica personalizzata";s:12:"send_confirm";s:68:"Sei sicuro che si desidera inviare questo feedback a eSyndiCat Team?";s:15:"listing_removed";s:41:"Quotazione è stato rimosso con successo.";s:17:"request_submitted";s:41:"Grazie. La richiesta è stata presentata.";s:14:"feedback_terms";s:307:"Se avete qualche idea di come migliorare il nostro software, trovato un bug o desidera richiedere modifica personalizzata, siete invitati a utilizzare questo modulo di feedback. Registriamo tutte le vostre richieste nel nostro database. Prepareremo i termini di contattare e i trasgressori verranno bannati.";s:10:"bug_report";s:19:"Segnalazione di bug";s:21:"error_username_exists";s:58:"Username è stata presa. Inserisci un nome utente diverso.";s:20:"error_username_empty";s:18:"Nome utente errato";s:15:"submit_feedback";s:33:"Inviare commenti a eSyndiCat Team";s:20:"hide_category_option";s:118:"Questa opzione permette di nascondere la categoria nell'elenco anche se sarà ancora accessibile tramite link diretto.";s:5:"never";s:3:"mai";s:13:"image_removed";s:26:"Immagine è stata rimossa.";s:17:"hook_editor_alert";s:118:"Si prega di essere molto attenti quando si modificano i ganci. Esso può essere facilmente rotto plugin funzionalità.";s:15:"banned_listings";s:18:"Inserzioni vietate";s:36:"image_set_as_default_icon_categories";s:56:"immagine impostata come icona predefinita per categorie.";s:17:"nonrecip_listings";s:24:"Inserzioni non reciproci";s:19:"reciprocal_listings";s:20:"Inserzioni reciproci";s:15:"create_category";s:15:"Create Category";s:17:"password_the_same";s:45:"New password must not match current password.";s:11:"hook_editor";s:13:"Gancio Editor";s:45:"are_you_sure_to_set_as_default_selected_icons";s:83:"Sei sicuro di impostare l'immagine selezionata come icona di categorie predefinite?";s:14:"items_selected";s:24:"gli elementi selezionati";s:14:"set_as_default";s:26:"Impostato come predefinito";s:19:"not_writable_folder";s:40:"Cartella di file Sitemap non scrivibile.";s:17:"create_gy_sitemap";s:31:"Creare sitemap di Google Yahoo.";s:11:"total_items";s:15:"articoli totali";s:10:"start_from";s:12:"a partire da";s:8:"finished";s:7:"Finito.";s:10:"processing";s:13:"Elaborazione.";s:17:"instead_thumbnail";s:19:"Invece di miniatura";s:5:"start";s:6:"Inizio";s:8:"progress";s:10:"Progresso.";s:12:"twitter_news";s:12:"Twitter News";s:8:"unbroken";s:12:"Ininterrotta";s:15:"uploading_image";s:20:"Caricamento immagine";s:13:"remove_reason";s:19:"Rimuovere il motivo";s:10:"view_image";s:24:"Visualizzazione immagine";s:15:"image_not_found";s:20:"Immagine non trovata";s:13:"item_selected";s:20:"elemento selezionato";s:5:"items";s:8:"Elementi";s:21:"categories_icon_notif";s:120:"Creare e caricare le immagini nella cartella "uploads/category-icons" per poter scegliere le proprie icone di categoria.";s:12:"last_visited";s:23:"Visitato l'ultima volta";s:19:"confirmation_resent";s:38:"Email di conferma è stata risentirsi.";s:25:"resend_confirmation_email";s:31:"Invia nuovamente email conferma";s:4:"item";s:8:"Elemento";s:9:"collapsed";s:8:"Crollato";s:18:"upload_image_error";s:24:"Caricare immagine errore";s:12:"select_image";s:20:"Selezionare immagine";s:7:"nothing";s:6:"Niente";s:18:"no_captcha_preview";s:25:"Nessuna anteprima captcha";s:14:"active_plugins";s:13:"Plugin attivi";s:8:"contents";s:9:"Contenuto";s:15:"broken_listings";s:16:"Inserzioni rotti";s:10:"edit_block";s:15:"Modifica blocco";s:9:"add_block";s:15:"Aggiungi blocco";s:13:"block_created";s:36:"Blocco è stato creato con successo.";s:9:"no_blocks";s:22:"Non c'è nessun blocco";s:18:"block_type_tip_php";s:62:"PHP è usato per avere il codice php nel tuo contenuto blocco.";s:10:"reset_plan";s:19:"Piano di ripristino";s:17:"file_doesnt_exist";s:15:"File non esiste";s:18:"import_and_install";s:28:"Importazione & installazione";s:16:"plugin_installed";s:40:"Plugin è stato installato con successo.";s:9:"uninstall";s:13:"Disinstallare";s:18:"plugin_uninstalled";s:43:"Plugin è stato disinstallato con successo.";s:16:"suggest_category";s:18:"Aggiungi categoria";s:25:"category_cannot_be_copied";s:94:"Questa categoria non può essere copiata per la sua categoria bambino o a se stesso: {copy_to}";s:11:"total_votes";s:24:"Voti totali <b>{num}</b>";s:15:"image_keepratio";s:33:"Mantenere il rapporto di immagine";s:25:"import_plugin_from_server";s:138:"File di installazione di plugin di importazione da questo server (specificare un percorso assoluto). È inoltre possibile digitare un URL.";s:11:"expire_date";s:13:"Scadenza Data";s:21:"generated_path_exists";s:122:"Percorso generato: <i>{name}</i> esiste già per favore specificare un altro percorso o cambiare leggermente il tuo titolo";s:28:"folder_incorrect_permissions";s:148:"Mi dispiace, che non sono state impostate le autorizzazioni necessarie. Si prega di impostare autorizzazioni scrivibile la directory seguente {name}";s:23:"add_another_one_to_same";s:42:"Aggiungere un altro della stessa categoria";s:15:"listing_expired";s:7:"Scaduto";s:21:"block_type_tip_smarty";s:214:"Smarty tipo blocco viene utilizzato per il codice di smarty. È possibile ottenere ulteriori informazioni sul motore di template Smarty qui: <a href="http://www.smarty.net" target="_blank">http://www.smarty.net</a>";s:13:"manage_blocks";s:13:"Manage Blocks";s:5:"block";s:6:"Blocco";s:7:"plugins";s:6:"Plugin";s:15:"parent_category";s:15:"Categoria padre";s:23:"import_plugin_installer";s:83:"Caricare il file XML di installazione plugin (nella maggior parte dei casi install)";s:10:"screenshot";s:10:"Screenshot";s:18:"template_installed";s:46:"Il {template} modello installato con successo.";s:14:"template_empty";s:22:"Non esiste un modello.";s:21:"template_folder_error";s:28:"Modello cartella non esiste.";s:11:"contributor";s:13:"Collaboratore";s:12:"release_date";s:16:"Data di rilascio";s:22:"template_xmlfile_error";s:38:"Il file XML del {template} non esiste.";s:12:"notification";s:8:"Notifica";s:22:"notif_htaccess_rebuilt";s:39:"È stato ricostruito il file. htaccess.";s:9:"submitted";s:8:"Inserita";s:16:"rebuild_htaccess";s:20:"Ricostruire htaccess";s:25:"notif_htaccess_permission";s:84:"Si prega di impostare l'autorizzazione scrivibile per ricostruire il file. htaccess.";s:24:"page_title_account_login";s:6:"Accedi";s:27:"page_title_payment_complete";s:18:"Pagamento completo";s:27:"page_title_account_register";s:10:"Registrati";s:23:"page_title_view_listing";s:18:"Visualizza profilo";s:34:"page_title_account_password_forgot";s:17:"Recupero password";s:16:"page_title_error";s:6:"Errore";s:19:"page_title_accounts";s:6:"Utenti";s:27:"page_title_payment_canceled";s:19:"Pagamento annullato";s:23:"page_title_edit_listing";s:19:"Modifica inserzione";s:25:"page_title_account_logout";s:6:"Logout";s:16:"page_title_thank";s:6:"Grazie";s:7:"preview";s:9:"Anteprima";s:28:"page_title_purchase_complete";s:17:"Acquisto completa";s:19:"page_title_purchase";s:8:"Acquisto";s:32:"page_title_report_broken_listing";s:25:"Rapporto rotto quotazione";s:13:"miscellaneous";s:5:"Varie";s:20:"category_url_will_be";s:19:"Categoria URL sarà";s:35:"category_locked_subcategories_alert";s:74:"Questa categoria sarà bloccata. Vuoi avere sottocategorie anche bloccati?";s:13:"no_more_files";s:48:"Non puoi caricare più file. Superato il limite.";s:14:"max_num_images";s:22:"Numero max di immagini";s:16:"page_url_will_be";s:22:"URL della pagina sarà";s:37:"category_unlocked_subcategories_alert";s:76:"Questa categoria sarà sbloccata. Vuoi avere sottocategorie anche sbloccati?";s:19:"block_type_tip_html";s:288:"Tipo HTML viene utilizzato per formattare la visualizzazione HTML. È possibile utilizzare l'editor WYSIWYG per il contenuto del blocco. Questo blocco può essere utilizzato anche per il codice JavaScript, ma è <span style="color: red">necessario incollarlo in modalità sorgente</span>.";s:23:"page_title_index_browse";s:17:"Browse Categories";s:20:"logo_image_not_found";s:78:"Impossibile trovare l'immagine del logo. Si prega di ricaricare immagine logo.";s:4:"hide";s:10:"Nascondere";s:21:"error_plan_deep_links";s:73:"Inserisci il numero corretto di deep link. Dovrebbe contenere solo cifre.";s:21:"error_plan_multicross";s:82:"Si prega di ingresso numero corretto di multicross. Dovrebbe contenere solo cifre.";s:20:"block_type_tip_plain";s:143:"Tipo di pianura è utilizzato quando si desidera visualizzare informazioni semplici. Esso verrà visualizzato come è più sfuggire i tag HTML.";s:21:"block_languages_empty";s:34:"È necessario scegliere la lingua.";s:11:"collapsible";s:10:"Pieghevole";s:13:"block_options";s:17:"Opzioni di blocco";s:14:"block_contents";s:16:"Blocco contenuto";s:14:"error_contents";s:29:"Campo contenuto è richiesto.";s:37:"are_you_sure_to_delete_this_deep_link";s:57:"Sei sicuro di che voler eliminare questo profondo legame?";s:13:"hide_category";s:21:"Nascondi la categoria";s:12:"go_to_manage";s:36:"Vai alla pagina di {plugin} Gestisci";s:16:"error_lang_title";s:37:"Campo titolo {lang} è una richiesta.";s:19:"error_lang_contents";s:40:"Campo contenuto {lang} è una richiesta.";s:3:"new";s:5:"Nuovo";s:14:"upgrade_plugin";s:37:"Eseguire l'aggiornamento del {plugin}";s:7:"details";s:8:"Dettagli";s:9:"operation";s:10:"Operazione";s:16:"manage_templates";s:16:"Manage Templates";s:12:"go_to_config";s:45:"Vai alla pagina di configurazione di {plugin}";s:17:"esyndicat_version";s:18:"versione eSyndiCat";s:8:"dropdown";s:16:"Elenco a discesa";s:17:"show_in_search_as";s:37:"Mostrare nella pagina di ricerca come";s:10:"digit_only";s:36:"cifra only(1-255) predefinito è 100";s:6:"radios";s:9:"Radio Set";s:17:"mark_after_submit";s:33:"Mark listato dopo presentare come";s:13:"title_for_any";s:38:"Titolo per "qualsiasi" opzione di meta";s:19:"cron_for_expiration";s:35:"Azione quando l'annuncio è scaduto";s:19:"status_after_submit";s:24:"Impostare lo stato come ";s:10:"checkboxes";s:27:"Set di caselle di controllo";s:21:"send_expiration_email";s:48:"Invia e-mail a [...] giorni prima della scadenza";s:13:"assign_fields";s:17:"Assegnare i campi";s:8:"keywords";s:8:"Keywords";s:13:"quick_jump_to";s:13:"Quick Jump To";s:4:"crop";s:8:"RITAGLIA";s:7:"fit_tip";s:213:"Il tentativo di ridimensionare l'immagine in modo proporzionale solo se non si adatta all'interno della "cornice" impostata l'altezza e la larghezza fornito: se adatta, l'immagine non sarà ridimensionata a tutti.";s:21:"installer_not_removed";s:139:"Programma di installazione non è stato rimosso. Esso è altamente raccomandato per eliminare il file 'install/modules/module.install.php'!";s:3:"fit";s:7:"MONTARE";s:8:"crop_tip";s:118:"Il mod tenterà di ritagliare l'immagine all'interno della "cornice" utilizzando gli argomenti di larghezza e altezza.";s:5:"howdy";s:5:"Howdy";s:8:"iso_code";s:12:"ISO - codice";s:20:"plain_text_templates";s:24:"Modelli di testo normale";s:14:"html_templates";s:12:"Modelli HTML";s:26:"quick_search_category_qtip";s:32:"Inserisci il titolo di categoria";s:25:"quick_search_listing_qtip";s:71:"Inserisci quotazione titolo, descrizione, URL, nome account o ID utente";s:24:"doc_plugin_not_available";s:48:"La documentazione del plugin non è disponibile.";s:18:"page_content_about";s:35:"<p>Chi siamo pagina contenuto</p>
+";s:15:"config_writable";s:132:"Il includes/config.inc.php è ancora scrivibile privilegi. Si prega di modificare le autorizzazioni config.inc.php a non scrivibile.";s:25:"go_to_browse_new_category";s:34:"Vai a sfogliare la nuova categoria";s:12:"go_to_browse";s:13:"Vai a Sfoglia";s:14:"manage_banners";s:14:"Manage Banners";s:17:"page_content_help";s:7232:"<p style="text-align: justify;">Non c&#39;&egrave; bisogno di sottolineare l&#39;importanza che il tuo sito web sia ben indicizzato sui motori di ricerca. Ma per essere ben indicizzato &egrave; importante di aumentare la link popularity, uno dei compiti pi&ugrave; difficili per te. Pi&ugrave; il sito compare nei link di altri siti web, maggiore sar&agrave; la sua popolarit&agrave;. Questo e il motivo per cui &egrave; importante essere linkati da PortaleSEO. Prima lo fai, prima inizi a beneficiare dei vantaggi di essere linkato da noi. La tua segnalazione &egrave; semplice da fare: tutto ci&ograve; che dovrai inserire &egrave; l&#39;indirizzo del tuo sito web, il tuo indirizzo email (che non verr&agrave; pubblicato) e una breve descrizione del sito. Inizia Subito!</p>
+
+<p style="text-align: justify;"><strong>Come inserire il tuo sito su PortaleSEO?</strong><br />
+&nbsp;</p>
+
+<p style="text-align: justify;">1. Per suggerire il tuo sito su PortaleSEO devi prima cliccare in alto a sinistra su <strong><a href="http://seoportale.com/suggest-listing.php?cid=0">AGGIUNGI SITO</a>.</strong></p>
+
+<p style="text-align: justify;"><strong><img alt="Aggiungi sito" src="http://seoportale.com/uploads/010f97a52b.png" style="width: 570px; height: 55px;" /></strong><br />
+2. Scegli la categoria che meglio identifica il tuo sito &ndash; per es. Blog dello Sport. <strong>Attenzione: Non suggerire il sito nella ROOT </strong>ma in una categoria adeguata, altrimenti non verr&agrave; accettato.</p>
+
+<p style="text-align: justify;"><img alt="Seleziona categoria" src="http://seoportale.com/uploads/314ea57aaf.png" style="width: 570px; height: 300px;" /><br />
+3. Scegli uno dei piani per la inserzione del tuo sito web. Hai la possibilit&agrave; di scegliere tramite:</p>
+
+<ul>
+	<li style="text-align: justify;">Segnalazione gratuita</li>
+	<li style="text-align: justify;">Segnalazione gratuita con link reciproco</li>
+	<li style="text-align: justify;">Segnalazione premium</li>
+</ul>
+
+<p style="text-align: justify;">Ti raccomandiamo di scegliere uno dei piani: <strong>Segnalazione gratuita con link reciproco </strong>oppure <strong>Segnalazione premium</strong>. Cosi la tua segnalazione sar&agrave; approvata velocemente (entro 24 ore per il piano Segnalazione premium) e potrai assicurare pi&ugrave; visibilit&agrave; al tuo link inserito su PortaleSEO perch&eacute; appare in tutte le pagine, nell&rsquo;area &quot;In Vetrina&quot;. Puoi anche aumentare la visibilit&agrave; del tuo link con filetti colorati e molte altre opzioni visibilit&agrave;.</p>
+
+<p style="text-align: justify;"><img alt="In Vetrina" src="http://seoportale.com/uploads/4bb283917b.png" style="width: 298px; height: 246px;" /><br />
+4. Inserisci il titolo che desideri per il tuo sito e il URL&nbsp;del tuo sito (es. http://www.forbes.com).&nbsp; Attenzione, se inserisci un URL rotto e clicchi invia modulo , riceverai un messaggio di errore!<br />
+5. Per inserire la descrizione puoi digitare il testo oppure puoi cliccare sul pulsante &ldquo;Preleva descrizione&rdquo; (la descrizione verr&agrave; compilata con il testo della meta descrizione del tuo sito).</p>
+
+<p style="text-align: justify;"><img alt="URL sito" src="http://seoportale.com/uploads/7ed27366a0.png" style="width: 570px; height: 200px;" /><br />
+6. Se hai scelto il piano Segnalazione gratis con Link Reciproco, devi digitare la pagina del tuo sito dove puoi inserire il ns. link reciproco. Dopo aver approvato&nbsp;il tuo sito ti forniremo sulla email il codice html che deve essere inserito sul tuo sito.<br />
+7. Inserisci il tuo indirizzo email (non verr&agrave; pubblicata).<br />
+8. Se preferisci, puoi inserire anche un indirizzo e i tuoi utenti ti potranno trovare pi&ugrave; facile (es. se hai un negozio oppure un ufficio avvocatura, architettura, ecc.). Ti offriamo anche la possibilit&agrave; di localizzare il tuo negozio sulla mappa cliccando sul pulsante &quot;Seleziona le coordinate&quot;.</p>
+
+<p style="text-align: justify;"><img alt="google map" src="http://seoportale.com/uploads/aca06dad61.png" style="width: 570px; height: 65px;" /><br />
+9. Aggiungi dei tag rilevanti che identificano meglio il tuo sito<br />
+10. Se hai scelto il piano Segnalazione Premium hai la possibilit&agrave; di aggiungere una immagine personalizzata nella tua inserzione invece delle immagine miniatura generate in automatico.</p>
+
+<p style="text-align: justify;"><img alt="Immagini" src="http://seoportale.com/uploads/d0baee582b.png" style="width: 570px; height: 65px;" /></p>
+
+<p style="text-align: justify;">Hai anche la possibilit&agrave; di inserire dei collegamenti profondi (deep links) per migliorare l&rsquo;indicizzazione del tuo sito web.</p>
+
+<p style="text-align: justify;"><img alt="deep links" src="http://seoportale.com/uploads/909fd89d03.png" style="width: 570px; height: 200px;" /><br />
+11. Compila il modulo captcha e clicca sul pulsante &quot;Invia&quot; modulo.<br />
+12. La tua segnalazione verr&agrave; analizzata e approvata del ns staff ricevendo un messaggio di informo.</p>
+
+<p style="text-align: justify;">Tutto qui, &egrave; troppo semplice?</p>
+
+<p style="text-align: justify;"><strong>Obblighi e condotta dell&rsquo;utente durante l&rsquo;inserzione sito:</strong></p>
+
+<p style="text-align: justify;">Ogni utente &egrave; libero di segnalare un numero illimitato di siti. Tali siti, se ritenuti idonei, possono essere inseriti su PortaleSEO. Non vengono accettati e quindi non segnalati i seguenti siti:</p>
+
+<ul>
+	<li style="text-align: justify;">mirror</li>
+	<li style="text-align: justify;">url redirect</li>
+	<li style="text-align: justify;">con materiale illegale</li>
+	<li style="text-align: justify;">non accettiamo SITI DI TERZO LIVELLO come per esempio www.tuodominio.altrodominio.com, cio&egrave; siti che sono ospitati da un altro dominio</li>
+	<li style="text-align: justify;">dialer</li>
+	<li style="text-align: justify;">violenti e/o razzisti</li>
+	<li style="text-align: justify;">che non siano il sito principale ma solo un&#39;area</li>
+	<li style="text-align: justify;">con pubblicit&agrave; a siti sopra citati</li>
+</ul>
+
+<p style="text-align: justify;">Se hai dei problemi durante l&rsquo;utilizzo del nostro portale, mandaci una email. Ti metteremo a disposizione la nostra cortesia e professionalit&agrave;. Non esitare a contattarci al indirizzo email: <a href="/cdn-cgi/l/email-protection#fd8e888d8d928f89bd8e98928d928f899c9198d39e9290"><span class="__cf_email__" data-cfemail="f2818782829d8086b281979d829d8086939e97dc919d9f">[email&nbsp;protected]</span><script data-cfhash='f9e31' type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></a></p>
+";s:18:"page_content_terms";s:11104:"<p style="text-align: justify;"><strong>L&rsquo;utilizzo del servizio &egrave; regolato nei termini ed alle condizioni di seguito riportate.</strong></p>
+
+<p style="text-align: justify;">1. Nell&#39;ambito della presente sezione (Termini e condizioni d&#39;uso) di Servizio con il termine &quot;Utente/i&quot; si intendono sia gli utenti navigatori che gli utenti inserzionisti.</p>
+
+<p style="text-align: justify;">2. Le inserzioni presenti sul sito PortaleSEO sono pubblicati su iniziativa autonoma dell&#39;Utente inserzionista, sotto la piena ed esclusiva responsabilit&agrave; di quest&#39;ultimo. Il sito PortaleSEO non sar&agrave;, pertanto, in alcun modo responsabile della veridicit&agrave;, della liceit&agrave;, del rispetto del diritto di propriet&agrave;, della legalit&agrave; e/o dell&#39;eventuale contrariet&agrave; all&#39;ordine pubblico od al buon costume, dei contenuti immessi on line dal proprio Utente. Il sito PortaleSEO offre un servizio di pubblicazione e consultazione di inserzioni gratuiti su Internet (tipo directory web) senza svolgere alcun ruolo di interposizione, mediazione ed intermediazione tra l&#39;Utente navigatore e l&#39;Utente inserzionista.</p>
+
+<p style="text-align: justify;">3. PortaleSEO si riserva il diritto di cancellare ogni inserzione pubblicata non in conformit&agrave; con i termini e le condizioni oppure le legge italiane. PortaleSEO riferir&agrave; all&rsquo;autorit&agrave; competente le violazioni delle disposizioni legislative previste (es: links che contengono pornografia infantile).</p>
+
+<p style="text-align: justify;">4. Il servizio potr&agrave; essere utilizzato dai maggiori di anni diciotto. L&rsquo;eventuale utilizzo del servizio da parte dei minori, presuppone e sottintende l&rsquo;autorizzazione dei genitori o di chi, sugli stessi, esercita la potest&agrave; o la tutela. Costoro si assumono, pertanto, la piena ed esclusiva responsabilit&agrave; di qualsivoglia comportamento tenuto dal minore nell&rsquo;accesso, nell&rsquo;utilizzo e nella fruizione del servizio.</p>
+
+<p style="text-align: justify;">5. L&#39;Utente prende atto che PortaleSEO non effettuer&agrave; alcun controllo preventivo sul contenuto degli annunci immessi in rete, n&eacute; svolger&agrave; alcuna attivit&agrave; di intermediazione sulle eventuali transazioni intercorrenti tra gli Utenti medesimi. Gli utenti si assumono, pertanto, la piena ed esclusiva responsabilit&agrave;, verso PortaleSEO e verso i terzi, del comportamento tenuto.</p>
+
+<p style="text-align: justify;">6. Pubblicando la propria inserzione su PortaleSEO l&#39;utente autorizza PortaleSEO ad adoperarsi affinch&eacute; il contenuto della inserzione venga reso visibile ed accessibile agli utenti della rete anche mediante successiva indicizzazione (automatica o selettiva) su motori di ricerca , mediante pubblicazione su altri siti con i quali PortaleSEO intrattenga rapporti di collaborazione, mediante pubblicizzazione su mezzi radiotelevisivi al fine di promuovere con pi&ugrave; efficacia le inserzioni dei propri utenti.</p>
+
+<p style="text-align: justify;">7. L&rsquo;Utente si impegna a non fruire dei servizi fornitigli dal sito PortaleSEO in modo improprio o contrario alle disposizioni di Termini e Condizioni d&rsquo;Uso, di Legge e regolamentari ed alle norme di Etica e di Buon uso dei servizi di rete. In particolare, l&rsquo;Utente si impegna a non trasmettere, tramite PortaleSEO, materiale di natura offensiva, calunniosa, diffamatoria, pedopornografica, volgare, oscena, blasfema, o comunque contraria ai principi di Legge, dell&rsquo;ordine pubblico e del buon costume. L&#39;inserzionista &egrave; consapevole che l&#39;indirizzo di posta elettronica reso noto su PortaleSEO potr&agrave; valere quale mezzo di comunicazione a distanza.</p>
+
+<p style="text-align: justify;">8. L&#39;Utente dichiara di utilizzare il servizio offerto da PortaleSEO nella consapevolezza di poter incontrare link che possono rinviare a pagine web su cui PortaleSEO non ha alcun controllo e sul cui contenuto non assume alcuna responsabilit&agrave;. Sar&agrave; compito dell&#39;Utente verificare di volta in volta le condizioni di utilizzo delle pagine cui accede mediante i link contenuti su PortaleSEO.</p>
+
+<p style="text-align: justify;">9. L&rsquo;Utente dichiara espressamente di astenersi da qualsivoglia discriminazione, diretta o indiretta, a causa della razza o dell&rsquo;origine etnica degli individui e si impegna al rispetto delle Convenzioni poste a salvaguardia dei diritti umani. L&rsquo;Utente si impegna a non pubblicare in rete, senza il consenso degli aventi diritto, inserzioni contenenti dati personali, sensibili e/o immagini di minori o di terzi, nonch&eacute; materiale contenente virus o altri sistemi tesi a danneggiare il funzionamento del presente servizio o di qualsivoglia impianto deputato alla telediffusione.</p>
+
+<p style="text-align: justify;">10. L&#39;Utente si obbliga a non incoraggiare, commettere, favorire e/o agevolare in qualunque modo, mediante gli spazi messi a disposizione da PortaleSEO, azioni criminali e comportamenti illeciti in generale. L&#39;Utente si obbliga a non pregiudicare l&#39;uso ed il godimento del Servizio degli altri utenti.</p>
+
+<p style="text-align: justify;">11. Mediante l&rsquo;utilizzo delle risorse offerte da PortaleSEO, l&#39;Utente si obbliga a non riprodurre, trascrivere, duplicare, distribuire, modificare o comunicare, senza averne diritto, materiale protetto dal diritto di autore. L&rsquo;Utente si impegna a non richiedere la pubblicazione di annunci mendaci.</p>
+
+<p style="text-align: justify;">12. L&rsquo;Utente, quale necessaria conseguenza della propria piena ed esclusiva responsabilit&agrave; eventualmente derivante dalla violazione di Leggi, regolamenti e delle presenti condizioni generali, dichiara espressamente di esonerare PortaleSEO da qualsivoglia responsabilit&agrave;, civile e penale, riconoscendone, fin d&rsquo;ora, il difetto di legittimazione passiva in giudizio.</p>
+
+<p style="text-align: justify;">13. In particolare, l&rsquo;Utente si obbliga a manlevare PortaleSEO, sostanzialmente e processualmente, da qualsiasi pregiudizio, perdita, danno, responsabilit&agrave;, costo, o&shy;nere o spesa, incluse le spese legali, derivanti da pretese o da azioni avanzate da terzi, in qualunque sede ed a qualunque titolo, in conseguenza di annunci, links segnalati od opinioni immessi in rete dall&rsquo;Utente mediante l&rsquo;utilizzo improprio delle risorse offerte da PortaleSEO.</p>
+
+<p style="text-align: justify;">14. PortaleSEO &egrave; titolare di tutti i servizi ed i contenuti messi a disposizione dell&rsquo;Utente tramite il proprio sito web.</p>
+
+<p style="text-align: justify;">15. E&rsquo;, pertanto, vietata la riproduzione e/o l&rsquo;utilizzazione, integrale o parziale, a titolo gratuito od o&shy;neroso, di qualsivoglia risorsa del sito, della vesta grafica, di simboli, marchi, loghi o segni distintivi in genere, compreso il testo delle presenti condizioni di utilizzo.</p>
+
+<p style="text-align: justify;">16. Resta salvo il diritto discrezionale di PortaleSEO di concedere, su richiesta dell&rsquo;Utente, la propria autorizzazione scritta all&rsquo;utilizzo di uno o pi&ugrave; servizi e per un uso strettamente personale.</p>
+
+<p style="text-align: justify;">&nbsp;17. Inserendo l&rsquo;inserzione su PortaleSEO l&#39;utente certifica di poterne disporre con pieno diritto del contenuto; inoltre dichiara che le immagini eventualmente inserite riguardano persone maggiorenni che hanno prestato manifesto consenso alla pubblicazione dell&#39;immagine su PortaleSEO</p>
+
+<p style="text-align: justify;">18. Non &egrave; consentito inserire testi o immagini volgari o offensivi</p>
+
+<p style="text-align: justify;">19. Non &egrave; consentito alcun tipo di link contenente riferimenti a prestazioni sessuali a pagamento.</p>
+
+<p style="text-align: justify;">20. Non possono essere inserite immagini a carattere pornografico contenenti organi genitali in vista.</p>
+
+<p style="text-align: justify;">21. L&rsquo;inserimento di materiale pedopornografico comporter&agrave; l&rsquo;immediata segnalazione alle autorit&agrave; competenti dei dati di accesso al sito al fine di consentire di risalire ai responsabili.</p>
+
+<p style="text-align: justify;">22. I dati personali forniti dall&rsquo;Utente saranno raccolti ed utilizzati da PortaleSEO nel pieno rispetto della normativa di cui al D.Lgs. n. 196 del 30 giugno 2003, Codice in materia di protezione dei dati personali. PortaleSEO rende noto all&rsquo; Utente che: - i dati personali forniti da quest&rsquo;ultimo verranno trattati esclusivamente per la fornitura del servizio richiesto - il trattamento dei dati sar&agrave; effettuato con modalit&agrave; informatizzate - gli indirizzi di posta elettronica forniti dall&#39;utente potranno essere condivisi con soggetti terzi esclusivamente previa autorizzazione dell&#39;utente stesso - i dati personali raccolti non verranno ceduti a terzi.</p>
+
+<p style="text-align: justify;">23. L&rsquo;Utente, accettando le condizioni di utilizzo, autorizza PortaleSEO al trattamento dei propri dati personali entro i limiti e per le finalit&agrave; indicati nella presente informativa.</p>
+
+<p style="text-align: justify;">24. Al fine di prevenire violazioni dei diritti, delle libert&agrave; fondamentali e della dignit&agrave; degli Interessati, PortaleSEO dichiara di astenersi dal trattare dati sensibili conferiti dall&rsquo;Utente. Quest&rsquo;ultimo si obbliga, pertanto, a non corredare le proprie inserzioni recanti eventuali dati sensibili, con ulteriori elementi che consentano la propria identificazione, diretta od indiretta.</p>
+
+<p style="text-align: justify;">25. PortaleSEO si riserva il diritto di modificare la suddetta informativa previo avviso all&rsquo;Utente, da effettuarsi mediante pubblicazione della versione aggiornata all&rsquo;interno del sito.</p>
+
+<p style="text-align: justify;">26. PortaleSEO si riserva, in ogni tempo, il diritto di revocare, disattivare o modificare, in via temporanea o definitiva, la fornitura del presente servizio nonch&eacute; di cancellare ed editare le inserzioni degli utenti secondo criteri discrezionali ed insindacabili, senza preavviso all&rsquo;Utente e senza indicarne le cause.</p>
+
+<p style="text-align: justify;">27. Quest&rsquo;ultimo concorda, pertanto, che PortaleSEO non sar&agrave; responsabile, verso lo stesso o verso terzi, della modifica, sospensione, revoca od interruzione del servizio nonch&eacute; della cancellazione e modifica dei messaggi inoltrati, qualunque ne siano le modalit&agrave; di realizzazione.</p>
+
+<p style="text-align: justify;">28. L&rsquo;Utente, prima di usufruire di qualsivoglia servizio, &egrave; tenuto ad informarsi sulla eventuale sussistenza di modifiche e/o aggiornamenti apportati alle condizioni di utilizzo. Tali modifiche e/o aggiornamenti formeranno, infatti, parte integrante delle presenti condizioni generali e costituiranno fonte di accordo tra PortaleSEO e l&rsquo;Utente.</p>
+";s:10:"sql_format";s:11:"Formato SQL";s:19:"page_content_policy";s:37:"Contenuto della pagina Privacy Policy";s:22:"page_content_advertise";s:52:"<p>Noi pubblicizzare il contenuto della pagina</p>
+";s:10:"csv_format";s:11:"Formato CSV";s:11:"file_format";s:15:"Formato di file";s:3:"and";s:1:"E";s:12:"order_number";s:15:"Numero d'ordine";s:8:"and_then";s:5:"e poi";s:10:"go_to_list";s:14:"Vai all'elenco";s:15:"add_another_one";s:19:"Aggiungere un altro";s:2:"or";s:2:"OR";s:26:"type_listing_account_title";s:40:"Quotazione titolo o account nome tipo...";s:9:"condition";s:10:"Condizione";s:15:"add_transaction";s:20:"Aggiungi transazione";s:19:"add_one_more_phrase";s:43:"Ti piacerebbe aggiungere una frase di più?";s:12:"last_updated";s:20:"Ultimo aggiornamento";s:21:"type_account_username";s:29:"Tipo nome utente dell'account";s:20:"error_while_doc_tabs";s:38:"Errore durante il recupero schede doc.";s:19:"type_username_email";s:34:"-digita il tuo username o email...";s:9:"searching";s:10:"Ricerca...";s:14:"add_new_phrase";s:21:"Aggiungi nuova frase?";s:11:"select_icon";s:20:"Selezionare un'icona";s:24:"upload_new_category_icon";s:36:"Caricare la nuova icona di categoria";s:14:"uploading_icon";s:20:"Icona di caricamento";s:17:"copy_to_clipboard";s:19:"Copia negli Appunti";s:13:"htaccess_file";s:10:". htaccess";s:4:"logo";s:4:"Logo";s:11:"select_logo";s:28:"Selezionare il Logo del sito";s:37:"are_you_sure_to_delete_selected_icons";s:43:"Davvero volete rimuovere icone selezionate?";s:20:"error_password_empty";s:15:"Password errata";s:20:"error_password_match";s:30:"Le password non corrispondono.";s:35:"are_you_sure_to_unset_category_icon";s:38:"Vuole veramente icona unset categoria?";s:14:"image_uploaded";s:41:"Immagine {name} è caricata con successo.";s:16:"upload_site_logo";s:25:"Caricare il Logo del sito";s:6:"upload";s:8:"Caricare";s:14:"action_confirm";s:59:"Davvero vuoi {action} [{listings}] di categoria {category}?";s:6:"action";s:6:"Azione";s:9:"view_logo";s:12:"Logo a vista";s:21:"site_logo_image_error";s:61:"Errore si verifica durante il caricamento immagine logo sito.";s:12:"params_wrong";s:22:"Params sono sbagliate.";s:19:"uploading_site_logo";s:24:"Caricamento Logo sito...";s:18:"unset_default_icon";s:32:"Icona di categoria non impostato";s:17:"license_not_valid";s:92:"Il numero di licenza non è valido. Si prega di controllare nella sezione di configurazione.";s:7:"warning";s:6:"AVVISO";s:16:"domain_not_valid";s:33:"Il nome di dominio non è valido.";s:19:"plugin_installation";s:13:"Installazione";s:10:"plugin_faq";s:17:"Domande frequenti";s:16:"plugin_changelog";s:9:"Changelog";s:18:"plugin_description";s:11:"Descrizione";s:14:"listings_chart";s:18:"Inserzioni grafico";s:18:"plugin_screenshots";s:11:"Screenshots";s:12:"plugin_notes";s:4:"Note";s:20:"plugin_documentation";s:21:"Plugin documentazione";s:15:"choose_importer";s:15:"Choose importer";s:25:"do_not_display_neighbours";s:25:"Non visualizzare i vicini";s:17:"database_password";s:21:"Password del database";s:17:"database_username";s:24:"Nome utente del database";s:13:"database_name";s:17:"Nome del database";s:6:"select";s:11:"Selezionare";s:15:"database_prefix";s:17:"Prefisso database";s:13:"find_database";s:19:"Trovare il Database";s:25:"database_connection_error";s:36:"Impossibile connettersi al database.";s:13:"database_host";s:13:"Database Host";s:24:"database_selection_error";s:37:"Errore durante la selezione database.";s:15:"manage_importer";s:14:"Manage Imports";s:13:"import_report";s:25:"Relazione di importazione";s:12:"no_importers";s:42:"Non non c'è nessun qualsiasi importatori.";s:25:"convert_database_complete";s:45:"Convertire il database completo con successo.";s:11:"dont_assign";s:13:"Non assegnare";s:25:"quick_search_account_qtip";s:43:"Inserisci l'ID account, nome utente o email";s:2:"id";s:2:"ID";s:15:"xml_parse_error";s:45:"Errore si verifica durante l'analisi file XML";s:14:"assign_account";s:21:"Assegnare all'account";s:16:"existing_account";s:17:"Account esistente";s:14:"xml_file_empty";s:15:"File XML vuoto.";s:2:"do";s:5:"Fare!";s:14:"items_per_page";s:19:"Elementi per pagina";s:20:"error_saving_changes";s:33:"Errore di salvare le modifiche...";s:12:"unpack_error";s:53:"Errore si verifica durante l'estrazione il pacchetto.";s:14:"license_empty ";s:167:"Il numero di licenza è vuoto. Si prega di inserire il tuo numero di licenza e salvare la configurazione <a href="{url}admin/controller.php?file=configuration">qui</a>";s:21:"update_overwrite_note";s:204:"Si prega di notare. Lo script di aggiornamento sovrascrive i file esistenti. Se avete qualsiasi modifica si prega di creare un backup dei tuoi file prima dell'aggiornamento.<br><br>Si desidera continuare?";s:17:"ftp_details_error";s:39:"Dettagli di connessione sono sbagliate.";s:10:"no_updates";s:44:"Non non c'è nessun eventuali aggiornamenti.";s:17:"ftp_connect_error";s:39:"Non è possibile connettersi al server.";s:15:"ftp_login_error";s:45:"Non può effettuare il login come {username}.";s:22:"script_success_updated";s:75:"Script è stato aggiornato con successo. La versione corrente è {version}.";s:14:"update_version";s:22:"Aggiornamento versione";s:18:"can_not_get_method";s:46:"Non è possibile ottenere il metodo di coping.";s:10:"update_msg";s:111:"eSyndiCat Directory {version} è avaiable. <a href="controller.php?file=update">Si prega di aggiornare ora.</a>";s:18:"incorrect_username";s:34:"Inserisci il nome utente corretto.";s:10:"custom_url";s:22:"URL SEO personalizzati";s:14:"listing_fields";s:12:"Elenco campi";s:14:"reset_listings";s:25:"Reimpostare le inserzioni";s:6:"readme";s:7:"Leggimi";s:9:"reset_all";s:15:"Reimposta tutto";s:16:"reset_categories";s:18:"Categorie di reset";s:16:"custom_url_exist";s:46:"Pagina con URL SEO personalizzato esiste già.";s:15:"search_sections";s:18:"Sezioni di ricerca";s:20:"reset_listing_clicks";s:22:"Reimposta elenco click";s:18:"reset_choose_table";s:40:"Si prega di scegliere qualsiasi tabella.";s:18:"reset_backup_alert";s:68:"Si prega di creare un backup prima di reimpostare qualsiasi tabella.";s:13:"reset_success";s:41:"Dati sono stati reimpostati con successo.";s:14:"reset_accounts";s:23:"Reimpostare gli account";s:21:"reset_category_clicks";s:30:"Reimpostare il categoria click";s:23:"export_tables_incorrect";s:51:"Si prega di selezionare tabelle per l'esportazione.";s:19:"page_menu_incorrect";s:34:"Menu della pagina non è corretta.";s:14:"category_icons";s:14:"Category Icons";s:11:"remove_icon";s:15:"Rimuovere icona";s:24:"admin_check_new_password";s:59:"Per favore controlla la tua e-mail per il link di conferma.";s:23:"admin_new_password_sent";s:94:"La nuova password è stata inviata al tuo indirizzo email. Per favore controlla la tua e-mail.";s:17:"available_plugins";s:18:"Plugin disponibili";s:6:"update";s:13:"Aggiornamento";s:13:"update_notice";s:62:"Prima di aggiornare per favore il backup di database e i file.";s:8:"hostname";s:8:"Hostname";s:22:"connection_information";s:30:"Informazioni sulla connessione";s:17:"installed_plugins";s:17:"Plugin installati";s:14:"esyndicat_news";s:17:"eSyndiCat notizie";s:17:"url_package_empty";s:29:"L'URL del pacchetto è vuoto.";s:11:"choose_icon";s:17:"Scegliere l'icona";s:27:"expiration_period_incorrect";s:53:"Periodo di scadenza errato. Dovrebbe essere numerico.";s:39:"are_you_sure_to_delete_this_transaction";s:49:"Sei sicuro di voler eliminare questa transazione?";s:11:"resize_mode";s:27:"Ridimensionare le modalità";s:17:"expiration_period";s:19:"Periodo di scadenza";s:4:"icon";s:5:"Icona";s:25:"get_package_content_error";s:66:"Errore si verifica durante il recupero il contenuto del pacchetto.";s:6:"submit";s:5:"Invia";s:15:"manage_listings";s:15:"Manage Listings";s:15:"use_real_prefix";s:36:"Utilizzare un prefisso tabelle reali";s:16:"complete_inserts";s:16:"Complete Inserts";s:12:"save_as_file";s:18:"Salvare come file.";s:14:"save_to_server";s:17:"Salvare il server";s:17:"location_sql_file";s:43:"Percorso del file di aggiornamento di MySQL";s:11:"no_upgrades";s:84:"Nessuna patch, aggiornamenti o SQL dump disponibile negli aggiornamenti / directory.";s:18:"export_not_checked";s:39:"Non hai selezionato nulla da esportare.";s:10:"save_to_pc";s:13:"Salvare su PC";s:18:"create_transaction";s:21:"Creare la transazione";s:16:"edit_transaction";s:26:"Modifica delle transazioni";s:31:"admin_page_title_manage_banners";s:14:"Manage Banners";s:19:"manage_transactions";s:18:"Manage trasactions";s:16:"field_min_length";s:13:"Lunghezza min";s:16:"field_max_length";s:13:"Lunghezza max";s:10:"page_title";s:13:"Titolo pagina";s:11:"new_account";s:13:"Nuovo account";s:5:"cross";s:5:"Croce";s:7:"tooltip";s:7:"ToolTip";s:15:"listing_crossed";s:36:"Quotazione attraversato con successo";s:14:"wysiwyg_editor";s:14:"Editor WYSIWYG";s:16:"listings_crossed";s:36:"Inserzioni attraversati con successo";s:11:"thumb_width";s:19:"Larghezza miniatura";s:12:"thumb_height";s:17:"Altezza miniatura";s:11:"unconfirmed";s:14:"Non confermato";s:8:"inactive";s:8:"Inattivo";s:16:"error_javascript";s:42:"Devi abilitare JavaScript nel tuo browser.";s:7:"confirm";s:10:"Confermare";s:13:"image_deleted";s:18:"Immagine eliminata";s:23:"notice_field_type_empty";s:34:"Devi selezionare il tipo di campo.";s:23:"listing_option_add_star";s:11:"Agg. Stella";s:7:"no_file";s:24:"Non non c'è nessun file";s:13:"plugin_errors";s:18:"Plugin. dll Errori";s:13:"reg_confirmed";s:36:"Conto confermato. Per favore Accedi.";s:16:"reg_confirmation";s:28:"Conferma della registrazione";s:15:"reg_confirm_err";s:42:"Error. Your confirmation key is not found.";s:13:"thankyou_tail";s:41:"<p>Si prega di leggere le istruzioni.</p>";s:27:"plugin_successfully_updated";s:31:"Plugin aggiornato correttamente";s:29:"plugin_remove_following_files";s:106:"Questo plugin va con i seguenti file di eliminarli per rimuovere completamente il plugin. <ul>{files}</ul>";s:29:"plugin_upload_following_files";s:103:"Questo plugin va con i seguenti file per favore caricatela nelle cartelle appropriate. <ul>{files}</ul>";s:11:"error_email";s:54:"Assicurarsi che hai inserito l'indirizzo email valido.";s:13:"update_plugin";s:20:"Aggiornamento plugin";s:10:"multicross";s:10:"Multicross";s:13:"thankyou_head";s:221:"Di seguito, sono riportati i tuoi dati. Potrai modificarli all'interno del tuo account.</p><p><span style="color: #F00; font-weight: bold;">Importante!</span> La password del tuo account ti è stata inviata via email:</p>";s:13:"cross_warning";s:84:"Si possono non aggiungere collegamenti trasversali alla stessa categoria principale.";s:14:"mcross_warning";s:38:"Non potete attraversare uno più link.";s:27:"page_title_suggest_category";s:18:"Aggiungi categoria";s:26:"page_title_random_listings";s:15:"Annunci casuali";s:26:"page_title_suggest_listing";s:21:"★ AGGIUNGI SITO ★";s:27:"page_title_popular_listings";s:8:"Popolari";s:23:"page_title_top_listings";s:11:"In evidenza";s:23:"page_title_new_listings";s:17:"Nuovi Inserimenti";s:17:"page_title_search";s:7:"Ricerca";s:16:"page_title_index";s:4:"Home";s:11:"upgrade_tip";s:167:"È possibile utilizzare questa pagina anche se si vuole aggiornare il plugin esistenti. Basta specificare il file Install e premere il pulsante "{import_and_install}".";s:16:"existing_plugins";s:16:"PLUGIN ESISTENTI";s:10:"no_plugins";s:14:"Nessun plugin.";s:15:"install_upgrade";s:29:"Installazione o aggiornamento";s:14:"filter_by_type";s:15:"Filtra per tipo";s:8:"any_word";s:16:"Qualsiasi parola";s:25:"page_title_categories_map";s:16:"Elenco categorie";s:15:"search_by_dates";s:15:"Ricerca di date";s:15:"update_pagerank";s:22:"Aggiornamento pagerank";s:12:"new_language";s:12:"Nuova lingua";s:13:"copy_language";s:15:"Copia di lingua";s:10:"add_phrase";s:19:"Aggiungere la frase";s:17:"search_in_phrases";s:14:"Cerca in frasi";s:13:"download_lang";s:22:"Lingua di esportazione";s:20:"incorrect_text_field";s:31:"Campo di testo non è corretto.";s:14:"lang_incorrect";s:41:"Si prega di scegliere la lingua corretta.";s:10:"key_exists";s:42:"La frase con una chiave simile esiste già";s:13:"key_not_valid";s:83:"Chiave non è valida. Solo alfanumerici e caratteri di sottolineatura sono ammessi.";s:13:"lock_category";s:19:"Categoria di blocco";s:17:"number_of_columns";s:17:"Numero di colonne";s:20:"number_of_neighbours";s:17:"Numero dei vicini";s:14:"all_neighbours";s:14:"Tutti i vicini";s:19:"number_of_neigh_tip";s:47:"<i>0</i> - non visualizzare categorie vicini ai";s:18:"number_of_cols_tip";s:32:"valore deve essere maggiore di 0";s:6:"custom";s:6:"Custom";s:11:"quick_links";s:11:"Quick links";s:34:"add_as_crossed_to_other_categories";s:69:"È possibile aggiungere elenchi ad altre categorie come attraversato.";s:16:"enable_no_follow";s:21:"Non abilitare seguire";s:6:"_type_";s:6:"-Tipo-";s:3:"all";s:5:"Tutti";s:4:"code";s:6:"Codice";s:7:"regular";s:8:"Regolari";s:18:"destination_broken";s:18:"Destinazione rotto";s:17:"reciprocal_broken";s:15:"Reciproco rotto";s:17:"destination_valid";s:19:"Destinazione valida";s:14:"_check_status_";s:22:"-Controllare lo stato-";s:6:"sticky";s:11:"Appiccicoso";s:11:"show_header";s:23:"Visualizza intestazione";s:4:"exit";s:6:"Uscita";s:13:"visual_manage";s:13:"Visual Manage";s:16:"visible_on_pages";s:21:"Visibile sulle pagine";s:10:"manage_acl";s:10:"Manage ACL";s:11:"acl_created";s:10:"ACL creato";s:14:"listings_added";s:16:"Annunci aggiunti";s:26:"tried_delete_current_admin";s:74:"Hai provato a cancellare la corrente admin che è non poteva essere fatto.";s:18:"copy_with_listings";s:45:"Si desidera copiare categorie con inserzioni?";s:30:"tried_disapprove_current_admin";s:72:"Hai provato a disapprovare admin attuale che è non poteva essere fatto.";s:14:"add_new_values";s:23:"Aggiungere nuovi valori";s:13:"phrases_added";s:14:"Frasi aggiunte";s:17:"differences_found";s:63:"<b>{num}</b> differenze rilevate. Rispetto di <b>{category}</b>";s:7:"compare";s:11:"Confrontare";s:10:"all_fields";s:13:"Tutti i campi";s:32:"two_language_required_to_compare";s:45:"Almeno due lingue per confrontarli necessaria";s:40:"are_you_sure_to_delete_selected_language";s:131:"Sei sicuro di che voler eliminare la lingua selezionata? Nota: Tutte le frasi verranno eliminate. Non non c'è nessun annullamento!";s:15:"related_deleted";s:45:"Relazioni selezionate correttamente eliminate";s:14:"blocks_deleted";s:55:"Blocchi selezionati sono stati cancellati con successo.";s:13:"plans_deleted";s:41:"Piani sono stati cancellati con successo.";s:6:"global";s:7:"Globale";s:12:"plan_deleted";s:38:"Piano è stato eliminato con successo.";s:7:"suspend";s:10:"Sospendere";s:23:"no_listings_in_category";s:193:"Nessuna inserzione in questa categoria. <a href="suggest-listing.php?cid={category_id}" style="font-weight: bold;">Fai clic qui</a> per aggiungere la scheda a <strong>{category_title}</strong>.";s:13:"block_deleted";s:52:"Blocco selezionato è stato cancellato con successo.";s:30:"leave_empty_to_show_everywhere";s:33:"Lascia vuoto per mostrare ovunque";s:38:"are_you_sure_to_delete_selected_phrase";s:47:"Sei sicuro di che voler eliminare questa frase?";s:13:"bind_to_plans";s:18:"Associare ai piani";s:7:"compose";s:8:"Comporre";s:18:"bind_to_categories";s:21:"Associare a categorie";s:10:"start_date";s:14:"Data di inizio";s:8:"end_date";s:12:"Data di fine";s:28:"password_restore_description";s:406:"Se vedete questa pagina significa che hai ricevuto un'email con
+
+Questo URL.
+
+Questa pagina è destinata per impostare una nuova password per l'amministrazione
+
+conto.<div style="color:red;padding:10px;border:1px solid gray"><p>Si presume che sai che il tuo nome utente (login)</p><p>C'è solo un tentativo!!!</p><p>Altrimenti, dovrete richiedere restauro nuovamente (nella pagina di login)</p></div>";s:15:"listing_deleted";s:32:"Annuncio cancellato con successo";s:7:"go_back";s:8:"Indietro";s:21:"listing_remove_reason";s:99:"È possibile digitare rimozione motivo (incluso per e-mail)<br><i>nessun effetto per cross link</i>";s:34:"editor_not_showed_listing_inactive";s:114:"Per sicurezza motivi html editor è mostrato solo se lo stato è attivo e HTML è consentito dalla configurazione.";s:2:"ok";s:2:"Ok";s:14:"multi_language";s:11:"Multilingue";s:9:"no_follow";s:11:"Non seguire";s:18:"categories_deleted";s:19:"Categorie eliminate";s:12:"new_password";s:14:"Nuova password";s:6:"locked";s:8:"Bloccato";s:13:"nothing_found";s:14:"Niente trovato";s:16:"listings_deleted";s:43:"Annunci selezionati correttamente eliminati";s:10:"moved_from";s:8:"Mosso da";s:16:"listing_returned";s:32:"Quotazione era tornato indietro!";s:8:"main_cat";s:10:"principale";s:10:"crossed_to";s:14:"Attraversato a";s:16:"category_deleted";s:19:"Categoria eliminato";s:13:"listing_moved";s:32:"Quotazione spostato con successo";s:14:"listings_moved";s:32:"Inserzioni spostati con successo";s:14:"listing_copied";s:27:"Elenco copiato con successo";s:15:"listings_copied";s:32:"Inserzioni copiate correttamente";s:14:"plan_not_chose";s:26:"Si deve scegliere un piano";s:14:"latest_version";s:15:"Ultima versione";s:7:"version";s:8:"Versione";s:15:"get_new_version";s:26:"Ottenere la nuova versione";s:14:"unknown_plugin";s:28:"Questo plugin è sconosciuto";s:20:"upgrade_instructions";s:24:"Aggiornamento istruzioni";s:31:"new_version_of_plugin_available";s:253:"È disponibile la nuova versione del plugin desidera aggiornarlo?<input type="button" value="{yes}" onclick="updatePlugin('{urlToGetNewVersion}', '{plugin}', '{updateInstructions}')"><input type="button" value="{no}" onclick="$('#notification').hide()">";s:9:"changelog";s:9:"Changelog";s:20:"plugin_is_up_to_date";s:21:"Plugin sia aggiornato";s:36:"error_occurred_while_plugin_updating";s:69:"Si è verificato un errore sconosciuto durante l'aggiornamento plugin";s:19:"add_listing_comment";s:34:"Aggiungi la quotazione di commento";s:9:"error_url";s:29:"Hai inserito l'URL non valido";s:13:"recip_recheck";s:26:"Ricontrollare il reciproco";s:12:"edit_comment";s:12:"Edit comment";s:7:"install";s:10:"Installare";s:20:"my_favorite_listings";s:16:"I tuoi preferiti";s:17:"favorites_removed";s:42:"L'annuncio è stato rimosso dai preferiti.";s:21:"remove_from_favorites";s:23:"Rimuovere dai preferiti";s:16:"add_to_favorites";s:20:"Aggiungi a Preferiti";s:17:"view_my_favorites";s:23:"Mostra i miei preferiti";s:15:"favorites_added";s:40:"L'elenco è stato aggiunto ai preferiti.";s:5:"apply";s:9:"Applicare";s:14:"modrewrite_url";s:19:"Non MOD-REWRITE URL";s:22:"modrewrite_url_thesame";s:29:"Non MOD-REWRITE URL lo stesso";s:10:"unique_key";s:14:"Chiave univoca";s:10:"page_added";s:36:"Pagina è stata creata con successo.";s:37:"are_you_sure_to_cancel_listing_moving";s:59:"È sicuro che vuoi cancellare account listato in movimento?";s:9:"edit_page";s:15:"Pagina modifica";s:8:"add_page";s:15:"Aggiungi pagina";s:14:"inventory_menu";s:20:"Menu dell'inventario";s:17:"compare_languages";s:21:"Confrontare le lingue";s:8:"language";s:6:"Lingua";s:14:"edit_translate";s:36:"Modifica / tradurre frasi {language}";s:7:"default";s:11:"Predefinito";s:8:"download";s:7:"Scarica";s:11:"set_default";s:11:"Set Default";s:12:"phrase_group";s:15:"Gruppo di frase";s:15:"download_upload";s:13:"Import/Export";s:10:"all_groups";s:14:"Tutti i gruppi";s:17:"no_search_results";s:57:"Non sono trovati risultati corrispondono ai tuoi criteri.";s:15:"crossed_deleted";s:44:"Incrocio selezionato correttamente eliminato";s:4:"line";s:5:"Linea";s:7:"bad_iso";s:26:"Brutto paese - codice ISO.";s:27:"page_title_account_listings";s:17:"Le tue inserzioni";s:29:"page_title_favorites_listings";s:16:"I tuoi preferiti";s:23:"page_title_edit_account";s:16:"Modifica Profilo";s:16:"page_title_about";s:9:"Chi Siamo";s:16:"page_title_terms";s:26:"Termini e Condizioni d'uso";s:15:"page_title_help";s:5:"Aiuto";s:28:"cannot_move_due_to_crosslink";s:65:"Kann nicht öffnen Sie die Datei mit Sql-Anweisungen: {filename}.";s:17:"page_title_policy";s:25:"Informativa sulla privacy";s:20:"page_title_advertise";s:17:"Pubblicizzare noi";s:18:"page_title_confirm";s:10:"Confermare";s:15:"characters_left";s:20:"Numero dei caratteri";s:4:"oops";s:5:"Oops!";s:4:"tree";s:6:"Albero";s:24:"category_cannot_be_moved";s:96:"Questa categoria non può essere spostata alla sua categoria di bambino o a se stesso: {move_to}";s:24:"copy_default_language_to";s:46:"Copiare la lingua di default [<b> [lang] </b>]";s:44:"are_you_sure_to_delete_selected_log_messages";s:65:"Sei sicuro di che voler cancellare i messaggi di log selezionato?";s:23:"language_already_exists";s:18:"Lingua esiste già";s:15:"find_and_delete";s:16:"eliminare orfano";s:23:"orphan_listings_deleted";s:34:"inserzioni orfane {num} eliminato!";s:18:"no_orphan_listings";s:29:"Nessun orfani annunci trovati";s:20:"no_orphan_categories";s:32:"Nessuna categoria orfana trovata";s:25:"orphan_categories_deleted";s:32:"categorie orfane {num} eliminate";s:13:"repair_tables";s:18:"RIPARAZIONE TAVOLE";s:16:"language_deleted";s:42:"Lingua selezionata correttamente eliminato";s:39:"are_you_sure_to_delete_selected_phrases";s:56:"Sei sicuro di che voler cancellare le frasi selezionate?";s:15:"page_title_tags";s:9:"Tag Cloud";s:31:"tpl_notif_comment_added_subject";s:37:"Comment has been added to {dir_title}";s:28:"tpl_notif_comment_added_body";s:243:"<h3>Dear {admin_name},</h3>
+
+<p>New comment has been added. Please check Admin Panel > Manage Comments section.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>";s:16:"listings_box_new";s:5:"Nouvi";s:16:"listings_box_top";s:3:"Top";s:19:"listings_box_random";s:7:"Casuali";s:20:"admin_page_title_stw";s:21:"Manage STW thumbnails";s:10:"manage_stw";s:21:"Manage STW thumbnails";s:19:"clear_system_thumbs";s:23:"Clear System Thumbnails";s:16:"clear_all_thumbs";s:20:"Clear All Thumbnails";s:23:"admin_page_title_spider";s:6:"Spider";s:21:"google_api_key_missed";s:88:"Google API Key Missed. Please read installation info of the plugin for more information.";s:19:"bing_api_key_missed";s:86:"Bing API Key Missed. Please read installation info of the plugin for more information.";s:21:"import_selected_links";s:21:"Import selected links";s:21:"keywords_should_be_in";s:21:"Keywords should be in";s:20:"not_available_spider";s:133:"A "allow_url_fopen" and "CURL extensions" is not available on your server. Spider will not work. Please contact your hosting company.";s:17:"import_to_one_cat";s:37:"Import selected links to one category";s:15:"number_of_links";s:26:"Number of links to request";s:15:"visit_this_site";s:15:"Visit this site";s:13:"manage_spider";s:13:"Manage Spider";s:13:"without_words";s:13:"Without words";s:11:"uncheck_all";s:11:"Uncheck All";s:11:"with_status";s:11:"with status";s:8:"anywhere";s:8:"Anywhere";s:8:"continue";s:8:"Continue";s:8:"pagetext";s:8:"Pagetext";s:6:"google";s:6:"Google";s:5:"yahoo";s:5:"Yahoo";s:5:"arrow";s:5:"arrow";s:5:"found";s:5:"found";s:4:"bing";s:4:"Bing";s:4:"prev";s:4:"Prev";s:16:"field_video_file";s:10:"Video file";s:19:"field_video_preview";s:13:"Video preview";s:17:"field_video_title";s:11:"Video title";s:23:"field_video_description";s:17:"Video description";s:18:"field_youtubevideo";s:13:"Youtube Video";s:21:"youtube_no_more_video";s:22:"No more video allowed.";s:13:"error_youtube";s:69:"Incorrect YouTube link. Please enter valid link or leave field empty.";s:33:"youtube_are_you_sure_remove_video";s:40:"Are sure you want to remove this video?.";s:22:"page_title_tell_friend";s:17:"Invia ad un amico";s:12:"cat_nav_help";s:28:"Che categoria stai cercando?";s:18:"categories_box_top";s:13:"Top Categorie";s:22:"categories_box_popular";s:18:"Categorie popolari";s:10:"field_city";s:6:"Città";s:13:"field_country";s:5:"Paese";s:9:"field_zip";s:3:"CAP";s:9:"field_tag";s:3:"Tag";s:8:"all_tags";s:11:"Tutti i Tag";s:7:"address";s:9:"Indirizzo";s:13:"field_address";s:9:"Indirizzo";s:28:"googlemap_select_coordinates";s:23:"Seleziona le coordinate";s:11:"field_state";s:5:"Stato";s:15:"preview_listing";s:9:"Anteprima";s:7:"no_tags";s:9:"Senza Tag";s:12:"rebuild_tags";s:12:"Rebuild Tags";s:4:"tags";s:3:"Tag";s:16:"tags_no_listings";s:38:"No listings yet created with this tag.";s:14:"visual_options";s:19:"Opzioni Visibilità";s:21:"preview_listing_title";s:20:"Sample Listing Title";s:27:"preview_listing_description";s:277:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.";s:24:"listing_option_add_badge";s:10:"Agg. badge";s:24:"listing_option_highlight";s:17:"Sottolinea titolo";s:25:"listing_option_color_link";s:27:"Titolo evidenziato in rosso";s:23:"listing_option_link_big";s:23:"Aumenta dimensione link";s:24:"listing_option_desc_bold";s:24:"Descrizione in grassetto";s:24:"listing_option_desc_ital";s:30:"Descrizione nello stile Italic";s:25:"listing_option_itali_link";s:25:"Titolo nello stile Italic";s:25:"listing_option_add_border";s:12:"Agg. filetto";s:24:"alternate_payment_method";s:31:"Metodo di pagamento alternativo";s:7:"ya_rank";s:11:"Yandex Rank";s:15:"recount_ya_rank";s:19:"Recount Yandex Rank";s:23:"tpl_tell_friend_subject";s:33:"{name} recommends you {dir_title}";s:26:"tpl_notif_tell_friend_body";s:381:"<h3>Dear {admin_name},</h3>
+
+
+
+Here is the original message sent to {tf_to}:
+
+<br /><br />
+
+================ Message Start =======================
+
+    <h3>Dear {friends_name},</h3>
+
+
+
+    <p>The following website was recommended to you by {name}: {dir_url}</p>
+
+
+
+    <p>{message}</p>
+
+
+
+    _____________________{dir_title}
+
+================ Message End =========================";s:5:"about";s:5:"About";s:19:"add_new_transaction";s:44:"Si desidera aggiungere la nuova transazione?";s:23:"admin_listing_submitted";s:42:"Quotazione è stato aggiunto con successo.";s:20:"tpl_tell_friend_body";s:199:"<h3>Dear {friends_name},</h3>
+
+<p>The following website was recommended to you by <a href="mailto:{sender_email}">{name}</a>: {dir_url}</p>
+
+<p>{message}</p>
+
+<p>_____________________{dir_title}</p>
+";s:10:"manage_rss";s:10:"Manage RSS";s:16:"thumbnail_update";s:13:"Aggiorna foto";}

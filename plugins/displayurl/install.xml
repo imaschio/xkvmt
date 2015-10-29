@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="displayurl">
+	<title>Display URL</title>
+	<summary>Displays spurious urls instead of real urls.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-05-14</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+	
+	<hooks>
+		<hook name="beforeCloseTag" file="plugins/displayurl/includes/hook.beforeclosetag.tpl" type="smarty"><![CDATA[]]></hook>
+
+		<hook name="bootstrap" file="plugins/displayurl/includes/hook.bootstrap.php" type="php"><![CDATA[]]></hook>
+	
+		<hook name="afterGetListingList,phpFrontListingsAfterGetListings,afterGetSearchResult,afterGetAdvSearchResult">
+		<![CDATA[
+global $listings;
+
+if(isset($listings) && !empty($listings))
+{
+	foreach($listings as $key => $listing)
+	{
+		if(!empty($listing['display_url']) && 'http://' != $listing['display_url'])
+		{
+			$listings[$key]['real_url'] = $listing['url'];
+			$listings[$key]['url'] = $listing['display_url'];
+		}
+	}
+}
+		]]>
+		</hook>
+		
+		<hook name="viewListingBeforeFooter" type="smarty">
+		<![CDATA[
+{if not empty($listing.display_url) && $listing.display_url neq 'http://'}
+	<input type="hidden" id="real_url_{$listing.id}" value="{$listing.real_url}" />
+	<input type="hidden" id="listing_id" value="{$listing.id}" />
+{/if}
+		]]>
+		</hook>
+
+		<hook name="viewListing">
+		<![CDATA[
+global $listing;
+
+if (!empty($listing['display_url']) && $listing['display_url'] != "http://" )
+{
+	$listing['real_url'] = $listing['url'];
+	$listing['url'] = $listing['display_url'];
+}
+		]]>
+		</hook>
+	</hooks>
+	
+	<fields>
+		<field name="display_url" title="Display URL" type="text" adminonly="1" length="255" default="http://" pages=""><![CDATA[Display URL]]></field>
+	</fields>
+</plugin>

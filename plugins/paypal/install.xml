@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<plugin name="paypal">
+	<title>Paypal</title>
+	<summary>Paypal Payment Gateway</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-04-14</date>
+	<status>active</status>
+	<compatibility>3.0</compatibility>
+
+	<hooks>
+		<hook name="paymentButtons" type="smarty">
+			<![CDATA[
+{include file=$smarty.const.IA_HOME|cat:"plugins/paypal/templates/payment_buttons.tpl"}
+			]]>
+		</hook>
+
+		<hook name="plansBeforeSubmitButton" type="smarty">
+			<![CDATA[
+{include file=$smarty.const.IA_HOME|cat:"plugins/paypal/admin/templates/plans_before_submit_button.tpl"}
+			]]>
+		</hook>
+
+		<hook name="plansAfterViewInclude">
+			<![CDATA[
+global $esynSmarty;
+
+$units_duration = array('d' => 'Days', 'w' => 'Weeks', 'm' => 'Months', 'y' => 'Years');
+
+$esynSmarty->assign('units_duration', $units_duration);
+			]]>
+		</hook>
+
+		<hook name="plansAfterJsInclude" type="smarty">
+			<![CDATA[
+{include_file js="plugins/paypal/js/admin/paypal"}
+			]]>
+		</hook>
+		
+		<hook name="adminPlanCommonFieldFilled">
+			<![CDATA[
+global $plan;
+
+if(isset($_POST['recurring']))
+{
+	$plan['recurring'] = (int)$_POST['recurring'];
+	$plan['duration'] = $_POST['duration'];
+	$plan['units_duration'] = $_POST['units_duration'];
+}
+else
+{
+	$plan['recurring'] = 0;
+}
+			]]>
+		</hook>
+
+	</hooks>
+
+	<phrases>
+		<phrase key="recurring" category="admin" code="en">Recurring</phrase>
+		<phrase key="units_duration" category="admin" code="en">Units of duration</phrase>
+		<phrase key="duration" category="admin" code="en">Duration</phrase>
+		<phrase key="paypal_options" category="admin" code="en">Paypal Options</phrase>
+	</phrases>
+
+	<config group="financial" name="paypal" type="divider" description="PayPal Configuration">PayPal Configuration</config>
+	<config group="financial" name="paypal_currency_code" type="text" description="PayPal currency code">USD</config>
+	<config group="financial" name="paypal_email" type="text" description="PayPal email"><![CDATA[ ]]></config>
+	<config group="financial" name="paypal_demo" type="radio" description="PayPal DEMO" multiple_values="0,1">0</config>
+
+	<install>
+		<code>
+			<![CDATA[
+global $esynAdmin, $esynUtil;
+
+$fields = $esynAdmin->getKeyValue("SHOW COLUMNS FROM {$esynAdmin->mPrefix}plans");
+
+if (!array_key_exists('recurring', $fields))
+{
+	$esynAdmin->query("ALTER TABLE `{$esynAdmin->mPrefix}plans` ADD `duration` VARCHAR( 255 ) NOT NULL , ADD `units_duration` VARCHAR( 255 ) NOT NULL, ADD `recurring` ENUM( '0', '1' ) NOT NULL AFTER `recursive`;");
+}
+
+$esynAdmin->setTable('config');
+
+$config['name'] = 'paypal_secret_word';
+$config['value'] = md5(esynUtil::getNewToken());
+$config['type'] = 'hidden';
+$config['description'] = 'PayPal secret word';
+$config['plugin'] = 'paypal';
+$config['order'] = $esynAdmin->one("MAX(`order`) + 1", "`plugin` = 'paypal'");
+
+$esynAdmin->insert($config);
+
+$esynAdmin->resetTable();
+			]]>
+		</code>
+	</install>
+
+</plugin>

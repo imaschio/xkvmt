@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<plugin name="listingstatus">
+	<title>Check Listing Status</title>
+	<summary>Plugin will allow your visitors to check the listing status by URL.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-04-01</date>
+	<status>active</status>
+	<compatibility>3.0</compatibility>
+	
+	<phrases>
+		<phrase key="check_link_status" category="common" code="en">Check Listing Status</phrase>
+		<phrase key="listing_status_description" category="common" code="en">You can check the listing status you've submitted in our directory.</phrase>
+		<phrase key="check_link_status_url" category="common" code="en">Link URL</phrase>
+		<phrase key="error_empty_link_status_url" category="common" code="en">Please type correct link URL.</phrase>
+		<phrase key="error_not_found_link_status_url" category="common" code="en">No listing found with this URL.</phrase>
+		<phrase key="approval_link_status_url" category="common" code="en">Your listing is waiting for administrator approval. It was submitted on {date}.</phrase>
+		<phrase key="active_link_status_url" category="common" code="en">This listing is active since {date}.</phrase>
+		<phrase key="suspended_link_status_url" category="common" code="en">This listing was suspended on {date}. Please contact site administrator in case you have questions.</phrase>
+		<phrase key="banned_link_status_url" category="common" code="en">This listing was banned on {date}. Please contact site adminisitrator if you have any questions.</phrase>
+	</phrases>
+	
+	<pages>
+		<page menus="bottom" status="active" uniqueurl="mod/listingstatus/" nofollow="1" title="Check listing status" name="listingstatus"><![CDATA[]]></page>
+	</pages>
+</plugin>

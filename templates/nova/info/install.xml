@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<template name="nova">
+	<title>Nova</title>
+	<summary>Nova is the new default template for 3.x version.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.1.4</version>
+	<date>2014-08-20</date>
+	<compatibility>3.2</compatibility>
+	<status>active</status>
+
+	<config group="general"
+		    name="esyndicat_block_positions"
+		    type="hidden"
+		    description="position">inventory,mainmenu,slider,verytop,left,top,center,user1,user2,bottom,right,verybottom,footer1,footer2,footer3,footer4,copyright</config>
+
+	<config group="miscellaneous"
+		    name="ckeditor_color"
+		    type="hidden"
+		    description="CKEditor color">#AAB</config>
+
+	<config group="miscellaneous"
+		    name="nova_divider1"
+		    type="divider"
+		    order="3000">Custom Template Configuration</config>
+
+	<config group="miscellaneous"
+			name="max_top_menu_items"
+			type="text"
+			order="3000"
+			description="Max number of items in Main Menu">6</config>
+
+	
+	<config group="miscellaneous" name="nova_social" order="3050" type="radio" multiplevalues="1,0" description="Display social icons">1</config>
+	<config group="miscellaneous" name="nova_social_new_window" order="3051" type="radio" multiplevalues="1,0" description="Open new window when icon is clicked">1</config>
+	<config group="miscellaneous"
+		    name="nova_social_t"
+		    type="text"
+		    order="3060"
+		    description="Twitter Link">#</config>
+	<config group="miscellaneous"
+		    name="nova_social_f"
+		    type="text"
+		    order="3061"
+		    description="Facebook Link">#</config>
+	<config group="miscellaneous"
+		    name="nova_social_g"
+		    type="text"
+		    order="3062"
+		    description="Google+ Link">#</config>
+
+	<config group="miscellaneous" name="alphabetic_search" type="radio" multiplevalues="0,1" description="Alphabetic Search display">1</config>
+
+	<block action="change" name="slider" status="active" position="slider" classname="slider-block" external="1" sticky="1"><![CDATA[]]></block>
+
+	<blocks>
+		<block title="About"
+			   show_header="1"
+			   position="footer1"
+			   type="smarty"
+			   collapsible="0"
+			   status="active"
+			   sticky="1">
+			<![CDATA[
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat minima consequatur enim perspiciatis odit quasi architecto quaerat possimus veritatis facere. Laboriosam impedit optio quos culpa nihil error repellat expedita facilis?</p>
+			]]>
+		</block>
+
+		<block title="What we do"
+			   show_header="1"
+			   position="footer2"
+			   type="smarty"
+			   collapsible="0"
+			   status="active"
+			   sticky="1">
+			<![CDATA[
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat minima consequatur enim perspiciatis odit quasi architecto quaerat possimus veritatis facere. Laboriosam impedit optio quos culpa nihil error repellat expedita facilis?</p>
+			]]>
+		</block>
+
+		<block title="Who we are"
+			   show_header="1"
+			   position="footer3"
+			   type="smarty"
+			   collapsible="0"
+			   status="active"
+			   sticky="1">
+			<![CDATA[
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat minima consequatur enim perspiciatis odit quasi architecto quaerat possimus veritatis facere. Laboriosam impedit optio quos culpa nihil error repellat expedita facilis?</p>
+			]]>
+		</block>
+
+		<block title="Contact Us"
+			   show_header="1"
+			   position="footer4"
+			   type="smarty"
+			   collapsible="0"
+			   status="active"
+			   sticky="1">
+			<![CDATA[
+<p>9870 St Vincent Place, Glasgow, DC 45 Fr 45.</p>
+<ul>
+	<li>Freephone: +1 800 559 6580</li>
+	<li>Telephone: +1 800 603 6035</li>
+	<li>FAX: +1 800 889 9898</li>
+</ul>
+			]]>
+		</block>
+	</blocks>
+</template>

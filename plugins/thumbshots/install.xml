@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="thumbshots">
+	<title>Thumbshots</title>
+	<summary>Thumbshots.org thumbnails provider integration.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.3</version>
+	<date>2013-11-05</date>
+	<status>active</status>
+	<compatibility>3.0</compatibility>
+
+	<config group="miscellaneous" name="thumbshotsorg_divider" type="divider" description="Thumbshots.org configuration"><![CDATA[Thumbshots.org configuration]]></config>
+	<config group="miscellaneous" name="thumbshotsorg_api_key" type="text" description="API Key"><![CDATA[]]></config>
+
+	<install>
+		<code>
+			<![CDATA[
+global $esynConfig;
+
+$current_value = $esynConfig->getConfig('thumbshots_name');
+
+$esynConfig->setTable('config');
+$current_values = $esynConfig->one("`multiple_values`", "`name` = 'thumbshots_name'");
+$esynConfig->resetTable();
+
+if (!empty($current_values))
+{
+	$values = explode(',', $current_values);
+}
+
+$values[] = 'thumbshots';
+
+$num_values = count($values);
+$updated_values = join(',', $values);
+
+$esynConfig->setTable('config');
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'thumbshots_name'");
+
+if (1 == $num_values)
+{
+	$esynConfig->update(array('value' => 'thumbshots'), "`name` = 'thumbshots_name'");
+}
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</install>
+
+	<uninstall>
+		<code>
+			<![CDATA[
+global $esynConfig;
+
+$current_value = $esynConfig->getConfig('thumbshots_name');
+
+$esynConfig->setTable('config');
+$current_values = $esynConfig->one("`multiple_values`", "`name` = 'thumbshots_name'");
+$esynConfig->resetTable();
+
+$values = explode(',', $current_values);
+
+if (!empty($values))
+{
+	foreach($values as $key => $value)
+	{
+		if ('thumbshots' == $value)
+		{
+			unset($values[$key]);
+		}
+	}
+}
+
+$updated_values = join(',', $values);
+
+$esynConfig->setTable('config');
+
+if (empty($values))
+{
+	$esynConfig->update(array('value' => ''), "`name` = 'thumbshots_name'");
+}
+
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'thumbshots_name'");
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</uninstall>
+</plugin>

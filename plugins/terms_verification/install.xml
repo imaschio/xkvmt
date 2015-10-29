@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="terms_verification">
+	<title>Terms verification</title>
+	<summary>Your submitters should agree to the terms on Add Listing page.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.2</version>
+	<date>2013-05-09</date>
+	<status>active</status>
+	<compatibility>3.0</compatibility>
+	
+	<hooks>
+		<hook name="editListingValidation">
+		<![CDATA[
+global $esynI18N, $error, $msg, $esynConfig;
+
+if (!isset($_POST['terms_check']))
+{
+	$error = true;
+	$msg[] = $esynI18N['error_terms_verification'];
+}
+		]]>
+		</hook>
+		
+		<hook name="afterSuggestListingFields" type="smarty" file="plugins/terms_verification/templates/hook.afterSuggestListingFields.tpl"><![CDATA[]]></hook>
+	</hooks>
+
+	<phrases>
+		<phrase key="terms_of_submission" category="common" code="en">Terms of Submission</phrase>
+		<phrase key="terms_i_agree" category="common" code="en">I agree with</phrase>
+		<phrase key="error_terms_verification" category="common" code="en">You may not suggest the link as you do not agree with the terms.</phrase>
+		<phrase key="terms_of_submission_text" category="common" code="en">Please edit your terms of submissions using your Admin Panel - Language Manager.</phrase>
+	</phrases>
+</plugin>

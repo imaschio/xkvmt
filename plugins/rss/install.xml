@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="rss">
+	<title>RSS plugin</title>
+	<summary>This mod will allow you to display external RSS feeds in the blocks of your directory.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.2.1</version>
+	<date>2014-06-27</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<adminpages>
+		<page block="plugins" menus="main">Manage RSS</page>
+	</adminpages>
+
+  	<hooks>
+		<hook name="bootstrap" file="plugins/rss/includes/hook.bootstrap.php"><![CDATA[]]></hook>
+	</hooks>
+
+	<phrases>
+		<phrase key="manage_rss" category="admin" code="en">Manage RSS</phrase>
+		<phrase key="rss_added" category="admin" code="en">RSS added.</phrase>
+		<phrase key="rss_deleted" category="admin" code="en">RSS deleted.</phrase>
+		<phrase key="edit_rss" category="admin" code="en">Edit RSS</phrase>
+		<phrase key="no_rss" category="admin" code="en"><![CDATA[No RSS added. <a href="controller.php?plugin=rss&action=add">Click here</a> to add RSS feed.]]></phrase>
+		<phrase key="are_you_sure_to_delete_this_rss" category="admin" code="en">Are you sure to delete this RSS feed?</phrase>
+		<phrase key="are_you_sure_to_delete_selected_rss" category="admin" code="en">Are you sure to delete selected RSS feeds?</phrase>
+		<phrase key="add_rss" category="admin" code="en">Add RSS></phrase>
+		<phrase key="error_url" category="admin" code="en">RSS URL is incorrect.</phrase>
+		<phrase key="rss_num_items" category="admin" code="en">Number of items</phrase>
+		<phrase key="rss_refresh_time" category="admin" code="en">Refresh Time</phrase>
+		<phrase key="rss_url" category="admin" code="en">URL of existing feed</phrase>
+	</phrases>
+
+	<installsql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}rss` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`id_block` int(11) NOT NULL DEFAULT '0',
+	`url` varchar(255) NOT NULL DEFAULT '',
+	`num` char(2) NOT NULL DEFAULT '5',
+	`refresh` smallint(8) NOT NULL,
+	`status` enum('inactive','active') NOT NULL DEFAULT 'active',
+	`recursive` int(11) NOT NULL,
+	PRIMARY KEY (`id`)
+) {mysql_version};
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}rss_categories` (
+	`id` int(11) NOT NULL auto_increment,
+	`rss_id` int(11) NOT NULL default '0',
+	`category_id` int(11) NOT NULL default '0',
+	PRIMARY KEY  (`id`)
+) {mysql_version};
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+ALTER TABLE `{prefix}blocks` ADD `rss_id` INT NOT NULL ;
+			]]>
+		</sql>
+	</installsql>
+
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}rss`;
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}rss_categories`;
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+ALTER TABLE `{prefix}blocks` DROP `rss_id`;
+			]]>
+		</sql>
+        <sql>
+            <![CDATA[
+DELETE FROM `{prefix}blocks` WHERE `plugin` = 'rss';
+            ]]>
+        </sql>
+	</uninstallsql>
+</plugin>

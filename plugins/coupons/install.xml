@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="coupons">
+	<title>Coupons</title>
+	<summary>This plugin allows to generate coupons to buy sponsored listings at a discounted price.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.1</version>
+	<date>2013-04-17</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+	
+	<adminpages>
+		<page block="plugins" menus="main">Coupons</page>
+	</adminpages>
+	
+	<phrases>
+		<phrase key="are_you_sure_to_delete_selected_coupons" category="admin" code="en">Are you sure to delete selected coupons?</phrase>
+		<phrase key="are_you_sure_to_delete_this_coupon" category="admin" code="en">Are you sure to delete this coupon?</phrase>
+		<phrase key="discount_percent" category="admin" code="en">Discount percent</phrase>
+		<phrase key="manage_coupons" category="admin" code="en">Manage Coupons</phrase>
+		<phrase key="coupon_added" category="admin" code="en">Coupon has been successfully added.</phrase>
+		<phrase key="cooupons_deleted" category="admin" code="en">Coupons deleted</phrase>
+		<phrase key="coupon_deleted" category="admin" code="en">Coupon deleted.</phrase>
+		<phrase key="add_coupon" category="admin" code="en">Add coupon</phrase>
+		<phrase key="edit_coupon" category="admin" code="en">Edit coupon</phrase>
+		<phrase key="discount" category="admin" code="en">Discount</phrase>
+		<phrase key="field_coupon_code" category="common" code="en">Coupon code</phrase>
+		<phrase key="have_coupon_code" category="common" code="en">I have a coupon code</phrase>
+		<phrase key="incorrect_coupon" category="common" code="en">Your have entered incorrect coupon code</phrase>
+		<phrase key="coupon_code" category="common" code="en">Coupon code</phrase>
+		<phrase key="view_coupon" category="common" code="en">View coupon</phrase>
+		<phrase key="no_coupons" category="common" code="en"><![CDATA[No coupons. <a href="controller.php?plugin=coupons&amp;action=add">Click here</a> to add coupons.]]></phrase>
+		<phrase key="time_used" category="common" code="en">How many time can be used</phrase>
+		<phrase key="uses_left" category="common" code="en">Uses Left</phrase>
+		<phrase key="coupons" category="common" code="en">Coupons</phrase>
+		<phrase key="coupon" category="common" code="en">Coupon</phrase>
+	</phrases>
+	
+	<config group="miscellaneous" name="coupons_divider" type="divider">Discount Coupons</config>
+	<config group="miscellaneous" name="coupons_functionality" type="radio" multiplevalues="0,1" description="Enable coupons">1</config>
+		
+	<hooks>
+		<hook name="suggestListingDataValidation,editListingValidation" type="php">
+			<![CDATA[
+global $coupon, $esynSmarty, $replaceQuery, $esynConfig, $eSyndiCat, $error, $msg, $esynI18N;
+if ($esynConfig->getConfig('coupons_functionality') && (isset($_POST['coupon_code']) && !empty($_POST['coupon_code'])))
+{
+	$eSyndiCat->setTable('coupons');
+	$coupon = $eSyndiCat->row("`discount`, `id`", "`coupon_code` = '".trim(esynSanitize::sql($_POST['coupon_code']))."' AND `status` = 'active'");
+	$eSyndiCat->resetTable();
+	
+	if (!isset($coupon['discount']) || empty($coupon['discount']))
+	{
+		$error = true;
+		$msg[] = $esynI18N['incorrect_coupon'];
+	}
+}
+			]]>
+		</hook>
+
+		<hook name="afterEditListing" file="plugins/coupons/includes/hook.afterEditListing.php"><![CDATA[]]></hook>
+
+		<hook name="phpFrontPurchaseBeforeHandler" type="php">
+			<![CDATA[
+global $eSyndiCat, $transaction;
+
+$eSyndiCat->setTable('coupons_used');
+$coupon_used = $eSyndiCat->row("`coupon_id`, `id`", "`item_id` = :item_id AND `item` = :item AND `paid` = '0'", array('item_id' => $transaction['item_id'], 'item' => $transaction['item']));
+$eSyndiCat->update(array("paid" => "1"), "`id` = :id", array('id' => $coupon_used['id']));
+$eSyndiCat->resetTable();
+
+$eSyndiCat->setTable("coupons");
+$coupon = $eSyndiCat->row("`discount`, `id`, `time_used`", "`id` = '".$coupon_used['coupon_id']."'");
+$time_used = $coupon['time_used'] - 1;
+$status = $time_used ? 'active' : 'inactive';
+$eSyndiCat->update(array("status" => $status, "time_used" => $time_used), "`id` = :coupon_id", array("coupon_id" => $coupon_used['coupon_id']));
+$eSyndiCat->resetTable();
+			]]>
+		</hook>
+
+		<hook name="editListingForm" type="smarty">
+			<![CDATA[
+{if $config.coupons_functionality}
+	<div class="fieldset collapsible">
+		<h4 class="title">{lang key='coupon'}</h4>
+		<div class="content collapsible-content">
+			<input type="text" class="span3" name="coupon_code" value="{if isset($smarty.post.coupon_code)}{$smarty.post.coupon_code}{/if}" id="coupon_code" />
+		</div>
+	</div>
+{/if}
+			]]>
+		</hook>
+	</hooks>
+
+	<installsql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}coupons` (
+	`id` INT(8) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+	`coupon_code` VARCHAR( 50 ) ,
+	`discount` TINYINT( 3 ) NOT NULL,
+	`time_used` INT( 8 ) NOT NULL,
+	`status` ENUM( 'inactive', 'active' ) NOT NULL DEFAULT 'active',
+	`description` VARCHAR(250) NOT NULL
+) {mysql_version};
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}coupons_used` (
+	`id` INT(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`coupon_id` INT(8) NOT NULL,
+	`item_id` INT(8) NOT NULL,
+	`item` VARCHAR(250) NOT NULL,
+	`date` DATETIME NOT NULL default '0000-00-00 00:00:00',
+	`paid` INT(8) NOT NULL default '0'
+) {mysql_version};
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+UPDATE `{prefix}hooks` SET `order` = '1' WHERE (`name` = 'afterSuggestListing' or `name` = 'afterEditListing') AND `plugin` = 'coupons'
+			]]>
+		</sql>
+	</installsql>
+		
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}coupons`;
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}coupons_used`;
+			]]>
+		</sql>
+	</uninstallsql>
+</plugin>

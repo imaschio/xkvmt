@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	# Uncomment the line below if you have redirect loop notice
+	# RewriteBase /install
+
+	RewriteRule ^(.*).(gif|png|jpg|js|css|ico|swf)$ $1.$2 [QSA,L]
+	RewriteRule ^(.*)$ system.php?_p=$1 [QSA,L]
+</IfModule>

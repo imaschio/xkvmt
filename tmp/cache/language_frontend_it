@@ -1,0 +1,607 @@
+a:686:{s:23:"esyndicat_action_delete";s:7:"Elimina";s:21:"comment_waits_approve";s:49:"Your comment should be approved by administrator.";s:8:"wrote_on";s:8:"wrote on";s:10:"check_news";s:10:"check news";s:13:"check_article";s:13:"check article";s:13:"check_listing";s:13:"check listing";s:8:"comments";s:8:"Commenti";s:14:"comment_author";s:4:"Nome";s:12:"author_email";s:5:"Email";s:10:"author_url";s:10:"Author URL";s:13:"leave_comment";s:18:"Lascia un commento";s:7:"comment";s:9:"Messaggio";s:11:"no_comments";s:12:"No Comments.";s:13:"comment_added";s:14:"Comment added.";s:24:"page_title_listingstatus";s:21:"Controlla stato link
+";s:22:"banned_link_status_url";s:96:"This listing was banned on {date}. Please contact site adminisitrator if you have any questions.";s:25:"suspended_link_status_url";s:99:"This listing was suspended on {date}. Please contact site administrator in case you have questions.";s:22:"active_link_status_url";s:36:"This listing is active since {date}.";s:24:"approval_link_status_url";s:79:"Your listing is waiting for administrator approval. It was submitted on {date}.";s:31:"error_not_found_link_status_url";s:31:"No listing found with this URL.";s:27:"error_empty_link_status_url";s:29:"Please type correct link URL.";s:21:"check_link_status_url";s:8:"Link URL";s:26:"listing_status_description";s:102:"Ti preghiamo gentilmente di inserire l'URL del tuo sito per verificare in quale stato si trova adesso.";s:17:"check_link_status";s:34:"Controlla lo Stato dell'inserzione";s:9:"bad_words";s:92:"These types of words are banned and will not be processed. Please replace them in the fields";s:31:"tpl_notif_listing_upgraded_body";s:626:"<h3>Dear {admin_name},</h3>
+
+<p>Listing {listing_url} has been upgraded at <em><a href="{dir_url}">{dir_title}</a></em> (<em><a href="{dir_url}">{dir_url}</a></em>).</p>
+
+<p>Listing <em><a href="{listing_path}">{listing_title}</a></em> will be expired on <em>{expire_date}</em>Plan: <em>{listing_plan}</em><br />
+<br />
+Payment was made by {payment_system} payment system.<br />
+Transaction ID: <em>{transactionID}</em><br />
+Subscription ID: <em>{subscriptionID}</em></p>
+
+<p>.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+
+<p>&nbsp;</p>
+";s:40:"tpl_notif_listing_subscr_payment_subject";s:49:"We have received an installment payment of {cost}";s:37:"tpl_notif_listing_subscr_payment_body";s:596:"<h3>
+	Dear {admin_name},</h3>
+<p>
+	These are the attributes of a listing:<br />
+	Title:<em> {listing_title}</em><br />
+	URL: <em>{listing_url}</em><br />
+	Description:<em> {listing_description}</em><br />
+	Email: <em>{listing_email}</em><br />
+	Plan: <em>{listing_plan}</em><br />
+<br />
+	Payment was made by {payment_system} payment system.<br />
+ Transaction ID: <em>{transactionID}</em><br />
+	Subscription ID: <em>{subscriptionID}</em></p>
+<p>
+	______________________________<br />
+	Thank you,<br />
+	{dir_title} Administration Team<br />
+	{dir_url}<br />
+	{dir_email}</p>
+";s:36:"tpl_notif_listing_subscr_eot_subject";s:44:"Installment payment completed at {dir_title}";s:33:"tpl_notif_listing_subscr_eot_body";s:547:"<h3>
+	Dear {admin_name},</h3>
+<p>
+ 	This is a courtesy notice to inform you that {payment_system} subscription has expired.<br /></p>
+<p> These are the attributes of a listing:<br />
+	Title:<em> {listing_title}</em><br />
+	URL: <em>{listing_url}</em><br />
+	Description:<em> {listing_description}</em><br />
+	Email: <em>{listing_email}</em><br />
+	Plan: <em>{listing_plan}</em><br />
+<br />
+</p>
+<p>
+	______________________________<br />
+	Thank you,<br />
+	{dir_title} Administration Team<br />
+	{dir_url}<br />
+	{dir_email}</p>
+";s:33:"tpl_notif_listing_payment_subject";s:41:"Listing was made sponsored at {dir_title}";s:34:"tpl_notif_account_register_subject";s:42:"Account has been registered to {dir_title}";s:31:"tpl_notif_account_register_body";s:383:"<h3>Dear {admin_name},</h3>
+
+<p>Account has been registered to <em><a href="{dir_url}">{dir_title}</a></em>. Please check it.</p>
+
+<p>These are the attributes of the account:<br />
+Username:<em>{account_name}</em><br />
+Email:<em> {account_email}</em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} AdministrationTeam<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:12:"ategoriesmap";s:16:"Elenco categorie";s:14:"categories_map";s:16:"Elenco categorie";s:33:"tpl_notif_account_payment_subject";s:41:"Account was made sponsored at {dir_title}";s:35:"tpl_notif_account_confirmed_subject";s:41:"Account has been confirmed at {dir_title}";s:30:"tpl_notif_account_payment_body";s:459:"<h3>Dear {admin_name},</h3>
+
+<p>Account was made sponsored at <em><a href="{dir_url}">{dir_title}</a></em>. Please check it.</p>
+
+<p>These are the attributes of an account:<br />
+Username:<em> {account_name}</em><br />
+Email: <em>{account_email}</em><br />
+Status:<em> {account_status}</em><br />
+Plan: <em>{account_plan}</em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:32:"tpl_notif_account_confirmed_body";s:414:"<h3>Dear {admin_name},</h3><p>	Account has been confirmed at <em><a href="{dir_url}">{dir_title}</a></em>. Please check it.</p><p>	These are the attributes of the account:<br />	Username:<em> {account_name}</em><br />	Email:<em> {account_email}</em><br />	Status:<em> {account_status}</em></p><p>______________________________<br />Thank you,<br />{dir_title} AdministrationTeam<br />{dir_url}<br />{dir_email}</p>";s:5:"login";s:6:"Accedi";s:18:"interface_language";s:21:"Lingua di interfaccia";s:8:"password";s:8:"Password";s:15:"forgot_password";s:21:"Password dimenticata?";s:9:"login_btn";s:6:"Accedi";s:16:"invalid_username";s:23:"Nome utente non valido.";s:16:"invalid_password";s:20:"Password non valida.";s:34:"tpl_listing_subscr_payment_subject";s:49:"Installment payment notification from {dir_title}";s:13:"changes_saved";s:24:"Changes have been saved.";s:10:"plan_added";s:24:"Piano è stato aggiunto.";s:4:"edit";s:8:"Modifica";s:10:"error_name";s:21:"Nome non è corretto.";s:4:"help";s:5:"Guida";s:13:"items_deleted";s:10:"Eliminato.";s:12:"save_changes";s:18:"Salva le modifiche";s:4:"home";s:4:"Home";s:10:"email_sent";s:14:"Email spedita.";s:4:"body";s:5:"Corpo";s:4:"from";s:2:"Da";s:14:"body_incorrect";s:22:"Corpo non è corretto.";s:2:"to";s:1:"A";s:7:"subject";s:7:"Oggetto";s:6:"author";s:6:"Autore";s:5:"email";s:5:"Email";s:10:"categories";s:9:"Categorie";s:8:"listings";s:10:"Inserzioni";s:9:"sponsored";s:13:"Sponsorizzato";s:8:"featured";s:10:"In Vetrina";s:7:"partner";s:7:"Partner";s:2:"go";s:3:"Vai";s:8:"_select_";s:13:"-- Seleziona-";s:11:"description";s:11:"Descrizione";s:5:"title";s:6:"Titolo";s:3:"add";s:8:"Aggiungi";s:8:"view_all";s:12:"Mostra tutti";s:6:"search";s:7:"Ricerca";s:6:"logout";s:6:"Logout";s:4:"date";s:4:"Data";s:4:"time";s:5:"Tempo";s:6:"status";s:5:"Stato";s:17:"field_description";s:11:"Descrizione";s:11:"field_email";s:5:"Email";s:16:"field_reciprocal";s:13:"URL reciproco";s:11:"field_thumb";s:14:"Aggiungi foto ";s:5:"order";s:6:"Ordine";s:6:"delete";s:9:"Eliminare";s:11:"field_title";s:6:"Titolo";s:9:"field_url";s:8:"URL sito";s:5:"reply";s:8:"Risposta";s:4:"move";s:8:"Spostare";s:8:"accounts";s:6:"Utenti";s:10:"reciprocal";s:9:"Reciproco";s:5:"total";s:6:"Totale";s:8:"category";s:9:"Categoria";s:7:"listing";s:10:"Quotazione";s:6:"browse";s:7:"Sfoglia";s:6:"create";s:6:"Creare";s:17:"browse_categories";s:17:"Browse Categories";s:7:"account";s:5:"Conto";s:13:"account_added";s:24:"Conto è stato aggiunto.";s:19:"passwords_not_match";s:30:"Le password non corrispondono.";s:18:"password_incorrect";s:19:"Password è errata.";s:13:"plan_assigned";s:39:"Piano sponsorizzato è stato assegnato.";s:6:"avatar";s:13:"Il tuo avatar";s:15:"title_incorrect";s:23:"Titolo non è corretto.";s:12:"all_listings";s:17:"Tutti gli annunci";s:14:"all_categories";s:18:"Tutte le categorie";s:4:"done";s:5:"Fatto";s:10:"expand_all";s:13:"Espandi tutto";s:12:"collapse_all";s:14:"Comprimi tutto";s:30:"tpl_payment_expiration_subject";s:41:"Payment is about to expire at {dir_title}";s:3:"yes";s:3:"Sì";s:2:"no";s:2:"No";s:13:"meta_keywords";s:13:"Meta-keywords";s:16:"meta_description";s:16:"Meta-description";s:13:"partner_since";s:11:"Partner dal";s:6:"clicks";s:5:"Click";s:4:"send";s:5:"Invia";s:3:"ban";s:7:"Divieto";s:7:"deleted";s:9:"Eliminato";s:14:"featured_since";s:14:"In Vetrina dal";s:6:"rating";s:11:"Valutazione";s:7:"myfield";s:12:"Il mio campo";s:7:"disable";s:12:"Disabilitare";s:11:"no_pagerank";s:16:"Non classificato";s:8:"pagerank";s:8:"PageRank";s:4:"some";s:6:"alcuni";s:12:"get_pagerank";s:17:"Ottenere Pagerank";s:18:"incorrect_filetype";s:26:"Tipo di file non corretto.";s:25:"upload_correct_permission";s:107:"La destinazione non poteva copiare l'immagine caricata. Assicurarsi che lo script ha permesso di scrittura.";s:14:"unknown_upload";s:59:"Errore sconosciuto apparso durante il caricamento del file.";s:17:"additional_fields";s:16:"Campi aggiuntivi";s:4:"rank";s:5:"Rango";s:4:"view";s:5:"Vista";s:15:"incorrect_email";s:29:"Inserisci un e-mail corretta.";s:17:"username_or_email";s:19:"Nome utente o Email";s:8:"username";s:11:"Nome utente";s:8:"fullname";s:14:"Nome e cognome";s:7:"enabled";s:9:"Abilitato";s:16:"password_confirm";s:17:"Conferma password";s:13:"payment_notif";s:22:"Notifica del pagamento";s:8:"disabled";s:8:"Disabili";s:3:"url";s:3:"URL";s:5:"pages";s:6:"Pagine";s:4:"page";s:6:"Pagina";s:19:"page_content_sample";s:48:"Il contenuto della pagina dovrebbe essere qui...";s:31:"tpl_listing_subscr_payment_body";s:728:"<h3>
+	Dear {account_name},</h3>
+<p>
+ The installment payment was successful made for your listing, placed on <em><a href="{dir_url}">{dir_title}</a></em>. </p>
+<p>
+	These are the attributes of a listing:<br />
+	Title:<em> {listing_title}</em><br />
+	URL: <em>{listing_url}</em><br />
+	Description:<em> {listing_description}</em><br />
+	Email: <em>{listing_email}</em><br />
+	Plan: <em>{listing_plan}</em><br />
+<br />
+	Payment was made by {payment_system} payment system.<br />
+	Transaction ID: <em>{transactionID}</em><br />
+	Subscription ID: <em>{subscriptionID}</em></p>
+<p>
+	______________________________<br />
+	Thank you,<br />
+	{dir_title} Administration Team<br />
+	{dir_url}<br />
+	{dir_email}</p>
+";s:30:"tpl_listing_subscr_eot_subject";s:44:"Installment payment completed at {dir_title}";s:24:"your_listing_description";s:32:"La tua descrizione di quotazione";s:6:"change";s:11:"cambiamento";s:16:"listing_category";s:17:"Categoria Listing";s:11:"error_login";s:33:"Login o la password non è valido";s:27:"tpl_listing_subscr_eot_body";s:597:"<h3>
+	Dear {account_name},</h3>
+<p>
+ This is a courtesy notice to inform you that your {payment_system} subscription has expired.  <em><a href="{dir_url}">{dir_title}</a></em>. </p>
+<p>
+	These are the attributes of a listing:<br />
+	Title:<em> {listing_title}</em><br />
+	URL: <em>{listing_url}</em><br />
+	Description:<em> {listing_description}</em><br />
+	Email: <em>{listing_email}</em><br />
+	Plan: <em>{listing_plan}</em><br />
+<br />
+</p>
+<p>
+	______________________________<br />
+	Thank you,<br />
+	{dir_title} Administration Team<br />
+	{dir_url}<br />
+	{dir_email}</p>
+";s:16:"password_changed";s:40:"Password è stata cambiata con successo.";s:19:"field_meta_keywords";s:13:"Meta Keywords";s:22:"field_meta_description";s:16:"Meta-description";s:26:"tpl_listing_submit_subject";s:46:"Your listing has been submitted to {dir_title}";s:29:"tpl_notif_tell_friend_subject";s:43:"{tf_from} sent {tf_to} a link to your site!";s:23:"tpl_listing_submit_body";s:527:"<h3>Dear {account_name},</h3>
+
+<p>We are glad to inform you that a link to {listing_url} has been submitted to <em><a href="{dir_url}">{dir_title}</a></em> ({dir_url}).</p>
+
+<p>After approval and activation, your URL will be listed at:</p>
+
+<p><a href="{listing_path}"><i>{listing_path}</i></a></p>
+
+<p>All the listings in our directory are direct, so they will improve your listing popularity.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:24:"tpl_listing_payment_body";s:647:"<h3>Dear {account_name},</h3>
+
+<p>Listing was made sponsored at <em><a href="{dir_url}">{dir_title}</a></em>.</p>
+
+<p>These are the attributes of a listing:<br />
+Title:<em> {listing_title}</em><br />
+URL: <em>{listing_url}</em><br />
+Description:<em> {listing_description}</em><br />
+Email: <em>{listing_email}</em><br />
+Plan: <em>{listing_plan}</em><br />
+<br />
+Payment was made by {payment_system} payment system.<br />
+Transaction ID: <em>{transactionID}</em><br />
+Subscription ID: <em>{subscriptionID}</em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:5:"error";s:6:"Errore";s:13:"accounts_area";s:11:"Area Utenti";s:15:"friend_fullname";s:20:"Nome e cognome amico";s:11:"friend_told";s:47:"Messaggio è stato appena inviato al tuo amico.";s:6:"forgot";s:21:"Password dimenticata?";s:14:"listing_status";s:18:"Elenco dello stato";s:4:"last";s:6:"Ultima";s:23:"tpl_listing_modify_body";s:693:"<h3>Dear {account_name},</h3>
+
+<p>We are glad to inform you, that your listing to site {listing_url} has been modified.</p>
+
+<p>These are the new attributes of your listing:</p>
+
+<p>Title: <em>{listing_title}</em><br />
+URL: <em>{listing_url}</em><br />
+Description: <em>{listing_description}</em><br />
+Email: <em>{listing_email}</em><br />
+Rank: <em>{listing_rank}</em><br />
+Status: <em>{listing_status}</em><br />
+Crossed to: <em>{crossed_categories}</em></p>
+
+<p>You can view your listing here:</p>
+
+<p><em><a href="{listing_path}">{listing_path}</a></em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:26:"tpl_listing_delete_subject";s:46:"Your listing has been deleted from {dir_title}";s:17:"featured_listings";s:10:"In Vetrina";s:15:"change_password";s:15:"Cambia Password";s:14:"category_title";s:16:"Titolo categoria";s:9:"ascending";s:10:"ascendente";s:9:"advertise";s:17:"Pubblicizzare noi";s:26:"tpl_listing_banned_subject";s:43:"Your listing has been banned at {dir_title}";s:23:"tpl_listing_delete_body";s:486:"<h3>	Dear {account_name},</h3><p>	Your listing {listing_url} has been deleted from <em><a href="{category_path}">{category_title}</a></em> category, probably because you did not place reciprocal listing(s) to <em><a href="{dir_url}">{dir_title}</a></em>. To see your listing again, please add a listing to our site and inform us.</p><p>	<em>{reason}</em></p><p>	______________________________<br />	Thank you, <br />	{dir_title} Administration Team<br />	{dir_url}<br />	{dir_email}</p>";s:23:"tpl_listing_banned_body";s:318:"<h3>	Dear {account_name},</h3><p>	Your listing to {listing_url} has been banned at <em><a href="{dir_url}">{dir_title}</a></em>.</p><p>	If you have questions, please feel free to ask us.</p><p>	______________________________<br />	Thank you, <br />	{dir_title} Administration Team<br />	{dir_url}<br />	{dir_email}</p>";s:24:"tpl_listing_approve_body";s:459:"<h3>Dear {account_name},</h3>
+
+<p>Congratulations! Your listing {listing_url} has been approved for <em><a href="{dir_url}">{dir_title}</a></em>. You can view it at:</p>
+
+<p><em><a href="{listing_path}">{listing_path}</a></em></p>
+
+<p>All the listings in our directory are direct, so they will improve your listing popularity.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:32:"tpl_listing_admin_submit_subject";s:42:"Your listing has been added to {dir_title}";s:27:"tpl_listing_approve_subject";s:45:"Your listing has been approved at {dir_title}";s:4:"free";s:6:"Gratis";s:5:"first";s:5:"Primo";s:27:"tpl_account_deleted_subject";s:44:"Your account has been deleted at {dir_title}";s:9:"not_rated";s:72:"Questo elenco è stato valutato non ancora. Essere i primi a tariffe it!";s:9:"all_words";s:15:"Tutte le parole";s:29:"tpl_listing_admin_submit_body";s:747:"<h3>Dear {account_name},</h3>
+
+<p>We are glad to inform you that a listing to {listing_url} has been added to <em><a href="{dir_url}">{dir_title}</a></em> ({dir_url}).</p>
+
+<p>These are the attributes of your listing:<br />
+Title: <em>{listing_title}</em><br />
+URL: <em>{listing_url}</em><br />
+Description:<em> {listing_description}</em><br />
+Email: <em>{listing_email}</em><br />
+Rank:<em> {listing_rank}</em></p>
+
+<p>You can view your listing here:</p>
+
+<p><em><a href="{listing_path}">{listing_path}</a></em></p>
+
+<p>All the listings in our directory are direct, so they will improve your listing popularity.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:24:"tpl_account_deleted_body";s:301:"<h3>Dear {account_name},</h3>
+
+<p>Your account has been deleted from</p>
+
+<p><em><a href="{dir_url}">{dir_title}</a></em></p>
+
+<p>Let us know if you have any questions.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:22:"error_no_account_email";s:43:"Nessun account registrato con questa email.";s:40:"tpl_account_confirm_change_email_subject";s:42:"Please confirm change email at {dir_title}";s:16:"your_listing_url";s:20:"URL del tuo annuncio";s:21:"your_listing_category";s:24:"Vostra categoria listing";s:10:"your_email";s:12:"La tua email";s:18:"view_my_categories";s:21:"Categorie di modifica";s:18:"your_username_here";s:23:"Il tuo nome utente qui:";s:11:"change_plan";s:20:"Piano di cambiamento";s:7:"welcome";s:9:"Benvenuto";s:11:"choose_plan";s:18:"Scegliere un piano";s:10:"alphabetic";s:10:"Alfabetico";s:19:"error_already_voted";s:53:"Tu hai già votato. Si prega di riprovare più tardi.";s:31:"tpl_account_admin_register_body";s:838:"<h3>Dear Sir {account_name},</h3>
+
+<p>Your website {listing_url} has been added to <em><a href="{dir_url}">{dir_title}</a></em> ({dir_url}).</p>
+
+<p>This is the information we have added:</p>
+
+<p>Title: {listing_title}<br />
+Description: {listing_description}<br />
+URL: {listing_url}<br />
+Email: {listing_email}</p>
+
+<p>You can find your listing at <a href="{listing_path}"><i>{listing_path}</i></a></p>
+
+<p>If you would like to update your listing information or provide more complete contact information, etc, you can login using the following information:</p>
+
+<p>Your username: {account_name}<br />
+Your password: {account_pwd}</p>
+
+<p>Login page: <a href="{dir_url}login.php">{dir_url}login.php</a></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:12:"user_default";s:23:"Predefinito dell'utente";s:17:"error_min_comment";s:60:"Your comment length should be more than {minLength} symbols.";s:17:"approval_listings";s:25:"In attesa di approvazione";s:18:"your_listing_title";s:17:"Quotazione titolo";i:1;s:15:"Non disponibile";s:12:"payment_done";s:232:"Grazie per il vostro pagamento. La transazione è stata completata e una ricevuta per l'acquisto è stato inviato via e-mail a voi. Una volta che l'amministratore approva l'inserzione apparirà come sponsorizzato nei nostri elenchi.";s:18:"enter_confirmation";s:41:"Inserisci il codice di conferma qui sotto";s:7:"unknown";s:11:"Sconosciuto";s:19:"error_comment_email";s:41:"Make sure you entered valid author email.";s:20:"no_approval_listings";s:72:"Nessuna inserzione sono in attesa di approvazione nelle vostre categorie";s:15:"account_created";s:34:"L'account è stato creato. Grazie!";s:5:"about";s:9:"Chi Siamo";s:15:"advanced_search";s:16:"Ricerca avanzata";s:19:"account_no_listings";s:312:"Non avete presentato eventuali inserzioni. Scegli una categoria corretta e accertarsi che sia inserita la quotazione migliore. Quindi fare clic su Aggiungi quotazione, ingresso di informazioni richieste e lo presenta.<br>Di solito ci vogliono circa 24 ore per una quotazione essere esaminata dall'amministratore.";s:9:"locations";s:9:"Posizioni";s:8:"location";s:9:"Posizione";s:15:"choose_location";s:22:"Scegliere la posizione";s:6:"expire";s:7:"Scadono";s:6:"filter";s:6:"Filtro";s:22:"error_contact_fullname";s:31:"Inserire una corretta fullname.";s:13:"not_available";s:15:"Non disponibile";s:14:"view_all_slide";s:15:"View All slides";s:10:"view_slide";s:10:"View slide";s:10:"slide_text";s:10:"Slide Text";s:11:"slide_title";s:14:"Title of slide";s:17:"error_description";s:32:"Description is a required field.";s:11:"error_title";s:26:"Title is a required field.";s:14:"slide_category";s:8:"Category";s:27:"page_title_search_locations";s:20:"Ricerca di posizioni";s:20:"page_title_locations";s:9:"Posizioni";s:12:"reset_filter";s:5:"Reset";s:18:"view_all_locations";s:29:"Visualizzare tutti i percorsi";s:6:"slides";s:6:"Slides";s:5:"slide";s:5:"Slide";s:9:"tab_title";s:9:"Tab title";s:18:"not_found_listings";s:27:"Nessuna inserzione trovata.";s:23:"your_listing_reciprocal";s:20:"Elenco URL reciproco";s:16:"restore_password";s:17:"Recupera password";s:12:"edit_listing";s:19:"Modifica inserzione";s:6:"reason";s:6:"Motivo";s:18:"related_categories";s:19:"Categorie correlate";s:9:"edit_info";s:13:"Modifica Info";s:20:"account_email_exists";s:40:"Esiste già un account con questa email.";s:12:"edit_account";s:16:"Modifica Profilo";s:13:"account_login";s:6:"Accedi";s:17:"description_empty";s:21:"Descrizione è vuota!";s:16:"account_listings";s:17:"Le tue inserzioni";s:10:"descending";s:11:"decrescente";s:14:"listings_found";s:17:"Annunci trovati: ";s:24:"error_directory_readonly";s:62:"Directory di upload è readonly. Si prega di farlo scrivibile.";s:13:"my_categories";s:13:"Mio categorie";s:13:"non_sponsored";s:22:"Link sponsorizzato non";s:4:"next";s:8:"Prosegui";s:10:"statistics";s:11:"Statistiche";s:19:"page_title_tagcloud";s:9:"Tag Cloud";s:3:"top";s:3:"Top";s:18:"crossed_categories";s:20:"Categorie incrociate";s:22:"fetch_meta_description";s:47:"Preleva la descrizione dal tag Meta Description";s:25:"preview_page_notification";s:96:"Questo è come tua pagina apparirà come una volta che si salva nel pannello di amministrazione.";s:13:"apply_filters";s:14:"Applica filtri";s:9:"check_all";s:17:"Controllare tutti";s:26:"categories_map_description";s:273:"Qui trovi tutte le categorie della nostra directory web. Scegli la sezione che identifica meglio il tuo sito - es. Blog dello Sport. Suggerisci il tuo sito nella sezione scelta. Non suggerire il sito nella ROOT ma in una categoria adeguata, altrimenti non verrà accettato.";s:25:"resend_confirm_email_text";s:209:"Se non ricevi alcuna e-mail di conferma, controlla la cartella SPAM della tua casella di posta. Se non trovi alcuna email puoi sempre provare a fartela <a href="resend-confirm.php" rel="nofollow">rispedire</a>";s:15:"click_to_upload";s:33:"Clicca qui per aggiungere foto...";s:11:"image_title";s:15:"Titolo immagine";s:5:"image";s:8:"Immagine";s:12:"view_listing";s:18:"Visualizza profilo";s:11:"search_page";s:17:"Pagina di ricerca";s:25:"field_group_title_general";s:8:"Generale";s:20:"error_comment_author";s:43:"Make sure you entered valid comment author.";s:27:"tpl_payment_expiration_body";s:483:"<h3>Dear {account_name},</h3>
+
+<p>Your listing <em><a href="{listing_path}">{listing_title}</a></em> will be expired on <em>{expire_date}</em>. You can click here to extend the sponsorship:</p>
+
+<p><em><a href="{dir_url}upgrade.php?id={listing_id}&amp;salt={salt}">{dir_url}upgrade.php?id={listing_id}&amp;salt={salt}</a></em></p>
+
+<p>{expire_action}</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:18:"admin_email_exists";s:38:"Admin con questa email già esistente.";s:36:"login_create_account_submit_category";s:61:"Si dovrebbe login o crea account per presentare la categoria.";s:12:"no_favorites";s:30:"Nessun sito preferito presente";s:5:"weeks";s:9:"settimane";s:5:"years";s:4:"anni";s:6:"months";s:4:"mesi";s:17:"page_title_logout";s:6:"Logout";s:4:"vote";s:9:"Votazione";s:21:"your_password_confirm";s:24:"Conferma la tua password";s:9:"sir_madam";s:9:"Sir/Madam";s:12:"your_message";s:9:"Messaggio";s:13:"your_password";s:11:"La password";s:9:"copyright";s:10:"PortaleSEO";s:14:"delete_listing";s:18:"Eliminare l'elenco";s:15:"listing_deleted";s:46:"L'inserzione è stato eliminato correttamente.";s:26:"do_you_want_delete_listing";s:37:"Vuoi davvero eliminare questo elenco?";s:14:"delete_account";s:17:"Eliminare Account";s:20:"delete_account_label";s:73:"Fai attenzione. Non sarete in grado di ripristinare l'account in seguito.";s:27:"error_delete_account_accept";s:44:"Si dovrebbe confermare eliminazione account.";s:20:"error_email_the_same";s:61:"Nuova email non deve corrispondere l'attuale indirizzo email.";s:35:"login_create_account_submit_listing";s:57:"Si dovrebbe login o crea account per presentare la lista.";s:23:"success_upgrade_listing";s:48:"Hanno aggiornato correttamente la tua inserzione";s:18:"sponsored_listings";s:13:"Sponsorizzato";s:11:"exact_match";s:12:"Frase esatta";s:13:"your_username";s:11:"Nome utente";s:36:"tpl_notif_listing_broken_report_body";s:318:"<h3>Dear {admin_name},</h3>
+
+<p>The following listing is reported as being broken:</p>
+
+<p>Listing ID: {listing_id}<br />
+Listing URL: {listing_url}<br />
+Listing Title: {listing_title}</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:11:"image_width";s:18:"Larghezza immagine";s:9:"next_page";s:17:"Pagina successiva";s:6:"remove";s:9:"Rimuovere";s:2:"of";s:2:"di";s:10:"first_page";s:12:"Prima pagina";s:13:"previous_page";s:17:"Pagina precedente";s:9:"last_page";s:13:"Ultima pagina";s:11:"no_listings";s:135:"Nessuna inserzione presente. <a href="suggest-listing.php?cid=0" style="font-weight: bold;">Clicca qui</a> per segnalare un nuovo sito.";s:15:"suggest_listing";s:13:"AGGIUNGI SITO";s:15:"listing_details";s:15:"Elenco dettagli";s:18:"no_sponsored_plans";s:33:"Non prevede sponsorizzati creati.";s:18:"broken_report_sent";s:57:"Thanks. A report has been sent to the site administrator.";s:6:"report";s:9:"Relazione";s:5:"close";s:8:"Chiudere";s:25:"do_you_want_report_broken";s:40:"Vuoi segnalare questo elenco come rotto?";s:8:"position";s:9:"Posizione";s:5:"other";s:5:"Altri";s:4:"save";s:7:"Salvare";s:11:"no_backlink";s:15:"Nessun backlink";s:15:"search_for_text";s:17:"Ricerca per testo";s:10:"search_for";s:12:"Cosa Cerchi?";s:30:"tpl_notif_listing_payment_body";s:700:"<h3>
+	Dear {admin_name},</h3>
+<p>
+	Listing was made sponsored at <em><a href="{dir_url}">{dir_title}</a></em>. Please check it.</p>
+<p>
+	These are the attributes of a listing:<br />
+	Title:<em> {listing_title}</em><br />
+	URL: <em>{listing_url}</em><br />
+	Description:<em> {listing_description}</em><br />
+	Email: <em>{listing_email}</em><br />
+	Plan: <em>{listing_plan}</em><br />
+<br />
+	Payment was made by {payment_system} payment system.<br />
+ Transaction ID: <em>{transactionID}</em><br />
+	Subscription ID: <em>{subscriptionID}</em></p>
+<p>
+	______________________________<br />
+	Thank you,<br />
+	{dir_title} Administration Team<br />
+	{dir_url}<br />
+	{dir_email}</p>
+";s:4:"copy";s:5:"Copia";s:14:"field_is_empty";s:19:""{field}" è vuoto.";s:14:"ascii_required";s:46:"Sono ammessi solo caratteri alfanumerici ASCII";s:12:"search_where";s:4:"Dove";s:9:"search_in";s:2:"In";s:13:"all_languages";s:15:"Tutte le lingue";s:3:"key";s:6:"Chiave";s:16:"current_password";s:16:"Password attuale";s:5:"value";s:6:"Valore";s:13:"error_comment";s:36:"Make sure you entered valid comment.";s:30:"tpl_notif_category_submit_body";s:391:"<h3>Dear {admin_name},</h3>
+
+<p>Category has been submitted to <em><a href="{dir_url}">{dir_title}</a></em>. Please check it.</p>
+
+<p>These are the attributes of a category:<br />
+Title:<em> {category_title}</em><br />
+Category path: <em>{category_path}</em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:39:"tpl_notif_listing_broken_report_subject";s:38:"Broken Listing Reported at {dir_title}";s:10:"no_results";s:16:"Nessun risultato";s:17:"new_password_sent";s:61:"Nuova password è stata inviata solo per e-mail dell'account!";s:21:"error_min_description";s:57:"La tua descrizione dovrebbe essere più di simboli {num}.";s:21:"error_max_description";s:57:"La tua descrizione dovrebbe essere meno di simboli {num}.";s:17:"error_file_upload";s:51:"Errore sconosciuto durante il caricamento del file.";s:29:"tpl_notif_listing_submit_body";s:464:"<h3>Dear {admin_name},</h3>
+
+<p>Listing has been submitted to <em><a href="{dir_url}">{dir_title}</a></em>. Please check it.</p>
+
+<p>These are the attributes of a listing:<br />
+Title:<em> {listing_title}</em><br />
+URL: <em>{listing_url}</em><br />
+Description: <em>{listing_description}</em><br />
+Email:<em> {listing_email}</em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:33:"tpl_notif_category_submit_subject";s:42:"Category has been submitted to {dir_title}";s:20:"error_category_empty";s:56:"Vai nella categoria appropriata e diventare cliente là.";s:13:"error_captcha";s:40:"Inserire un codice di conferma corretta.";s:21:"error_category_locked";s:41:"Non suggerire nuove categorie nella ROOT!";s:21:"error_category_exists";s:22:"Categoria esiste già.";s:21:"error_email_incorrect";s:38:"Inserisci un indirizzo email corretto.";s:21:"error_listing_present";s:47:"La quotazione è già presente nella directory.";s:15:"error_sponsored";s:85:"Si dovrebbe scegliere piano sponsorizzato. Sono accettati solo annunci sponsorizzati.";s:19:"complete_submission";s:22:"Presentazione completa";s:17:"confirmation_sent";s:62:"Conferma per la richiesta di cambio password è stata inviata.";s:14:"sponsored_plan";s:19:"Piano sponsorizzato";s:8:"previous";s:10:"Precedente";s:16:"partner_listings";s:21:"Inserzioni di partner";s:32:"tpl_notif_listing_submit_subject";s:41:"Listing has been submitted to {dir_title}";s:34:"tpl_notif_listing_upgraded_subject";s:40:"Listing has been upgraded at {dir_title}";s:27:"tpl_listing_payment_subject";s:41:"Listing was made sponsored at {dir_title}";s:15:"listing_changed";s:36:"Elenco modifiche sono state salvate.";s:13:"listing_added";s:13:"Pubblicato il";s:10:"logged_out";s:31:"Logout effettuato con successo!";s:17:"listing_submitted";s:36:"Listing has been added successfully.";s:32:"tpl_account_change_email_subject";s:58:"Account email has been successfully changed at {dir_title}";s:20:"neighbour_categories";s:19:"Categorie vicini ai";s:11:"my_listings";s:17:"Le tue inserzioni";s:25:"tpl_listing_upgraded_body";s:438:"<h3>Dear {account_name},</h3>
+
+<p>Your listing {listing_url} has been upgraded at <em><a href="{dir_url}">{dir_title}</a></em> (<em><a href="{dir_url}">{dir_url}</a></em>).</p>
+
+<p>Your listing <em><a href="{listing_path}">{listing_title}</a></em> will be expired on <em>{expire_date}</em>.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+
+<p>&nbsp;</p>
+";s:28:"tpl_listing_upgraded_subject";s:45:"Your listing has been upgraded at {dir_title}";s:26:"tpl_listing_modify_subject";s:45:"Your listing has been modified at {dir_title}";s:12:"listing_rank";s:15:"Quotazione Rank";s:21:"tpl_listing_move_body";s:382:"<h3>Dear {account_name},</h3>
+
+<p>We are glad to inform you, that your listing to site {listing_url} has been moved into another category.</p>
+
+<p>This is the new location of your listing:</p>
+
+<p><em><a href="{listing_path}">{listing_path}</a></em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:24:"tpl_listing_move_subject";s:42:"Your listing has been moved at {dir_title}";s:30:"tpl_listing_disapprove_subject";s:48:"Your listing has been disapproved at {dir_title}";s:27:"tpl_listing_disapprove_body";s:322:"<h3>Dear {account_name},</h3>
+
+<p>Your listing {listing_url} has been disapproved at<em> <a href="{dir_url}">{dir_title}</a></em>.</p>
+
+<p>If you have questions, please feel free to ask us.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:34:"tpl_account_admin_register_subject";s:38:"Thanks for registration at {dir_title}";s:29:"tpl_account_change_email_body";s:302:"<h3>Dear {account_name},</h3>
+
+<p>You have successfully changed an email address to <strong>{account_new_email}</strong> at <em><a href="{dir_url}">{dir_title}</a></em>.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:28:"tpl_account_approved_subject";s:45:"Your account has been approved at {dir_title}";s:25:"tpl_account_approved_body";s:359:"<h3>Dear {account_name},</h3>
+
+<p>Your account has been approved at <em><a href="{dir_url}">{dir_title}</a></em>. Now you can log in to the directory: <em><a href="{dir_url}login.php">{dir_url}login.php</a></em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+
+<p>&nbsp;</p>
+";s:31:"tpl_account_disapproved_subject";s:48:"Your account has been disapproved at {dir_title}";s:32:"tpl_account_change_password_body";s:420:"<h3>Dear {account_name},</h3>
+
+<p>You have successfully changed a password at <em><a href="{dir_url}">{dir_title}</a></em>. Now you should use the following credentials to log in as account:</p>
+
+<p>username:<strong> {account_name}</strong><br />
+password: <strong>{account_pwd}</strong></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:35:"tpl_account_change_password_subject";s:61:"Account password has been successfully changed at {dir_title}";s:44:"tpl_account_confirm_restore_password_subject";s:35:"Please confirm email at {dir_title}";s:41:"tpl_account_confirm_restore_password_body";s:601:"<h3>Dear {account_name},</h3>
+
+<p>We have received new password request for your account ({account_name}) at <em><a href="{dir_url}">{dir_title}</a></em>.<br />
+<br />
+If this request was initiated by you, please click on following link to confirm your email:<br />
+<em><a href="{dir_url}confirm.php?action=restore_password&amp;account={account_id}&amp;r={account_key}">{dir_url}confirm.php?action=restore_password&amp;account={account_id}&amp;r={account_key}</a></em></p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:6:"policy";s:25:"Informativa sulla privacy";s:23:"tpl_account_banned_body";s:244:"<h3>Dear {account_name},</h3>
+
+<p>Your account has been banned at <em><a href="{dir_url}">{dir_title}</a></em>.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:26:"tpl_account_banned_subject";s:43:"Your account has been banned at {dir_title}";s:28:"tpl_account_disapproved_body";s:249:"<h3>Dear {account_name},</h3>
+
+<p>Your account has been disapproved at <em><a href="{dir_url}">{dir_title}</a></em>.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:37:"tpl_account_confirm_change_email_body";s:591:"<h3>	Dear {account_name},</h3><p>	We have received change email request for your account ({account_name}) at <em><a href="{dir_url}">{dir_title}</a></em>.<br />	<br />	If this request was initiated by you, please click on following link to confirm your email:<br />	<em><a href="{dir_url}confirm.php?action=change_email&amp;account={account_id}&amp;r={account_key}">{dir_url}confirm.php?action=change_email&amp;account={account_id}&amp;r={account_key}</a></em></p><p>	______________________________<br />	Thank you,<br />	{dir_title} Administration Team<br />	{dir_url}<br />	{dir_email}</p>";s:28:"tpl_account_register_subject";s:38:"Thanks for registration at {dir_title}";s:14:"company_policy";s:18:"Politica aziendale";s:25:"tpl_account_register_body";s:795:"<h3>Dear Sir/Madam,</h3>
+
+<p>Thanks for your registration at <em><a href="{dir_url}">{dir_title}</a></em>. Here is information you should use in order to login:</p>
+
+<p>Your username: <strong>{account_name}</strong><br />
+Your password: <strong>{account_pwd}</strong><br />
+Your activation key: <strong>{account_key}</strong></p>
+
+<p>To activate your account go to<em> <a href="{dir_url}register.php?user={account_name_url}&amp;key={account_key}&amp;action=confirm">{dir_url}register.php?user={account_name_url}&amp;key={account_key}&amp;action=confirm</a></em></p>
+
+<p>You may change your password later by editing your personal attributes in your account area.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>
+";s:7:"section";s:15:"Sezione ricerca";s:15:"output_settings";s:22:"Impostazioni di output";s:12:"search_match";s:7:"Partita";s:5:"where";s:4:"Dove";s:12:"start_search";s:14:"Inizia ricerca";s:12:"confirmation";s:8:"Conferma";s:2:"na";s:3:"n/a";s:10:"deep_links";s:21:"Collegamenti profondi";s:9:"relevance";s:9:"Rilevanza";s:7:"perpage";s:15:"Per ogni pagina";s:7:"loading";s:14:"Caricamento...";s:23:"submission_confirmation";s:67:"Si prega di verificare se le informazioni presentate sono corrette.";s:16:"reciprocal_empty";s:24:"Link reciproco è vuoto!";s:16:"register_account";s:19:"Non hai un account?";s:15:"upgrade_listing";s:19:"Aggiornare l'elenco";s:14:"username_empty";s:63:"Make sure you entered valid username or your account is active.";s:9:"url_empty";s:13:"URL è vuoto!";s:5:"terms";s:19:"Termini di utilizzo";s:6:"thanks";s:7:"Grazie.";s:11:"title_empty";s:16:"Titolo è vuoto!";s:15:"thanks_for_vote";s:24:"Grazie per la votazione.";s:20:"total_num_categories";s:10:"Categorie:";s:10:"thank_text";s:31:"per tornare alla pagina indice.";s:20:"error_broken_listing";s:53:"Listing seems to be broken. Please check it manually.";s:16:"wrong_image_type";s:82:"Solo i tipi di immagine seguente sono consentiti (<i>{types}</i>) per campo {name}";s:12:"new_listings";s:17:"Nuovi Inserimenti";s:12:"new_password";s:14:"Nuova Password";s:13:"new_password2";s:23:"Conferma nuova password";s:19:"transaction_failed2";s:73:"Smettere di cercare hack il nostro sito! Il tuo ip è stato rintracciato!";s:25:"transaction_success_title";s:21:"Transazione riuscita!";s:18:"transaction_failed";s:54:"Transazione non riuscita! Vi preghiamo di contattarci!";s:18:"total_num_listings";s:13:"Segnalazioni:";s:12:"top_listings";s:11:"In evidenza";s:16:"view_my_listings";s:24:"Mostra le mie inserzioni";s:11:"view_amazon";s:16:"Vedi Info Amazon";s:19:"transaction_success";s:62:"Transazione riuscita! Ti verrà inviata un'email entro 24 ore!";s:8:"sections";s:18:"Sezioni di ricerca";s:10:"file_types";s:107:"Permesso di tipi di file (valori separati da virgola (non includere il punto), esempio: pdf, doc, odf, mov)";s:8:"contains";s:8:"Contiene";s:10:"searchable";s:11:"Ricercabile";i:673;s:49:"Indirizzo IP è stato bannato dall'amministratore";s:6:"cancel";s:7:"Annulla";s:5:"reset";s:5:"Reset";s:18:"click_here_to_edit";s:29:"Fare clic qui per modificare.";s:8:"filename";s:13:"Nome del file";i:671;s:89:"Autorizzazione negata. Non hai abbastanza dell'autorizzazione per modificare tale elenco.";i:672;s:68:"Aggiungere funzionalità categoria disabilitato dall'amministratore.";i:304;s:20:"Non modificato (304)";i:200;s:34:"URL situato, contenuto segue (200)";i:301;s:38:"Oggetto spostato permanentemente (301)";i:302;s:22:"Oggetto spostato (302)";s:26:"error_accountpsw_incorrect";s:15:"Password errata";s:28:"error_account_listings_limit";s:51:"Non si possono aggiungere più liste per tuo conto.";s:23:"error_account_incorrect";s:18:"Nome utente errato";s:21:"error_username_exists";s:58:"Username è stata presa. Inserisci un nome utente diverso.";s:20:"error_username_empty";s:18:"Nome utente errato";i:666;s:105:"Si è verificato un errore durante l'inserzione pagato sottomissione. Per favore tenta d'un elenco nuovo.";i:667;s:71:"Inserzione errata identificazione durante l'elaborazione del pagamento.";i:669;s:64:"Hai usato la demo di transazione. Per favore smettila di barare.";i:668;s:53:"Id piano errato durante l'elaborazione del pagamento.";i:670;s:58:"Funzionalità di account disabilitata dall'amministratore.";s:27:"error_deep_link_not_similar";s:72:"Il dominio di legame profondo ({url}) non è simile come URL il listato.";s:34:"instructions_restore_password_sent";s:73:"Un'email con le istruzioni di ripristino della password è stata inviata.";s:23:"error_reciprocal_domain";s:70:"Per favore assicuratevi di che utilizzare un backlink dal tuo dominio.";i:500;s:35:"Errore sconosciuto del server (500)";i:404;s:21:"URL non trovato (404)";i:503;s:39:"Capacità del server ha raggiunto (503)";i:401;s:17:"Unauthorized(401)";i:403;s:14:"Proibito (403)";i:400;s:26:"Richiesta non valida (400)";s:17:"password_the_same";s:45:"New password must not match current password.";s:30:"instructions_change_email_sent";s:72:"Il messaggio con le istruzioni per modificare l'e-mail è stato inviato.";s:12:"change_email";s:14:"Cambiare Email";s:13:"confirm_email";s:18:"Confermare l'Email";s:31:"account_successful_change_email";s:43:"Hai cambiato con successo l'account e-mail.";s:4:"more";s:21:"<i>Scopri di più</i>";s:20:"username_unconfirmed";s:130:"Your account is unconfirmed. Go to this <a href="resend-confirm.php?username={username}">PAGE</a> to request a confirmation email.";s:15:"username_banned";s:47:"L'account è stato bandito dall'amministratore.";s:14:"main_menu_more";s:7:"Più...";s:16:"categories_found";s:19:"Categorie trovate: ";s:12:"last_visited";s:23:"Visitato l'ultima volta";s:25:"resend_confirmation_email";s:31:"Invia nuovamente email conferma";s:12:"company_jobs";s:14:"Azienda lavori";s:12:"company_info";s:12:"Azienda Info";s:13:"company_terms";s:20:"Termini del servizio";s:16:"suggest_category";s:18:"Aggiungi categoria";s:11:"total_votes";s:24:"Voti totali <b>{num}</b>";s:15:"random_listings";s:15:"Annunci casuali";s:11:"expire_date";s:13:"Scadenza Data";s:28:"folder_incorrect_permissions";s:148:"Mi dispiace, che non sono state impostate le autorizzazioni necessarie. Si prega di impostare autorizzazioni scrivibile la directory seguente {name}";s:21:"youre_in_preview_mode";s:78:"Sei in modalità anteprima modello. <a href="?switchToNormalMode=y">Uscita</a>";s:15:"parent_category";s:15:"Categoria padre";s:17:"date_registration";s:21:"Data di registrazione";s:20:"view_account_details";s:29:"Visualizza dettagli del conto";s:19:"no_account_listings";s:51:"Account non dispone ancora di eventuali inserzioni.";s:11:"no_accounts";s:27:"Non ci sono nessun account.";s:24:"page_title_account_login";s:6:"Accedi";s:27:"page_title_payment_complete";s:18:"Pagamento completo";s:27:"page_title_account_register";s:10:"Registrati";s:23:"page_title_view_listing";s:18:"Visualizza profilo";s:34:"page_title_account_password_forgot";s:17:"Recupero password";s:16:"page_title_error";s:6:"Errore";s:19:"page_title_accounts";s:6:"Utenti";s:27:"page_title_payment_canceled";s:19:"Pagamento annullato";s:23:"page_title_edit_listing";s:19:"Modifica inserzione";s:25:"page_title_account_logout";s:6:"Logout";s:16:"page_title_thank";s:6:"Grazie";s:28:"page_title_purchase_complete";s:17:"Acquisto completa";s:32:"page_title_report_broken_listing";s:25:"Rapporto rotto quotazione";s:13:"no_more_files";s:48:"Non puoi caricare più file. Superato il limite.";s:23:"page_title_index_browse";s:17:"Browse Categories";s:17:"confirm_not_valid";s:80:"Dati di conferme non sono valide. Si prega di ricontrollare il link di conferma.";s:14:"error_contents";s:29:"Campo contenuto è richiesto.";s:3:"new";s:5:"Nuovo";s:15:"xml_syndication";s:15:"Syndication XML";s:20:"check_listing_fields";s:36:"Prego ricontrollare le informazioni.";s:23:"esyndicat_action_report";s:18:"Segnala link rotto";s:8:"rss_feed";s:8:"Feed RSS";s:22:"esyndicat_action_visit";s:11:"Vai al sito";s:18:"page_content_about";s:35:"<p>Chi siamo pagina contenuto</p>
+";s:17:"page_content_help";s:7232:"<p style="text-align: justify;">Non c&#39;&egrave; bisogno di sottolineare l&#39;importanza che il tuo sito web sia ben indicizzato sui motori di ricerca. Ma per essere ben indicizzato &egrave; importante di aumentare la link popularity, uno dei compiti pi&ugrave; difficili per te. Pi&ugrave; il sito compare nei link di altri siti web, maggiore sar&agrave; la sua popolarit&agrave;. Questo e il motivo per cui &egrave; importante essere linkati da PortaleSEO. Prima lo fai, prima inizi a beneficiare dei vantaggi di essere linkato da noi. La tua segnalazione &egrave; semplice da fare: tutto ci&ograve; che dovrai inserire &egrave; l&#39;indirizzo del tuo sito web, il tuo indirizzo email (che non verr&agrave; pubblicato) e una breve descrizione del sito. Inizia Subito!</p>
+
+<p style="text-align: justify;"><strong>Come inserire il tuo sito su PortaleSEO?</strong><br />
+&nbsp;</p>
+
+<p style="text-align: justify;">1. Per suggerire il tuo sito su PortaleSEO devi prima cliccare in alto a sinistra su <strong><a href="http://seoportale.com/suggest-listing.php?cid=0">AGGIUNGI SITO</a>.</strong></p>
+
+<p style="text-align: justify;"><strong><img alt="Aggiungi sito" src="http://seoportale.com/uploads/010f97a52b.png" style="width: 570px; height: 55px;" /></strong><br />
+2. Scegli la categoria che meglio identifica il tuo sito &ndash; per es. Blog dello Sport. <strong>Attenzione: Non suggerire il sito nella ROOT </strong>ma in una categoria adeguata, altrimenti non verr&agrave; accettato.</p>
+
+<p style="text-align: justify;"><img alt="Seleziona categoria" src="http://seoportale.com/uploads/314ea57aaf.png" style="width: 570px; height: 300px;" /><br />
+3. Scegli uno dei piani per la inserzione del tuo sito web. Hai la possibilit&agrave; di scegliere tramite:</p>
+
+<ul>
+	<li style="text-align: justify;">Segnalazione gratuita</li>
+	<li style="text-align: justify;">Segnalazione gratuita con link reciproco</li>
+	<li style="text-align: justify;">Segnalazione premium</li>
+</ul>
+
+<p style="text-align: justify;">Ti raccomandiamo di scegliere uno dei piani: <strong>Segnalazione gratuita con link reciproco </strong>oppure <strong>Segnalazione premium</strong>. Cosi la tua segnalazione sar&agrave; approvata velocemente (entro 24 ore per il piano Segnalazione premium) e potrai assicurare pi&ugrave; visibilit&agrave; al tuo link inserito su PortaleSEO perch&eacute; appare in tutte le pagine, nell&rsquo;area &quot;In Vetrina&quot;. Puoi anche aumentare la visibilit&agrave; del tuo link con filetti colorati e molte altre opzioni visibilit&agrave;.</p>
+
+<p style="text-align: justify;"><img alt="In Vetrina" src="http://seoportale.com/uploads/4bb283917b.png" style="width: 298px; height: 246px;" /><br />
+4. Inserisci il titolo che desideri per il tuo sito e il URL&nbsp;del tuo sito (es. http://www.forbes.com).&nbsp; Attenzione, se inserisci un URL rotto e clicchi invia modulo , riceverai un messaggio di errore!<br />
+5. Per inserire la descrizione puoi digitare il testo oppure puoi cliccare sul pulsante &ldquo;Preleva descrizione&rdquo; (la descrizione verr&agrave; compilata con il testo della meta descrizione del tuo sito).</p>
+
+<p style="text-align: justify;"><img alt="URL sito" src="http://seoportale.com/uploads/7ed27366a0.png" style="width: 570px; height: 200px;" /><br />
+6. Se hai scelto il piano Segnalazione gratis con Link Reciproco, devi digitare la pagina del tuo sito dove puoi inserire il ns. link reciproco. Dopo aver approvato&nbsp;il tuo sito ti forniremo sulla email il codice html che deve essere inserito sul tuo sito.<br />
+7. Inserisci il tuo indirizzo email (non verr&agrave; pubblicata).<br />
+8. Se preferisci, puoi inserire anche un indirizzo e i tuoi utenti ti potranno trovare pi&ugrave; facile (es. se hai un negozio oppure un ufficio avvocatura, architettura, ecc.). Ti offriamo anche la possibilit&agrave; di localizzare il tuo negozio sulla mappa cliccando sul pulsante &quot;Seleziona le coordinate&quot;.</p>
+
+<p style="text-align: justify;"><img alt="google map" src="http://seoportale.com/uploads/aca06dad61.png" style="width: 570px; height: 65px;" /><br />
+9. Aggiungi dei tag rilevanti che identificano meglio il tuo sito<br />
+10. Se hai scelto il piano Segnalazione Premium hai la possibilit&agrave; di aggiungere una immagine personalizzata nella tua inserzione invece delle immagine miniatura generate in automatico.</p>
+
+<p style="text-align: justify;"><img alt="Immagini" src="http://seoportale.com/uploads/d0baee582b.png" style="width: 570px; height: 65px;" /></p>
+
+<p style="text-align: justify;">Hai anche la possibilit&agrave; di inserire dei collegamenti profondi (deep links) per migliorare l&rsquo;indicizzazione del tuo sito web.</p>
+
+<p style="text-align: justify;"><img alt="deep links" src="http://seoportale.com/uploads/909fd89d03.png" style="width: 570px; height: 200px;" /><br />
+11. Compila il modulo captcha e clicca sul pulsante &quot;Invia&quot; modulo.<br />
+12. La tua segnalazione verr&agrave; analizzata e approvata del ns staff ricevendo un messaggio di informo.</p>
+
+<p style="text-align: justify;">Tutto qui, &egrave; troppo semplice?</p>
+
+<p style="text-align: justify;"><strong>Obblighi e condotta dell&rsquo;utente durante l&rsquo;inserzione sito:</strong></p>
+
+<p style="text-align: justify;">Ogni utente &egrave; libero di segnalare un numero illimitato di siti. Tali siti, se ritenuti idonei, possono essere inseriti su PortaleSEO. Non vengono accettati e quindi non segnalati i seguenti siti:</p>
+
+<ul>
+	<li style="text-align: justify;">mirror</li>
+	<li style="text-align: justify;">url redirect</li>
+	<li style="text-align: justify;">con materiale illegale</li>
+	<li style="text-align: justify;">non accettiamo SITI DI TERZO LIVELLO come per esempio www.tuodominio.altrodominio.com, cio&egrave; siti che sono ospitati da un altro dominio</li>
+	<li style="text-align: justify;">dialer</li>
+	<li style="text-align: justify;">violenti e/o razzisti</li>
+	<li style="text-align: justify;">che non siano il sito principale ma solo un&#39;area</li>
+	<li style="text-align: justify;">con pubblicit&agrave; a siti sopra citati</li>
+</ul>
+
+<p style="text-align: justify;">Se hai dei problemi durante l&rsquo;utilizzo del nostro portale, mandaci una email. Ti metteremo a disposizione la nostra cortesia e professionalit&agrave;. Non esitare a contattarci al indirizzo email: <a href="/cdn-cgi/l/email-protection#fd8e888d8d928f89bd8e98928d928f899c9198d39e9290"><span class="__cf_email__" data-cfemail="f2818782829d8086b281979d829d8086939e97dc919d9f">[email&nbsp;protected]</span><script data-cfhash='f9e31' type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></a></p>
+";s:18:"page_content_terms";s:11104:"<p style="text-align: justify;"><strong>L&rsquo;utilizzo del servizio &egrave; regolato nei termini ed alle condizioni di seguito riportate.</strong></p>
+
+<p style="text-align: justify;">1. Nell&#39;ambito della presente sezione (Termini e condizioni d&#39;uso) di Servizio con il termine &quot;Utente/i&quot; si intendono sia gli utenti navigatori che gli utenti inserzionisti.</p>
+
+<p style="text-align: justify;">2. Le inserzioni presenti sul sito PortaleSEO sono pubblicati su iniziativa autonoma dell&#39;Utente inserzionista, sotto la piena ed esclusiva responsabilit&agrave; di quest&#39;ultimo. Il sito PortaleSEO non sar&agrave;, pertanto, in alcun modo responsabile della veridicit&agrave;, della liceit&agrave;, del rispetto del diritto di propriet&agrave;, della legalit&agrave; e/o dell&#39;eventuale contrariet&agrave; all&#39;ordine pubblico od al buon costume, dei contenuti immessi on line dal proprio Utente. Il sito PortaleSEO offre un servizio di pubblicazione e consultazione di inserzioni gratuiti su Internet (tipo directory web) senza svolgere alcun ruolo di interposizione, mediazione ed intermediazione tra l&#39;Utente navigatore e l&#39;Utente inserzionista.</p>
+
+<p style="text-align: justify;">3. PortaleSEO si riserva il diritto di cancellare ogni inserzione pubblicata non in conformit&agrave; con i termini e le condizioni oppure le legge italiane. PortaleSEO riferir&agrave; all&rsquo;autorit&agrave; competente le violazioni delle disposizioni legislative previste (es: links che contengono pornografia infantile).</p>
+
+<p style="text-align: justify;">4. Il servizio potr&agrave; essere utilizzato dai maggiori di anni diciotto. L&rsquo;eventuale utilizzo del servizio da parte dei minori, presuppone e sottintende l&rsquo;autorizzazione dei genitori o di chi, sugli stessi, esercita la potest&agrave; o la tutela. Costoro si assumono, pertanto, la piena ed esclusiva responsabilit&agrave; di qualsivoglia comportamento tenuto dal minore nell&rsquo;accesso, nell&rsquo;utilizzo e nella fruizione del servizio.</p>
+
+<p style="text-align: justify;">5. L&#39;Utente prende atto che PortaleSEO non effettuer&agrave; alcun controllo preventivo sul contenuto degli annunci immessi in rete, n&eacute; svolger&agrave; alcuna attivit&agrave; di intermediazione sulle eventuali transazioni intercorrenti tra gli Utenti medesimi. Gli utenti si assumono, pertanto, la piena ed esclusiva responsabilit&agrave;, verso PortaleSEO e verso i terzi, del comportamento tenuto.</p>
+
+<p style="text-align: justify;">6. Pubblicando la propria inserzione su PortaleSEO l&#39;utente autorizza PortaleSEO ad adoperarsi affinch&eacute; il contenuto della inserzione venga reso visibile ed accessibile agli utenti della rete anche mediante successiva indicizzazione (automatica o selettiva) su motori di ricerca , mediante pubblicazione su altri siti con i quali PortaleSEO intrattenga rapporti di collaborazione, mediante pubblicizzazione su mezzi radiotelevisivi al fine di promuovere con pi&ugrave; efficacia le inserzioni dei propri utenti.</p>
+
+<p style="text-align: justify;">7. L&rsquo;Utente si impegna a non fruire dei servizi fornitigli dal sito PortaleSEO in modo improprio o contrario alle disposizioni di Termini e Condizioni d&rsquo;Uso, di Legge e regolamentari ed alle norme di Etica e di Buon uso dei servizi di rete. In particolare, l&rsquo;Utente si impegna a non trasmettere, tramite PortaleSEO, materiale di natura offensiva, calunniosa, diffamatoria, pedopornografica, volgare, oscena, blasfema, o comunque contraria ai principi di Legge, dell&rsquo;ordine pubblico e del buon costume. L&#39;inserzionista &egrave; consapevole che l&#39;indirizzo di posta elettronica reso noto su PortaleSEO potr&agrave; valere quale mezzo di comunicazione a distanza.</p>
+
+<p style="text-align: justify;">8. L&#39;Utente dichiara di utilizzare il servizio offerto da PortaleSEO nella consapevolezza di poter incontrare link che possono rinviare a pagine web su cui PortaleSEO non ha alcun controllo e sul cui contenuto non assume alcuna responsabilit&agrave;. Sar&agrave; compito dell&#39;Utente verificare di volta in volta le condizioni di utilizzo delle pagine cui accede mediante i link contenuti su PortaleSEO.</p>
+
+<p style="text-align: justify;">9. L&rsquo;Utente dichiara espressamente di astenersi da qualsivoglia discriminazione, diretta o indiretta, a causa della razza o dell&rsquo;origine etnica degli individui e si impegna al rispetto delle Convenzioni poste a salvaguardia dei diritti umani. L&rsquo;Utente si impegna a non pubblicare in rete, senza il consenso degli aventi diritto, inserzioni contenenti dati personali, sensibili e/o immagini di minori o di terzi, nonch&eacute; materiale contenente virus o altri sistemi tesi a danneggiare il funzionamento del presente servizio o di qualsivoglia impianto deputato alla telediffusione.</p>
+
+<p style="text-align: justify;">10. L&#39;Utente si obbliga a non incoraggiare, commettere, favorire e/o agevolare in qualunque modo, mediante gli spazi messi a disposizione da PortaleSEO, azioni criminali e comportamenti illeciti in generale. L&#39;Utente si obbliga a non pregiudicare l&#39;uso ed il godimento del Servizio degli altri utenti.</p>
+
+<p style="text-align: justify;">11. Mediante l&rsquo;utilizzo delle risorse offerte da PortaleSEO, l&#39;Utente si obbliga a non riprodurre, trascrivere, duplicare, distribuire, modificare o comunicare, senza averne diritto, materiale protetto dal diritto di autore. L&rsquo;Utente si impegna a non richiedere la pubblicazione di annunci mendaci.</p>
+
+<p style="text-align: justify;">12. L&rsquo;Utente, quale necessaria conseguenza della propria piena ed esclusiva responsabilit&agrave; eventualmente derivante dalla violazione di Leggi, regolamenti e delle presenti condizioni generali, dichiara espressamente di esonerare PortaleSEO da qualsivoglia responsabilit&agrave;, civile e penale, riconoscendone, fin d&rsquo;ora, il difetto di legittimazione passiva in giudizio.</p>
+
+<p style="text-align: justify;">13. In particolare, l&rsquo;Utente si obbliga a manlevare PortaleSEO, sostanzialmente e processualmente, da qualsiasi pregiudizio, perdita, danno, responsabilit&agrave;, costo, o&shy;nere o spesa, incluse le spese legali, derivanti da pretese o da azioni avanzate da terzi, in qualunque sede ed a qualunque titolo, in conseguenza di annunci, links segnalati od opinioni immessi in rete dall&rsquo;Utente mediante l&rsquo;utilizzo improprio delle risorse offerte da PortaleSEO.</p>
+
+<p style="text-align: justify;">14. PortaleSEO &egrave; titolare di tutti i servizi ed i contenuti messi a disposizione dell&rsquo;Utente tramite il proprio sito web.</p>
+
+<p style="text-align: justify;">15. E&rsquo;, pertanto, vietata la riproduzione e/o l&rsquo;utilizzazione, integrale o parziale, a titolo gratuito od o&shy;neroso, di qualsivoglia risorsa del sito, della vesta grafica, di simboli, marchi, loghi o segni distintivi in genere, compreso il testo delle presenti condizioni di utilizzo.</p>
+
+<p style="text-align: justify;">16. Resta salvo il diritto discrezionale di PortaleSEO di concedere, su richiesta dell&rsquo;Utente, la propria autorizzazione scritta all&rsquo;utilizzo di uno o pi&ugrave; servizi e per un uso strettamente personale.</p>
+
+<p style="text-align: justify;">&nbsp;17. Inserendo l&rsquo;inserzione su PortaleSEO l&#39;utente certifica di poterne disporre con pieno diritto del contenuto; inoltre dichiara che le immagini eventualmente inserite riguardano persone maggiorenni che hanno prestato manifesto consenso alla pubblicazione dell&#39;immagine su PortaleSEO</p>
+
+<p style="text-align: justify;">18. Non &egrave; consentito inserire testi o immagini volgari o offensivi</p>
+
+<p style="text-align: justify;">19. Non &egrave; consentito alcun tipo di link contenente riferimenti a prestazioni sessuali a pagamento.</p>
+
+<p style="text-align: justify;">20. Non possono essere inserite immagini a carattere pornografico contenenti organi genitali in vista.</p>
+
+<p style="text-align: justify;">21. L&rsquo;inserimento di materiale pedopornografico comporter&agrave; l&rsquo;immediata segnalazione alle autorit&agrave; competenti dei dati di accesso al sito al fine di consentire di risalire ai responsabili.</p>
+
+<p style="text-align: justify;">22. I dati personali forniti dall&rsquo;Utente saranno raccolti ed utilizzati da PortaleSEO nel pieno rispetto della normativa di cui al D.Lgs. n. 196 del 30 giugno 2003, Codice in materia di protezione dei dati personali. PortaleSEO rende noto all&rsquo; Utente che: - i dati personali forniti da quest&rsquo;ultimo verranno trattati esclusivamente per la fornitura del servizio richiesto - il trattamento dei dati sar&agrave; effettuato con modalit&agrave; informatizzate - gli indirizzi di posta elettronica forniti dall&#39;utente potranno essere condivisi con soggetti terzi esclusivamente previa autorizzazione dell&#39;utente stesso - i dati personali raccolti non verranno ceduti a terzi.</p>
+
+<p style="text-align: justify;">23. L&rsquo;Utente, accettando le condizioni di utilizzo, autorizza PortaleSEO al trattamento dei propri dati personali entro i limiti e per le finalit&agrave; indicati nella presente informativa.</p>
+
+<p style="text-align: justify;">24. Al fine di prevenire violazioni dei diritti, delle libert&agrave; fondamentali e della dignit&agrave; degli Interessati, PortaleSEO dichiara di astenersi dal trattare dati sensibili conferiti dall&rsquo;Utente. Quest&rsquo;ultimo si obbliga, pertanto, a non corredare le proprie inserzioni recanti eventuali dati sensibili, con ulteriori elementi che consentano la propria identificazione, diretta od indiretta.</p>
+
+<p style="text-align: justify;">25. PortaleSEO si riserva il diritto di modificare la suddetta informativa previo avviso all&rsquo;Utente, da effettuarsi mediante pubblicazione della versione aggiornata all&rsquo;interno del sito.</p>
+
+<p style="text-align: justify;">26. PortaleSEO si riserva, in ogni tempo, il diritto di revocare, disattivare o modificare, in via temporanea o definitiva, la fornitura del presente servizio nonch&eacute; di cancellare ed editare le inserzioni degli utenti secondo criteri discrezionali ed insindacabili, senza preavviso all&rsquo;Utente e senza indicarne le cause.</p>
+
+<p style="text-align: justify;">27. Quest&rsquo;ultimo concorda, pertanto, che PortaleSEO non sar&agrave; responsabile, verso lo stesso o verso terzi, della modifica, sospensione, revoca od interruzione del servizio nonch&eacute; della cancellazione e modifica dei messaggi inoltrati, qualunque ne siano le modalit&agrave; di realizzazione.</p>
+
+<p style="text-align: justify;">28. L&rsquo;Utente, prima di usufruire di qualsivoglia servizio, &egrave; tenuto ad informarsi sulla eventuale sussistenza di modifiche e/o aggiornamenti apportati alle condizioni di utilizzo. Tali modifiche e/o aggiornamenti formeranno, infatti, parte integrante delle presenti condizioni generali e costituiranno fonte di accordo tra PortaleSEO e l&rsquo;Utente.</p>
+";s:19:"page_content_policy";s:37:"Contenuto della pagina Privacy Policy";s:22:"page_content_advertise";s:52:"<p>Noi pubblicizzare il contenuto della pagina</p>
+";s:20:"newly_added_listings";s:26:"Inserzioni appena aggiunti";s:21:"most_popular_listings";s:24:"Inserzioni più popolari";s:3:"and";s:1:"E";s:2:"or";s:2:"OR";s:12:"comment_rank";s:21:"Rango di quotazione: ";s:19:"error_root_category";s:97:"Non è possibile aggiungere nella categoria radice. Scegli una categoria appropriata e riprovare.";s:20:"error_suggest_logged";s:45:"Dovrebbe essere loggato per aggiungere liste.";s:20:"error_password_empty";s:15:"Password errata";s:20:"error_password_match";s:30:"Le password non corrispondono.";s:24:"error_reciprocal_listing";s:42:"Si prega di input corretto link reciproco.";s:17:"error_max_comment";s:60:"Your comment length should be less than {maxLength} symbols.";s:25:"error_no_account_username";s:57:"Nessun account registrato con questo Nome utente o email.";s:16:"sort_listings_by";s:25:"Ordina inserzioni dalla: ";s:22:"auto_generate_password";s:33:"Crea una password automaticamente";s:8:"purchase";s:8:"acquisto";s:19:"purchase_successful";s:45:"Grazie. Abbiamo ricevuto il vostro pagamento.";s:15:"sponsored_plans";s:19:"Piani sponsorizzati";s:6:"submit";s:5:"Invia";s:10:"submission";s:13:"Presentazione";s:21:"suggest_category_top1";s:31:"Suggerisci nuova categoria qui:";s:20:"suggest_listing_top1";s:66:"Si sta per presentare la tua inserzione per la seguente categoria:";s:20:"suggest_listing_top2";s:62:"Assicurati che la tua inserzione si adatta a questa categoria.";s:20:"passwords_dont_match";s:47:"Le password che hai inserito non corrispondono.";s:14:"password_empty";s:36:"Non hai inserito una nuova password.";s:12:"rate_listing";s:20:"Quotazione del tasso";s:16:"popular_listings";s:8:"Popolari";s:10:"rating_num";s:22:"Numero di valutazioni:";s:8:"register";s:10:"Registrati";s:21:"report_broken_listing";s:25:"Rapporto rotto quotazione";s:16:"characters_count";s:20:"Numero dei caratteri";s:18:"error_max_textarea";s:63:"Vostra lunghezza {field} dovrebbe essere meno di simboli {num}.";s:18:"error_min_textarea";s:62:"La lunghezza di {field} dovrebbe essere più di simboli {num}.";s:7:"captcha";s:65:"Kann nicht öffnen Sie die Datei mit Sql-Anweisungen: {filename}.";s:15:"payment_gateway";s:20:"Gateway di pagamento";s:10:"rememberme";s:24:"Mantieni la connessione ";s:21:"reg_confirmed_pending";s:89:"Conto confermato. Il tuo account è ancora in attesa di approvazione dall'amministratore.";s:6:"fields";s:5:"Campi";s:11:"unconfirmed";s:14:"Non confermato";s:24:"error_username_incorrect";s:51:"Assicurarsi che hai inserito il nome utente valido.";s:16:"error_javascript";s:42:"Devi abilitare JavaScript nel tuo browser.";s:7:"confirm";s:10:"Confermare";s:18:"favorites_listings";s:17:"Annunci Preferiti";s:23:"listing_option_add_star";s:11:"Agg. Stella";s:5:"plans";s:19:"Piani di promozione";s:14:"redraw_captcha";s:48:"Clicca sull'immagine per creare un nuovo codice.";s:13:"reg_confirmed";s:36:"Conto confermato. Per favore Accedi.";s:25:"account_already_confirmed";s:28:"Nome utente già confermato.";s:16:"reg_confirmation";s:28:"Conferma della registrazione";s:15:"reg_confirm_err";s:42:"Error. Your confirmation key is not found.";s:12:"text_captcha";s:44:"Inserisci le lettere che vedi nell'immagine.";s:13:"thankyou_tail";s:41:"<p>Si prega di leggere le istruzioni.</p>";s:28:"listings_submission_disabled";s:59:"Presentazione di inserzioni è disattivata da adminstrator.";s:11:"error_email";s:54:"Assicurarsi che hai inserito l'indirizzo email valido.";s:12:"add_favorite";s:49:"Si desidera aggiungere l'inserzione ai preferiti?";s:13:"thankyou_head";s:221:"Di seguito, sono riportati i tuoi dati. Potrai modificarli all'interno del tuo account.</p><p><span style="color: #F00; font-weight: bold;">Importante!</span> La password del tuo account ti è stata inviata via email:</p>";s:13:"cross_warning";s:84:"Si possono non aggiungere collegamenti trasversali alla stessa categoria principale.";s:14:"mcross_warning";s:38:"Non potete attraversare uno più link.";s:15:"remove_favorite";s:47:"Si desidera rimuovere il listato dai preferiti?";s:27:"page_title_suggest_category";s:18:"Aggiungi categoria";s:26:"page_title_random_listings";s:15:"Annunci casuali";s:26:"page_title_suggest_listing";s:21:"★ AGGIUNGI SITO ★";s:27:"page_title_popular_listings";s:8:"Popolari";s:23:"page_title_top_listings";s:11:"In evidenza";s:23:"page_title_new_listings";s:17:"Nuovi Inserimenti";s:17:"page_title_search";s:7:"Ricerca";s:16:"page_title_index";s:4:"Home";s:16:"search_criterias";s:18:"Criteri di ricerca";s:15:"listings_legend";s:53:"annunci in attesa di approvazione dell'amministratore";s:8:"any_word";s:16:"Qualsiasi parola";s:25:"page_title_categories_map";s:16:"Elenco categorie";s:6:"posted";s:14:"pubblicato su ";s:29:"listing_fin_move_confirmation";s:47:"Sei sicuro di che voler spostare questo elenco?";s:9:"rate_this";s:23:"Vota questo tasso di {}";s:11:"quick_links";s:11:"Quick links";s:34:"add_as_crossed_to_other_categories";s:69:"È possibile aggiungere elenchi ad altre categorie come attraversato.";s:4:"code";s:6:"Codice";s:20:"youre_in_manage_mode";s:70:"Sono riuscite in modalità. <a href="?switchToNormalMode=y">Uscita</a>";s:4:"exit";s:6:"Uscita";s:20:"wrong_file_extension";s:117:"Estensione di file sbagliato per campo {field}. Si prega di utilizzare una delle seguenti estensioni <i>{allowed}</i>";s:7:"suspend";s:10:"Sospendere";s:7:"go_back";s:8:"Indietro";s:2:"ok";s:2:"Ok";s:16:"listing_returned";s:32:"Quotazione era tornato indietro!";s:12:"move_listing";s:21:"Spostare l'inserzione";s:10:"crossed_to";s:14:"Attraversato a";s:10:"vote_casts";s:9:"Voto cast";s:9:"vote_cast";s:9:"Vote cast";s:9:"error_url";s:29:"Hai inserito l'URL non valido";s:16:"comment_approval";s:45:"Il tuo commento è in attesa di approvazione.";s:6:"slogan";s:56:"Costruire una directory di che si può essere orgogliosi";s:20:"my_favorite_listings";s:16:"I tuoi preferiti";s:17:"favorites_removed";s:42:"L'annuncio è stato rimosso dai preferiti.";s:21:"remove_from_favorites";s:23:"Rimuovere dai preferiti";s:16:"add_to_favorites";s:20:"Aggiungi a Preferiti";s:17:"view_my_favorites";s:23:"Mostra i miei preferiti";s:15:"favorites_added";s:40:"L'elenco è stato aggiunto ai preferiti.";s:5:"apply";s:9:"Applicare";s:25:"listing_move_confirmation";s:160:"Si sta per spostare inserzione in un'altra categoria, si prega di essere sicuro di volere fare questo. Se l'inserzione presenta lo stato attivo è disapprovato.";s:8:"language";s:6:"Lingua";s:7:"default";s:11:"Predefinito";s:8:"download";s:7:"Scarica";s:11:"set_default";s:11:"Set Default";s:27:"page_title_account_listings";s:17:"Le tue inserzioni";s:29:"page_title_favorites_listings";s:16:"I tuoi preferiti";s:23:"page_title_edit_account";s:16:"Modifica Profilo";s:12:"error_banned";s:64:"Quotazione è stato vietato. Non provare ad aggiungere di nuovo.";s:16:"page_title_about";s:9:"Chi Siamo";s:16:"page_title_terms";s:26:"Termini e Condizioni d'uso";s:15:"page_title_help";s:5:"Aiuto";s:17:"page_title_policy";s:25:"Informativa sulla privacy";s:20:"page_title_advertise";s:17:"Pubblicizzare noi";s:18:"page_title_confirm";s:10:"Confermare";s:15:"characters_left";s:20:"Numero dei caratteri";s:18:"category_submitted";s:36:"La tua categoria è stata segnalata!";s:16:"payment_canceled";s:79:"Poiché annullato il pagamento che inserzione non apparirà come sponsorizzato.";s:4:"oops";s:5:"Oops!";s:10:"click_here";s:10:"Clicca qui";s:15:"page_title_tags";s:9:"Tag Cloud";s:29:"listings_error_comment_logged";s:44:"You should be logged in to comment listings.";s:29:"articles_error_comment_logged";s:44:"You should be logged in to comment articles.";s:25:"news_error_comment_logged";s:40:"You should be logged in to comment news.";s:37:"articles_comments_submission_disabled";s:61:"Comments submission for articles is disabled by adminstrator.";s:37:"listings_comments_submission_disabled";s:61:"Comments submission for listings is disabled by adminstrator.";s:33:"news_comments_submission_disabled";s:57:"Comments submission for news is disabled by adminstrator.";s:17:"comment_rate_this";s:9:"Rate this";s:14:"comment_rating";s:6:"Rating";s:7:"not_set";s:7:"not set";s:10:"votes_cast";s:10:"Votes cast";s:17:"thanks_for_voting";s:17:"Thanks for voting";s:31:"tpl_notif_comment_added_subject";s:37:"Comment has been added to {dir_title}";s:28:"tpl_notif_comment_added_body";s:243:"<h3>Dear {admin_name},</h3>
+
+<p>New comment has been added. Please check Admin Panel > Manage Comments section.</p>
+
+<p>______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}</p>";s:8:"fb_login";s:14:"Facebook Login";s:16:"listings_box_new";s:5:"Nouvi";s:16:"listings_box_top";s:3:"Top";s:19:"listings_box_random";s:7:"Casuali";s:16:"field_video_file";s:10:"Video file";s:19:"field_video_preview";s:13:"Video preview";s:17:"field_video_title";s:11:"Video title";s:23:"field_video_description";s:17:"Video description";s:18:"field_youtubevideo";s:13:"Youtube Video";s:21:"youtube_no_more_video";s:22:"No more video allowed.";s:13:"error_youtube";s:69:"Incorrect YouTube link. Please enter valid link or leave field empty.";s:22:"page_title_tell_friend";s:17:"Invia ad un amico";s:12:"cat_nav_help";s:28:"Che categoria stai cercando?";s:18:"categories_box_top";s:13:"Top Categorie";s:22:"categories_box_popular";s:18:"Categorie popolari";s:10:"field_city";s:6:"Città";s:13:"field_country";s:5:"Paese";s:9:"field_zip";s:3:"CAP";s:9:"field_tag";s:3:"Tag";s:8:"all_tags";s:11:"Tutti i Tag";s:7:"address";s:9:"Indirizzo";s:13:"field_address";s:9:"Indirizzo";s:28:"googlemap_select_coordinates";s:23:"Seleziona le coordinate";s:11:"field_state";s:5:"Stato";s:15:"preview_listing";s:9:"Anteprima";s:7:"no_tags";s:9:"Senza Tag";s:12:"rebuild_tags";s:12:"Rebuild Tags";s:4:"tags";s:3:"Tag";s:16:"tags_no_listings";s:38:"No listings yet created with this tag.";s:14:"visual_options";s:19:"Opzioni Visibilità";s:21:"preview_listing_title";s:20:"Sample Listing Title";s:27:"preview_listing_description";s:277:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.";s:24:"listing_option_add_badge";s:10:"Agg. badge";s:24:"listing_option_highlight";s:17:"Sottolinea titolo";s:25:"listing_option_color_link";s:27:"Titolo evidenziato in rosso";s:23:"listing_option_link_big";s:23:"Aumenta dimensione link";s:24:"listing_option_desc_bold";s:24:"Descrizione in grassetto";s:24:"listing_option_desc_ital";s:30:"Descrizione nello stile Italic";s:25:"listing_option_itali_link";s:25:"Titolo nello stile Italic";s:25:"listing_option_add_border";s:12:"Agg. filetto";s:24:"alternate_payment_method";s:31:"Metodo di pagamento alternativo";s:7:"ya_rank";s:11:"Yandex Rank";s:23:"tpl_tell_friend_subject";s:33:"{name} recommends you {dir_title}";s:26:"tpl_notif_tell_friend_body";s:381:"<h3>Dear {admin_name},</h3>
+
+
+
+Here is the original message sent to {tf_to}:
+
+<br /><br />
+
+================ Message Start =======================
+
+    <h3>Dear {friends_name},</h3>
+
+
+
+    <p>The following website was recommended to you by {name}: {dir_url}</p>
+
+
+
+    <p>{message}</p>
+
+
+
+    _____________________{dir_title}
+
+================ Message End =========================";i:674;s:47:"You may not add more listings for your account.";s:20:"tpl_tell_friend_body";s:199:"<h3>Dear {friends_name},</h3>
+
+<p>The following website was recommended to you by <a href="mailto:{sender_email}">{name}</a>: {dir_url}</p>
+
+<p>{message}</p>
+
+<p>_____________________{dir_title}</p>
+";s:16:"thumbnail_update";s:13:"Aggiorna foto";}

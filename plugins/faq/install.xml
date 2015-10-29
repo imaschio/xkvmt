@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="faq">
+	<title>FAQ</title>
+	<summary>Allows to create FAQs section.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.3</version>
+	<date>2013-08-28</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+	
+	<adminpages>
+		<page block="plugins" menus="main">Manage FAQ</page>
+	</adminpages>
+	
+	<config group="miscellaneous" name="faq" type="divider" description="FAQ Plugin">FAQ Plugin</config>
+	<config group="miscellaneous" name="num_new_faq" type="text" description="Number of Questions in box Last Questions">5</config>
+	
+	<hooks>
+		<hook name="bootstrap">
+			<![CDATA[
+global $esynSmarty, $eSyndiCat, $esynConfig;
+
+$eSyndiCat->setTable('faq');
+$box_faq = $eSyndiCat->all("*", "`status` = 'active' AND `lang` = '".IA_LANGUAGE."' ORDER BY `id` DESC", array(),0 , $esynConfig->getConfig('num_new_faq'));
+$eSyndiCat->resetTable();
+$esynSmarty->assignByRef('box_faq', $box_faq);
+			]]>
+		</hook>
+	</hooks>
+	
+	<blocks>
+		<block name="new_faq_answers" title="Last Questions" showheader="1" collapsible="1" lang="en" status="active" position="left" type="smarty" sticky="1" external="1"><![CDATA[]]></block>
+	</blocks>	
+
+	<phrases>
+		<phrase key="are_you_sure_to_delete_selected_faq_categories" category="admin" code="en">Are you sure you want to delete this categories?</phrase>
+		<phrase key="are_you_sure_to_delete_selected_faq_category" category="admin" code="en">Are you sure you want to delete this category</phrase>
+		<phrase key="are_you_sure_to_delete_this_faqs" category="admin" code="en">Are you sure you want to delete this faqs?</phrase>
+		<phrase key="are_you_sure_to_delete_this_faq" category="admin" code="en">Are you sure you want to delete this faq?</phrase>
+		<phrase key="click_to_manage_faqs" category="common" code="en">Click to manage questions in this category</phrase>
+		<phrase key="category_exists" category="common" code="en">Category already exists</phrase>
+		<phrase key="faq_categories" category="common" code="en">FAQ Categories</phrase>
+		<phrase key="error_question" category="admin" code="en">Question is empty</phrase>
+		<phrase key="faq_cat_added" category="admin" code="en">Category added</phrase>
+		<phrase key="error_answer" category="admin" code="en">Answer is empty</phrase>
+		<phrase key="edit_faq_cat" category="admin" code="en">Edit Category</phrase>
+		<phrase key="error_title" category="admin" code="en">Title is required field.</phrase>
+		<phrase key="add_faq_cat" category="admin" code="en">Add Category</phrase>
+		<phrase key="manage_faq" category="admin" code="en">Manage FAQ</phrase>
+		<phrase key="faq_added" category="admin" code="en">Question has been added.</phrase>
+		<phrase key="edit_faq" category="admin" code="en">Edit FAQ</phrase>
+		<phrase key="question" category="admin" code="en">Question</phrase>
+		<phrase key="add_faq" category="admin" code="en">Add FAQ</phrase>
+		<phrase key="answer" category="admin" code="en">Answer</phrase>
+		<phrase key="no_faq" category="admin" code="en"><![CDATA[No FAQ. <a href="controller.php?plugin=faq&amp;do=add">Click here</a> to add new question.]]></phrase>
+		<phrase key="no_faq" category="frontend" code="en">There are no FAQs.</phrase>
+		<phrase key="faq" category="common" code="en">FAQ</phrase>
+	</phrases>
+
+	<pages>
+		<page name="faq" menus="main,bottom" title="FAQ" status="active" uniqueurl="mod/faq/" nofollow="0"><![CDATA[ ]]></page>
+	</pages>
+
+	<installsql>
+		<sql>
+			<![CDATA[			
+CREATE TABLE `{prefix}faq` (
+	`id` int(11) NOT NULL auto_increment,
+	`question` text NOT NULL,
+	`answer` text NOT NULL,
+	`category` int(11) NOT NULL,
+	`status` enum('inactive','active') NOT NULL default 'inactive',
+	`lang` char(2) NOT NULL default '',
+	PRIMARY KEY (`id`),
+	KEY `lang` (`lang`)
+) {mysql_version};
+			]]>
+		</sql>
+		
+		<sql>
+			<![CDATA[			
+CREATE TABLE `{prefix}faq_categories` (
+	`id` int(11) NOT NULL auto_increment,
+	`title` varchar(255) NOT NULL default '',
+	`description` text NULL,
+	`status` enum('inactive','active') NULL default 'inactive',
+	`lang` char(2) NOT NULL default '',
+	PRIMARY KEY (`id`),
+	KEY `lang` (`lang`)
+) {mysql_version};
+			]]>
+		</sql>
+		
+		<sql>
+			<![CDATA[			
+INSERT INTO `{prefix}faq_categories` (`id`, `title`, `description`, `status`, `lang`) VALUES ('-1', 'ROOT', 'Without Category', '', '');
+			]]>
+		</sql>
+	</installsql>
+
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}faq`;
+			]]>
+		</sql>
+		
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}faq_categories`;
+			]]>
+		</sql>
+	</uninstallsql>
+</plugin>

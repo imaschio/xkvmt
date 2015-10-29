@@ -1,0 +1,312 @@
+- eSyndiCat CMS Changelog -
+
+>> From 3.0 to 3.0.1 <<
+
+	- #173: Review styles and fix them for thumbshots plugins
+	- #174: Correct remote plugin information
+	- #175: Fix visual mode
+	- #177: Admin should not be able to change listing field type
+	- #178: Blocks are not deleted after new template installation
+	- #179: Fix Nova template screenshots
+	- #180: Remove non_modrewrite_url column
+	- #181: Search highlight does not work properly
+	- #186: Ext DatePicker issue
+	- #188: Incorrect template block mapping
+	- #189: Incorrect sitemap generation for listings
+	- #190: Incorrect relations created for categories
+	- #193: Incorrect breadcrumb on View listing page
+	- #194: Hardcoded strings on advanced search
+	- #195: No language selector
+	- #197: Disable plans display
+	- #200: Suggest Listing : Frontend : cKeditor issue
+	* #59: Unique block names
+	* #176: Fix esynImporter to make updates easier
+	* #183: Template overrides for plugins and templates
+	* #185: DB prefix should be mandatory
+	* #192: Update ExtJS to 3.4 version
+	* #198: Style video upload field
+	* #201: Update CKEditor to 4.0.2
+	+ #187: Integrate adminer.php in the admin panel
+	+ #196: Implement changelog in admin panel
+
+>> From 3.0.1 to 3.0.2 <<
+
+	- #191: Fix responsive version
+	- #203: Listing field with type "Text"
+	- #204: Add Transaction generates error
+	- #210: Listing submission does not work for the crossed categories
+	- #211: No cross category symbol
+	- #212: Review breadcrumb functionality
+	- #213: Crossed category title doesn't displayed
+	- #214: Missing crossed category class
+	- #215: Hook editor does not display core custom hooks
+	- #216: Compatibility issues with IE browser
+	- #217: Tile listing breaks the layout
+	- #218: Watermark issues
+	- #219: Check HTML type blocks
+	- #220: Grid checkbox click generates error
+	- #221: Sort plugins issues
+	- #222: External SQL plugin is not run correctly
+
+>> From 3.0.2 to 3.0.3 <<
+
+	- Bug #224: Display notification for obsolete browsers
+	- Bug #225: Error on admin panel login
+	- Bug #229: Incorrect notice about install removal
+	- Bug #232: Hardcoded strings on add listing page
+	- Bug #233: Password restoration doesn't work [Frontend]
+	- Bug #235: Websnapr plugin and sponsored block in Nova template
+	- Bug #238: Review code and rename elements
+	- Bug #239: Optimize php type block execution
+	- Bug #241: Smarty type block textarea is not 100% wide
+	+ Feature #231: Fetch description based on meta description
+	+ Feature #240: Max number of main menu items
+
+>> From 3.0.3 to 3.0.4 <<
+
+	- Bug #154: Admin Panel :: Categories tree doesn't work in IE9, 10 browsers.
+	- Bug #205: Styles issue with categories tree.
+	- Bug #209: Frontend :: category doesn't save on edit Listing page.
+	- Bug #243: Multicrossing does not work correctly
+	- Bug #244: Googlemap artefacts
+	- Bug #246: It is not possible to edit block with type "smarty" using IE9 browser.
+	- Bug #247: Content does not generate block id
+	- Bug #248: Fix tab display in templates
+	- Bug #249: Remove console debug on plans page
+	* Bug #226: Improve migrator
+	* Bug #230: esyndicat importer issue.
+	* Bug #236: Importer issue.
+	* Bug #251: Better deeplinks display
+	* Bug #252: Display filename for storage field
+	* Bug #255: Avatar field on Edit account page
+	* Bug #257: Remove dropdown categories selection
+	+ Feature #245: Need to add functionality to reset category and listing clicks statistics
+	+ Feature #254: Add Edit Listing in actions
+
+>> From 3.0.4 to 3.0.5 <<
+
+	- Bug #242: Account email changes
+	- Bug #256: Listing count not updated for account
+	- Bug #258: Default installation template issue
+	+ Feature #259: Update listing pagerank
+	+ Feature #260: Assign listing ownership without extra actions
+	+ Feature #261: Add listing owner link to the listing
+	+ Feature #262: Make better template for view account page
+
+>> From 3.0.5 to 3.0.6 <<
+
+	- Bug #8: Related categories display does not work
+	- Bug #81: Refactor Terms Of Use on Suggest Listing plugin
+	- Bug #93: Google Map do not work in collapsed block.
+	- Bug #120: sitemap.xml 404 after creation
+	- Bug #227: Admin panel translation issues
+	- Bug #228: Get rid of classes which are bound to js in manage mode
+	- Bug #267: the block with "center" position is not displayed properly on the Front End (however when 'preview mode' is enabled it's displayed properly)
+	- Bug #268: Visual Mode doesn't work in 3.0 versions
+	- Bug #269: New, Popular, Top listings page issues
+	- Bug #270: Incorrect category id in menus
+	+ Feature #76: Detect IP address functionality
+	+ Feature #77: Set default language for admin panel
+	+ Feature #264: Rename menu item
+	+ Feature #265: Link changelog history to real tickets
+	+ Feature #266: Add description expander
+	+ Feature #271: Easier debug when var_dump
+	Feature #118: Integrate Reviews - declined
+
+>> From 3.0.6 to 3.0.7 <<
+
+	- Bug #272: Repair Categories Paths feature works incorrectly
+	- Bug #274: Search errors
+	- Bug #275: Admin Panel > Hook Editor doesn't work.
+	- Bug #278: Suggest Listing : Frontend
+	- Bug #281: Description auto fill works either in 'ON' mode or in 'OFF' mode
+	- Bug #284: UpgradeSQL instruction does not work
+	- Bug #285: Locked state not visible on ROOT category
+	- Bug #286: Adminer does not work properly in 3.0 version
+	- Bug #288: Ability to add Browse Categories page to menu
+	- Bug #291: Gallery field issue
+	+ Feature #273: Use metas when no meta inserted
+	+ Feature #276: Add pages search
+	+ Feature #280: Refactor buttons in similar to Subrion manner
+	+ Feature #282: Add functionality to Admin Panel to hide/show empty categories in front page
+	+ Feature #287: Add config option to disable alphabetic search
+	+ Feature #289: Add contrast colors to Nova template
+
+>> From 3.0.7 to 3.0.8 <<
+
+	- Bug #292: Keep search params in search inputs
+	- Bug #297: Error 500 when deleting an item from menu
+	- Bug #300: Issues with meta keywords generation
+	- Bug #303: Incorrect pagerank display
+	- Bug #305: Lowercase URLs on View Listing page
+	- Bug #310: Account Listing Limit feature doesn't work.
+	- Bug #313: Account listings issues
+	+ Feature #293: Add KLogger to utils folder
+	+ Feature #294: Add a notification that big dumps cannot be handled during data export.
+	+ Feature #298: Reset clicks count statistics.
+	+ Feature #308: Add explanation in install/ .htaccess
+	+ Feature #309: Submission status for paid listings
+	+ Feature #314: Design badges for approval listings on My Listings page
+
+>> From 3.0.8 to 3.1.0 <<
+
+	- Bug #316: Listing mark as "status" doesn't work on edit listing page.
+	- Bug #330: Incorrect condition for block change action when installing new template
+	- Bug #331: Gallery field: image title disappears after re-saving listing
+	* Bug #333: Add RSS icon to default Nova template
+	+ Feature #47: Create new email template in Admin Panel
+	+ Feature #87: Add functionality to set block to particular category
+	+ Feature #317: Ability to add custom email templates
+	+ Feature #320: Multi-level dropdown menu
+	+ Feature #321: Add nofollow to external links
+	+ Feature #322: Add option to open external links in a new window
+	+ Feature #325: Drop menus for categories
+	+ Feature #329: Number of characters for meta fields
+	+ Feature #334: Better password field management
+	+ Feature #335: Improve slider functionality
+
+>> From 3.1.0 to 3.1.1 <<
+
+	- Bug #94: Listings recount in admin panel
+	- Bug #136: adjustNumListings function should be optimized(Admin Panel edit and remove listings)
+	- Bug #312: Listing URL is not a Required field feature works incorrect
+	- Bug #324: Rewrite "check consistency" functions for categories
+	- Bug #327: Error while adding listing after meta_keywords and meta_description fields removal
+	- Bug #332: Incorrect working of listing fields length
+	- Bug #336: Meta keywords field is readonly
+	- Bug #342: Issues in error_log
+	- Bug #344: Too many actions for ROOT category
+	- Bug #345: Undefined in plans grid
+	- Bug #349: Re-write importer to match the latest standards
+	- Bug #356: Update twitter feed in admin panel
+	+ Feature #350: Update CKEditor library to 4.2
+
+>> From 3.1.1 to 3.2.0 <<
+
+	- Bug #328: Incorrect working Multicross functionality while there is any plan on the site.
+	- Bug #354: Categories tree doesn't work for crossed category if the parent category is locked.
+	- Bug #358: Add extra validation for listing field names
+	- Bug #360: Create div wrapper for fields without group on suggest listing page
+	- Bug #361: Minor issues in 3.1.1
+	- Bug #363: Deep links don't save if you submit listings in Admin Panel
+	- Bug #369: CKeditor issues with languages
+	- Bug #370: Check bugs on PHP 5.4
+	- Bug #374: No RSS image in templates
+	- Bug #376: Add Cronjob to every template for 3.0 and 3.1 versions
+	- Bug #381: Listing URL is required in Admin Panel
+	- Bug #382: Browse Categories -> Copy subcategories of doesn't work
+	- Bug #384: Listings aren't deleted after your click on 'Remove' button or on X in Admin Panel
+	- Bug #385: Enable No-Follow option in Edit Category doesn't work
+	- Bug #387: JS code is not shown in CKEditor after source mode on/off
+	- Bug #388: Validate field name for uniqueness
+	- Bug #392: Division by zero error when go to Search page
+	- Bug #397: Disable click on 'More...' item in main menu.
+	- Bug #399: Incorrect links count after edit
+	- Bug #401: Simplify admin templates inclusion
+	- Bug #402: Use the same classes for progress bars
+	- Bug #403: Incorrect working of Fetch meta_description when WYSIWYG is turned ON
+	- Bug #405: Update CKEditor library
+	- Bug #407: when transfer the listing from old category to a new one, the number of listings for old category remains the same.
+	- Bug #408: Fix max-width for images in IE browsers
+	- Bug #410: Admin Panel does not work in IE11
+	- Bug #413: Admin Panel > Manage Admins :: Submission Notification iPhone button always "off"
+	- Bug #416: getPageRank function doesn't work on Frontend.
+	- Bug #417: Account listings limit configuration doesn't work.
+	- Bug #424: Optimize getPageRank function.
+	- Bug #429: Implement remote template installation
+	- Bug #433: Incorrect working of Fit/Crop functionality for Image fields
+	- Bug #434: Minor bug with categories tree and crossed categories tree on Add listing page :: Frontend.
+	- Bug #435: Fetch Meta Tags feature doesn't work when trying to get meta tags from redirecting site
+	- Bug #436: Duplicate Checking is incorrectly.
+	- Bug #437: Cookies aren't deleted after the user has been deleted
+	- Bug #439: Account Plans functionality doesn't work
+	- Bug #440: Account listings limit option doesn't work
+	- Bug #442: The default value of language selector on login page to Admin Panel
+	- Bug #443: Get rid of obsolete clipboard library
+	- Bug #448: JS Conflict between comments plugin and Image gallery (LightBox).
+	- Bug #452: Make featured setting doesn't work for reciprocal listings
+	- Bug #459: Incorrect display of listing fields with type = 'textarea'
+	- Bug #461: Users can preview listing of unchosen plan on Add Listing page
+	- Bug #466: Incorrect working of Sitemap generation for pages with Custom URL
+	- Bug #470: Listing Expiration is not working In Listing Configuration
+	- Bug #471: MySQL database error on frontend's suggest listing page
+	- Bug #472: Visual options doesn't displays on Admin's suggest-listing page.
+	- Bug #473: Listing title alias issue
+	- Bug #475: Script doesn't generate listing domain if listing was submitted from admin panel
+	- Bug #477: Frontend's Suggest listing page :: Plans issues.
+	- Bug #478: Frontend :: Suggest and Edit listing page. Plans does not change.
+	- Bug #480: Frontends edit listing page visual options issues
+	- Bug #481: Admin Panel :: Suggest listing page visual options issues.
+	+ Feature #6: Account sponsored plans improvements
+	+ Feature #124: Paid accounts invoices
+	+ Feature #295: Custom URL alias for the view listing page
+	+ Feature #347: Improve Delete listing functionality
+	+ Feature #368: Allow create custom field types
+	+ Feature #375: Reported broken links list
+	+ Feature #378: Collapsible field groups
+	+ Feature #379: Add account ip logging
+	+ Feature #389: Add the possibility to submit listings with URL without http://
+	+ Feature #396: Combine admin / front util files
+	+ Feature #409: Display frontend for admin if disabled
+	+ Feature #412: Add Western Latin subset to OpenSans font-family in default template
+	+ Feature #414: Accounts Registration Notification for Admin
+	+ Feature #423: Add the option to rename related categories.
+	+ Feature #426: Separate hooks list fetch
+	+ Feature #427: CKEditor default language
+	+ Feature #430: Sponsored plans options
+	+ Feature #432: Add an option to romanize titles in URLs
+	+ Feature #449: Improve gallery field
+	+ Feature #450: MySQLi integratioin
+	+ Feature #451: Optimize admin files
+	+ Feature #453: Implement the Reciprocal listings checking via Cronjob
+	+ Feature #458: Add config for social buttons
+	+ Feature #474: Add feature to generate listings title alias
+
+>> From 3.2.0 to 3.2.1 <<
+
+	- Bug #485: Expiration period is not set in admin panel
+	- Bug #487: Incorrect working of Edit Listing on FrontEnd
+	- Bug #490: Pages when set to inactive is still active on frontend
+	- Bug #491: Templates issues
+	- Bug #495: Register account bug
+	- Bug #496: Incorrect path generation for categories during categories submission
+	- Bug #497: SMTP mail method doesn't work
+	- Bug #498: There is no pagination on My Listings page
+	- Bug #500: Can't create listings if I don't have plan
+	- Bug #505: Listing URLs issue
+	- Bug #506: Phrases missed in listing-preview file
+	- Bug #507: There is no way to change account plan on Edit Account page
+	- Bug #508: Add nofollow to external links option doesn't work
+	+ Feature #476: Account's My Listings page improvements.
+	+ Feature #501: Update PHPMailer class
+
+>> From 3.2.1 to 3.3.0 <<
+
+	- Bug #352: Re-build cache system
+	- Bug #442: The default value of language selector on login page to Admin Panel
+	- Bug #446: Prevent CSRF for HTTPS
+	- Bug #492: Restore fonts to default in default template
+	- Bug #493: Frontend Edit Listing page bug
+	- Bug #508: Add nofollow to external links option doesn't work
+	- Bug #510: No account username on top, new, popular listing pages
+	- Bug #512: Emails are not sent during listings move from one category to another
+	- Bug #514: Incorrect working of Check Consistency features
+	- Bug #519: Visual Mode doesn't work
+	- Bug #520: Remove hardcoded lines on purchase page
+	- Bug #521: 'Lowercase case URLs' config doesn't work
+	- Bug #524: Get remote plugins is not working
+	- Bug #528: There is no pagination on Listings List page if I have Premium Business plugin installed
+	- Bug #530: Incorrect working of Meta Keywords filling for Listings during Listing Submission from FrontEnd page
+	- Bug #535: Incorrect category blocking
+	- Bug #536: Incorrect calculation of plan total price
+	- Bug #539: Admin notices on front end
+	- Bug #540: There is no email sent if user clicks on Report Listing is broken
+	- Bug #544: Getting error when trying to edit listing in Admin Panel during Duplicate Listing Checking is ON
+	- Bug #545: Category is not shown as a Menu item
+	- Bug #546: Check Consistency delete orphan bug
+	- Bug #548: Edit Listing page Image gallery issue
+	- Bug #549: Incorrect working of Compare Languages feature
+	- Bug #552: There is no any working free Thumbnail generator plugin
+	- Bug #558: Incorrect working of Listing Field Group edit action
+	+ Feature #543: Not full working of 'Open external links in new window' config
+	+ Feature #551: Improve search filters

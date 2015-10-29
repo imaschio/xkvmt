@@ -1,0 +1,107 @@
+a:321:{s:14:"htaccessfile_0";s:557:"<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresDefault "access plus 1 year"
+</IfModule>
+
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE \
+		text/html text/plain text/xml text/css text/javascript \
+		application/xml application/xhtml+xml application/rss+xml \
+		application/javascript application/x-javascript \
+		image/svg+xml font/opentype application/x-font-ttf
+</IfModule>
+
+# Uncomment next line if you get 404 error on accounts page
+# Options -MultiViews
+
+<IfModule mod_rewrite.c>
+# enable mod_rewrite
+RewriteEngine on
+
+";s:14:"htaccessfile_1";s:1268:"# SECTION 1
+# correct urls for yahoo bot
+RewriteCond %{REQUEST_URI} !\..+$
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule (.*) %{REQUEST_URI}/ [R=301,L]
+
+# mod_rewrite rules for plugins
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^mod/(.*)(\.xml|\.php([0-9]*)|\.tpl|\.phtml|\.ini|\.inc|/)$ controller.php?_p=$1 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^mod/(.*)$ controller.php?_p=$1 [QSA,L]
+
+# mod_rewrite rules for view account page
+RewriteRule ^accounts/$ accounts.php [QSA,L]
+RewriteRule ^accounts/(.*)/$ accounts.php?alpha=$1 [QSA,L]
+RewriteRule ^accounts/index([0-9]+).html$ accounts.php?page=$1 [QSA,L]
+RewriteRule ^accounts/(.*)/index([0-9]+).html$ accounts.php?alpha=$1&page=$2 [QSA,L]
+RewriteRule ^accounts/(.*).html$ view-account.php?account=$1 [QSA,L]
+
+RewriteRule ^sitemap.xml$ tmp/sitemap/google/sitemap.xml [QSA,L]
+RewriteRule ^sitemap([0-9]+).xml$ tmp/sitemap/google/sitemap$1.xml [QSA,L]
+RewriteRule ^sitemap_index.xml$ tmp/sitemap/google/sitemap_index.xml [QSA,L]
+RewriteRule ^urllist.txt$ tmp/sitemap/yahoo/urllist.txt [QSA,L]
+
+# mod_rewrite rules for alphabetic search
+RewriteRule ^alpha/(.*)/$ search.php?alpha=$1 [QSA,L]
+RewriteRule ^alpha/(.*)/index([0-9]+).html$ search.php?alpha=$1&page=$2 [QSA,L]
+
+";s:14:"htaccessfile_2";s:125:"# SECTION 2
+# mod_rewrite rules for ROOT category
+RewriteRule ^index([0-9]+).html$ index.php?category=0&page=$1 [QSA,L]
+
+";s:14:"htaccessfile_3";s:215:"# SECTION 3
+# mod_rewrite rules for categories pages with HTML path option disable
+RewriteRule ^(.*)/$ index.php?category=$1 [QSA,L]
+RewriteRule ^(.*)/index([0-9]+).html$ index.php?category=$1&page=$2 [QSA,L]
+
+";s:14:"htaccessfile_4";s:165:"# SECTION 4
+RewriteRule ^([a-z]+)-listings.html$ listings.php?view=$1 [QSA,L]
+RewriteRule ^([a-z]+)-listings([0-9]+).html$ listings.php?view=$1&page=$2 [QSA,L]
+
+";s:14:"htaccessfile_5";s:231:"# SECTION 5
+# mod_rewrite rules for view listing page
+RewriteRule ^([^/]+)-l([0-9]+).html$ view-listing.php?cat=&title=$1&id=$2 [QSA,L]
+RewriteRule ^(.*)/([^/]+)-l([0-9]+).html$ view-listing.php?cat=$1&title=$2&id=$3 [QSA,L]
+
+";s:14:"htaccessfile_6";s:107:"# SECTION 6
+# mod_rewrite rules for error pages
+RewriteRule ^([0-9]+).htm$ error.php?error=$1 [QSA,L]
+
+";s:14:"htaccessfile_7";s:139:"# SECTION 7
+# mod_rewrite rules for add category page
+RewriteRule ^suggest-category-([0-9]+).html$ suggest-category.php?id=$1 [QSA,L]
+
+";s:14:"htaccessfile_8";s:62:"# SECTION 8
+RewriteRule ^LICENSE.htm$ LICENSE.htm [QSA,L]
+
+";s:14:"htaccessfile_9";s:260:"# SECTION 9
+# mod_rewrite rules for categories pages
+RewriteRule ^(.*)_([0-9]+).html$ index.php?category=$1&page=$2 [QSA,L]
+RewriteRule ^(.*).html?(.*)$ index.php?category=$1&$2 [QSA,L]
+RewriteRule ^(.*).html$ index.php?category=$1 [QSA,L]
+</IfModule>
+
+";s:15:"htaccessfile_10";s:120:"# SECTION 10
+ErrorDocument 500 500.htm
+ErrorDocument 404 404.htm
+ErrorDocument 403 403.htm
+ErrorDocument 401 401.htm";s:15:"display_twitter";s:1:"1";s:17:"display_feedbacks";s:1:"1";s:17:"display_changelog";s:1:"1";s:8:"accounts";s:1:"1";s:21:"accounts_autoapproval";s:1:"1";s:27:"allow_listings_submit_guest";s:1:"1";s:29:"allow_categories_submit_guest";s:1:"1";s:21:"allow_delete_accounts";s:1:"0";s:16:"num_get_accounts";s:2:"10";s:21:"account_listing_limit";s:3:"100";s:16:"suggest_category";s:1:"1";s:13:"use_html_path";s:1:"0";s:7:"related";s:1:"1";s:9:"neighbour";s:1:"1";s:22:"show_children_listings";s:1:"1";s:21:"hide_empty_categories";s:1:"0";s:16:"categories_order";s:5:"title";s:19:"num_categories_cols";s:1:"2";s:20:"num_listings_display";s:1:"0";s:15:"subcats_display";s:1:"3";s:19:"num_cats_for_search";s:2:"10";s:20:"categories_tree_type";s:4:"tree";s:23:"categories_icon_display";s:1:"1";s:21:"categories_icon_width";s:2:"32";s:22:"categories_icon_height";s:2:"32";s:10:"cron_recip";s:1:"0";s:11:"cron_broken";s:1:"1";s:13:"cron_pagerank";s:1:"1";s:17:"cron_num_listings";s:2:"10";s:15:"cron_report_job";s:1:"0";s:21:"cron_report_job_extra";s:1:"0";s:17:"cron_report_cycle";s:1:"0";s:23:"cron_report_cycle_extra";s:1:"0";s:11:"cron_backup";s:1:"1";s:19:"cron_backup_archive";s:1:"1";s:20:"cron_backup_interval";s:2:"60";s:21:"cron_backup_last_time";s:10:"1426025127";s:14:"cron_duplicate";s:1:"0";s:4:"cron";s:1:"1";s:18:"sponsored_listings";s:1:"1";s:18:"sponsored_accounts";s:1:"1";s:15:"currency_symbol";s:3:"€";s:14:"sponsored_only";s:1:"0";s:21:"num_sponsored_display";s:1:"3";s:7:"version";s:5:"3.3.0";s:4:"site";s:32:"PortaleSEO: Indicizzazione - SEO";s:6:"suffix";s:0:"";s:10:"site_email";s:22:"support@seoportale.com";s:9:"site_logo";s:18:"img_5f0eea26c7.png";s:14:"site_watermark";s:0:"";s:23:"site_watermark_position";s:12:"bottom_right";s:17:"site_main_content";s:276:"<p><strong><a href="http://seoportale.com/suggest-listing.php?cid=0">Segnala il tuo sito qui</a>! </strong>PortaleSEO &egrave; un servizio utile ai webmaster e non solo: promozione del tuo sito internet gratis, indicizzazione, visibilit&agrave; SEO e strumenti webmaster</p>
+";s:16:"site_description";s:155:"Segnala il tuo sito qui! PortaleSEO è un servizio utile ai webmaster e non solo: promozione del tuo sito internet gratis, indicizzazione e visibilità SEO";s:13:"site_keywords";s:66:"PortaleSEO, seo, indicizzazione, directory, popolarità, webmaster";s:6:"backup";s:7:"backup/";s:4:"tmpl";s:5:"gelio";s:10:"admin_tmpl";s:7:"default";s:4:"lang";s:2:"it";s:7:"charset";s:5:"UTF-8";s:11:"date_format";s:9:"%b %e, %Y";s:16:"title_breadcrumb";s:1:"1";s:15:"language_switch";s:1:"1";s:14:"lowercase_urls";s:1:"1";s:15:"alias_urlencode";s:1:"0";s:19:"external_blank_page";s:1:"1";s:18:"external_no_follow";s:1:"0";s:16:"display_frontend";s:1:"1";s:17:"underconstruction";s:45:"We are sorry. Our site is under construction.";s:14:"old_pages_urls";s:1:"0";s:11:"config_keys";s:113:"recaptcha_publickey,recaptcha_privatekey,sendmail_path,smtp_secure_connection,smtp_server,smtp_user,smtp_password";s:23:"default_categories_icon";s:0:"";s:14:"date_format_js";s:13:"M, d, Y H:i:s";s:11:"logo_height";s:2:"20";s:25:"allow_listings_submission";s:1:"1";s:23:"allow_listings_deletion";s:1:"0";s:13:"autometafetch";s:1:"1";s:13:"auto_approval";s:1:"0";s:10:"new_window";s:1:"1";s:26:"forward_to_listing_details";s:1:"1";s:8:"pagerank";s:1:"1";s:18:"viewlisting_fields";s:7:"0,1,3,4";s:19:"deep_links_validate";s:1:"0";s:22:"count_crossed_listings";s:1:"0";s:21:"listing_marked_as_new";s:2:"15";s:18:"num_index_listings";s:2:"12";s:16:"num_get_listings";s:2:"12";s:20:"num_featured_display";s:1:"5";s:19:"num_partner_display";s:1:"3";s:15:"visitor_sorting";s:1:"1";s:16:"listings_sorting";s:4:"date";s:21:"listings_sorting_type";s:9:"ascending";s:12:"expire_notif";s:0:"";s:13:"expire_period";s:0:"";s:13:"expire_action";s:0:"";s:22:"broken_listings_report";s:1:"1";s:22:"sort_listings_in_boxes";s:9:"site-wide";s:20:"mcross_functionality";s:1:"0";s:19:"mcross_number_links";s:1:"3";s:21:"mcross_only_sponsored";s:1:"1";s:13:"listing_check";s:1:"0";s:15:"broken_visitors";s:1:"0";s:12:"http_headers";s:11:"200,403,405";s:16:"reciprocal_check";s:1:"0";s:15:"reciprocal_link";s:24:"http://www.eannunci.com/";s:33:"reciprocal_required_only_for_free";s:1:"0";s:17:"reciprocal_domain";s:1:"1";s:14:"recip_featured";s:1:"1";s:19:"reciprocal_visitors";s:1:"1";s:16:"reciprocal_label";s:139:"To validate the reciprocal link please include the following HTML code in the page at the URL specified above, before submitting this form:";s:15:"reciprocal_text";s:56:"<a href="http://seoportale.com/">eSyndiCat Directory</a>";s:18:"duplicate_checking";s:1:"0";s:14:"duplicate_type";s:6:"domain";s:18:"duplicate_visitors";s:1:"1";s:12:"email_groups";s:28:"account,listing,other,custom";s:13:"mail_function";s:8:"php mail";s:8:"mimetype";s:4:"html";s:13:"sendmail_path";s:18:"/usr/sbin/sendmail";s:22:"smtp_secure_connection";s:0:"";s:11:"smtp_server";s:0:"";s:9:"smtp_port";s:0:"";s:9:"smtp_user";s:0:"";s:13:"smtp_password";s:0:"";s:22:"account_admin_register";s:1:"1";s:16:"account_approved";s:1:"1";s:14:"account_banned";s:1:"0";s:20:"account_change_email";s:1:"1";s:23:"account_change_password";s:1:"1";s:28:"account_confirm_change_email";s:1:"1";s:32:"account_confirm_restore_password";s:1:"1";s:15:"account_deleted";s:1:"0";s:19:"account_disapproved";s:1:"0";s:16:"account_register";s:1:"1";s:20:"listing_admin_submit";s:1:"1";s:15:"listing_approve";s:1:"1";s:14:"listing_banned";s:1:"0";s:14:"listing_delete";s:1:"0";s:18:"listing_disapprove";s:1:"0";s:14:"listing_modify";s:1:"1";s:12:"listing_move";s:1:"1";s:15:"listing_payment";s:1:"1";s:14:"listing_submit";s:1:"1";s:18:"listing_subscr_eot";s:1:"0";s:22:"listing_subscr_payment";s:1:"1";s:16:"listing_upgraded";s:1:"1";s:23:"notif_account_confirmed";s:1:"0";s:21:"notif_account_payment";s:1:"0";s:22:"notif_account_register";s:1:"0";s:21:"notif_category_submit";s:1:"1";s:27:"notif_listing_broken_report";s:1:"1";s:21:"notif_listing_payment";s:1:"1";s:20:"notif_listing_submit";s:1:"1";s:24:"notif_listing_subscr_eot";s:1:"0";s:28:"notif_listing_subscr_payment";s:1:"1";s:22:"notif_listing_upgraded";s:1:"1";s:18:"payment_expiration";s:1:"1";s:26:"ckeditor_code_highlighting";s:1:"0";s:25:"ckeditor_default_language";s:4:"auto";s:17:"ckeditor_ui_color";s:7:"#bbd2e0";s:7:"captcha";s:1:"1";s:12:"captcha_name";s:8:"kcaptcha";s:15:"captcha_preview";s:0:"";s:9:"thumbshot";s:1:"1";s:15:"thumbshots_name";s:10:"pagepeeker";s:13:"lightbox_name";s:8:"fancybox";s:8:"stw_size";s:2:"lg";s:22:"captcha_case_sensitive";s:1:"1";s:25:"fancybox_slide_transition";s:7:"elastic";s:24:"fancybox_open_transition";s:4:"fade";s:20:"fancybox_slide_speed";s:4:"fast";s:19:"fancybox_open_speed";s:4:"fast";s:14:"stw_cache_days";s:2:"30";s:22:"prettyphoto_show_title";s:1:"1";s:17:"alphabetic_search";s:1:"1";s:14:"gelio_social_f";s:35:"https://www.facebook.com/portaleseo";s:14:"gelio_social_g";s:45:"https://plus.google.com/115108970085473240598";s:14:"gelio_social_t";s:30:"https://twitter.com/PortaleSEO";s:18:"max_top_menu_items";s:1:"7";s:14:"ckeditor_color";s:4:"#AAB";s:25:"esyndicat_block_positions";s:127:"inventory,mainmenu,header,verytop,left,top,center,user1,user2,bottom,right,verybottom,footer1,footer2,footer3,footer4,copyright";s:16:"off_line_payment";s:1:"0";s:27:"off_line_payment_send_email";s:1:"1";s:20:"off_line_payment_msg";s:60:"Your Bank Account details {url_listing} {payment_for_submit}";s:15:"banners_payment";s:1:"0";s:19:"num_verytop_banners";s:1:"1";s:22:"num_verybottom_banners";s:1:"1";s:27:"num_belowcategories_banners";s:1:"1";s:21:"num_inventory_banners";s:1:"1";s:16:"num_left_banners";s:1:"1";s:17:"num_right_banners";s:1:"1";s:15:"num_top_banners";s:1:"1";s:20:"num_mainmenu_banners";s:1:"1";s:21:"num_copyright_banners";s:1:"1";s:18:"num_bottom_banners";s:1:"1";s:17:"num_user1_banners";s:1:"1";s:17:"num_user2_banners";s:1:"1";s:19:"num_footer1_banners";s:1:"1";s:19:"num_footer2_banners";s:1:"1";s:19:"num_footer3_banners";s:1:"1";s:19:"num_footer4_banners";s:1:"1";s:20:"banner_guests_submit";s:1:"1";s:13:"banner_prefix";s:7:"banner_";s:13:"banners_order";s:6:"random";s:15:"stw_full_length";s:1:"0";s:20:"googlemap_longtitude";s:9:"12.482269";s:18:"googlemap_latitude";s:9:"41.895623";s:27:"googlemap_show_without_data";s:1:"0";s:19:"googlemap_map_width";s:4:"100%";s:20:"googlemap_map_height";s:5:"400px";s:22:"googlemap_default_zoom";s:2:"16";s:22:"googlemap_append_field";s:7:"address";s:21:"googlemap_bgclassname";s:11:"gmap-marker";s:17:"googlemap_bgcolor";s:7:"#dbe8f7";s:18:"googlemap_minwidth";s:3:"150";s:18:"googlemap_maxwidth";s:3:"250";s:21:"googlemap_bordercolor";s:4:"#aa7";s:22:"googlemap_borderradius";s:1:"4";s:21:"googlemap_borderwidth";s:1:"1";s:19:"notif_comment_added";s:1:"1";s:22:"tags_convert_utf_ascii";s:1:"0";s:18:"use_title_for_tags";s:1:"0";s:24:"use_description_for_tags";s:1:"0";s:10:"tags_count";s:2:"30";s:16:"num_tags_display";s:1:"6";s:14:"tags_count_all";s:3:"500";s:9:"tags_size";s:6:"80-240";s:18:"stw_custom_quality";s:2:"95";s:16:"stw_custom_delay";s:1:"5";s:20:"stw_refresh_ondemand";s:1:"1";s:15:"stw_wide_screen";s:0:"";s:14:"stw_max_height";s:0:"";s:21:"stw_custom_resolution";s:0:"";s:11:"num_top_cat";s:1:"8";s:15:"num_popular_cat";s:1:"8";s:20:"comments_news_rating";s:1:"1";s:30:"comments_news_rating_block_max";s:2:"10";s:23:"comments_news_max_chars";s:3:"300";s:23:"comments_news_min_chars";s:2:"10";s:22:"comments_news_approval";s:1:"0";s:18:"comments_news_html";s:1:"0";s:22:"comments_news_accounts";s:1:"1";s:30:"comments_allow_news_submission";s:1:"1";s:29:"comments_articles_rate_period";s:1:"1";s:34:"comments_articles_rating_block_max";s:2:"10";s:24:"comments_articles_rating";s:1:"1";s:27:"comments_articles_max_chars";s:3:"300";s:27:"comments_articles_min_chars";s:2:"10";s:26:"comments_articles_approval";s:1:"0";s:22:"comments_articles_html";s:1:"0";s:26:"comments_articles_accounts";s:1:"1";s:34:"comments_allow_articles_submission";s:1:"1";s:29:"comments_listings_rate_period";s:1:"1";s:34:"comments_listings_rating_block_max";s:2:"10";s:24:"comments_listings_rating";s:1:"1";s:27:"comments_listings_max_chars";s:3:"300";s:27:"comments_listings_min_chars";s:2:"10";s:26:"comments_listings_approval";s:1:"0";s:22:"comments_listings_html";s:1:"0";s:26:"comments_listings_accounts";s:1:"1";s:34:"comments_allow_listings_submission";s:1:"1";s:9:"bad_words";s:32:"fuck, shit, cunt, viagra, cialis";s:18:"bad_words_checking";s:1:"1";s:17:"pagepeeker_format";s:3:"gif";s:11:"tell_friend";s:1:"1";s:17:"notif_tell_friend";s:1:"1";s:25:"tell_friend_include_admin";s:1:"1";s:20:"paypal_currency_code";s:3:"EUR";s:12:"paypal_email";s:20:"admin@seoportale.com";s:11:"paypal_demo";s:1:"0";s:18:"paypal_secret_word";s:32:"0d47b425dd366f39cc075512b862b6fb";s:21:"thumbshotsorg_api_key";s:12:"/65MQ6nHRCo=";s:17:"spider_google_api";s:0:"";s:17:"captcha_num_chars";s:1:"5";s:14:"display_slider";s:1:"1";s:10:"num_slides";s:1:"5";s:15:"slideshow_speed";s:4:"7000";s:15:"animation_speed";s:3:"600";s:16:"slider_animation";s:5:"slide";s:16:"slider_direction";s:10:"horizontal";s:25:"comments_news_rate_period";s:1:"1";s:28:"comments_num_latest_comments";s:1:"5";s:15:"comments_rating";s:1:"1";s:19:"comments_rating_max";s:2:"10";s:7:"fb_like";s:1:"1";s:13:"fb_like_faces";s:1:"1";s:11:"fb_comments";s:1:"0";s:14:"stw_secret_key";s:5:"8484d";s:14:"stw_access_key";s:15:"b1424414a24523d";s:23:"prettyphoto_socialtools";s:0:"";s:22:"prettyphoto_anim_speed";s:6:"normal";s:17:"prettyphoto_style";s:12:"dark_rounded";s:20:"num_related_listings";s:1:"5";s:16:"num_top_listings";s:1:"5";s:19:"num_random_listings";s:1:"5";s:16:"num_new_listings";s:1:"7";s:13:"ip_block_text";s:41:"We are sorry. Your IP address is blocked.";s:13:"ip_block_list";s:50:"These
+are
+your
+IP
+adress
+parted
+by
+new line";s:17:"enable_block_list";s:1:"1";s:19:"google_verification";s:94:"<meta name="google-site-verification" content="_AvwYkWgJS3VZdeOD7Q8pXQIIMkolU7-9U5rGikHGb8" />";s:16:"google_analytics";s:417:"<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60600240-1', 'auto');
+  ga('send', 'pageview');
+
+</script>";s:11:"fb_admin_id";s:0:"";s:14:"fb_num_comment";s:2:"15";s:17:"fb_comments_width";s:3:"400";s:9:"fb_app_id";s:15:"355505111310792";s:13:"fb_app_secret";s:32:"d5afa1a590125599bf49bd2db51ab9aa";s:19:"webthumbnail_height";s:3:"200";s:18:"webthumbnail_width";s:3:"200";s:19:"webthumbnail_format";s:3:"gif";s:20:"webthumbnail_browser";s:6:"chrome";s:11:"stw_branded";s:1:"0";s:16:"websnapr_api_key";s:12:"E899gGrcr2wL";}

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="kcaptcha">
+	<title>KCaptcha</title>
+	<summary>Plugin will add the CAPTCHA to all pages where it needs.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-02-07</date>
+	<status>active</status>
+	<compatibility>3.0</compatibility>
+
+	<config group="captcha" name="" type="divider" description="KCAPTCHA configuration">KCAPTCHA configuration</config>
+	<config group="captcha" name="captcha_case_sensitive" type="radio" value="1" multiplevalues="1,0" description="Case sensitive">1</config>
+	<config group="captcha" name="captcha_num_chars" type="text" description="Number of characters">5</config>
+
+	<install>
+		<code>
+			<![CDATA[
+global $esynConfig;
+
+$current_value = $esynConfig->getConfig('captcha_name');
+
+$esynConfig->setTable('config');
+$current_values = $esynConfig->one("`multiple_values`", "`name` = 'captcha_name'");
+$esynConfig->resetTable();
+
+if (!empty($current_values))
+{
+	$values = explode(',', $current_values);
+}
+
+$values[] = 'kcaptcha';
+
+$num_values = count($values);
+$updated_values = join(',', $values);
+
+$esynConfig->setTable('config');
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'captcha_name'");
+
+if(1 == $num_values)
+{
+	$esynConfig->update(array('value' => 'kcaptcha'), "`name` = 'captcha_name'");
+}
+
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</install>
+	
+	<!-- The PHP code which run when plugin uninstalls -->
+	<uninstall>
+		<code>
+			<![CDATA[
+global $esynConfig;
+
+$current_value = $esynConfig->getConfig('captcha_name');
+
+$esynConfig->setTable('config');
+$current_values = $esynConfig->one("`multiple_values`", "`name` = 'captcha_name'");
+$esynConfig->resetTable();
+
+$values = explode(',', $current_values);
+
+if(!empty($values))
+{
+	foreach($values as $key => $value)
+	{
+		if('kcaptcha' == $value)
+		{
+			unset($values[$key]);
+		}
+	}
+}
+
+$updated_values = join(',', $values);
+
+$esynConfig->setTable('config');
+
+if(empty($values))
+{
+	$esynConfig->update(array('value' => ''), "`name` = 'captcha_name'");
+}
+
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'captcha_name'");
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</uninstall>
+</plugin>

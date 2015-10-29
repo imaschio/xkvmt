@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="mailer">
+	<title>Mailer</title>
+	<summary>This plugin allows to create a subscription form on your website and contact members in a handy way.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.3</version>
+	<date>2013-09-09</date>
+	<status>active</status>
+	<compatibility>3.0</compatibility>
+
+	<adminpages>
+		<page block="plugins" file="index" menus="main">Mailer</page>
+		<page file="manage-mailer" block="">Manage Mailer</page>
+	</adminpages>
+	
+	<pages>
+		<page status="active" name="subscribe"><![CDATA[ ]]></page>
+	</pages>
+
+	<config group="miscellaneous" name="divider_newsletter" type="divider" description="Newsletter"><![CDATA[ Newsletter ]]></config>
+	<config group="miscellaneous" name="newsletter_autoapproval" type="radio" multiple_values="1,0" description="Newsletter Auto Approval">1</config>
+	<config group="miscellaneous" name="newsletter_captcha" type="radio" multiple_values="1,0" description="Newsletter check for captcha">0</config>
+	<config group="miscellaneous" name="newsletter_unsubscribe_link" type="textarea" editor="1" description="Unsubscribe Link"><![CDATA[
+<br /><br /><br />
+__________________________________________<br />
+<span style="fontsize: 8px;">If you no longer wish to receive newsletters from us, please  <a href="{unsub_link}">Unsubscribe</a></span>
+	]]></config>
+	<config group="mail" name="newsletter_unsubscribe" type="hidden" description="" multiplevalues="1,0">1</config>
+	<config group="mail" name="newsletter_confirm" type="hidden" description="" multiplevalues="1,0">1</config>
+
+    <phrases>
+		<phrase key="are_you_sure_to_delete_selected_subscribe" category="common" code="en">Are you sure to delete selected subscribers?</phrase>
+		<phrase key="newsletter_unsubscribe_confirm_err" category="common" code="en">Error. Your key not found.</phrase>
+		<phrase key="newsletter_unsubscribe_confirm" category="common" code="en"><![CDATA[<h2>Congratulations!</h2>You have successfully confirmed end of subscription.<br>Best regards.]]></phrase>
+		<phrase key="newsletter_email_exists" category="common" code="en">Email already exists.</phrase>
+		<phrase key="newsletter_unsubscribe" category="common" code="en"><![CDATA[<h2>Thank You,</h2>We have just sent you a confirmation email. It should arrive into your inbox shortly.<br />Please check your email inbox, find our confirmation email, read the instructions, and confirm.]]></phrase>
+		<phrase key="newsletter_confirm_err" category="common" code="en">Error. Your key not found.</phrase>
+		<phrase key="newsletter_delete_err" category="common" code="en">Your subscription has not been removed</phrase>
+		<phrase key="page_title_subscribe" category="common" code="en">Newsletter</phrase>
+		<phrase key="newsletter_subscribe" category="common" code="en"><![CDATA[<h2>Thank You,</h2> thank you for subscribing to our newsletter.<br />Before we start sending you our newsletter we have to make sure we have your permission. We have just sent you a confirmation email. It should arrive into your inbox shortly.<br />Please check your email inbox, find the our subscription confirmation email, read the instructions, and confirm your subscription.]]></phrase>
+		<phrase key="error_realname_empty" category="common" code="en">Real name field is empty.</phrase>
+		<phrase key="newsletter_confirmed" category="common" code="en"><![CDATA[<h2>Congratulations!</h2>You have successfully confirmed your subscription.<br />We do appreciate your feedback so feel free to reply to our newsletter messages.<br />Stay in touch!<br />Best regards.]]></phrase>
+		<phrase key="manage_subscribers" category="common" code="en">Manage Subscribers</phrase>
+		<phrase key="newsletter_deleted" category="common" code="en">Your subscription has been removed</phrase>
+		<phrase key="email_tags_explan" category="common" code="en">You can use following email tags</phrase>
+		<phrase key="error_email_exist" category="common" code="en">Email already exist</phrase>
+		<phrase key="could_not_deliver" category="common" code="en">Message Could not be delivered to the following email: {email}</phrase>
+		<phrase key="newsletters_added" category="common" code="en">Subcriber has been added successfully.</phrase>
+		<phrase key="get_rec_from_cat" category="common" code="en">Get recipients from category</phrase>
+		<phrase key="add_subscriber" category="common" code="en">Add Subscriber</phrase>
+		<phrase key="select_accounts" category="common" code="en">Select Accounts:</phrase>
+		<phrase key="individ_receps" category="common" code="en">Individual recipients</phrase>
+		<phrase key="no_newsletters" category="common" code="en">no_newsletters</phrase>
+		<phrase key="manage_mailer" category="common" code="en">Manage Mailer</phrase>
+		<phrase key="all_accounts" category="common" code="en">all accounts</phrase>
+		<phrase key="mass_mailer" category="common" code="en">Mass mailer</phrase>
+		<phrase key="error_email" category="common" code="en">The email is not valid</phrase>
+		<phrase key="unsubscribe" category="common" code="en">Unsubscribe</phrase>
+		<phrase key="newsletters" category="common" code="en">Newsletters</phrase>
+		<phrase key="unconfirmed" category="common" code="en">Unconfirmed</phrase>
+		<phrase key="no_accounts" category="common" code="en">No accounts</phrase>
+		<phrase key="error_name" category="common" code="en">The name is empty</phrase>
+		<phrase key="newsletter" category="common" code="en">Newsletter</phrase>
+		<phrase key="mail_queue" category="common" code="en">Mail Queue</phrase>
+		<phrase key="subscribe" category="common" code="en">Subscribe</phrase>
+		<phrase key="no_receps" category="common" code="en">There are no recipients</phrase>
+		<phrase key="realname" category="common" code="en">Real name</phrase>
+		<phrase key="mailer" category="common" code="en">Mailer</phrase>
+		<phrase key="send" category="common" code="en">Send</phrase>
+		<phrase key="newsletter_block_text" category="common" code="en">Subscribe to our email newsletter for useful tips and valuable resources, sent out every second Tuesday.</phrase>
+
+		<phrase key="email_group_mailer" category="admin" code="en">Mailer Plugin Templates</phrase>
+		<phrase key="tpl_newsletter_confirm_subject" category="email" code="en">Thanks for subscribing at {dir_title}</phrase>
+        <phrase key="tpl_newsletter_confirm_body" category="email" code="en">
+			<![CDATA[
+Greetings {realname},<br /><br />
+
+Thanks for requesting the {dir_title} newsletter.<br /><br />
+
+Before we begin sending it,  we want to make sure we<br />
+have your permission.<br /><br />
+
+Below are the confirmation instructions.<br /><br />
+
+-----------------------------------------------------------<br />
+CONFIRM BY VISITING THE LINK BELOW:<br /><br />
+
+To activate your subscription go to <a href="{dir_url}mod/mailer/?action=subscribe&key={key}">{dir_url}mod/mailer/?action=subscribe&key={key}</a><br /><br />
+
+Click the link above to give us permission to send you<br />
+information.  It's fast and easy!  If you cannot click the<br />
+full URL above, please copy and paste it into your web<br />
+browser.<br /><br />
+
+If you do not want to subscribe, simply ignore this message.<br />
+______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}<br />
+        ]]></phrase>
+        <phrase key="tpl_newsletter_unsubscribe_subject" category="email" code="en">Unsubscribing at {dir_title}</phrase>
+        <phrase key="tpl_newsletter_unsubscribe_body" category="email" code="en"><![CDATA[
+Greetings {realname},<br />
+<br />
+To unsubscribe go to <a href="{dir_url}mod/mailer/?action=unsubscribe&key={key}">{dir_url}mod/mailer/?action=unsubscribe&key={key}</a><br />
+<br />
+If you cannot click the full URL above, please copy and paste it into your web<br />
+browser.<br />
+<br />
+If you do not want to unsubscribe, simply ignore this message.<br />
+______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}<br />
+        ]]></phrase>
+    </phrases>
+
+	<blocks>
+		<block name="newsletter" title="Newsletter" showheader="1" collapsible="0" lang="en" position="right" type="smarty" sticky="1" status="active" external="1"><![CDATA[]]></block>
+	</blocks>
+
+	<installsql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}newsletter` (
+	`id` int(8) NOT NULL auto_increment PRIMARY KEY,
+	`realname` varchar(30) NOT NULL default '',
+	`email` varchar(50) NOT NULL default '',
+	`sec_key` varchar(32) NOT NULL default '',
+	`status` enum('approval','active','unconfirmed') NOT NULL default 'active',
+	`date_reg` datetime NOT NULL default '0000-00-00 00:00:00'
+) {mysql_version};
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}mail_queue` (
+	`id` int(11) NOT NULL auto_increment,
+	`email` varchar(255) NOT NULL default '',
+	`message_id` int(11) NOT NULL default '0',
+	`variables` text NOT NULL,
+	`date` datetime NOT NULL default '0000-00-00 00:00:00',
+	PRIMARY KEY  (`id`),
+	KEY `message_id` (`message_id`)
+) {mysql_version};
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}messages` (
+	`id` int(11) NOT NULL auto_increment,
+	`subject` varchar(255) NOT NULL default '',
+	`message` text NOT NULL,
+	`date` datetime NOT NULL default '0000-00-00 00:00:00',
+	PRIMARY KEY  (`id`)
+) {mysql_version};
+			]]>
+		</sql>
+	</installsql>
+	
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}newsletter`;
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}messages`;
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}mail_queue`;
+			]]>
+		</sql>
+	</uninstallsql>
+</plugin>

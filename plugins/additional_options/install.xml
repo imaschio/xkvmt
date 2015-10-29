@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<plugin name="additional_options">
+	<title>Additional Account Options</title>
+	<summary>The plugin allows registered users to use additional tools to manage listings and account.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.1</version>
+	<date>2013-09-06</date>	
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<actions>
+		<action show="view_listing">remove</action>
+	</actions>
+
+	<hooks>
+		<hook name="listingDisplayToolbarLinks" type="smarty">
+			<![CDATA[
+{if $esynAccountInfo}
+	{if $esynAccountInfo.id == $listing.account_id}
+		<a id="remove_listing{$listing.id}" href="{$smarty.const.ESYN_URL}controller.php?plugin=additional_options&file=remove-listing&id={$listing.id}" onClick="return confirm('{lang key="are_you_sure_remove_listing"}');" title="{lang key='remove_listing'}"><i class="icon-remove icon-blue"></i></a>
+	{/if}
+{/if}
+			]]>
+		</hook>
+
+		<hook name="viewListingBeforeFooter" type="smarty">
+			<![CDATA[
+{ia_print_js files='plugins/additional_options/js/frontend/index'}
+
+{ia_add_js}
+	var account_id = {($esynAccountInfo.id) ? $esynAccountInfo.id : 0};
+	var logged = {($esynAccountInfo) ? 1 : 0};
+{/ia_add_js}
+			]]>
+		</hook>
+	</hooks>
+
+	<phrases>
+		<phrase key="remove_listing" category="frontend" code="en">Remove Listing</phrase>
+		<phrase key="you_cannot_delete_listing" category="frontend" code="en">Listings removal is not allowed for guests. You have to Sign In or Register in order to delete a listing.</phrase>
+		<phrase key="esyndicat_action_remove" category="frontend" code="en"><![CDATA[Remove Listing]]></phrase>
+		<phrase key="listing_removed" category="frontend" code="en">The listing was removed successfully.</phrase>
+		<phrase key="are_you_sure_remove_listing" category="frontend" code="en">Are you sure you want to remove the listing?</phrase>
+	</phrases>
+</plugin>

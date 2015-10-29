@@ -1,0 +1,21 @@
+<p>Please follow these instructions to setup single sign-on integration for your VanillaForums. We don't cover VanillaForums integration in details as this information could be found on their official website.</p>
+<p>
+	<ul>
+		<li>Install VanillaForums on the same domain where you have eSyndiCat script installed.</li>
+		<li>Install VanillaForums jsConnect plugin: http://vanillaforums.org/addon/jsconnect-plugin</li>
+		<li>Open VanillaForums dashboard and click Plugins, edit jsConnect plugin.</li>
+		<li>Add a new connection with the following params::<br />
+			a. Client ID / Secret - you can auto generate them by clicking an appropriate button
+			b. Site Name - put anything here, let's use eSyndiCat as an example
+			c. Authenticate Url - http://YOUR.ESYNDICAT.URL/mod/vanillaforums/
+			d. Sign In Url - http://YOUR.ESYNDICAT.URL/login.php
+			e. Register Url - http://YOUR.ESYNDICAT.URL/register.php
+		</li>
+		<li>Save Changes</li>
+		<li>Go to Configuration and allow registration for SSO only.</li>
+		<li>Install eSyndiCat plugin VanillaForums Signle Sign-On</li>
+		<li>Go to Subrion Admin Panel -> Configuration -> Miscellaneous</li>
+		<li>Find the section related to VanillaForums and insert the key &amp; Secret you generated in VanillaForums dashboard, Save Changes</li>
+		<li>Create a new page with External Content and place it in the menu. It should be a full URL to your forums homepage.</li>
+	</ul>
+</p>
