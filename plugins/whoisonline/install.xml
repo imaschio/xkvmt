@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin name="whoisonline">
+	<title>Who is online</title>
+	<summary>This mod allows you to display active users on your directory pages.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.2</version>
+	<date>2013-08-03</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<hooks>
+		<hook name="adminDatabaseConsistency" type="smarty">
+			<![CDATA[
+<li style="margin: 5px;">
+	<span style="display:block; float:left; width:210px; margin-right:10px;"><b>{$esynI18N.manage_whoisonline}</b>:</span>
+	<a href="controller.php?file=database&amp;page=consistency&amp;type=clear_statistic" id="whoisonline_clear">{$esynI18N.clear_statistic|upper}</a>
+</li>
+			]]>
+		</hook>
+
+		<hook name="phpAdminDatabaseConsistencyType" type="php">
+			<![CDATA[
+global $eSyndiCat, $esynAdmin, $esynI18N;
+
+if ('clear_statistic' == $_GET['type'])
+{
+	if ($esynAdmin->query("TRUNCATE `{$esynAdmin->mPrefix}whoisonline`"))
+	{
+		esynMessages::setMessage($esynI18N['clear_statistic_msg'], false);
+		esynUtil::reload(array("type"=>null));
+	}
+	else
+	{
+		esynMessages::setMessage($esynI18N['clear_statistic_msg_error'], true);
+		esynUtil::reload(array("type"=>null));
+	}
+}
+			]]>
+		</hook>
+
+		<hook name="theVeryStart" file="plugins/whoisonline/includes/hook.theVeryStart.php"><![CDATA[]]></hook>
+		<hook name="bootstrap" file="plugins/whoisonline/includes/hook.bootstrap.php"><![CDATA[]]></hook>
+		<hook name="statisticsBlock" file="plugins/whoisonline/templates/hook.statisticsBlock.tpl" type="smarty"><![CDATA[]]></hook>
+	</hooks>
+
+	<phrases>
+		<phrase key="clear_statistic_msg_error" category="admin" code="en"><![CDATA[Unknown error while clearing statistics.]]></phrase>
+		<phrase key="clear_statistic_msg" category="admin" code="en"><![CDATA[Statistics successfully cleared.]]></phrase>
+		<phrase key="manage_whoisonline" category="admin" code="en"><![CDATA[WHOIS ONLINE]]></phrase>
+		<phrase key="clear_statistic" category="admin" code="en"><![CDATA[Clear statistics]]></phrase>
+		<phrase key="total_visits" category="common" code="en">Total visits</phrase>
+		<phrase key="active_visitors" category="common" code="en">Active visitors</phrase>
+		<phrase key="active_bots" category="common" code="en">Active bots</phrase>
+		<phrase key="other_bots" category="common" code="en">Unidentified bots</phrase>
+		<phrase key="visits" category="common" code="en">Visits today</phrase>
+		<phrase key="users" category="common" code="en">Users</phrase>
+		<phrase key="whoisonline" category="common" code="en">Who is online</phrase>
+	</phrases>
+
+	<installsql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}whoisonline` (
+	`id` int(8) NOT NULL auto_increment,
+    `ip_addr` varchar(15) NOT NULL default '',
+	`id_session` varchar(50) NOT NULL default '',
+	`date` timestamp NOT NULL default '0000-00-00 00:00:00',
+	`status` enum('active','expired') NOT NULL default 'active',
+	`username` varchar(30) NOT NULL default '',
+	`bot` varchar(50) NOT NULL default '',
+	PRIMARY KEY  (`id`),
+	KEY `status` (`status`),
+	KEY `date` (`date`),
+	KEY `bot` (`bot`),
+	KEY `id_session` (`id_session`)
+){mysql_version};
+			]]>
+		</sql>
+	</installsql>
+
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}whoisonline`;
+			]]>
+		</sql>
+	</uninstallsql>
+</plugin>

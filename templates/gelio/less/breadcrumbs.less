@@ -1,0 +1,56 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+
+// .breadcrumb {
+//   padding: 8px 15px;
+//   margin: 0 0 @baseLineHeight;
+//   list-style: none;
+//   background-color: #f5f5f5;
+//   .border-radius(@baseBorderRadius);
+//   > li {
+//     display: inline-block;
+//     .ie7-inline-block();
+//     text-shadow: 0 1px 0 @white;
+//     > .divider {
+//       padding: 0 5px;
+//       color: #ccc;
+//     }
+//   }
+//   > .active {
+//     color: @grayLight;
+//   }
+// }
+
+// ia-replace
+.ia-breadcrumb {
+  padding: 0;
+  font-size: 11px;
+  margin: 0;
+  list-style: none;
+
+  > li {
+    display: inline-block;
+    .ie7-inline-block();
+    text-shadow: 0 1px 0 @white;
+
+    a {
+      text-decoration: underline;
+      color: @breadcrumbLinkColor;
+
+      &:hover {
+        text-decoration: none;
+        color: @breadcrumbLinkHoverColor;
+      }
+    }
+
+    > .divider {
+      padding: 0 5px;
+      color: @breadcrumbDividerColor;
+    }
+  }
+  > .active {
+    color: @breadcrumbActiveColor;
+  }
+}

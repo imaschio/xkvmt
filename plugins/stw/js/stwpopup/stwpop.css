@@ -1,0 +1,77 @@
+/*
+ * Alejandro Luis González Tokman
+ * August 20th, 2013
+ * aleco@abeeworks.com
+*/
+a.stwpopup {
+	position: relative;
+}
+a div.stw-tooltip {
+	position:absolute;
+}
+a div.stw-tooltip img {
+	border-style:none;
+	background:none;
+	padding:0px;
+	margin:0px;
+	position:absolute;
+}
+.stwpopup .lb-sm { background: url('lb-sm.png'); }
+.stwpopup .lt-sm { background: url('lt-sm.png'); }
+.stwpopup .rb-sm { background: url('rb-sm.png'); }
+.stwpopup .rt-sm { background: url('rt-sm.png'); }
+
+.stwpopup .lb-lg { background: url('lb-lg.png'); }
+.stwpopup .lt-lg { background: url('lt-lg.png'); }
+.stwpopup .rb-lg { background: url('rb-lg.png'); }
+.stwpopup .rt-lg { background: url('rt-lg.png'); }
+
+.stwpopup .lb-xlg { background: url('lb-xlg.png'); }
+.stwpopup .lt-xlg { background: url('lt-xlg.png'); }
+.stwpopup .rb-xlg { background: url('rb-xlg.png'); }
+.stwpopup .rt-xlg { background: url('rt-xlg.png'); }
+
+.stwpopup .bglb-sm { background: url('bglb-sm.png'); }
+.stwpopup .bglt-sm { background: url('bglt-sm.png'); }
+.stwpopup .bgrb-sm { background: url('bgrb-sm.png'); }
+.stwpopup .bgrt-sm { background: url('bgrt-sm.png'); }
+
+.stwpopup .bglb-lg { background: url('bglb-lg.png'); }
+.stwpopup .bglt-lg { background: url('bglt-lg.png'); }
+.stwpopup .bgrb-lg { background: url('bgrb-lg.png'); }
+.stwpopup .bgrt-lg { background: url('bgrt-lg.png'); }
+
+.stwpopup .bglb-xlg { background: url('bglb-xlg.png'); }
+.stwpopup .bglt-xlg { background: url('bglt-xlg.png'); }
+.stwpopup .bgrb-xlg { background: url('bgrb-xlg.png'); }
+.stwpopup .bgrt-xlg { background: url('bgrt-xlg.png'); }
+
+.stwpopup .lb-sm img { top: 30px; left: 30px; }
+.stwpopup .lt-sm img { top: 30px; left: 30px; }
+.stwpopup .rb-sm img { top: 30px; left: 30px; }
+.stwpopup .rt-sm img { top: 30px; left: 30px; }
+
+.stwpopup .lb-lg img { top: 30px; left: 30px; }
+.stwpopup .lt-lg img { top: 30px; left: 30px; }
+.stwpopup .rb-lg img { top: 30px; left: 30px; }
+.stwpopup .rt-lg img { top: 30px; left: 30px; }
+
+.stwpopup .lb-xlg img { top: 30px; left: 30px; }
+.stwpopup .lt-xlg img { top: 30px; left: 30px; }
+.stwpopup .rb-xlg img { top: 30px; left: 30px; }
+.stwpopup .rt-xlg img { top: 30px; left: 30px; }
+
+.stwpopup .bglb-sm img { top: 30px; left: 17px; }
+.stwpopup .bglt-sm img { top: 30px; left: 17px; }
+.stwpopup .bgrb-sm img { top: 30px; left: 25px; }
+.stwpopup .bgrt-sm img { top: 30px; left: 25px; }
+
+.stwpopup .bglb-lg img { top: 35px; left: 17px; }
+.stwpopup .bglt-lg img { top: 45px; left: 17px; }
+.stwpopup .bgrb-lg img { top: 35px; left: 30px; }
+.stwpopup .bgrt-lg img { top: 45px; left: 30px; }
+
+.stwpopup .bglb-xlg img { top: 57px; left: 27px; }
+.stwpopup .bglt-xlg img { top: 72px; left: 28px; }
+.stwpopup .bgrb-xlg img { top: 56px; left: 48px; }
+.stwpopup .bgrt-xlg img { top: 72px; left: 46px; }

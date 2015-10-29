@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="googlesearch">
+	<title>Google Search</title>
+	<summary>Google Search integration, allow visitors to search information on your site using Google Search Engine.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-02-11</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+	
+	<hooks>
+		<hook name="headSection" type="smarty">
+		<![CDATA[
+{ia_add_js}
+	$(document).ready(function()
+	{
+		$(".js-top-search-button").after(' <button type="submit" class="btn btn-success" id="SearchGoogle">{$lang.google_search}</button>');
+
+		$(".js-top-search-button").click(function()
+		{
+			$("#searchForm").attr("action", intelli.config.esyn_url + 'search.php').submit();
+		});
+
+		$("#SearchGoogle").click(function()
+		{
+			$("#searchFormBar").append('<input type="hidden" value="Google Search">');
+			$("#searchFormBar").append('<input type="hidden" name="sitesearch" value="' + escape(intelli.config.esyn_url.replace('http://', '')) + '">');
+			$("#search_input").attr("name", "q");
+			$("#searchFormBar").attr("action", "http://www.google.com/search").submit();
+		});
+	});
+{/ia_add_js}
+]]>
+		</hook>
+	</hooks>
+
+	<phrases>
+		<phrase key="google_search" category="common" code="en">Google Search</phrase>
+	</phrases>
+</plugin>

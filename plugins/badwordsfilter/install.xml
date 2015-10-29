@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="badwordsfilter">
+	<title>Bad words filter</title>
+	<summary>This plugin does not allow listing submissions if text or textarea type fields contain any of banned words list.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-02-11</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+	
+	<config group="miscellaneous" name="div_badwordsfilter" type="divider" description="Bad Words Filter"><![CDATA[Bad Words Filter]]></config>
+	<config group="miscellaneous" name="bad_words_checking" type="radio" description="Checking for bad words" multiplevalues="1,0">1</config>
+	<config group="miscellaneous" name="bad_words" type="textarea" description="Bad word list">fuck, shit, cunt, viagra, cialis</config>
+	
+	<phrases>
+		<phrase key="bad_words" category="common" code="en">These types of words are banned and will not be processed. Please replace them in the fields</phrase>
+	</phrases>
+	
+	<hooks>
+		<hook name="editListingValidation" file="plugins/badwordsfilter/includes/hook.editListingValidation.php"><![CDATA[]]></hook>
+	</hooks>
+</plugin>

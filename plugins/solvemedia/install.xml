@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="solvemedia">
+	<title>SolveMedia</title>
+	<summary>This plugin provides integration for SolveMedia.com advertising captcha.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-01-14</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<config group="miscellaneous" name="solvemedia_plugin" type="divider" description="SolveMedia configuration" value=""><![CDATA[SolveMedia configuration]]></config>
+	<config group="miscellaneous" name="solvemedia_ckey" description="Challenge Key (C-key)" type="text">#</config>
+	<config group="miscellaneous" name="solvemedia_vkey" description="Verification Key (V-key)" type="text">#</config>
+	<config group="miscellaneous" name="solvemedia_hkey" description="Authentication Hash Key (H-key)" type="text">#</config>
+
+	<install>
+		<code>
+			<![CDATA[
+global $esynAdmin;
+
+$esynAdmin->setTable('config');
+$current_values = $esynAdmin->one("`multiple_values`", "`name` = 'captcha_name'");
+
+if(!empty($current_values))
+{
+	$values = explode(',', $current_values);
+}
+
+$values[] = 'solvemedia';
+
+$num_values = count($values);
+$updated_values = join(',', $values);
+
+$esynAdmin->update(array('multiple_values' => $updated_values), "`name` = 'captcha_name'");
+
+if(1 == $num_values)
+{
+	$esynAdmin->update(array('value' => 'solvemedia'), "`name` = 'captcha_name'");
+}
+
+$esynAdmin->resetTable();
+			]]>
+		</code>
+	</install>
+	
+	<uninstall>
+		<code>
+			<![CDATA[
+global $esynAdmin;
+
+$esynConfig->setTable('config');
+
+$current_values = $esynAdmin->one("`multiple_values`", "`name` = 'captcha_name'");
+
+$values = explode(',', $current_values);
+
+if(!empty($values))
+{
+	foreach($values as $key => $value)
+	{
+		if ('solvemedia' == $value)
+		{
+			unset($values[$key]);
+		}
+	}
+}
+
+$updated_values = join(',', $values);
+
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'captcha_name'");
+
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</uninstall>
+</plugin>

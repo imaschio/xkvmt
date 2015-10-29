@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<plugin name="crawl">
+	<title>Crawler</title>
+	<summary>This plugin intended to extract meta description and meta keywords by url to add them to your directory.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.2.0</version>
+	<date>2014-07-15</date>
+	<status>active</status>
+	<compatibility>3.2</compatibility>
+
+	<phrases>
+		<phrase key="list_of_urls" category="admin" code="en">List of URL's (with http)</phrase>
+		<phrase key="keywords" category="admin" code="en">Keywords</phrase>
+		<phrase key="parse" category="admin" code="en">Parse</phrase>
+		<phrase key="invalid_url" category="admin" code="en">Invalid URL</phrase>
+		<phrase key="listing_adding_error" category="admin" code="en">Adding listing error</phrase>
+	</phrases>
+
+	<adminpages>
+		<page block="plugins" menus="main">Crawler</page>
+	</adminpages>
+</plugin>

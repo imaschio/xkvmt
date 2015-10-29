@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="googlemap">
+	<title>Google Map</title>
+	<summary>This plugin generate address fields for a listing and displays Google Map.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.4</version>
+	<date>2014-12-16</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<configgroup name="googlemap">Google Maps</configgroup>
+
+	<config group="googlemap" name="googlemap" type="divider">Google Map</config>
+	<config group="googlemap" name="googlemap_longtitude" type="text" description="Center in the longtitude">-95.908507</config>
+	<config group="googlemap" name="googlemap_latitude" type="text" description="Center in the latitude">41.150489</config>
+	<config group="googlemap" name="googlemap_show_without_data" type="radio" multiplevalues="1,0" description="Show empty map">0</config>
+	<config group="googlemap" name="googlemap_map_width" type="text" description="Width of map">100%</config>
+	<config group="googlemap" name="googlemap_map_height" type="text" description="Height of map">400px</config>
+	<config group="googlemap" name="googlemap_default_zoom" type="text" description="Default zoom of map">16</config>
+	<config group="googlemap" name="googlemap_append_field" type="select" multiplevalues="address,city,zip,state,country" description="Append link to field">address</config>
+	<config group="googlemap" name="googlemap_info" type="divider">InfoBubble settings</config>
+	<config group="googlemap" name="googlemap_bgclassname" type="text" description="Background classname">gmap-marker</config>
+	<config group="googlemap" name="googlemap_bgcolor" type="text" description="Background color">#dbe8f7</config>
+	<config group="googlemap" name="googlemap_minwidth" type="text" description="Min width">150</config>
+	<config group="googlemap" name="googlemap_maxwidth" type="text" description="Max width">250</config>
+	<config group="googlemap" name="googlemap_bordercolor" type="text" description="Border color">#aa7</config>
+	<config group="googlemap" name="googlemap_borderradius" type="text" description="Border radius">4</config>
+	<config group="googlemap" name="googlemap_borderwidth" type="text" description="Border width">1</config>
+
+	<fields>
+		<field name="address" title="Address" type="text" length="150" pages="suggest,edit,view" searchable="1"><![CDATA[]]></field>
+		<field name="city" title="City" type="text" length="150" pages="suggest,edit,view" searchable="1"><![CDATA[]]></field>
+		<field name="zip" title="ZIP" type="text" length="10" pages="suggest,edit,view" searchable="1"><![CDATA[]]></field>
+		<field name="state" title="State" type="text" length="25" pages="suggest,edit,view" searchable="1"><![CDATA[]]></field>
+		<field name="country" title="Country" type="text" length="150" pages="suggest,edit,view" searchable="1"><![CDATA[]]></field>
+		<field name="latitude" title="Latitude" type="text" length="150" pages="suggest,edit" searchable="0" adminonly="0"><![CDATA[]]></field>
+		<field name="longitude" title="Longitude" type="text" length="150" pages="suggest,edit" searchable="0" adminonly="0"><![CDATA[]]></field>
+		<field name="zoom" title="Zoom" type="text" length="10" pages="suggest,edit" searchable="0" adminonly="0"><![CDATA[]]></field>
+	</fields>
+
+	<phrases>
+		<phrase key="google_map" category="common" code="en">Google Map</phrase>
+		<phrase key="print_directions" category="common" code="en">Print Directions</phrase>
+		<phrase key="directions" category="common" code="en">Directions</phrase>
+		<phrase key="address" category="common" code="en">Address</phrase>
+		<phrase key="enter_address" category="common" code="en">Enter your address</phrase>
+		<phrase key="get_directions" category="common" code="en">Get Directions!</phrase>
+		<phrase key="googlemap_find_on_map" category="common" code="en">Find on map</phrase>
+		<phrase key="googlemap_check_address" category="common" code="en">Check address</phrase>
+		<phrase key="googlemap_select_coordinates" category="common" code="en">Select coordinates</phrase>
+		<phrase key="googlemap_address_empty" category="common" code="en">The address string is empty. Please type any address or try to select coordinates manually.</phrase>
+		<phrase key="googlemap_address_not_found" category="common" code="en">The {address} address is not found. Please try to select coordinates manually.</phrase>
+		<phrase key="consistency_coordinates_update" category="common" code="en">Updates listings latitude & longitude fields using Google Maps geocode functionality based on address values.</phrase>
+		<phrase key="coordinates_update" category="admin" code="en">Update Coordinates</phrase>
+	</phrases>
+
+	<blocks>
+		<block name="googlemap" title="Google Map" showheader="0" collapsible="1" lang="en" status="active" position="right" type="smarty" pages="search,new_listings,top_listings,popular_listings,random_listings,account_listings,favorites_listings,view_listing,index,index_browse" external="1"><![CDATA[]]></block>
+	</blocks>
+
+	<hooks>
+		<hook name="listingDisplayToolbarLinks" type="smarty">
+			<![CDATA[
+<span class="js-map-marker-{$listing.id}"></span>
+			]]>
+		</hook>
+		<hook name="beforeListingDisplay,viewListingAfterMainFieldsDisplay" type="smarty">
+			<![CDATA[
+{if (!empty($listing.zip) || !empty($listing.country) || !empty($listing.state) || !empty($listing.city) || !empty($listing.address)) || (!empty($listing.latitude) || !empty($listing.longitude))}
+	<div class="js-map-info" id="js-map-info-{$listing.id}"
+		data-id="{$listing.id}"
+		data-zip="{$listing.zip}"
+		data-country="{$listing.country}"
+		data-state="{$listing.state}"
+		data-city="{$listing.city}"
+		data-address="{$listing.address}"
+		data-description="{$listing.description|strip_tags|truncate:150:"..."}"
+		data-title="{$listing.title|escape:'html'}"
+		data-url="{print_listing_url listing=$listing}"
+		data-lat="{$listing.latitude}"
+		data-lng="{$listing.longitude}"
+		data-zoom="{$listing.zoom}">
+	</div>
+{/if}
+			]]>
+		</hook>
+
+		<hook name="suggestListingBeforeFooter" type="smarty">
+			<![CDATA[
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+{include_file css='plugins/googlemap/js/jquery/plugins/colorbox/css/colorbox'}
+{ia_print_js files='plugins/googlemap/js/jquery/plugins/colorbox/jquery.colorbox, plugins/googlemap/js/common/select'}
+			]]>
+		</hook>
+
+		<hook name="tplAdminSuggestListingAfterIncludeJs" type="smarty">
+			<![CDATA[
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+{include_file css='plugins/googlemap/js/jquery/plugins/colorbox/css/colorbox'}
+{include_file js='plugins/googlemap/js/jquery/plugins/colorbox/jquery.colorbox, plugins/googlemap/js/common/select'}
+			]]>
+		</hook>
+
+		<hook name="adminDatabaseConsistency" type="smarty">
+			<![CDATA[
+<li>
+	<div class="consistency-item-actions" id="google-map">
+		<h5>{$esynI18N.coordinates_update}:</h5>
+		<a href="#" class="ajax" data-num="{$stats_items.gmap_num_listings}" data-type="updatecoordinates">{$esynI18N.update|upper}</a>
+	</div>
+	<div class="consistency-item-annotation">
+		{lang key='consistency_coordinates_update'}
+	</div>
+</li>
+			]]>
+		</hook>
+
+		<hook name="phpAdminDatabaseConsistencyTypeAjax" type="php">
+			<![CDATA[
+if ($_GET['type'] == 'updatecoordinates')
+{
+	include(IA_PLUGINS.'googlemap'.IA_DS.'admin'.IA_DS.'index.php');
+}
+			]]>
+		</hook>
+
+		<hook name="phpAdminDatabaseConsistencyStats" type="php">
+			<![CDATA[
+global $esynAdmin, $stats_items;
+
+$sql = "SELECT SQL_CALC_FOUND_ROWS `id` FROM {$esynAdmin->mPrefix}listings WHERE `latitude` = '' OR `longitude` = ''";
+$esynAdmin->query($sql);
+$stats_items['gmap_num_listings'] = $esynAdmin->foundRows();
+			]]>
+		</hook>
+		<hook name="tplAdminDatabaseBeforeFooter" type="smarty">
+		<![CDATA[
+{include_file js="plugins/googlemap/js/admin/index"}
+		]]>
+		</>
+	</hooks>
+</plugin>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="tell_friend">
+	<title>Tell friend</title>
+	<summary>This is official plugin allows your visitors to send an email to their friends about that resource.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-02-13</date>
+	<status>active</status>
+	<compatibility>3.0</compatibility>
+
+	<phrases>
+		<phrase key="friend_told" category="frontend" code="en"><![CDATA[Message has just been sent to your friend.]]></phrase>
+		<phrase key="tell_friend" category="frontend" code="en"><![CDATA[Tell Friend]]></phrase>
+		<phrase key="email_group_tell_friend" category="admin" code="en"><![CDATA[Tell Friend Plugin Templates]]></phrase>
+
+        <phrase key="tpl_tell_friend_subject" category="email" code="en"><![CDATA[{name} recommends you {dir_title}]]></phrase>
+        <phrase key="tpl_tell_friend_body" category="email" code="en"><![CDATA[
+<h3>Dear {friends_name},</h3>
+
+<p>
+The following website was recommended to you by {name}: {dir_url}
+</p>
+
+<p>
+{message}
+</p>
+
+_____________________{dir_title}
+        ]]></phrase>
+        <phrase key="tpl_notif_tell_friend_subject" category="email" code="en"><![CDATA[{tf_from} sent {tf_to} a link to your site!]]></phrase>
+        <phrase key="tpl_notif_tell_friend_body" category="email" code="en"><![CDATA[
+<h3>Dear {admin_name},</h3>
+
+Here is the original message sent to {tf_to}:
+<br /><br />
+================ Message Start =======================
+    <h3>Dear {friends_name},</h3>
+
+    <p>The following website was recommended to you by {name}: {dir_url}</p>
+
+    <p>{message}</p>
+
+    _____________________{dir_title}
+================ Message End =========================
+        ]]></phrase>
+	</phrases>
+
+	<pages>
+		<page menus="bottom" title="Tell Friend" status="active" uniqueurl="mod/tell_friend/" nofollow="1" name="tell_friend"><![CDATA[ ]]></page>
+	</pages>
+
+	<config group="miscellaneous" name="tell_friend_divider" type="divider" description="Tell Friend"><![CDATA[ Tell a Friend ]]></config>
+	<config group="mail" name="tell_friend" type="hidden" description="Send email">1</config>
+	<config group="mail" name="notif_tell_friend" type="hidden" description="Send email to admin">1</config>
+	<config group="miscellaneous" name="tell_friend_include_admin" type="radio" multiple_values="0,1" description="Send email to admin with tell a friend">0</config>
+</plugin>

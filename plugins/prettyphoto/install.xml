@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="prettyphoto">
+	<title>Pretty Photo</title>
+	<summary>Plugin will add lightbox effect to images using PrettyPhoto library.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-02-20</date>
+	<status>active</status>
+	<compatibility>3.0</compatibility>
+
+	<config group="miscellaneous" name="prettyphoto_divider" type="divider" description="PrettyPhoto configuration" order="503">PrettyPhoto</config>
+	<config group="miscellaneous" name="prettyphoto_show_title" type="radio" values="1,0" description="Show title" order="504">1</config>
+	<config group="miscellaneous" name="prettyphoto_style" type="select" multiplevalues="dark_rounded,dark_square,facebook,light_rounded,light_square" description="PrettyPhoto style"order=" 505">dark_rounded</config>
+	<config group="miscellaneous" name="prettyphoto_anim_speed" type="select" multiplevalues="fast,slow,normal" description="PrettyPhoto animation speed" order="506">fast</config>
+	<config group="miscellaneous" name="prettyphoto_socialtools" type="textarea" values="" description="Social tools code" order="507"><![CDATA[]]></config>
+
+	<hooks>
+		<hook name="headSection" type="smarty">
+			<![CDATA[
+{if 'prettyphoto' == $config.lightbox_name}
+	{ia_print_css files='plugins/prettyphoto/js/css/prettyPhoto'}
+{/if}
+			]]>
+		</hook>
+
+		<hook name="beforeCloseTag" type="smarty">
+			<![CDATA[
+{if 'prettyphoto' == $config.lightbox_name}
+	{ia_print_js files='plugins/prettyphoto/js/js/jquery.prettyPhoto'}
+
+	{ia_add_js}
+	$(function()
+	{
+		$('a[rel^="ia_lightbox"]').prettyPhoto(
+		{
+			show_title: {$config.prettyphoto_show_title},
+			social_tools: '{$config.prettyphoto_socialtools}',
+			theme: '{$config.prettyphoto_style}',
+			animation_speed: '{$config.prettyphoto_anim_speed}'
+		});
+	});
+	{/ia_add_js}
+{/if}
+			]]>
+		</hook>
+	</hooks>
+
+	<install>
+		<code>
+			<![CDATA[
+global $esynConfig;
+
+$esynConfig->setTable('config');
+$current_values = $esynConfig->one("`multiple_values`", "`name` = 'lightbox_name'");
+$esynConfig->resetTable();
+
+if ($current_values)
+{
+	$values = explode(',', $current_values);
+}
+
+$values[] = 'prettyphoto';
+
+$updated_values = implode(',', $values);
+
+$esynConfig->setTable('config');
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'lightbox_name'");
+if (1 == count($values))
+{
+	$esynConfig->update(array('value' => 'prettyphoto'), "`name` = 'lightbox_name'");
+}
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</install>
+
+	<uninstall>
+		<code>
+			<![CDATA[
+global $esynConfig;
+
+$esynConfig->setTable('config');
+$current_values = $esynConfig->one("`multiple_values`", "`name` = 'lightbox_name'");
+$values = explode(',', $current_values);
+if (!empty($values))
+{
+	foreach($values as $key => $value)
+	{
+		if ('prettyphoto' == $value)
+		{
+			unset($values[$key]);
+		}
+	}
+}
+$updated_values = join(',', $values);
+
+if (empty($values))
+{
+	$esynConfig->update(array('value' => ''), "`name` = 'lightbox_name'");
+}
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'lightbox_name'");
+
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</uninstall>
+</plugin>

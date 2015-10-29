@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="banners">
+	<title>Banners plugin</title>
+	<summary>This plugin allow you to display some Banners on your directory.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.1</version>
+	<date>2013-09-06</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+	
+	<pages>
+		<page title="Suggest Banner" name="suggest_banner" status="active" uniqueurl="mod/banners/index.html" readonly="1" nofollow="1"><![CDATA[ ]]></page>
+	</pages>
+	
+	<adminpages>
+		<page block="plugins" menus="main" aco="manage_banners">Manage Banners</page>
+		<page file="banner_plans" block="" aco="manage_banner_plans">Manage Banner Plans</page>
+	</adminpages>
+	
+	<phrases>
+		<phrase key="are_you_sure_to_delete_selected_banners" category="admin" code="en">Are you sure to delete selected banners</phrase>
+        <phrase key="banner_plan_not_selected" category="common" code="en">You should select banner plan.</phrase>
+        <phrase key="set_status_after_submit" category="common" code="en">Set banner status after submit as</phrase>
+		<phrase key="banner_email_incorrect" category="common" code="en">As you are not registered we need to know your correct email that informs you about any changes with your banner.</phrase>
+		<phrase key="cron_for_expiration_b" category="common" code="en">Cron for changing banner after payment is expired</phrase>
+		<phrase key="page_title_my_banners" category="page" code="en">My Banners</phrase>
+		<phrase key="banner_type_incorrect" category="common" code="en">Banner type is incorrect.</phrase>
+		<phrase key="banner_title_is_empty" category="common" code="en">Banner Title is empty.</phrase>
+		<phrase key="uploads_not_writable" category="common" code="en">Uploads folder is not writable. Your customers will not be able submit Local(image,flash) bunners.</phrase>
+		<phrase key="remote_url_incorrect" category="common" code="en">You must specify an URL to the remote banner.</phrase>
+		<phrase key="paypal_not_installed" category="common" code="en">You need install any payment plugin before create a banners plan.</phrase>
+		<phrase key="banner_url_incorrect" category="common" code="en">Banner URL is incorrect.</phrase>
+		<phrase key="click_to_add_banner" category="common" code="en">Click here to add Your Banner</phrase>
+		<phrase key="manage_banner_plans" category="common" code="en">Manage Banner Plans</phrase>
+		<phrase key="choose_file_upload" category="common" code="en">Choose a file to upload</phrase>
+		<phrase key="image_keepratio" category="common" code="en">Keep image ratio</phrase>
+		<phrase key="include_subcats" category="common" code="en">include subcategories</phrase>
+		<phrase key="use_orig_params" category="common" code="en">Use original parameters</phrase>
+		<phrase key="suggest_banner" category="common" code="en">Suggest Banner</phrase>
+		<phrase key="manage_banners" category="admin" code="en">Manage Banners</phrase>
+		<phrase key="banner_img_url" category="common" code="en">Banner image URL</phrase>
+		<phrase key="banner_email" category="common" code="en">Your e-mail</phrase>
+		<phrase key="banner_title" category="common" code="en">Banner Title</phrase>
+		<phrase key="banner_added" category="common" code="en">Banner added.</phrase>
+		<phrase key="image_height" category="common" code="en">Image Height</phrase>
+		<phrase key="banner_type" category="common" code="en">Banner Type</phrase>
+		<phrase key="edit_banner" category="common" code="en">Edit Banner</phrase>
+		<phrase key="image_width" category="common" code="en">Image Width</phrase>
+		<phrase key="no_banners" category="admin" code="en"><![CDATA[No banners. <a href="controller.php?plugin=banners&amp;action=add">Click here</a> to add banner.]]></phrase>
+		<phrase key="banner_alt" category="common" code="en">Banner Alternative Text</phrase>
+		<phrase key="add_banner" category="common" code="en">Add Banner</phrase>
+		<phrase key="banner_url" category="common" code="en">Banner URL</phrase>
+		<phrase key="image_fit" category="common" code="en">Enlarge the image if it will be less than entered sizes</phrase>
+		<phrase key="_parent" category="common" code="en">Parent Frame</phrase>
+		<phrase key="content" category="common" code="en">Content</phrase>
+		<phrase key="banners" category="common" code="en">Banners</phrase>
+		<phrase key="target" category="common" code="en">Target</phrase>
+		<phrase key="remote" category="common" code="en">Remote</phrase>
+		<phrase key="banner" category="common" code="en">Banner</phrase>
+		<phrase key="_blank" category="common" code="en">New Window</phrase>
+		<phrase key="_self" category="common" code="en">Current Window</phrase>
+		<phrase key="local" category="common" code="en">Local (image or flash)</phrase>
+		<phrase key="block" category="common" code="en">Block</phrase>
+		<phrase key="shows" category="common" code="en">Shows</phrase>
+		<phrase key="_top" category="common" code="en">Top Frame</phrase>
+		<phrase key="text" category="common" code="en">Plain text</phrase>
+		<phrase key="html" category="common" code="en">HTML or JS</phrase>
+
+		<phrase key="email_group_banners" category="admin" code="en"><![CDATA[Banners Plugin Templates]]></phrase>
+
+        <phrase key="tpl_banners_payment_subject" category="email" code="en">Banner was submitted to {dir_title}</phrase>
+        <phrase key="tpl_banners_payment_body" category="email" code="en"><![CDATA[
+Dear {admin_name},<br /><br />
+
+Banner was submitted to {dir_title} Directory. Please check it.<br /><br />
+
+These are the attributes of a banner:<br />
+Title: {item_title}<br />
+URL: {item_url}<br />
+Email: {item_email}<br />
+Banner Plan: {item_plan}<br /><br />
+
+______________________________<br />
+Thank you,<br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}	]]>
+        </phrase>
+	</phrases>
+
+	<configgroup name="banners">Banners Configuration</configgroup>
+
+	<config group="banners" name="num_verytop_banners" type="text" description="Number of very top banners to be dispayed on page">1</config>
+	<config group="banners" name="num_verybottom_banners" type="text" description="Number of very bottom banners to be dispayed on page">1</config>
+	<config group="banners" name="num_belowcategories_banners" type="text" description="Number of belowcategories banners to be dispayed on page">1</config>
+	<config group="banners" name="num_inventory_banners" type="text" description="Number of inventory banners to be dispayed on page">1</config>
+	<config group="banners" name="num_left_banners" type="text" description="Number of left banners to be dispayed on page">1</config>
+	<config group="banners" name="num_right_banners" type="text" description="Number of right banners to be dispayed on page">1</config>
+	<config group="banners" name="num_top_banners" type="text" description="Number of top banners to be dispayed on page">1</config>
+	<config group="banners" name="num_mainmenu_banners" type="text" description="Number of mainmenu banners to be dispayed on page">1</config>
+	<config group="banners" name="num_copyright_banners" type="text" description="Number of copyright banners to be dispayed on page">1</config>
+	<config group="banners" name="num_bottom_banners" type="text" description="Number of bottom banners to be dispayed on page">1</config>
+	<config group="banners" name="num_user1_banners" type="text" description="Number of user1 banners to be dispayed on page">1</config>
+	<config group="banners" name="num_user2_banners" type="text" description="Number of user2 banners to be dispayed on page">1</config>
+	<config group="banners" name="num_footer1_banners" type="text" description="Number of footer1 banners to be dispayed on page">1</config>
+	<config group="banners" name="num_footer2_banners" type="text" description="Number of footer2 banners to be dispayed on page">1</config>
+	<config group="banners" name="num_footer3_banners" type="text" description="Number of footer3 banners to be dispayed on page">1</config>
+	<config group="banners" name="num_footer4_banners" type="text" description="Number of footer4 banners to be dispayed on page">1</config>
+	<config group="banners" name="banner_guests_submit" type="radio" multiplevalues="0,1" description="Allow submitting banners by guests.">1</config>
+	<config group="banners" name="banner_prefix" type="text" description="Banner Prefix">banner_</config>
+	<config group="banners" name="banners_order" type="select" multiplevalues="random, date added" description="Order Banners by">random</config>
+	<config group="mail" name="banners_payment" type="hidden" description="Send email">1</config>
+
+	<hooks>
+		<hook name="beforeBlocksLoad" file="plugins/banners/includes/hook.beforeblocksload.php"><![CDATA[]]></hook>
+		
+		<hook name="afterFooterLinks">
+		<![CDATA[
+global $esynConfig;
+
+$root = IA_URL;
+$path = $root."plugins".IA_DS."banners".IA_DS."js".IA_DS."frontend".IA_DS."count-click.js";
+
+echo "<script type=\"text/javascript\">";
+echo "var root = '{$root}';";
+echo "</script>";
+echo "<script type=\"text/javascript\" src=\"{$path}\"></script>";
+		]]>
+		</hook>
+
+		<hook name="phpAdminTransactionsQuery" type="php">
+		<![CDATA[
+global $fields, $join, $item;
+if ("banner" == $item['item'])
+{
+	$join['banner_plans'] = 'ON `t`.`plan_id` = `banner_plans`.`id`';
+	$join['banners'] = 'ON `t`.`item_id` = `banners`.`id`';
+	$fields['pln_title'] = '`banner_plans`.`title`';
+	$fields['itm_id'] = '`banners`.`id`';
+}
+			]]>
+		</hook>
+		<hook name="phpAdminTransactionsParse" type="php">
+		<![CDATA[
+global $key, $value, $transactions;
+if ("banner" == $value['item'])
+{
+	$transactions[$key]['plan'] = $value['pln_title'] ?
+		'<b><a title="' . _t('edit_plan') . '" href="controller.php?plugin=banners&file=banner_plans&do=edit&id=' . $value['plan_id'] . '">' . $value['pln_title'] . '</a></b>' :
+		'<b>' . $value['plan_title'] . '</b>';
+	$transactions[$key]['item'] = $value['itm_id'] ?
+		'<b><a title="' . _t('edit_banner') . '" href="controller.php?plugin=banners&do=edit&id=' . $value['item_id'] . '">' . $value['item'] . '</a></b>' :
+		'<b>' . $value['item'] . '</b>';
+}
+		]]>
+		</hook>
+	</hooks>
+
+	<blocks>
+		<block title="Left Banners" showheader="1" lang="en" position="left" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($left_banner)}
+	{foreach from=$left_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_left"}
+	{/foreach}
+{elseif $add_ads_left}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_left"}
+{/if}
+			]]>
+		</block>
+
+		<block title="Right Banners" showheader="1" lang="en" position="right" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($right_banner)}
+	{foreach from=$right_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_right"}
+	{/foreach}
+{elseif $add_ads_right}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_right"}
+{/if}
+			]]>
+		</block>
+
+		<block title="Top Banners" showheader="1" lang="en" position="top" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($top_banner)}
+	{foreach from=$top_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_top"}
+	{/foreach}
+{elseif $add_ads_top}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_top"}
+{/if}
+			]]>
+		</block>
+
+		<block title="Bottom Banners" showheader="1" lang="en" position="bottom" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($bottom_banner)}
+	{foreach from=$bottom_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_bottom"}
+	{/foreach}
+{elseif $add_ads_bottom}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_bottom"}
+{/if}
+			]]>
+		</block>
+
+		<block title="User1 Banners" showheader="1" lang="en" position="user1" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($user1_banner)}
+	{foreach from=$user1_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_user1"}
+	{/foreach}
+{elseif $add_ads_user1}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_user1"}
+{/if}
+			]]>
+		</block>
+
+		<block title="User2 Banners" showheader="1" lang="en" position="user2" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($user2_banner)}
+	{foreach from=$user2_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_user2"}
+	{/foreach}
+{elseif $add_ads_user2}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_user2"}
+{/if}
+			]]>
+		</block>
+		
+		<block title="Very Bottom Banners" showheader="1" lang="en" position="verybottom" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($verybottom_banner)}
+	{foreach from=$verybottom_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_verybottom"}
+	{/foreach}
+{elseif $add_ads_verybottom}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_verybottom"}
+{/if}
+			]]>
+		</block>
+		
+		<block title="Very Top Banners" showheader="1" lang="en" position="verytop" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($verytop_banner)}
+	{foreach from=$verytop_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_verytop"}
+	{/foreach}
+{elseif $add_ads_verytop}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_verytop"}
+{/if}
+			]]>
+		</block>
+		
+		<block title="Inventory Banners" showheader="1" lang="en" position="inventory" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($inventory_banner)}
+	{foreach from=$inventory_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_inventory"}
+	{/foreach}
+{elseif $add_ads_inventory}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_inventory"}
+{/if}
+			]]>
+		</block>
+
+		<block title="Main Menu Banners" showheader="1" lang="en" position="mainmenu" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($mainmenu_banner)}
+	{foreach from=$mainmenu_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_mainmenu"}
+	{/foreach}
+{elseif $add_ads_mainmenu}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_mainmenu"}
+{/if}
+			]]>
+		</block>
+
+		<block title="Copyright Banners" showheader="1" lang="en" position="copyright" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($copyright_banner)}
+	{foreach from=$copyright_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_copyright"}
+	{/foreach}
+{elseif $add_ads_copyright}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_copyright"}
+{/if}
+			]]>
+		</block>
+
+		<block title="Footer1 Banners" showheader="1" lang="en" position="footer1" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($footer1_banner)}
+	{foreach from=$footer1_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_footer1"}
+	{/foreach}
+{elseif $add_ads_footer1}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_footer1"}
+{/if}
+			]]>
+		</block>
+
+		<block title="Footer2 Banners" showheader="1" lang="en" position="footer2" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($footer2_banner)}
+	{foreach from=$footer2_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_footer2"}
+	{/foreach}
+{elseif $add_ads_footer2}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_footer2"}
+{/if}
+			]]>
+		</block>
+
+		<block title="Footer3 Banners" showheader="1" lang="en" position="footer3" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($footer3_banner)}
+	{foreach from=$footer3_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_footer3"}
+	{/foreach}
+{elseif $add_ads_footer3}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_footer3"}
+{/if}
+			]]>
+		</block>
+
+		<block title="Footer4 Banners" showheader="1" lang="en" position="footer4" type="smarty" collapsible="1" status="active">
+			<![CDATA[
+{if isset($footer4_banner)}
+	{foreach from=$footer4_banner item=banner}
+			{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner=$banner banner_pos="$add_ads_footer4"}
+	{/foreach}
+{elseif $add_ads_footer4}
+	{if isset($bannerError)}{$bannerError}{/if}
+	{include file=$smarty.const.IA_PLUGINS|cat:"banners/templates/banner.tpl" banner="" banner_pos="$add_ads_footer4"}
+{/if}
+			]]>
+		</block>
+	</blocks>
+
+	<installsql>
+		<sql>
+			<![CDATA[
+				CREATE TABLE `{prefix}banner_clicks` (
+					`id` int(8) NOT NULL auto_increment,
+					`id_banner` int(8) NOT NULL default '0',
+					`ip` varchar(16) collate utf8_general_ci NOT NULL default '',
+					`date` date NOT NULL default '0000-00-00',
+					PRIMARY KEY  (`id`),
+					KEY `ip` (`ip`,`date`),
+					KEY `id_banner` (`id_banner`)
+				);
+			]]>
+		</sql>
+
+		<sql>
+			<![CDATA[	
+				CREATE TABLE `{prefix}banners` (
+					`id` int(8) NOT NULL auto_increment,
+					`account_id` int(8) NOT NULL default '0',
+					`title` varchar(255) collate utf8_general_ci NOT NULL default '',
+					`url` varchar(150) collate utf8_general_ci NOT NULL default '',
+					`alt` varchar(255) collate utf8_general_ci NOT NULL default '',
+					`email` varchar(50) collate utf8_general_ci NOT NULL default '',
+					`image` varchar(150) collate utf8_general_ci NOT NULL default '',
+					`status` enum('inactive','active','approval') collate utf8_general_ci NOT NULL default 'active',
+					`added` date NOT NULL default '0000-00-00',
+					`recursive` tinyint(1) unsigned NOT NULL default '0',
+					`showed` int(10) unsigned NOT NULL default '0',
+					`clicked` int(10) unsigned NOT NULL default '0',
+					`type` varchar(20) collate utf8_general_ci NOT NULL default '',
+					`content` text collate utf8_general_ci NOT NULL,
+					`planetext_content` text collate utf8_general_ci NOT NULL,
+					`position` varchar(20) collate utf8_general_ci NOT NULL default '',
+					`target` varchar(25) collate utf8_general_ci NOT NULL default '',
+					`width` varchar(10) collate utf8_general_ci NOT NULL default '',
+					`height` varchar(10) collate utf8_general_ci NOT NULL default '',
+					`no_follow` enum('1','0') collate utf8_general_ci NOT NULL default '0',
+					`plan_id` int NOT NULL ,
+					`sponsored_start` TIMESTAMP NOT NULL ,
+					`transaction_id` INT NOT NULL ,
+					PRIMARY KEY  (`id`),
+					KEY `position` (`position`),
+					KEY `status` (`status`)
+				);
+			]]>
+		</sql>
+		
+		<sql>
+			<![CDATA[
+				CREATE TABLE IF NOT EXISTS `{prefix}banner_plans` (
+				  `id` int(4) unsigned NOT NULL auto_increment,
+				  `title` varchar(50) collate utf8_general_ci NOT NULL default '',
+				  `description` text collate utf8_general_ci NOT NULL,
+				  `cost` float NOT NULL default '0',
+				  `period` int(4) NOT NULL default '0',
+				  `status` enum('active','inactive') collate utf8_general_ci NOT NULL default 'active',
+				  `order` float NOT NULL default '0',
+				  `lang` varchar(2) collate utf8_general_ci NOT NULL default '',
+				  `email_expire` varchar(255) collate utf8_general_ci NOT NULL default '',
+				  `recurring` enum('0','1') collate utf8_general_ci NOT NULL default '0',
+				  `duration` varchar(255) collate utf8_general_ci NOT NULL default '',
+				  `mark_as` enum('active','inactive') collate utf8_general_ci NOT NULL default 'active',
+				  `action_expire` varchar(20) collate utf8_general_ci default NULL,
+				  `units_duration` varchar(255) collate utf8_general_ci NOT NULL default '',
+				  PRIMARY KEY  (`id`)
+				);
+			]]>
+		</sql>
+		
+		<sql>
+			<![CDATA[	
+				CREATE TABLE `{prefix}banners_categories` (
+					`id` int(11) NOT NULL auto_increment,
+					`banner_id` int(11) NOT NULL default '0',
+					`category_id` int(11) NOT NULL default '0',
+					PRIMARY KEY  (`id`),
+					KEY `banner_id` (`banner_id`,`category_id`)
+				);
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[	
+				CREATE TABLE `{prefix}banner_plan_blocks` (
+					`id` int(11) NOT NULL auto_increment,
+					`plan_id` int(11) NOT NULL default '0',
+					`block_pos` varchar(50) collate utf8_general_ci NOT NULL default '',
+					PRIMARY KEY  (`id`)
+				);
+			]]>
+		</sql>
+	</installsql>
+	<upgradesql>
+		<sql version="1.9">
+			<![CDATA[
+				CREATE TABLE IF NOT EXISTS `{prefix}banner_plans` (
+				  `id` int(4) unsigned NOT NULL auto_increment,
+				  `title` varchar(50) collate utf8_general_ci NOT NULL default '',
+				  `description` text collate utf8_general_ci NOT NULL,
+				  `cost` float NOT NULL default '0',
+				  `period` int(4) NOT NULL default '0',
+				  `status` enum('active','inactive') collate utf8_general_ci NOT NULL default 'active',
+				  `order` float NOT NULL default '0',
+				  `lang` varchar(2) collate utf8_general_ci NOT NULL default '',
+				  `email_expire` varchar(255) collate utf8_general_ci NOT NULL default '',
+				  `recurring` enum('0','1') collate utf8_general_ci NOT NULL default '0',
+				  `duration` varchar(255) collate utf8_general_ci NOT NULL default '',
+				  `mark_as` enum('active','inactive') collate utf8_general_ci NOT NULL default 'active',
+				  `action_expire` varchar(20) collate utf8_general_ci default NULL,
+				  `units_duration` varchar(255) collate utf8_general_ci NOT NULL default '',
+				  PRIMARY KEY  (`id`)
+				);
+			]]>
+		</sql>
+	</upgradesql>
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+				DROP TABLE IF EXISTS `{prefix}banners`;
+			]]>
+		</sql>
+		
+		<sql>
+			<![CDATA[
+				DROP TABLE IF EXISTS `{prefix}banner_plans`;
+			]]>
+		</sql>
+	
+		<sql>
+			<![CDATA[
+				DROP TABLE IF EXISTS `{prefix}banner_clicks`;
+			]]>
+		</sql>
+		
+		<sql>
+			<![CDATA[
+				DELETE FROM `{prefix}plans` WHERE `item` = 'banners'
+			]]>
+		</sql>
+
+		<sql>
+			<![CDATA[
+				DROP TABLE IF EXISTS `{prefix}banners_categories`;
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+				DROP TABLE IF EXISTS `{prefix}banner_plan_blocks`;
+			]]>
+		</sql>
+	</uninstallsql>
+</plugin>

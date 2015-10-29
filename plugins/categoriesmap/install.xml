@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="categoriesmap">
+	<title>Categories map</title>
+	<summary>Builds categories tree on a separate page.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.2</version>
+	<date>2013-09-13</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<phrases>
+		<phrase key="categories_map" category="common" code="en">Categories map</phrase>
+		<phrase key="categories_map_description" category="frontend" code="en">See the categories structure on our website. You can choose the category that fits your listing the best and submit it there.</phrase>
+	</phrases>
+
+	<pages>
+		<page menus="bottom" status="active" uniqueurl="mod/categoriesmap.html" nofollow="0" name="categories_map" title="Map"><![CDATA[ Map ]]></page>
+	</pages>
+</plugin>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="polls">
+	<title>Polls</title>
+	<summary>This mod allows you to display some Polls in your directory.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-09-25</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+	
+	<adminpages>
+		<page block="plugins" menus="main">Manage Polls</page>
+	</adminpages>
+
+	<hooks>
+		<hook name="bootstrap" file="plugins/polls/includes/hook.bootstrap.php"><![CDATA[]]></hook>
+	</hooks>
+	
+	<blocks>
+		<block name="polls" title="Polls" showheader="1" collapsible="1" lang="en" position="left" type="smarty" sticky="1" status="active" external="1"><![CDATA[]]></block>
+	</blocks>
+	
+	<phrases>
+		<phrase key="error_poll_options_required" category="admin" code="en"><![CDATA[You need to input at least two options for your poll.]]></phrase>
+		<phrase key="poll_added" category="admin" code="en"><![CDATA[Poll added.]]></phrase>
+		<phrase key="total_votes" category="frontend" code="en"><![CDATA[Total votes {num}.]]></phrase>
+		<phrase key="no_polls" category="admin" code="en"><![CDATA[No polls created.]]></phrase>
+		<phrase key="manage_polls" category="admin" code="en"><![CDATA[Manage Polls]]></phrase>
+		<phrase key="add_poll" category="admin" code="en"><![CDATA[Add Poll]]></phrase>
+		<phrase key="edit_poll" category="admin" code="en"><![CDATA[Edit Poll]]></phrase>
+		<phrase key="votes" category="common" code="en">votes</phrase>
+	</phrases>
+	
+	<installsql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}poll_clicks` (
+	`id` int(8) NOT NULL auto_increment,
+	`poll_id` int(8) NOT NULL default '0',
+	`ip` varchar(16) NOT NULL default '',
+	`date` date NOT NULL default '0000-00-00',
+	PRIMARY KEY  (`id`),
+	KEY `id_poll` (`poll_id`),
+	KEY `ip` (`ip`)
+) {mysql_version};
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}poll_options` (
+	`id` int(11) NOT NULL auto_increment,
+	`poll_id` int(11) NOT NULL default '0',
+	`title` varchar(50) NOT NULL default '',
+	`votes` int(11) NOT NULL default '0',
+	PRIMARY KEY  (`id`),
+	KEY `poll_id` (`poll_id`)
+) {mysql_version};
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}polls_categories` (
+	`id` int(11) NOT NULL auto_increment,
+	`poll_id` int(11) NOT NULL default '0',
+	`category_id` int(11) NOT NULL default '0',
+	PRIMARY KEY  (`id`),
+	KEY `poll_id` (`poll_id`),
+	KEY `category_id` (`category_id`)
+) {mysql_version};
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}polls` (
+	`id` int(11) NOT NULL auto_increment,
+	`title` varchar(50) NOT NULL default '',
+	`lang` varchar(25) NOT NULL default '',
+	`status` enum('active','inactive') NOT NULL default 'active',
+	`date` datetime NOT NULL default '0000-00-00 00:00:00',
+	`expires` datetime NOT NULL default '0000-00-00 00:00:00',
+	`ip` varchar(15) NOT NULL default '',
+	`recursive` char(1) NOT NULL default '',
+	PRIMARY KEY  (`id`),
+	KEY `lang` (`lang`)
+) {mysql_version};
+			]]>
+		</sql>
+	</installsql>
+	
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}poll_clicks`;
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}poll_options`;
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}polls_categories`;
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}polls`;
+			]]>
+		</sql>
+	</uninstallsql>
+</plugin>

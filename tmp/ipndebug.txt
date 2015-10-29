@@ -1,0 +1,1638 @@
+POST VARIABLES:
+
+Array
+(
+    [mc_gross] => 10.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => V9UJPNQ2EC9L8
+    [tax] => 0.00
+    [payment_date] => 03:41:14 Mar 19, 2015 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => daniele
+    [mc_fee] => 0.69
+    [notify_version] => 3.8
+    [custom] => 
+    [payer_status] => verified
+    [business] => victor_trofin@yahoo.com
+    [quantity] => 1
+    [verify_sign] => AqqFS4D06MDBObZgpGcDezWRavZoAUsY0ehJ60iX.S6iBFbreE1GOxm7
+    [payer_email] => infodanielemori@gmail.com
+    [txn_id] => 4PE298140E140054A
+    [payment_type] => instant
+    [payer_business_name] => maredellamaremma
+    [last_name] => mori
+    [receiver_email] => victor_trofin@yahoo.com
+    [payment_fee] => 
+    [receiver_id] => 8XPK575MYXPU4
+    [txn_type] => web_accept
+    [item_name] => Payment for: listing
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => IT
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => bbf4cdf041219
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-origin-www.paypal.com
+Date: Thu, 19 Mar 2015 10:41:26 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=wH1yzx9Lav81lFcfcoZycPTTf_PeSVeboWVh3Ek15UJApZg-mxxw250va6qF72RzL4IaLPdXhCu4yUBX5HsFj3s6hcicICIgT3sj34Lza5EvyLw5n1FkXkOF445za3HY7w4V_5j1cSDM_rNW5JYZKzkKB6GkAFIMruJiba2pDbOUFdthrHBt7_Q4Atvx2L66BUDli8-7quKf0jEg42GuyUmHgEMDln08QnX8ohrEPJPxid7xtD9yQRLtFFT_UcUXAC1cpgFAAOQ5dbdHcjrKWznpZy53rLPYQa1feg8B9lXaSmU8ZdxVLotBQZ0MEfwHE7l373O5ajywxyqH3s3VGCiQeLrwQNSxSHFfbgU6QboTvtgItgJu9eOeGuSH38UNCLLSXU821rgs8nJ4vQHsN54y7-HMTQlO1v7uOIWKl1VEVxy1pehhoW7ElMK; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 16-Mar-2025 10:41:26 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sat, 18-Mar-2017 10:41:26 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.16.0.14.1426761686018573; path=/; expires=Sat, 11-Mar-45 10:41:26 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE9.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D3601271381; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.16.0.11.1426761686012515; path=/; expires=Sat, 11-Mar-45 10:41:26 GMT
+Set-Cookie: AKDC=slc-origin-www.paypal.com; expires=Thu, 19-Mar-2015 11:11:26 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [mc_gross] => 16.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => L8HJGUUE7F38A
+    [tax] => 0.00
+    [payment_date] => 08:36:28 Mar 19, 2015 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => Massimiliano
+    [mc_fee] => 0.89
+    [notify_version] => 3.8
+    [custom] => 
+    [payer_status] => verified
+    [business] => victor_trofin@yahoo.com
+    [quantity] => 1
+    [verify_sign] => A0CoDJ0RoYcAwJ2xfFvC4BDc5rNPAbtZALmx8xXUOjQD6boj5Hycb8XA
+    [payer_email] => customercare@voguebuster.it
+    [txn_id] => 4CC7993357639471E
+    [payment_type] => instant
+    [payer_business_name] => Blu Street
+    [last_name] => Caracciolo
+    [receiver_email] => victor_trofin@yahoo.com
+    [payment_fee] => 
+    [receiver_id] => 8XPK575MYXPU4
+    [txn_type] => web_accept
+    [item_name] => Payment for: listing
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => IT
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 112eb65441190
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-origin-www.paypal.com
+Date: Thu, 19 Mar 2015 15:36:42 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=PFXw0JXADTYAyuktpqhv6dF1hJ0Ktl-m5DLwfWo5_yJbOqFnd0N6SoMOE0BEhV6Zs4oV191bPzOOdpgMP7HlReZxVycHdCxrB8L8h4_vdqM6azTrBkkhg1oZ4bP6hh5nVlf27_WlXXmvKI0dv4-2c0HqmrlnH_YoB5YkErtofEnLkpcu_yByX4GZ8_qth_mYQoPf4CJvbrSV-5k0qC-H58y-amgyl63D8MN2v2v8-Ap8V24Ra9x1BSxy1mdno1c_iDPIXM-YrfTxK_YjXY5Hiq_YdQWWPjl9NW-Ckc-d03IsG04hRcxfEjVCL4F4WZliDLtKsl5TKgqSYkthZEIMG0HZHXjX9csbq3W49G51wQPxpgPaITeiB8JA_RMb3uZGOAB_A5FR8qLdLGd8tn5RUUdCOBQzi845X3Q9_PHBK309eBZ7D8ZGYQ902nC; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 16-Mar-2025 15:36:41 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sat, 18-Mar-2017 15:36:41 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.16.0.147.1426779401583681; path=/; expires=Sat, 11-Mar-45 15:36:41 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE9.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D166529621; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.16.0.11.1426779401577410; path=/; expires=Sat, 11-Mar-45 15:36:41 GMT
+Set-Cookie: AKDC=slc-origin-www.paypal.com; expires=Thu, 19-Mar-2015 16:06:42 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [mc_gross] => 10.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => THSGBSNZXQWZG
+    [tax] => 0.00
+    [payment_date] => 07:40:33 Mar 20, 2015 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => FRANCISCO JAVIER
+    [mc_fee] => 0.69
+    [notify_version] => 3.8
+    [custom] => 
+    [payer_status] => verified
+    [business] => victor_trofin@yahoo.com
+    [quantity] => 1
+    [verify_sign] => ADMFpgupGin1FaTCokhaja09b-y8AZ1Q.MdpD4ucyAuxmjIa0R9rKOlQ
+    [payer_email] => outletando@gmail.com
+    [txn_id] => 09910149CA7251154
+    [payment_type] => instant
+    [payer_business_name] => OUTLETANDO
+    [last_name] => CASTILLO LATORRE
+    [receiver_email] => victor_trofin@yahoo.com
+    [payment_fee] => 
+    [receiver_id] => 8XPK575MYXPU4
+    [txn_type] => web_accept
+    [item_name] => Payment for: listing
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => ES
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 2fbfbd2a623f1
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-a-origin-www-1.paypal.com
+Date: Fri, 20 Mar 2015 14:41:01 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=Y9AqgmXzHJsQTI9K638RBiyVxhBkwleCCRG4kqFkhVtniBWYV_yRfQXIPpb6RBl_TvyH7pWy0ZxAhXxuZptbj7EVskNQLenwLjeyx7_6SnXT6xgT95znPOW_LUPmPDqKOv-EQuSAR0OSznU1kIAbAiwCLCPhgB9Yu6NfcswTCbyQOAFe5fHkozkDpOmSq1E1vcmS1IzU9rwIJB_hhHvFXVDo1mCf-GELp2DNgZPCk7Rs5H5WZvXYso0GK-W5phMDheEsbbDjM0nAPLCQOm_ekkFEveoo-GfcOQCpAG_Zy6iGfpSIjBJhoL92qV2t6xnqYd5Sjd6LhGCgIuR7kOiEo8lbLMgIM-N78pnG4qPq1lRygjRXw0KoFpSk0HjfpqGDoy-YjWvn7JZjuNItQApXI6WffU3TddK6Ci9lK-UB1dcqyDnFXxgUBs8MP6G; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Mon, 17-Mar-2025 14:41:01 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sun, 19-Mar-2017 14:41:01 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.73.8.134.1426862461572814; path=/; expires=Sun, 12-Mar-45 14:41:01 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE5.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D2100366421; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.73.8.32.1426862461561830; path=/; expires=Sun, 12-Mar-45 14:41:01 GMT
+Set-Cookie: AKDC=slc-a-origin-www-1.paypal.com; expires=Fri, 20-Mar-2015 15:11:01 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [mc_gross] => 15.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => THSGBSNZXQWZG
+    [tax] => 0.00
+    [payment_date] => 08:08:34 Mar 20, 2015 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => FRANCISCO JAVIER
+    [mc_fee] => 0.86
+    [notify_version] => 3.8
+    [custom] => 
+    [payer_status] => verified
+    [business] => victor_trofin@yahoo.com
+    [quantity] => 1
+    [verify_sign] => AUO.BRPvdL3CfQ3sjyV941pUxfC6ArJ1nXjly7.pDhnuYON6O5QIjNbu
+    [payer_email] => outletando@gmail.com
+    [txn_id] => 4N399395E06943613
+    [payment_type] => instant
+    [payer_business_name] => OUTLETANDO
+    [last_name] => CASTILLO LATORRE
+    [receiver_email] => victor_trofin@yahoo.com
+    [payment_fee] => 
+    [receiver_id] => 8XPK575MYXPU4
+    [txn_type] => web_accept
+    [item_name] => Payment for: listing
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => ES
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => b5f3ba95a576e
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-a-origin-www-2.paypal.com
+Date: Fri, 20 Mar 2015 15:08:53 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=C2KH2u-vbi3rF9n_At0F9CQxrPhA8icC3WPC9nuZOCdRmWbS6Oy1VQvIICeufnHFie2WJ1BSW3yrF2IuysV1nPxpAHf7hkE1wOKG7_wYPiBX9OsgMEI1NVZwqeAecGyFiE_wxUHtyq18IYymWj5QiyTn1MzFmFXtYBS-igpgZJSaZjWYN9ivdPhmIvcS6ZCLZzcVdI5TPPEDQfCWvSvQVLHuw1_kXz0OWKUVH6v0R8blLbtIlBEh-f-gxTwKgwK_7OkOT7N-YhKCfzc-458HkybQfqOmEMwsamznII-ehveVp2-wElm7UmEXT0363pfgDXAbKJ7loM-1E-73-zY6CWppQaNlqLvrK-1d90_nNR4v3S3hDTS5Mmpyffbbysb7gjfJPkEY8ol6C7F9b2sQFHoXot7dLeprqw1xm8pspx0NqJ78dMzaid4sMSe; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Mon, 17-Mar-2025 15:08:53 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sun, 19-Mar-2017 15:08:53 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.73.8.137.1426864133221683; path=/; expires=Sun, 12-Mar-45 15:08:53 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE5.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D87559253; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.73.8.71.1426864133214601; path=/; expires=Sun, 12-Mar-45 15:08:53 GMT
+Set-Cookie: AKDC=slc-a-origin-www-2.paypal.com; expires=Fri, 20-Mar-2015 15:38:53 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [mc_gross] => 15.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => THSGBSNZXQWZG
+    [tax] => 0.00
+    [payment_date] => 08:27:37 Mar 20, 2015 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => FRANCISCO JAVIER
+    [mc_fee] => 0.86
+    [notify_version] => 3.8
+    [custom] => 
+    [payer_status] => verified
+    [business] => victor_trofin@yahoo.com
+    [quantity] => 1
+    [verify_sign] => ATIWztSx402.VoTpHzlojvWgOyuUA3eoC.OMycdeCTPPKCOJeENQdC2S
+    [payer_email] => outletando@gmail.com
+    [txn_id] => 4WL10718KV1048624
+    [payment_type] => instant
+    [payer_business_name] => OUTLETANDO
+    [last_name] => CASTILLO LATORRE
+    [receiver_email] => victor_trofin@yahoo.com
+    [payment_fee] => 
+    [receiver_id] => 8XPK575MYXPU4
+    [txn_type] => web_accept
+    [item_name] => Payment for: listing
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => ES
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 936ec8127ffb4
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-2.paypal.com
+Date: Fri, 20 Mar 2015 15:27:52 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=Wxghit9D8ZCmhDZ2cJxgZvVnqS7NVT-UdiRB8U4QOhqBLfb4LqcI1tZxkq-wP4UozuOSarje5TGY8K3DQuiSwPpMSeC0xyaBtnb2dDT5LGlkDKHjUmOxvGc0MNCXumjxfrq5vKhGJ23m8kB8y6mmNC8O_-KLEwjjVQMCuV4IzM1bWRyqAP8qiTa048yc85aU9zFmik35MN8dDfJcygeGa36FoG77aKSKBLVucnVd9ahPk2wJQc90_goEQJlIbza5_u_CjQp3l8ENSWcrY7UmmPSG4rRx_DV7HAc0vwZMsbUH1CRHqC3DUxTK3byZM04aMY6aX7s64OYYgod-QT5lcgX11sWyT3VA0VQMfEFh0d_0NC7d5PYf20sPjOPpObTIpQBeOA6jvaRzMqptpNpFUNLjFAzBFbpksqeVbP_N3w6YldsQpKGhwmi8Opi; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Mon, 17-Mar-2025 15:27:52 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sun, 19-Mar-2017 15:27:52 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.74.8.137.1426865272063564; path=/; expires=Sun, 12-Mar-45 15:27:52 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D2017201237; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.74.8.57.1426865272049223; path=/; expires=Sun, 12-Mar-45 15:27:52 GMT
+Set-Cookie: AKDC=slc-b-origin-www-2.paypal.com; expires=Fri, 20-Mar-2015 15:57:52 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [mc_gross] => 20.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => THSGBSNZXQWZG
+    [tax] => 0.00
+    [payment_date] => 08:35:13 Mar 20, 2015 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => FRANCISCO JAVIER
+    [mc_fee] => 1.03
+    [notify_version] => 3.8
+    [custom] => 
+    [payer_status] => verified
+    [business] => victor_trofin@yahoo.com
+    [quantity] => 1
+    [verify_sign] => AlNsyP4B-VE3fykqTTbzBt.74kfzARbDuKYRkGgYYt4gp9-j6c1yvliX
+    [payer_email] => outletando@gmail.com
+    [txn_id] => 42J54465FY247922V
+    [payment_type] => instant
+    [payer_business_name] => OUTLETANDO
+    [last_name] => CASTILLO LATORRE
+    [receiver_email] => victor_trofin@yahoo.com
+    [payment_fee] => 
+    [receiver_id] => 8XPK575MYXPU4
+    [txn_type] => web_accept
+    [item_name] => Payment for: listing
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => ES
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 7e234ede7efd7
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-a-origin-www-2.paypal.com
+Date: Fri, 20 Mar 2015 15:35:28 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=mU9Abb9XFnoQ50Iu2sbFhhFUeYNuF4rCHFSt6Mm_lBEQGyNFCoNvb-bmaqcCg1pXy1JFrI1MssyetRLsp8v8ioyHL6ClFFtvIAJ-qLnUHYhilF8DuSJg42Ga1hXy3OniRBlQxaCB7-74DUmrDiIeMFqSPJwKmJER4hWuM7ay-vMPqDxn6Dm9bN91nfTa5zaX4hwrfEb4cy1Wkit4iKOn5FJhTiyf6vhzXFeH23M0vo5ZmRRZ-sddATDO915GnFQrIr8eXBwK0yg24BxrMh8YWp2u6uOR7nzbMObtFQt3CLb-nLYQJLXS_d_m3OZ7oiodFJ0691UUPAofac46GEkU6yKFChvpaR33CUck_3RmdiPCJL8Zod_sWphRdPOjJwMvXlwegX1drX1T7Zkq63xMCek56H-3AnIU2UcTQeTaNc_e92fWuqj_VTU2vLq; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Mon, 17-Mar-2025 15:35:28 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sun, 19-Mar-2017 15:35:28 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.73.8.137.1426865728308593; path=/; expires=Sun, 12-Mar-45 15:35:28 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE5.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D1077808213; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.73.8.53.1426865728296481; path=/; expires=Sun, 12-Mar-45 15:35:28 GMT
+Set-Cookie: AKDC=slc-a-origin-www-2.paypal.com; expires=Fri, 20-Mar-2015 16:05:28 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [mc_gross] => 10.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => LMU35MCFUPNGJ
+    [tax] => 0.00
+    [payment_date] => 09:21:20 Mar 24, 2015 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => Giacomo luigi
+    [mc_fee] => 0.69
+    [notify_version] => 3.8
+    [custom] => 
+    [payer_status] => verified
+    [business] => victor_trofin@yahoo.com
+    [quantity] => 1
+    [verify_sign] => AFbtoae17G1snrl8ZQGTOr-6vaYpATzLQKLaxGtHEQ7Roh4fq6Zt3wSU
+    [payer_email] => g.delmonte@psicosalute.it
+    [txn_id] => 37X98953CC844421J
+    [payment_type] => instant
+    [payer_business_name] => Giacomo Luigi del monte
+    [last_name] => Del monte
+    [receiver_email] => victor_trofin@yahoo.com
+    [payment_fee] => 
+    [receiver_id] => 8XPK575MYXPU4
+    [txn_type] => web_accept
+    [item_name] => Payment for: listing
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => IT
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 1a6b8e5d68851
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-a-origin-www-2.paypal.com
+Date: Tue, 24 Mar 2015 16:21:33 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=00M9-gHlmmOn6e_OioY4Q8AB6Spw9KQ3aPRH8RP-oCklyht2kwDpEDmrK9LXrQbmYa5768B7YOtw_C84X4U2p47awAHEp2_OhLy1LG7Xd0WiGdPx8Q3RATUCsQ44hVO6BbqXSzA77SMhvQXCI35yVGnEchbaO8VfaeLaaI6CCisbky6pYRxvUvw6-2A05OxevQVWlmuzBn2KcW1tP96ikvfMOAMwTrJTF7-87UN68Wx9XeFa4YO-EkgUHf4JG7c0HVJdklInOBr3SxYUjPH4venkUOLRqBmOeyTSXJG7oJztWUEm-H09W9VsxEdRyOveHPV9wCNNjADcfRbl5NaC6TahNPlJs4ZtJbKTscTw15lJWKZLG9daqdKZgS30ZBy6YnpcMgE20nqLJD834LUK2S_9MAeGs7TMYiIBK-3qdSW6AWgKaDKbryKPmvO; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Fri, 21-Mar-2025 16:21:33 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Thu, 23-Mar-2017 16:21:33 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.73.8.134.1427214092964790; path=/; expires=Thu, 16-Mar-45 16:21:32 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE5.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D210702677; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.73.8.60.1427214092953314; path=/; expires=Thu, 16-Mar-45 16:21:32 GMT
+Set-Cookie: AKDC=slc-a-origin-www-2.paypal.com; expires=Tue, 24-Mar-2015 16:51:33 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [mc_gross] => 10.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => QHDNXUJNRJGMG
+    [tax] => 0.00
+    [payment_date] => 00:01:51 Mar 28, 2015 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => Michele Umberto
+    [mc_fee] => 0.69
+    [notify_version] => 3.8
+    [custom] => 
+    [payer_status] => verified
+    [business] => victor_trofin@yahoo.com
+    [quantity] => 1
+    [verify_sign] => A6lxBBGoJlsVSjckyA0Us.6hMf7-AcTa2bbmhgrmrz2WKRRrClX6zpzD
+    [payer_email] => michelrusso@tiscali.it
+    [txn_id] => 1N710266NR1959540
+    [payment_type] => instant
+    [payer_business_name] => H.S.S. di Russo Michele
+    [last_name] => Russo
+    [receiver_email] => victor_trofin@yahoo.com
+    [payment_fee] => 
+    [receiver_id] => 8XPK575MYXPU4
+    [txn_type] => web_accept
+    [item_name] => Payment for: listing
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => IT
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 913576766812a
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-2.paypal.com
+Date: Sat, 28 Mar 2015 07:02:02 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=-71-AxYYinwFiOU2QdM4Y3nA-3uYtXQBoIwLXNa84LaI0TY87hQfpJxUVGmZvDiYVXkCau7fiTkyvX070xtmqqjgUpatnkBH-CLZd73MIOJmTTg0IO83Vb-sDSP2oRY04FM7aI5ZpA1dHwqlR2WyMCRSO5jGl07QVvIkDlU8cs_Zpn2KxtLaOS347brzAlCQXz0hq0c_o4QWl081i2-nG59mTp3lS5N3kMlu_-_vsUJJqeRpHFkGIT2MjANaWpnUgk_BY72XmQ2RG2zsFgzxG3K5f6W_ensKemBZoMXibmxJRCUdEcu4j2mBtedueO81HdOV0kIVEurvYGktpo4KJ1DMB2-JAeV67_9idpRP6yOpwg8hZFVGgj9fu3tqtqDotO1W1mcrj086Vb6rtemF3ANH52WZt-dhk7GSz-4CIlcevQM6Tgfa3EcVxVa; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Tue, 25-Mar-2025 07:02:02 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Mon, 27-Mar-2017 07:02:02 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.74.8.134.1427526121935135; path=/; expires=Mon, 20-Mar-45 07:02:01 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D3914405461; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.74.8.62.1427526121923523; path=/; expires=Mon, 20-Mar-45 07:02:01 GMT
+Set-Cookie: AKDC=slc-b-origin-www-2.paypal.com; expires=Sat, 28-Mar-2015 07:32:02 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [transaction_subject] => 
+    [payment_date] => 14:01:25 Apr 15, 2015 PDT
+    [txn_type] => web_accept
+    [last_name] => Lugara
+    [residence_country] => IT
+    [item_name] => Payment for: listing
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => victor_trofin@yahoo.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => AWtP1BSSSCRqX-r8JE37CUyTVwkfAadLqVprh-kirgzFeqFiWN.87b6N
+    [payer_status] => unverified
+    [tax] => 0.00
+    [payer_email] => paulmorrow02@gmail.com
+    [txn_id] => 8UD64425SJ697390J
+    [quantity] => 1
+    [receiver_email] => victor_trofin@yahoo.com
+    [first_name] => Paolo
+    [payer_id] => 97HR224JCRMJ6
+    [receiver_id] => 8XPK575MYXPU4
+    [item_number] => 
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 0.76
+    [shipping] => 0.00
+    [mc_gross] => 12.00
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.8
+    [ipn_track_id] => 888271e3917e7
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-1.paypal.com
+Date: Wed, 15 Apr 2015 21:01:41 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=Yw_mB8Eb5fiBIDg6w4tzKqxNfcDdo-dHs_v927uz2YlGmXtc9hq-hl6sMJMPg1QoeeoqDPUsVtfpVRFdrB9tWuofY-0gPXufQbyTJAW7-Sw5IzovrvyfiIwRbPjC0zkWISzLgAMPcnj4WLaOczaKXtXxmp4xJU8qVyn4--JhtwAgizselFG5lcR6qTMV8w0D2oKViZwoSy6rkL-0gV4W18K9hGIcGhGQavuf90vV9gtKtYBSyHnI_yRkG4kwPI8sYPx7f8j7P87XXSnXkpjjyofkPOyrWBZ-TP4LblqVez6Gch9QNsBEu4_AR5q7Rtyf716NIS_8XpQL81eoKW9K1cowy-pYbRoJIlcwoQcm6X8ltaMhuZlbN-4ZFp856VCy8Jh-0UPfi0Gbofpx0QZ1DCHVf0t-d2uhGeZHlkKYnA1LgTur8D7K-gxnuIi; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 12-Apr-2025 21:01:41 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 14-Apr-2017 21:01:41 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.74.8.137.1429131701266729; path=/; expires=Fri, 07-Apr-45 21:01:41 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D3050384981; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.74.8.44.1429131701255348; path=/; expires=Fri, 07-Apr-45 21:01:41 GMT
+Set-Cookie: AKDC=slc-b-origin-www-1.paypal.com; expires=Wed, 15-Apr-2015 21:31:41 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [transaction_subject] => 
+    [payment_date] => 14:26:51 Apr 15, 2015 PDT
+    [txn_type] => web_accept
+    [last_name] => Lugara
+    [residence_country] => IT
+    [item_name] => Payment for: listing
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => victor_trofin@yahoo.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => AcwcWTJXFg5M-Ij-NkYq.jllTHSiArZaKy5fCL1Y1xGcqi0w7nT0ai10
+    [payer_status] => unverified
+    [tax] => 0.00
+    [payer_email] => paulmorrow02@gmail.com
+    [txn_id] => 33781151T34687132
+    [quantity] => 1
+    [receiver_email] => victor_trofin@yahoo.com
+    [first_name] => Paolo
+    [payer_id] => 97HR224JCRMJ6
+    [receiver_id] => 8XPK575MYXPU4
+    [item_number] => 
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 0.76
+    [shipping] => 0.00
+    [mc_gross] => 12.00
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.8
+    [ipn_track_id] => b051d2a665769
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-origin-www.paypal.com
+Date: Wed, 15 Apr 2015 21:27:17 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=XrmTczGcB5BzPk6pDHAAmtcfC3vC7PO-yoLKycB3XH6xrgbrT3HHBUU3SHLbuW2PK5nsTyIzIjzCcMFtn_BgcTQFoNFu7NVOXUS9B3EwcAEqsAWGNeAG-UsUOCPbb5cSJcvqFcY1_wDvH5jyAhXSy_swia496lpicGRdYn8Ts9Vw-U_Gsthj0KESzU3F2QdEs9s9CbhtzX7kVqYHgKolk8QlNGcvARUW5sxfEmq8qqLka1Gg9pf79tPCHbp2D3DV67Y4u1xH_9bIQ5OmxwWz9ioiwQDhBKFFqNLfVlQdK_4MW4WSkO4xlYWUJUrds5eWPjNoHZdtWUkuPqSCbhWHre8A727okndxJESKDLwV6f8F-xtDHXV43hSrtw-_2QxgamX45OkhFx9BflrdR7UDKFas4zFXblzI_twGbpCn7sS2-Wq3ojEc4K4E7sm; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 12-Apr-2025 21:27:17 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 14-Apr-2017 21:27:17 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.16.0.147.1429133237349112; path=/; expires=Fri, 07-Apr-45 21:27:17 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE9.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D3050778197; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.16.0.11.1429133237342754; path=/; expires=Fri, 07-Apr-45 21:27:17 GMT
+Set-Cookie: AKDC=slc-origin-www.paypal.com; expires=Wed, 15-Apr-2015 21:57:17 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [transaction_subject] => 
+    [payment_date] => 23:00:38 May 04, 2015 PDT
+    [txn_type] => web_accept
+    [last_name] => Luciana
+    [residence_country] => IT
+    [item_name] => Payment for: listing
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => victor_trofin@yahoo.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => A2k3lFqDi.fbzr9ajRZiw2OO.0PuAbMv8hu3a.wup4eMpATCQDe8FxEb
+    [payer_status] => verified
+    [tax] => 0.00
+    [payer_email] => pier.rock@yahoo.com
+    [txn_id] => 64V76739BH021222T
+    [quantity] => 1
+    [receiver_email] => victor_trofin@yahoo.com
+    [first_name] => Bettini
+    [payer_id] => DUSJZ8BE87PNQ
+    [receiver_id] => 8XPK575MYXPU4
+    [item_number] => 
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 0.69
+    [shipping] => 0.00
+    [mc_gross] => 10.00
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.8
+    [ipn_track_id] => 91fcffe743182
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-origin-www.paypal.com
+Date: Tue, 05 May 2015 06:00:52 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=mtpP6SOBNvhqaqYF0Qe6sDf-8oyHrRruDrAHIol8MkHSN5sJAA6GiG_k4CEFbua7oaWzpFf0EeuVfXMdt7MZCJbMPx_5LaKUn7AdLaZ2P5g1jpit2GTHPp2fQzc07z7XAMqjDoFN6nw8lrW-Xc67LzROerX47j8dM-sgTORAlcGojDaLavwxW7pyCGoBSYF9s16-IOkMOZHuVIk1IdRupDSdE9Xj8otDyM-5_fscmNE_-mtrgh4B8Rl7UeS4B5hE7iCXxvNaw9bXWmdVo4WdsdIShy5_0sesYHZwoEN2RZoPo-iO7Ta3XyMxlLBEN5SaPBil-sXVtvLD5fOx6-mS6eXsz0jR10wFN4PS9PdeygOCU7_Q3Q2rz7LMmBKb_SCD30ThHA1mzYXu_J2qZNeIpqx4Ul2E2fV-p0U9LPz1yMy_BWgNSontik6Zgvy; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Fri, 02-May-2025 06:00:51 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Thu, 04-May-2017 06:00:51 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.16.0.14.1430805651626472; path=/; expires=Thu, 27-Apr-45 06:00:51 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE9.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D2472298581; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.16.0.11.1430805651618954; path=/; expires=Thu, 27-Apr-45 06:00:51 GMT
+Set-Cookie: AKDC=slc-origin-www.paypal.com; expires=Tue, 05-May-2015 06:30:52 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [transaction_subject] => 
+    [payment_date] => 23:15:46 May 04, 2015 PDT
+    [txn_type] => web_accept
+    [last_name] => Falcione
+    [residence_country] => CH
+    [item_name] => Payment for: listing
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => victor_trofin@yahoo.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => A4TGbZ0VQep0DscA2SyOO7lfPAk1ArY1475PockMnXc0ylsCOjLXQJyf
+    [payer_status] => verified
+    [tax] => 0.00
+    [payer_email] => happyticino@bluewin.ch
+    [txn_id] => 8PH54324W3812204U
+    [quantity] => 1
+    [receiver_email] => victor_trofin@yahoo.com
+    [first_name] => Gianni
+    [payer_id] => 3QGS9XGAER4RN
+    [receiver_id] => 8XPK575MYXPU4
+    [item_number] => 
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 1.01
+    [shipping] => 0.00
+    [mc_gross] => 15.00
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.8
+    [ipn_track_id] => 29b31ac6a1cbc
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-2.paypal.com
+Date: Tue, 05 May 2015 06:15:57 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=PNWUNjqStn1e1esvx-gdjQNFo_Vbh2ydLOFkiNHen10DrAHMTuc-9bUCD45ORew1UYjkkqeSvFCQSjqyBX6PtoZ9vO3xfsRaVLO9h2O8hVRcZADFdb6V6jC4mwVprdjWtbh6yJJEOdn_u3tL6BVJCP5mgufgpAjn6wfzsq291Vl3_8B4cBn5RbWNiFBxx-Y9dgm73UrpMpI7AaQwp7wkjJXpBuUzWihZ7RI-7B1VOnB9Dpm_GBc5kHT5PYlHlOXpTU1OcbyLglXfd6av5l_KfzJm1WfmdLiz-izfm09cmXZ6rUd0Cs1055BaHp11hR9s5i8Wbo7_StgMiUGkTXX0aOePfG9VUeDqR8NQNTMKIbLGKiorwrSq6rudTHJg9Cs0INmoS-E_-hSY5AmObygG8YwQBsoERNTYPNfbOyzMO-0yxQkDTH5O3BBeY_a; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Fri, 02-May-2025 06:15:56 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Thu, 04-May-2017 06:15:56 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.74.8.137.1430806556577079; path=/; expires=Thu, 27-Apr-45 06:15:56 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D476072021; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.74.8.60.1430806556563253; path=/; expires=Thu, 27-Apr-45 06:15:56 GMT
+Set-Cookie: AKDC=slc-b-origin-www-2.paypal.com; expires=Tue, 05-May-2015 06:45:57 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [mc_gross] => 26.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => MJRZ2GNL5QPKU
+    [tax] => 0.00
+    [payment_date] => 08:33:47 May 21, 2015 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => CATALIN
+    [mc_fee] => 1.23
+    [notify_version] => 3.8
+    [custom] => 
+    [payer_status] => verified
+    [business] => victor_trofin@yahoo.com
+    [quantity] => 1
+    [verify_sign] => AZmbOZGWd8OeiXSbdUPcLmD2lZoFA2Y5MtRmKaPaOWVpGBC3koAx4ZxK
+    [payer_email] => BESTBOY_BT@YAHOO.COM
+    [txn_id] => 8XT85953AR5359459
+    [payment_type] => instant
+    [payer_business_name] => LoveFantasy
+    [last_name] => ATITIENEI
+    [receiver_email] => victor_trofin@yahoo.com
+    [payment_fee] => 
+    [receiver_id] => 8XPK575MYXPU4
+    [txn_type] => web_accept
+    [item_name] => Payment for: listing
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => IT
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 1e8de567e5370
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-a-origin-www-2.paypal.com
+Date: Thu, 21 May 2015 15:34:08 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=9mhkQ88a7vkvv5xhKRnIlf6Ld_WU3Vce_OwTzZEkWv48Q5EKxypfnA_hPnc4hU3Bi5-1W613Ka1QLhyhid_uV4gUmi3XqXmfy-3euX4R9TQQshMDczmgCr8zWIVbX2buoneDUK9aSlygu5NzfkeVKkWK1mj_WOaopq0aVGFIF6RqoXoMIP7yy9VClanhbRI_v8IWj4j62xjcd2BnC2hubOWe3eT7YN_HAJH48rGfbDE6fMm9b8a7RybvVHV1SjmAUd5n4iKVf6UjlOyQdqkpGIRbrneUm-Q2rWWQbMLnvou1Mysxe0kwya6JOwtn-hbK3xkYE50PkPLukMF7MNbtxOpMUirMB8LrdfFp7XG0CAQopfBHbQ5Wi02VXdijFaieHMKLO_vrIkMTuIaCDajiZN5X_rVunqhI8tnaCBjjTeu0JBB8Z0bxJDqYdH0; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 18-May-2025 15:34:08 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sat, 20-May-2017 15:34:08 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.73.8.134.1432222448352329; path=/; expires=Sat, 13-May-45 15:34:08 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE5.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D4042939733; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.73.8.57.1432222448339233; path=/; expires=Sat, 13-May-45 15:34:08 GMT
+Set-Cookie: AKDC=slc-a-origin-www-2.paypal.com; expires=Thu, 21-May-2015 16:04:08 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [mc_gross] => 10.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => QG9ZLGWEADYLU
+    [tax] => 0.00
+    [payment_date] => 03:45:28 Jul 06, 2015 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => giovanna zaira
+    [mc_fee] => 0.69
+    [notify_version] => 3.8
+    [custom] => 
+    [payer_status] => unverified
+    [business] => admin@seoportale.com
+    [quantity] => 1
+    [verify_sign] => A17fDnXX5fxUoI.cv6lj22PQwBsPAF3AkHlzCu1Q6zxZcRFXDz-BDc48
+    [payer_email] => info@cartomanziabassissimocosto.it
+    [txn_id] => 3GA94574NL191214T
+    [payment_type] => instant
+    [payer_business_name] => cartomanziabassissimocosto
+    [last_name] => rossi
+    [receiver_email] => admin@seoportale.com
+    [payment_fee] => 
+    [receiver_id] => 3JEG6PU65HCB6
+    [txn_type] => web_accept
+    [item_name] => Payment for: listing
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => IT
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => c2ccf8a126bb7
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Paypal-Debug-Id: 62934ff621c40
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-2.paypal.com
+Date: Mon, 06 Jul 2015 10:45:46 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=OZKfsubqSmtmV28OUyVyJ_BzhAvUTlg7P1xTa5eKj56GugRJmtGA0cDW2Qr-HawLDvylpItTO_a6zCdpDqF5C5RkfZ5MIwZEUAHR0pSBfZi-4xbfF96LQCigvU5RgCV53_2TMIMXZtuirxrk33QlU9twsBJRihEG-upEQBW8srNF0bKbQCkG9KpO0mvuGq1CmAwCD89YfuBawiOJr9npDWN-SgfQh-Nzy-FhoO2fkWdP46sgj9RRWgy8cVVpOOExsHWnlSOfJ5n3apyfD5s1YQARGFWo-GkapwOAnpVwzrOXM8-FDj4qq1qaMnjADP1lhXLcmljagSw6aagvBMiqmCZQtivnZ6Fv5ZZ7xDlhzW39RUzb641UNVbp6nutlbvNlmhGEOKQYj0UGzP_U11ixhfCuDxo9qsDmunJdGmFVuhWb9gfqgJGuFiCc1i; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Thu, 03-Jul-2025 10:45:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Wed, 05-Jul-2017 10:45:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.74.8.137.1436179546151625; path=/; expires=Wed, 28-Jun-45 10:45:46 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D1516018261; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.74.8.66.1436179546138048; path=/; expires=Wed, 28-Jun-45 10:45:46 GMT
+Set-Cookie: AKDC=slc-b-origin-www-2.paypal.com; expires=Mon, 06-Jul-2015 11:15:46 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [mc_gross] => 20.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => D547GGHNPXPPQ
+    [tax] => 0.00
+    [payment_date] => 01:37:01 Jul 07, 2015 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => stefano
+    [mc_fee] => 1.03
+    [notify_version] => 3.8
+    [custom] => 
+    [payer_status] => verified
+    [business] => admin@seoportale.com
+    [quantity] => 1
+    [verify_sign] => Acs-2PVVUo0CdLTSeRAJzSuWZrIhAMA.K8yfaN3ksMod5HocZI35MQSp
+    [payer_email] => arcieristefano@gmail.com
+    [txn_id] => 2C737500577169810
+    [payment_type] => instant
+    [payer_business_name] => STUDIO ARCIERI di Arcieri Stefano
+    [last_name] => arcieri
+    [receiver_email] => admin@seoportale.com
+    [payment_fee] => 
+    [receiver_id] => 3JEG6PU65HCB6
+    [txn_type] => web_accept
+    [item_name] => Payment for: listing
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => IT
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => d587e26addd37
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Paypal-Debug-Id: 5dbb152a14cec
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-origin-www.paypal.com
+Date: Tue, 07 Jul 2015 08:37:13 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=jNn_2_kkyBTLHH05KoH3wxgKJinEpmWG38BxIA7YhslL-6s0pKGnfFBemtZLF4eotihM7RTEjwzvjfOrh8-U6z3ozCwdK5mGl1yhmi3mgvwcgA1BzV9905NfDgdfLWnrzYh9uJNOueYBiSujuz2bNTrZmLR_r-HxOVmoACedwH3HFKuyM1DRKwB4CzP64kHGMbT1V_kUIkspj1tPKMEwn8fBV7PU43K1wfkZDWO6CZPXTp-JjNYd9dpqNZjykbRFFn5zNVdgBjdPOq4QzEgyiy4KQlpEXhe-6PO7ly2iBq9qq_CzxGE9IUxv2QQ5-PjIpm9_vKxQGrlsKfk7qvB0ZS6vpo_QMMPllZb01m_ibZkXQlHSULClzZyyBiz8OMCqU345zJXBdPhb2KdDKProOsYQTilLw0cha1IiGjCYc0COUI6Z9oAB-4-8Ngm; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Fri, 04-Jul-2025 08:37:13 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Thu, 06-Jul-2017 08:37:13 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.16.0.14.1436258233091860; path=/; expires=Thu, 29-Jun-45 08:37:13 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE9.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D3113196373; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.16.1.2.1436258233085005; path=/; expires=Thu, 29-Jun-45 08:37:13 GMT
+Set-Cookie: AKDC=slc-origin-www.paypal.com; expires=Tue, 07-Jul-2015 09:07:13 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [transaction_subject] => 
+    [payment_date] => 01:14:48 Jul 08, 2015 PDT
+    [txn_type] => web_accept
+    [last_name] => bordonaro
+    [residence_country] => IT
+    [item_name] => Payment for: listing
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => admin@seoportale.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => AvwlpSh2i3PDukbs20sk8tDG705VAZ-V8Y6lIOCr5J7t8Uq.KQac6v0-
+    [payer_status] => verified
+    [tax] => 0.00
+    [payer_email] => alfio1976@gmail.com
+    [txn_id] => 0A247507AX142470X
+    [quantity] => 1
+    [receiver_email] => admin@seoportale.com
+    [first_name] => alfio
+    [payer_id] => Y3P928SM8H7DL
+    [receiver_id] => 3JEG6PU65HCB6
+    [item_number] => 
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 0.93
+    [shipping] => 0.00
+    [mc_gross] => 17.00
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.8
+    [ipn_track_id] => 71e1a29fa1dc9
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Paypal-Debug-Id: 70942e693c9c
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-origin-www.paypal.com
+Date: Wed, 08 Jul 2015 08:14:59 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=R9gSHVEmJUaIbiyrrWCF-hZDXYsEpcf0PloH0pCBFua8fxd2Mk1emUCT5VuYdEVR_WuCcNK0xQHQH55kiIXyqcacJtLP0S8Bx15E60gGXvRzC-PnenTeActIlH9KrzJaXvCwITizmYotWtGa28vsICH3hcbTECgjF_qZqkDzgkwtCNcAB_-0V8pzkpq6VfkR96P29LQdCj8H5tUkHu3WWgaUrcMvQFuB90-1CM99c1-uqMISUR7nwswsdx4XHHLNAMaEIBmBQtpH6dZUNWw762o8Vc1kIJUL0UubnYps31eHN7Oa1BHhAXoxJZQdIxfxNqQOl7S-fU_txIbE6Xmh2IqKNkyHl6Zf7RxQeZFERCttIEsE5KrCc7OIRxtV_h-R-bztUGa-s61ApJ2JTbsEyU75ByOfGgFCqtK6k8Kjw7Z3nWoPkXHJUt26x0S; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 05-Jul-2025 08:14:59 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 07-Jul-2017 08:14:59 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.16.0.148.1436343299610801; path=/; expires=Fri, 30-Jun-45 08:14:59 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE9.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D64789589; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.16.1.4.1436343299605150; path=/; expires=Fri, 30-Jun-45 08:14:59 GMT
+Set-Cookie: AKDC=slc-origin-www.paypal.com; expires=Wed, 08-Jul-2015 08:44:59 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [mc_gross] => 10.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => EE35Q8LAYYX9E
+    [tax] => 0.00
+    [payment_date] => 08:38:46 Jul 09, 2015 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => Andrea
+    [mc_fee] => 0.69
+    [notify_version] => 3.8
+    [custom] => 
+    [payer_status] => verified
+    [business] => admin@seoportale.com
+    [quantity] => 1
+    [verify_sign] => AS-3SKSqiWYUSXAUHOtgpgbir-qeARZM54OB16HUcbUfV8z2qyhvp6oD
+    [payer_email] => andrea.verdicaro@email.it
+    [txn_id] => 2W740964KV032782R
+    [payment_type] => instant
+    [payer_business_name] => FUTURE DI ANDREA VERDICARO
+    [last_name] => Verdicaro
+    [receiver_email] => admin@seoportale.com
+    [payment_fee] => 
+    [receiver_id] => 3JEG6PU65HCB6
+    [txn_type] => web_accept
+    [item_name] => Payment for: listing
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => IT
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 7e4a788f38b91
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Paypal-Debug-Id: 802be8d61d4d7
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-a-origin-www-2.paypal.com
+Date: Thu, 09 Jul 2015 15:39:10 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=OZJaM0jwh32cRTwxkIORPTSelV2hxG87fI3fGCoMo85_hDEGbVyJoeaqghHcweRpI7gLbNhhLb1tb8saT3qNNMiZhn5k1himwSYbMHu3HAH2bKUSSks_H4AQANuev_ck9huFXLYO8AjEo0Y7UzUmFxVeACcGsMI1NSS9jQiRgGBxukDg70GXrCo4mwcsj7rzCwyZpGPzrAmLk-fcquNlo_uOiYxQkWgUpofC3YI-YXYZ6Jbj6XRJu--NTZCtKF6p5zdPfkJOPINHFb1xwexDjn-rlBaVCa7nSXC4EIen6-zYXB0ug7ia1KYOFVjqEqdkXRxMSXsLeKxouAGVgP7J-i6B_PSUdHgt_yz8CEgHKHlP7uo2AwH5Wysnm3o0uQkZD4Y6OIk899_IxRm7BJc662vxWw5Psyb1soabn5BpZ7wFlaNIFsgt9rFfv64; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 06-Jul-2025 15:39:10 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sat, 08-Jul-2017 15:39:10 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.73.8.137.1436456350132915; path=/; expires=Sat, 01-Jul-45 15:39:10 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE5.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D2660605525; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.73.8.67.1436456350119773; path=/; expires=Sat, 01-Jul-45 15:39:10 GMT
+Set-Cookie: AKDC=slc-a-origin-www-2.paypal.com; expires=Thu, 09-Jul-2015 16:09:10 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [transaction_subject] => 
+    [payment_date] => 03:44:54 Jul 27, 2015 PDT
+    [txn_type] => web_accept
+    [last_name] => Piromalli
+    [residence_country] => IT
+    [item_name] => Payment for: listing
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => admin@seoportale.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => ANc79cx0nOjtjRmd1K0rzvpG.GGCAmzBX80b1kWHCa3eYTTKgzMoea9z
+    [payer_status] => verified
+    [tax] => 0.00
+    [payer_email] => luigi2178@libero.it
+    [txn_id] => 39G903425N069602E
+    [quantity] => 1
+    [receiver_email] => admin@seoportale.com
+    [first_name] => Luigi
+    [payer_id] => H3NX62BD8QF48
+    [receiver_id] => 3JEG6PU65HCB6
+    [item_number] => 
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 0.69
+    [shipping] => 0.00
+    [mc_gross] => 10.00
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.8
+    [ipn_track_id] => bf36d3f869e46
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Paypal-Debug-Id: f0df2eb7ee2bc
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: dcg12-origin-www-1.paypal.com
+Date: Mon, 27 Jul 2015 10:45:12 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=SSKoJiJzayJ1J_yVEcnIiaQzqm5AmQJN9sKCQflmOhfc8WsveR_gIU-1-dOqrdgKIcu2sSSs8fUtiqWI0TT8OsUeWoLAtWFWoyninZOR6QKeTQiXObGSMGDp0HyGYGsQi0Plcc5nbC8yaVv8Uf8PKiw75pTRH5IRBXTV8ubV6Dc051kUQ-1o4g9MQJqFZa7tN88eW2wIni-6YppAj3qdF_DrA__ft8jy0lp1cXJ4BYnOVndFaRsJ6IM_r2qkJRTHF8tmFyHfGWZiC21jdtYQNj9bHotj1xNPyYzwEQEo-SMST6KW6ro7T_lDthrGj4pTwyZwyOe5b7SGyJ7Vj9l6QLLiQ6swvB2XvLgSBdy4YeqtN4YO3PR-mybhz0DKpmPkaRXZJrCfep0rQu5430Z2g0Oh8uU1olDmaIu-B_2FWDbW3OEoKMsljWg-sS0; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Thu, 24-Jul-2025 10:45:12 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Wed, 26-Jul-2017 10:45:12 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.17.1.16.1437993911982030; path=/; expires=Wed, 19-Jul-45 10:45:11 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE11.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D3070998101; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.17.1.10.1437993911975309; path=/; expires=Wed, 19-Jul-45 10:45:11 GMT
+Set-Cookie: AKDC=dcg12-origin-www-1.paypal.com; expires=Mon, 27-Jul-2015 11:15:12 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [transaction_subject] => 
+    [payment_date] => 09:32:40 Sep 27, 2015 PDT
+    [txn_type] => web_accept
+    [last_name] => passamonti
+    [residence_country] => IT
+    [item_name] => Payment for: listing
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => admin@seoportale.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => AHv1tUoTpxEI-mxnp0yDM8OmMfrBAri1WAgQaYbpQHwwGQagyHxL9R9w
+    [payer_status] => verified
+    [tax] => 0.00
+    [payer_email] => atom73@gmail.com
+    [txn_id] => 01A511716C749843K
+    [quantity] => 1
+    [receiver_email] => admin@seoportale.com
+    [first_name] => mario
+    [payer_id] => KKUMNQHLAXZUW
+    [receiver_id] => 3JEG6PU65HCB6
+    [item_number] => 
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 0.69
+    [shipping] => 0.00
+    [mc_gross] => 10.00
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.8
+    [ipn_track_id] => 8ac579fa18309
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Paypal-Debug-Id: 373ca7ffde9ab
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-2.paypal.com
+Date: Sun, 27 Sep 2015 16:32:52 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=paCOBsE1xjdVh81_YcVfmtGpg5jL39CE99t8g0EDrB49nrEufF7JfEAsNbTawSDZI68ZzP87nn9rL0um0nWCKIxUfqxHlpIv3IxOqpMktRa1ctj8JquIVvZbhNAiCQaVHS06Sf7xOIEzNkNzHgQKRk2WDDEeE5wvr5UbwnWgrPq7HQ-NVuG9Re59HKef8_tmFnMpJXgvnMvRxDZZIfiI-C_d9i3JUgXoVU2efMYoHT84zupcn0nRlj-BL9UM7BrU9k4BnGqVI7hIXZ6hUOkD6TCljrJ3kgllzF7R50x3BzLbUzMyQ6JQE8konJvaMR6cNTeqZYNrqtpmxiLZS4-Ss5tKgAEmvBGSGgb8shkdBIyCOruSVpfcXrOoo7cmdVeIcYlw3OBd72p5EeL33KVPep82FXS79UR3-D_f8s4cw2pikaw2WTLMDi-MPLK; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Wed, 24-Sep-2025 16:32:52 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Tue, 26-Sep-2017 16:32:52 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.74.8.134.1443371571924056; path=/; expires=Tue, 19-Sep-45 16:32:51 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D857344086; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.74.8.70.1443371571911613; path=/; expires=Tue, 19-Sep-45 16:32:51 GMT
+Set-Cookie: AKDC=slc-b-origin-www-2.paypal.com; expires=Sun, 27-Sep-2015 17:02:52 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [transaction_subject] => 
+    [payment_date] => 05:55:54 Sep 30, 2015 PDT
+    [txn_type] => web_accept
+    [last_name] => MARTO
+    [residence_country] => GR
+    [item_name] => Payment for: listing
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => admin@seoportale.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => ApZwcZsoP.0EhLY44k88Z0WcxxqnASpVfWtJKfVEnDUbQtMi1Lx.YdkL
+    [payer_status] => verified
+    [tax] => 0.00
+    [payer_email] => arjan@i-digger.com
+    [txn_id] => 64H46524C1464133L
+    [quantity] => 1
+    [receiver_email] => admin@seoportale.com
+    [first_name] => ARJAN
+    [payer_id] => MKT62A2KAYGN8
+    [receiver_id] => 3JEG6PU65HCB6
+    [item_number] => 
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 0.69
+    [shipping] => 0.00
+    [mc_gross] => 10.00
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.8
+    [ipn_track_id] => e71d3292c6330
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Paypal-Debug-Id: e99a6d1641bee
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-1.paypal.com
+Date: Wed, 30 Sep 2015 12:56:13 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=y1Alu832YY_BrcmWUIKAwEsHPgTYpyHm_FJo6e1UxfC2IWy_VSA1DHYaPx1Ri9sAZx86RUVP1ZxAlrFEsG1mA0jiqQBIoDwVQYaU6gPnYeIxUS37VWrCC-a_sz_7oldNhA3ZUf_sptqf3PguHAsKEw5_WTvOHdYBC39LG2yt7Yl4eYICG4GmSR-5WSPNrlI0vUjnuR0diGLvyFrlojsjHBskF7_ZBLYi2MeMmXqF-0MT2Rq5Oys0nderdI9_pihzvFCHKImWQoiD_S0yiEJdpobWwp2121EZgLaBQ9YMNQTAuAbXJvczWxLZLZX4OJgTd8sYO-vu5TZDst_MrHb4cl6zAV_-4-7xtASqxudLEeaq7LKIYMkdJPv-WiTpZFy5oa49xzUfUCX8xD3ekNEmRQIRe2blsISMS5Se05TXYjdEi_QHHh4Dwac9vgq; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 27-Sep-2025 12:56:13 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 29-Sep-2017 12:56:13 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.74.8.134.1443617773280452; path=/; expires=Fri, 22-Sep-45 12:56:13 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D3990555478; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.74.8.47.1443617773269098; path=/; expires=Fri, 22-Sep-45 12:56:13 GMT
+Set-Cookie: AKDC=slc-b-origin-www-1.paypal.com; expires=Wed, 30-Sep-2015 13:26:13 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [mc_gross] => 10.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => MHX9SLJ8HL33U
+    [tax] => 0.00
+    [payment_date] => 02:22:55 Oct 08, 2015 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => Luca
+    [mc_fee] => 0.69
+    [notify_version] => 3.8
+    [custom] => 
+    [payer_status] => verified
+    [business] => admin@seoportale.com
+    [quantity] => 1
+    [verify_sign] => AQYTgL3v31I0V8X0-w0FFi87o1FAAmlH5X2qED9Sc-BxHyTmyK.4H0U0
+    [payer_email] => pagamenti@universoinfesta.it
+    [txn_id] => 6YS63872TH423610U
+    [payment_type] => instant
+    [payer_business_name] => Universo delle Feste di Luca Smiraglia
+    [last_name] => Smiraglia
+    [receiver_email] => admin@seoportale.com
+    [payment_fee] => 
+    [receiver_id] => 3JEG6PU65HCB6
+    [txn_type] => web_accept
+    [item_name] => Payment for: listing
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => IT
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 8ebc0c96a5f3f
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Paypal-Debug-Id: e53e3402ab832
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: dcg12-origin-www-2.paypal.com
+Date: Thu, 08 Oct 2015 09:23:05 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=orNo_1GPwhVo_iFWLYfnrdq2FRq2nLwGs_oFMB1MCQdDJ3-kVYXLrMlKLVGvjXCieT32RafEVHXum94peubhnASbXEDapga-n2ah1Oofw4Cw7u6MjUi2ckrB92W6Wkw2QoLRHhc-aycIiKgqYSL1dqK7twEZ9LE1pqXKXztHwR7v-Bp9Oi06c5dZoSGU7K-uufffSz1CkftbKnQXvLVCiZHuKAhYgJ1Q5ZZLyF4ovl26xwFgpzRJGkRum3z3olVAEY7YduU89EeqRTJ16OFSICvnomcxStv7Pv0u_1mlgb3Un4_AGtH3pR3n-8Ez_GX13oNYHGnxyykWnUy3MyeFOPrFK0jX6HXkVZNQJT_8pJ_m24TdlKE9mf-uWoSsNNboOTobMD_BbKV-T80d4OturB9bqJqmTY2CWcmEufyfiePG0X2qjFmdyFWGt-y; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 05-Oct-2025 09:23:05 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sat, 07-Oct-2017 09:23:05 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.17.1.19.1444296184714952; path=/; expires=Sat, 30-Sep-45 09:23:04 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE11.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D4164228694; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.17.0.205.1444296184702140; path=/; expires=Sat, 30-Sep-45 09:23:04 GMT
+Set-Cookie: AKDC=dcg12-origin-www-2.paypal.com; expires=Thu, 08-Oct-2015 09:53:05 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [transaction_subject] => 
+    [payment_date] => 07:57:09 Oct 08, 2015 PDT
+    [txn_type] => web_accept
+    [last_name] => Pavan
+    [residence_country] => IT
+    [item_name] => Payment for: listing
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => admin@seoportale.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => AcE2uah9fzGQIYibH799J4hdOjH.A0z3JIRNIvvJygd73RCiiJ4cktkb
+    [payer_status] => verified
+    [tax] => 0.00
+    [payer_email] => redazione@1001notte.com
+    [txn_id] => 9GF68340NG312193J
+    [quantity] => 1
+    [receiver_email] => admin@seoportale.com
+    [first_name] => Piero
+    [payer_id] => DBV2GQKJFTXLU
+    [receiver_id] => 3JEG6PU65HCB6
+    [item_number] => 
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 1.20
+    [shipping] => 0.00
+    [mc_gross] => 25.00
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.8
+    [ipn_track_id] => f14d1b1e10af9
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Paypal-Debug-Id: 68f2525bf0c0c
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: dcg12-origin-www-1.paypal.com
+Date: Thu, 08 Oct 2015 14:57:36 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=gvNOTxSz6KvMdGRgNG8JQh1qd2IvXw3zBr7jetkjCuZGROhHIaL_4VdQXbYfjJPpDNvcv0p99G52U0mfZmxPLXyLeISU8CckjyLdmX8V5U5OJj8NykCZuUCiF876jiQNzmUOWtrFi3WyVI7Ryb1LPRR-IMVOfX0KXcldCsyzPaMSBqb7IbCfik4WyQbEDaqLlejZyYlTu2fwbYgORfzTycY2LvSqyO9pWiJOuEDHRpaFYD2QCFyI65DiPgWmYVuqwV7L4JZBbPI2t7sOb91073P_4xh1n7S6OzPIZV9RXbMPWG0EJ_bY3gKIQ5JpjlrcD1p-UPU4qEmP2cQaytq29OiUkLlvZK0pqZCAS-tLk_WKwsaiiHw1albjVOTLxkCTrPT4iPHNzJPSz3I_I77Usuacw1ZmIVxIg5xaQFyFSzw23Aqg1ks3RdyI1QW; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 05-Oct-2025 14:57:36 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sat, 07-Oct-2017 14:57:36 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.17.0.14.1444316255994294; path=/; expires=Sat, 30-Sep-45 14:57:35 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE11.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D1602491990; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.17.1.9.1444316255984810; path=/; expires=Sat, 30-Sep-45 14:57:35 GMT
+Set-Cookie: AKDC=dcg12-origin-www-1.paypal.com; expires=Thu, 08-Oct-2015 15:27:36 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [transaction_subject] => 
+    [payment_date] => 12:45:39 Oct 08, 2015 PDT
+    [txn_type] => web_accept
+    [last_name] => Munor
+    [residence_country] => IT
+    [item_name] => Payment for: listing
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => admin@seoportale.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => Al8NNE6haVvI.amSs8wAhzm-5p1VAZeRs1yYtFvF0BMwS05mK7Xo3YGW
+    [payer_status] => unverified
+    [tax] => 0.00
+    [payer_email] => admediaweb@gmail.com
+    [txn_id] => 92N95611T8300845J
+    [quantity] => 1
+    [receiver_email] => admin@seoportale.com
+    [first_name] => Albert
+    [payer_id] => Q4NY5FPS7T7RW
+    [receiver_id] => 3JEG6PU65HCB6
+    [item_number] => 
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 0.69
+    [shipping] => 0.00
+    [mc_gross] => 10.00
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.8
+    [ipn_track_id] => 3d50941bb40ed
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Paypal-Debug-Id: 300dd11021b44
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-1.paypal.com
+Date: Thu, 08 Oct 2015 19:45:57 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=J7i3ZZD8RG3KvJ7S6Gl2lRMEJKAq8FqMdIQmxXVluk0k7hMIVP8YNI_Dr_YSGH1OxQxKZP6rJIQq8ErHNk3QQwPkNpRBtYwBiGz5HbW_np9ALzPvm40UyihKveCGQ9FTqekdsD1Q9oydjl6Vw6HRTB9HYqBe5baxo-Uf0U4sfrTf40NdnV8xX0DIOROsAmh7BeoEgHNdpHGO1omELa8IfWi8iRG2iZ9kVcFc1VxcY7adDPeEL7Ou06FS6O4hp92yoKal2flOLn3Mn_UFp9dDX0nnv6ndvbZo9-OYmkyet2jN5VHmMAIfq5ioqGCLH8BCXQGILEv8vXd0RY2H6t9vsZ2tJzUAEZc5QGDR8dowG6txcqqBeK4A279Z50nHEnlL_3bCgir_2OV5R3G5onMLa7iDAAWZr8yhbJ_8cDP725qIHcUyX8L0LQ8qXZu; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 05-Oct-2025 19:45:57 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sat, 07-Oct-2017 19:45:57 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.74.8.134.1444333557149441; path=/; expires=Sat, 30-Sep-45 19:45:57 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D4123465302; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.74.8.40.1444333557137821; path=/; expires=Sat, 30-Sep-45 19:45:57 GMT
+Set-Cookie: AKDC=slc-b-origin-www-1.paypal.com; expires=Thu, 08-Oct-2015 20:15:57 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+
+POST VARIABLES:
+
+Array
+(
+    [transaction_subject] => 
+    [payment_date] => 08:35:57 Oct 10, 2015 PDT
+    [txn_type] => web_accept
+    [last_name] => lunetta
+    [residence_country] => IT
+    [item_name] => Payment for: listing
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => admin@seoportale.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => AlZ5sziZyOInqv3AMcp68K229jrOAh-LbTL7kv2x1X5Hj.ToErt4oUeL
+    [payer_status] => verified
+    [tax] => 0.00
+    [payer_email] => lunettadavide@gmail.com
+    [txn_id] => 4EF30470HR241712Y
+    [quantity] => 1
+    [receiver_email] => admin@seoportale.com
+    [first_name] => davide
+    [payer_id] => FP93BHTH53Z9Y
+    [receiver_id] => 3JEG6PU65HCB6
+    [item_number] => 
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 0.69
+    [shipping] => 0.00
+    [mc_gross] => 10.00
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.8
+    [ipn_track_id] => 5f9059abd9c67
+)
+
+
+RESPONSE:
+
+Array
+(
+    [0] => HTTP/1.0 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Paypal-Debug-Id: 23c337e48e918
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-1.paypal.com
+Date: Sat, 10 Oct 2015 15:36:10 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=xvzPbjIGeta6zci90AKTSszkw1eEG9605haijbhopBVXhXa64Fahn6-uPHFB0Ugh8O4NPML-orSi88mlXzXipeQD7E_Rh_ZDQYL4uCgMQsoAYJ3M571tHBpzq0KWjI9jwNw4fUJ0oM86DLJ1tpSE13msnNQBbOfRmcSKA6F614bwan9IOEqP1KFtW_Xs6pMdUh4Nw3vEvjwLuuY4O4DsBo3XOra_TE62oKaLFLAsDwd79jx0Sd-EIkKYDe__2w6yofnSfS3qRFSHFbdtogbzMPnEepI3Ac-T0xCHjM5zC0Dl0R0yYehk9JqxGJl0EcmkonMfzFSqXdkZp_XCqphfTwP6mCuOvOHP045AKBXZyRbZBwkfsfJMSLqhlbDgs0JpGCf-6FvEiRW-AuBQnbRQHTjC192MrL3u0Gcssn3sbbQ20DndHcQ-q9p4gRW; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Tue, 07-Oct-2025 15:36:10 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Mon, 09-Oct-2017 15:36:10 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.74.8.134.1444491370595896; path=/; expires=Mon, 02-Oct-45 15:36:10 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D1781537110; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.74.8.45.1444491370583697; path=/; expires=Mon, 02-Oct-45 15:36:10 GMT
+Set-Cookie: AKDC=slc-b-origin-www-1.paypal.com; expires=Sat, 10-Oct-2015 16:06:10 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+    [1] => VERIFIED
+)
+

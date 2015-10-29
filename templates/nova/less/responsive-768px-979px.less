@@ -1,0 +1,89 @@
+//
+// Responsive: Tablet to desktop
+// --------------------------------------------------
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+  // Fixed grid
+  #grid > .core(@gridColumnWidth768, @gridGutterWidth768);
+
+  // Fluid grid
+  #grid > .fluid(@fluidGridColumnWidth768, @fluidGridGutterWidth768);
+
+  // Input grid
+  #grid > .input(@gridColumnWidth768, @gridGutterWidth768);
+
+  // No need to reset .thumbnails here since it's the same @gridGutterWidth
+
+  // iaBootstrap styles
+  // -------------------------
+  
+  header {
+
+    .brand.pull-left {
+      float: none;
+      text-align: center;
+    }
+
+    .nav-main.pull-right {
+      float: none;
+      text-align: center;
+    }
+  }
+
+  .marketing-unit {
+    background-size: auto;
+
+    h1 {
+      font-size: 60px;
+    }
+
+    .flex-direction-nav .flex-prev,
+    .flex-direction-nav .flex-next {
+      top: auto;
+      bottom: 0;
+      margin: 0;
+    }
+  }
+
+  .alphabetic-search {
+    padding-top: 6px;
+
+    a {
+      margin: 0 0 6px;
+    }
+  }
+
+  .box {
+    .media.ia-item {
+      .pull-left.image {
+        float: none;
+        margin-bottom: 10px;
+
+        .media-object {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .js-switch-display-type {
+    display: none;
+  }
+
+  .page-view_listing {
+    .content-wrap {
+      .media.ia-item {
+        .pull-right {
+          float: none;
+
+          .pull-left {
+            float: none;
+          }
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="extrastats">
+	<title>Extra Statistics</title>
+	<summary>Improves statistics block. Now your visitors can see number of pending listings, total listing clicks and total number of category clicks in the directory.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-02-11</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+	
+	<phrases>
+		<phrase key="pending_approval" category="frontend" code="en">Pending approval</phrase>
+		<phrase key="total_listing_clicks" category="frontend" code="en">Total listing clicks</phrase>
+		<phrase key="total_category_clicks" category="frontend" code="en">Total category clicks</phrase>
+	</phrases>
+
+	<hooks>
+		<hook name="bootstrap" type="php">
+			<![CDATA[
+global $eSyndiCat, $esynSmarty;
+
+$eSyndiCat->setTable("listings");
+$num_total['pending'] = $eSyndiCat->one("COUNT(*)", "`status` = 'approval'");
+$eSyndiCat->resetTable();
+				
+$eSyndiCat->setTable("listing_clicks");
+$num_total['listing'] = $eSyndiCat->one("COUNT(*)");
+$eSyndiCat->resetTable();
+				
+$eSyndiCat->setTable("category_clicks");
+$num_total['category'] = $eSyndiCat->one("COUNT(*)");
+$eSyndiCat->resetTable();
+			
+$esynSmarty->assign('num_total', $num_total);
+			]]>
+		</hook>
+
+		<hook name="statisticsBlock" type="smarty">
+			<![CDATA[
+{if isset($num_total.pending)}
+<tr>
+	<td>{$lang.pending_approval}:</td>
+	<td class="text-right">{$num_total.pending}</td>
+</tr>
+{/if}
+
+{if isset($num_total.listing)}
+<tr>
+	<td>{$lang.total_listing_clicks}:</td>
+	<td class="text-right">{$num_total.listing}</td>
+</tr>
+{/if}
+
+{if isset($num_total.category)}
+<tr>
+	<td>{$lang.total_category_clicks}:</td>
+	<td class="text-right">{$num_total.category}</td>
+</tr>
+{/if}
+			]]>
+		</hook>
+	</hooks>
+</plugin>

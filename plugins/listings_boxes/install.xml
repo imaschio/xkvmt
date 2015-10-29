@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="listings_boxes">
+	<title>Listing Boxes</title>
+	<summary>Displays New, Top, Random, Related listngs in the boxes.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.1</version>
+	<date>2013-05-29</date>
+	<compatibility>3.0</compatibility>
+  	<status>active</status>
+  
+	<config group="listings" name="listing_boxes" type="divider" description="Listing Boxes Plugin Options">Listing Boxes Plugin Options</config>
+	<config group="listings" name="num_new_listings" type="text" description="Number of listings in New Listings Box">10</config>
+	<config group="listings" name="num_random_listings" type="text" description="Number of listings in Random Listings Box">5</config>
+	<config group="listings" name="num_top_listings" type="text" description="Number of listings in Top Listings Box">5</config>
+	<config group="listings" name="num_related_listings" type="text" description="Number of listings in Related Listings Box">5</config>
+
+	<phrases>
+		<phrase key="listings_box_new" category="common" code="en">New</phrase>
+		<phrase key="listings_box_top" category="common" code="en">Top</phrase>
+		<phrase key="listings_box_random" category="common" code="en">Random</phrase>
+	</phrases>
+  
+	<hooks>
+		<hook name="bootstrap">
+			<![CDATA[
+global $eSyndiCat, $esynSmarty, $esynAccountInfo, $esynConfig, $box_listings, $esynListing;
+
+$box_listings['new'] = $esynListing->getLatest(0, $esynConfig->getConfig('num_new_listings'), $esynAccountInfo['id']);
+$box_listings['random'] = $esynListing->getRandom($esynConfig->getConfig('num_random_listings'), $esynAccountInfo['id']);
+$box_listings['top'] = $esynListing->getTop(0, $esynConfig->getConfig('num_top_listings'), $esynAccountInfo['id']);
+
+$esynSmarty->assignByRef('box_listings', $box_listings);
+		]]></hook>
+
+		<hook name="viewListingAfterGetListing">
+			<![CDATA[
+global $eSyndiCat, $esynSmarty, $listing, $esynConfig, $esynListing, $box_listings;
+
+$sql = "SELECT t1.*, ";
+$sql .= "t2.`path`, t2.`title` `category_title` ";
+$sql .= "FROM `".$eSyndiCat->mPrefix."listings` t1 ";
+$sql .= "LEFT JOIN `".$eSyndiCat->mPrefix."categories` t2 ";
+$sql .= "ON t1.`category_id` = t2.`id` ";
+$sql .= "WHERE t1.`status` = 'active' ";
+$sql .= "AND `t1`.`category_id` = '".$listing['category_id']."'";
+$sql .= "ORDER BY t1.`title` DESC LIMIT 0, ".$esynConfig->getConfig('num_related_listings')."";
+
+$box_listings['related'] = $eSyndiCat->getAll($sql);
+$esynSmarty->assignByRef('box_listings', $box_listings);
+
+		]]></hook>
+	</hooks>
+
+	<blocks>
+		<block title="New Listings" name="new-listings" showheader="0" collapsible="0" lang="en" status="active" position="bottom" type="smarty" sticky="0" pages="index" external="1"><![CDATA[]]></block>
+		<block title="Listings box" name="listings-box" showheader="0" collapsible="0" lang="en" status="active" position="left" type="smarty" sticky="1" external="1"><![CDATA[]]></block>
+		<block title="Related listings" name="related-listings" showheader="1" collapsible="1" lang="en" status="active" position="right" type="smarty" pages="view_listing" external="1"><![CDATA[]]></block>
+	</blocks>
+</plugin>

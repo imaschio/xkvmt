@@ -1,0 +1,3 @@
+<a href="{(isset($lightbox)) ? $listing.url : {print_listing_url listing=$listing}}" id="l_{$listing.id}" {if $config.external_no_follow}rel="nofollow"{/if} data-id="{$listing.id}" data-item="listings"  class="js-count">
+	<img {if isset($tile)}style="margin: -90px 0 0 -90px;"{else}class="media-object"{/if} src="{$smarty.const.IA_URL}uploads/thumbnails/{$listing.domain}.{$config.pagepeeker_format}" alt="">
+</a>

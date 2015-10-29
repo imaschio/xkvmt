@@ -1,0 +1,40 @@
+.guestbook-comment {
+	margin-bottom: 22px;
+}
+.guestbook-comment .info {
+	font-style: italic;
+	font-size: 12px;
+	color: #999;
+}
+.guestbook-comment .info .sep {
+	display: inline-block;
+	margin: 0 6px;
+	color: #ccc;
+}
+.guestbook-comment .info a {
+	color: #999;
+	text-decoration: underline;
+}
+.guestbook-comment .info a:hover {
+	color: #666;
+	text-decoration: none;
+}
+.guestbook-comment .comment {
+	background: #f7f7f7;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 10px;
+	position: relative;
+	margin-left: 20px;
+}
+.guestbook-comment .comment:before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	top: 5px;
+	left: -16px;
+	background: url('../img/comment-arr.png') 0 0 no-repeat;
+}

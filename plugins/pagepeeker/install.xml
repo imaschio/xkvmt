@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="pagepeeker">
+	<title>Pagepeeker</title>
+	<summary>This plugin generates pagepeeker screenshots for the listings.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.2.4</version>
+	<date>2014-12-25</date>
+	<compatibility>3.2.1</compatibility>
+	<status>active</status>
+
+	<config group="miscellaneous" name="pagepeeker_separator" type="divider" description="pagepeeker">Pagepeeker</config>
+	<config group="miscellaneous" name="pagepeeker_format" type="select" multiplevalues="png,jpg,gif" description="Output image format">png</config>
+
+	<phrases>
+		<phrase key="thumbnail" category="common" code="en">Thumbnail</phrase>
+		<phrase key="thumbnail_updated" category="common" code="en">Thumbnail has been updated</phrase>
+		<phrase key="thumbnail_update" category="common" code="en">Update thumbnail</phrase>
+		<phrase key="consistency_generate_thumbs" category="common" code="en">This tool generates listings thumbnails.</phrase>
+		<phrase key="generate_thumbs" category="admin" code="en">Generate Thumbnails</phrase>
+	</phrases>
+
+	<hooks>
+		<hook name="phpAdminSuggestListingBeforeView">
+			<![CDATA[
+global $esynAdmin;
+
+if ('pagepeeker' == $esynAdmin->mConfig['thumbshots_name'] && ('update_thumb' == $_GET['action']) && !empty($_GET['domain']))
+{
+	$path = IA_UPLOADS . 'thumbnails' ;
+
+	if (!file_exists($path) || !is_dir($path))
+	{
+		@mkdir($path);
+	}
+
+	$thumbname = $_GET['domain'] . '.' . $esynAdmin->mConfig['pagepeeker_format'];
+	$ch = curl_init('http://free.pagepeeker.com/v2/thumbs.php?size=m&url=' . $_GET['domain']);
+	$fp = fopen($path . IA_DS . $thumbname, 'wb');
+	curl_setopt($ch, CURLOPT_FILE, $fp);
+	curl_setopt($ch, CURLOPT_HEADER, 0);
+	curl_exec($ch);
+	curl_close($ch);
+	fclose($fp);
+
+	$out['img'] = $thumbname;
+	echo esynUtil::jsonEncode($out);
+	exit;
+}
+			]]>
+		</hook>
+		<hook name="viewListing">
+			<![CDATA[
+global $listing, $eSyndiCat, $esynSmarty;
+
+if ('pagepeeker' == $eSyndiCat->mConfig['thumbshots_name'] && !empty($listing['domain']))
+{
+	$path = IA_UPLOADS . 'thumbnails' ;
+	if (!file_exists($path) || !is_dir($path))
+	{
+		@mkdir($path);
+	}
+
+	$thumbname = $listing['domain'] . '.' . $eSyndiCat->mConfig['pagepeeker_format'];
+
+	$json = esynUtil::jsonDecode(esynUtil::getPageContent('http://free.pagepeeker.com/v2/thumbs_ready.php?size=m&url=' . $listing['domain']));
+	$isReady = $json['IsReady'];
+
+	if (1 == $isReady)
+	{
+		if (!file_exists($path . IA_DS . $thumbname))
+		{
+			$ch = curl_init('http://free.pagepeeker.com/v2/thumbs.php?size=m&url=' . $listing['domain']);
+			$fp = fopen($path . IA_DS . $thumbname, 'wb');
+			curl_setopt($ch, CURLOPT_FILE, $fp);
+			curl_setopt($ch, CURLOPT_HEADER, 0);
+			curl_exec($ch);
+			curl_close($ch);
+			fclose($fp);
+		}
+	}
+	else
+	{
+		$i = 0;
+		while ($isReady < 1)
+		{
+			$json = esynUtil::jsonDecode(esynUtil::getPageContent('http://free.pagepeeker.com/v2/thumbs_ready.php?size=m&url=' . $listing['domain']));
+			$isReady = $json['IsReady'];
+
+			if (++$i >= 5)
+			{
+				if (1 == $isReady)
+				{
+					$ch = curl_init('http://free.pagepeeker.com/v2/thumbs.php?size=m&url=' . $listing['domain']);
+					$fp = fopen($path . IA_DS . $thumbname, 'wb');
+					curl_setopt($ch, CURLOPT_FILE, $fp);
+					curl_setopt($ch, CURLOPT_HEADER, 0);
+					curl_exec($ch);
+					curl_close($ch);
+					fclose($fp);
+				}
+
+				break;
+			}
+		}
+	}
+}
+			]]>
+		</hook>
+		<hook name="viewListingAfterGetListing">
+			<![CDATA[
+global $eSyndiCat;
+
+if ('pagepeeker' == $eSyndiCat->mConfig['thumbshots_name'] && ('update_thumb' == $_GET['action']) && !empty($_GET['domain']))
+{
+	$path = IA_UPLOADS . 'thumbnails' ;
+	if (!file_exists($path) || !is_dir($path))
+	{
+		@mkdir($path);
+	}
+
+	$thumbname = $_GET['domain'] . '.' . $eSyndiCat->mConfig['pagepeeker_format'];
+	$ch = curl_init('http://free.pagepeeker.com/v2/thumbs.php?size=m&url=' . $_GET['domain']);
+	$fp = fopen($path . IA_DS . $thumbname, 'wb');
+	curl_setopt($ch, CURLOPT_FILE, $fp);
+	curl_setopt($ch, CURLOPT_HEADER, 0);
+	curl_exec($ch);
+	curl_close($ch);
+	fclose($fp);
+
+	$out['img'] = $thumbname;
+	echo esynUtil::jsonEncode($out);
+	exit;
+}
+			]]>
+		</hook>
+
+		<hook name="tplAdminSuggestListingForm" type="smarty">
+			<![CDATA[
+{if isset($smarty.get.do) && $smarty.get.do eq 'edit'}
+<fieldset>
+	<legend><strong>{$esynI18N.thumbnail}</strong></legend>
+	<table cellspacing="0" cellpadding="0" width="100%" class="striped">
+		<tr>
+			<td width="200"><strong>{$esynI18N.thumbnail} for {$listing.domain}</strong></td>
+			<td>
+				<div class="image_box thumbnail_box">
+					<a class="lightbox" target="_blank" href="../uploads/thumbnails/{$listing.domain}.{$config.pagepeeker_format}">
+						<img src="../uploads/thumbnails/{$listing.domain}.{$config.pagepeeker_format}" width="200">
+					</a>
+					<div class="delete"><a class="js-update-thumbnail" href="{$listing.domain}">{$esynI18N.update}</a></div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</fieldset>
+{/if}
+			]]>
+		</hook>
+		<hook name="tplFrontViewListingAfterThumbshot" type="smarty">
+			<![CDATA[
+{if $esynAccountInfo.id == $listing.account_id}
+	<p><a class="js-update-thumbnail" data-listing-id="{$listing.id}" href="{$listing.domain}">{lang key='thumbnail_update'}</a></p>
+	{include_file js="plugins/pagepeeker/js/frontend/pagepeeker"}
+{/if}
+			]]>
+		</hook>
+		<hook name="tplAdminSuggestListingBeforeIncludeJs" type="smarty">
+			<![CDATA[
+{include_file js="plugins/pagepeeker/js/admin/pagepeeker"}
+			]]>
+		</hook>
+
+		<hook name="adminDatabaseConsistency" type="smarty">
+			<![CDATA[
+{if $config.thumbshots_name == 'pagepeeker'}
+	<li>
+		<div class="consistency-item-actions">
+			<h5>{$esynI18N.generate_thumbs}:</h5>
+			<a href="#" class="ajax" data-num="{$stats_items.listings}" data-type="generatethumbs">{$esynI18N.generate_thumbs|upper}</a>
+		</div>
+		<div class="consistency-item-annotation">
+			{lang key='consistency_generate_thumbs'}
+		</div>
+	</li>
+{/if}
+			]]>
+		</hook>
+		<hook name="phpAdminDatabaseConsistencyTypeAjax" type="php">
+			<![CDATA[
+if ($_GET['type'] == 'generatethumbs')
+{
+	include(IA_PLUGINS.'pagepeeker'.IA_DS.'admin'.IA_DS.'index.php');
+}
+			]]>
+		</hook>
+	</hooks>
+
+	<install>
+		<code>
+			<![CDATA[
+global $esynConfig;
+
+// thumbnail file path
+$path = IA_UPLOADS . 'thumbnails' ;
+
+// create thumbnails directory in case it does not exist
+if (!file_exists($path) || !is_dir($path))
+{
+	@mkdir($path);
+}
+
+$esynConfig->setTable('config');
+$current_values = $esynConfig->one("`multiple_values`", "`name` = 'thumbshots_name'");
+$esynConfig->resetTable();
+
+if (!empty($current_values))
+{
+	$values = explode(',', $current_values);
+}
+
+$values[] = 'pagepeeker';
+
+$num_values = count($values);
+$updated_values = join(',', $values);
+
+$esynConfig->setTable('config');
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'thumbshots_name'");
+
+if (1 == $num_values)
+{
+	$esynConfig->update(array('value' => 'pagepeeker'), "`name` = 'thumbshots_name'");
+}
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</install>
+
+	<uninstall>
+		<code>
+			<![CDATA[
+global $esynConfig;
+
+$esynConfig->setTable('config');
+$current_values = $esynConfig->one("`multiple_values`", "`name` = 'thumbshots_name'");
+$esynConfig->resetTable();
+
+$values = explode(',', $current_values);
+
+if (!empty($values))
+{
+	foreach($values as $key => $value)
+	{
+		if ('pagepeeker' == $value)
+		{
+			unset($values[$key]);
+		}
+	}
+}
+
+$updated_values = join(',', $values);
+
+$esynConfig->setTable('config');
+
+if (empty($values))
+{
+	$esynConfig->update(array('value' => ''), "`name` = 'thumbshots_name'");
+}
+
+$esynConfig->update(array('multiple_values' => $updated_values), "`name` = 'thumbshots_name'");
+$esynConfig->resetTable();
+			]]>
+		</code>
+	</uninstall>
+</plugin>

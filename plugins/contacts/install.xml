@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="contacts">
+	<title>Contacts</title>
+	<summary>Plugin will allow your visitors to send you contact requests through the web form.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.5</version>
+	<compatibility>3.0</compatibility>
+	<date>2014-06-30</date>
+	<status>active</status>
+
+	<adminpages>
+		<page block="plugins" menus="main" aco="contacts">Manage Contacts</page>
+	</adminpages>
+
+	<hooks>
+		<hook name="smartyAdminAccountsAfterJSInclude" type="smarty">
+			<![CDATA[
+{ia_print_js files='plugins/contacts/js/admin/contacts_accounts'}
+			]]>
+		</hook>
+
+		<hook name="beforeCloseTag" type="smarty">
+		<![CDATA[
+{ia_print_js files='plugins/contacts/js/frontend/contacts'}
+		]]>
+		</hook>
+
+		<hook name="listingDisplayToolbarActions" type="smarty">
+			<![CDATA[
+{if $esynAccountInfo && $esynAccountInfo.id != $listing.account_id}
+	<a href="#" class="js-tooltip js-contact_member" data-id="{$listing.id}" data-listing-account="{$listing.account_id}" data-account="{$esynAccountInfo.id}" title="{lang key='contact_listing_owner'}">
+		<i class="icon-envelope icon-white"></i>
+	</a>
+{/if}
+			]]>
+		</hook>
+
+		<hook name="afterMainContent" type="smarty">
+		<![CDATA[
+{if 'view_account' == $smarty.const.IA_REALM && isset($account)}
+	<input type="hidden" id="account_id" name="account_id" value="{$account.id}" />
+{/if}
+		]]>
+		</hook>
+	</hooks>
+
+	<phrases>
+		<phrase key="email_sent" category="frontend" code="en">Email has been sent successfully.</phrase>
+		<phrase key="contacts_full_name" category="frontend" code="en">Your name</phrase>
+		<phrase key="contacts_email" category="frontend" code="en">Your email</phrase>
+		<phrase key="contacts_subject" category="frontend" code="en">Subject</phrase>
+		<phrase key="contacts_body" category="frontend" code="en">Message body</phrase>
+		<phrase key="contacts_reason" category="frontend" code="en">Reason</phrase>
+		<phrase key="get_back_to" category="frontend" code="en">to get back to listing detail page.</phrase>
+		<phrase key="error_contact_body" category="frontend" code="en">Please fill in contact reason.</phrase>
+		<phrase key="error_contact_subject" category="frontend" code="en">Please fill in contact subject.</phrase>
+		<phrase key="contact_us" category="frontend" code="en">Contact us</phrase>
+		<phrase key="contact_added" category="frontend" code="en">Thanks. Your message has been sent to our administrators. They will reply shortly.</phrase>
+		<phrase key="manage_contacts" category="admin" code="en">Manage Contacts</phrase>
+		<phrase key="no_contacts" category="admin" code="en">No contact requests.</phrase>
+		<phrase key="cc" category="admin" code="en">Cc (comma seperated list of emails)</phrase>
+		<phrase key="bcc" category="admin" code="en">Bcc (comma seperated list of emails)</phrase>
+		<phrase key="reply_member" category="admin" code="en">Reply the member</phrase>
+		<phrase key="compose_email" category="admin" code="en">Compose new email</phrase>
+		<phrase key="delete_these_contacts" category="admin" code="en">Are you sure you want to remove these contacts?</phrase>
+		<phrase key="delete_this_contact" category="admin" code="en">Are you sure you want to remove this contact?</phrase>
+		<phrase key="contacts" category="common" code="en">Contacts</phrase>
+		<phrase key="page_title_contacts" category="common" code="en">Contact us</phrase>
+		<phrase key="contacts_deleted" category="admin" code="en">Contacts have been deleted.</phrase>
+		<phrase key="contact_deleted" category="admin" code="en">Contact has been deleted.</phrase>
+		<phrase key="contact_account" category="common" code="en">Contact Account</phrase>
+		<phrase key="contact_listing_owner" category="frontend" code="en">Contact Listing Owner</phrase>
+		<phrase key="contact_us_page_description" category="frontend" code="en">Please contact us if you have any questions. We will reply as soon as possible.</phrase>
+
+		<phrase key="email_group_contacts" category="admin" code="en"><![CDATA[Contacts Plugin Templates]]></phrase>
+		<phrase key="tpl_notif_contact_us_subject" category="email" code="en">Contact us page ({subject})</phrase>
+		<phrase key="tpl_notif_contact_us_body" category="email" code="en"><![CDATA[
+<h3>Dear {admin_name},</h3>
+<p>
+You got contact requests with subject: {subject}, in {dir_title} Directory.<br /><br />
+<p/>
+<p>
+From: {sender_fullname} <{sender_email}><br />
+<br />
+Reason: {body}
+</p>
+<p>
+______________________________<br />
+Thank you, <br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}
+</p>
+]]>
+        </phrase>
+
+		<phrase key="tpl_contact_listing_owner_subject" category="email" code="en">{subject}</phrase>
+		<phrase key="tpl_contact_listing_owner_body" category="email" code="en"><![CDATA[
+<h3>Greetings,</h3>
+<p>
+You have a contact request from this directory website: <a href="{dir_url}">{dir_title}</a> <br />
+Your listing: <a href="{listing_path}">{listing_title}</a> <br />
+<p/>
+<p>
+From: {sender_fullname} <{sender_email}><br />
+<br />
+Subject: {subject} <br />
+<p/>
+<p>
+Body: <br />
+{body}
+</p>
+<p>
+______________________________<br />
+Thank you, <br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}
+</p>
+]]>
+        </phrase>
+
+		<phrase key="tpl_notif_contact_listing_owner_subject" category="email" code="en">Someone has contacted listing owner on {dir_title} ({subject})</phrase>
+		<phrase key="tpl_notif_contact_listing_owner_body" category="email" code="en"><![CDATA[
+<h3>Dear {admin_name},</h3>
+<p>
+Here is a copy of email body sent to the listing owner:
+</p>
+----------------------------------------------------------------------------
+<h3>Greetings,</h3>
+<p>
+You have a contact request from this directory website: <a href="{dir_url}">{dir_title}</a> <br />
+Your listing: <a href="{listing_path}">{listing_title}</a> <br />
+<p/>
+<p>
+From: {sender_fullname} <{sender_email}><br />
+<br />
+Subject: {subject} <br />
+<p/>
+<p>
+Body: <br />
+{body}
+</p>
+<p>
+______________________________<br />
+Thank you, <br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}
+</p>
+]]>
+        </phrase>
+
+        <phrase key="tpl_contact_member_subject" category="email" code="en">{subject}</phrase>
+		<phrase key="tpl_contact_member_body" category="email" code="en"><![CDATA[
+<h3>Greetings {account_name},</h3>
+<p>
+You have a contact request from this directory website: {dir_title}
+<p/>
+<p>
+From: {sender_fullname} <{sender_email}><br />
+<br />
+Subject: {subject} <br />
+<p/>
+<p>
+Body: <br />
+{body}
+</p>
+<p>
+______________________________<br />
+Thank you, <br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}
+</p>
+]]>
+        </phrase>
+
+        <phrase key="tpl_notif_contact_member_subject" category="email" code="en">Someone has contacted a member on {dir_title} ({subject})</phrase>
+		<phrase key="tpl_notif_contact_member_body" category="email" code="en"><![CDATA[
+<h3>Hi {admin_name},</h3>
+<p>
+Contacted member name: <a href="{account_url}">{account_name}</a><br />
+Here is a copy of email body sent to the member:
+</p>
+----------------------------------------------------------------------------------
+<h3>Greetings {account_name},</h3>
+<p>
+You have a contact request from this directory website: {dir_title}
+<p/>
+<p>
+From: {sender_fullname} <{sender_email}><br />
+<br />
+Subject: {subject} <br />
+<p/>
+<p>
+Body: <br />
+{body}
+</p>
+<p>
+______________________________<br />
+Thank you, <br />
+{dir_title} Administration Team<br />
+{dir_url}<br />
+{dir_email}
+</p>
+]]>
+        </phrase>
+	</phrases>
+
+	<config group="miscellaneous" name="contact_us_divider" type="divider" value="Contact Us">Contact Us</config>
+	<config group="miscellaneous" name="contacts_send_admin" type="radio" multiplevalues="0,1" description="Send copy to the site admin when anyone contacts listing owner">1</config>
+
+	<config group="mail" name="notif_contact_us" type="hidden" value="Send email">1</config>
+	<config group="mail" name="contact_listing_owner" multiplevalues="0,1" type="hidden">1</config>
+	<config group="mail" name="notif_contact_listing_owner" multiplevalues="0,1" type="hidden">1</config>
+	<config group="mail" name="contact_member" multiplevalues="0,1" type="hidden">1</config>
+	<config group="mail" name="notif_contact_member" multiplevalues="0,1" type="hidden">1</config>
+
+	<pages>
+		<page menus="bottom" status="active" title="Contact Us" uniqueurl="mod/contacts/?contact=us" nofollow="0" name="contact_us"><![CDATA[]]></page>
+		<page status="active" title="Contact Member" uniqueurl="mod/contacts/?contact=member" nofollow="0" name="contact_member"><![CDATA[]]></page>
+		<page status="active" title="Contact Listing Owner" uniqueurl="mod/contacts/?contact=listing" nofollow="0" name="contact_listing"><![CDATA[]]></page>
+	</pages>
+
+	<actions>
+		<action title="Contact Listing Owner" show="view_account,view_listing">contact_member</action>
+	</actions>
+
+	<installsql>
+		<sql>
+			<![CDATA[
+CREATE TABLE `{prefix}contacts` (
+    `id` int(8) NOT NULL auto_increment,
+    `fullname` varchar(50) NOT NULL default '',
+    `email` varchar(100) NOT NULL default '',
+    `subject` text NOT NULL,
+    `reason` text NOT NULL,
+    `date` datetime NOT NULL default '0000-00-00 00:00:00',
+    `ip` varchar(15) NOT NULL default '',
+    PRIMARY KEY (`id`)
+) {mysql_version};
+			]]>
+		</sql>
+	</installsql>
+
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}contacts`;
+			]]>
+		</sql>
+	</uninstallsql>
+</plugin>

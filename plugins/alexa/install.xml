@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<plugin name="alexa">
+	<title>Alexa</title>
+	<summary>Displays alexa traffic widgets on the listing details page.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.0</version>
+	<date>2013-02-26</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<tooltips>
+		<tooltip key="alexa_stats_type">
+			<![CDATA[
+"a" - 120 x 95 (recommended for user1, user2 blocks)<br />
+"b" - 120 x 240 (recommended for left, right blocks)<br />
+"c" - 468 x 60 (recommended for top, verytop, bottom, verybottom blocks)
+			]]>
+		</tooltip>
+		<tooltip key="alexa_graph_type">
+			<![CDATA[
+"r" Reach<br />
+"n" Rank<br />
+"p" Page Views
+			]]>
+		</tooltip>
+		<tooltip key="alexa_graph_range">
+			<![CDATA[
+"7d" Seven Days<br />
+"1m" One Month<br />
+"3m" Three Months<br />
+"6m" Six Months<br />
+"1y" One Year<br />
+"3y" Three Year<br />
+"5y" Five Year<br />
+"max" Maximum Available
+			 ]]>
+		</tooltip>
+		<tooltip key="alexa_graph_width"><![CDATA[ in pixels (max 400) ]]></tooltip>
+		<tooltip key="alexa_graph_height"><![CDATA[ in pixels (max 300) ]]></tooltip>
+		<tooltip key="alexa_graph_bgcolor"><![CDATA[ hex value without "#" char (usually "e6f3fc") ]]></tooltip>
+	</tooltips>
+
+	<blocks>
+		<block name="alexa_site_stats" title="Alexa Site Stats" showheader="1" lang="en" position="user1" type="smarty" collapsible="1" status="active" pages="view_listing">
+			<![CDATA[
+{if $listing.domain}
+	<div class="text-center">
+		<a href="http://www.alexa.com/siteinfo/{$listing.domain}">
+			<script type='text/javascript' src='http://xslt.alexa.com/site_stats/js/s/{$config.alexa_stats_type}?url={$listing.domain}'></script>
+		</a>
+	</div>
+{/if}
+			]]>
+		</block>
+
+		<block name="alexa_traffic_graph" title="Alexa Traffic Graph" showheader="1" lang="en" position="user2" type="smarty" collapsible="1" status="active" pages="view_listing">
+			<![CDATA[
+{if $listing.domain}
+	<div class="text-center">
+		<script type="text/javascript" src="http://widgets.alexa.com/traffic/javascript/graph.js"></script>
+		<script type="text/javascript">
+			var sites = ['{$listing.domain}'];
+			var opts = {
+				width: "{$config.alexa_graph_width}",
+				height: "{$config.alexa_graph_height}",
+				type: "{$config.alexa_graph_type}",
+				range: "{$config.alexa_graph_range}",
+				bgcolor: "{$config.alexa_graph_bgcolor}"
+			};
+			AGraphManager.add(new AGraph(sites, opts));
+		</script>
+	</div>
+{/if}
+			]]>
+		</block>
+	</blocks>
+
+	<config group="miscellaneous" name="alexa_config" type="divider" description="Alexa plugin configuration"><![CDATA[ Alexa plugin configuration ]]></config>
+	<config group="miscellaneous" name="alexa_stats_type" type="select" multiplevalues="a,b,c" description="Type of Alexa Site Stats Block">a</config>
+	<config group="miscellaneous" name="alexa_graph_width" type="text" description="Alexa Traffic Graph Width">300</config>
+	<config group="miscellaneous" name="alexa_graph_height" type="text" description="Alexa Traffic Graph Height">220</config>
+	<config group="miscellaneous" name="alexa_graph_type" type="select" multiplevalues="r,n,p" description="Type of Alexa Traffic Graph">r</config>
+	<config group="miscellaneous" name="alexa_graph_range" type="select" multiplevalues="7d,1m,3m,6m,1y,3y,5y,max" description="Alexa Traffic Graph Range">3m</config>
+	<config group="miscellaneous" name="alexa_graph_bgcolor" type="text" description="Alexa Traffic Graph Background Color">e6f3fc</config>
+</plugin>

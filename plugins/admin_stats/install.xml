@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="admin_stats">
+	<title>Admin Statistics</title>
+	<summary>Displays submission stats in admin panel.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.1</version>
+	<date>2013-03-11</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+	
+	<hooks>
+		<hook name="adminIndexAfterIncludeJs" type="smarty">
+			<![CDATA[
+{include_file js='plugins/admin_stats/js/admin/index'}
+			]]>
+		</hook>
+	</hooks>
+
+	<phrases>
+		<phrase key="submissions_by_day" category="admin" code="en">Submissions by Day Of Week</phrase>
+		<phrase key="submissions_by_month" category="admin" code="en">Submissions by Month</phrase>
+		
+		<phrase key="monday" category="admin" code="en">Monday</phrase>
+		<phrase key="tuesday" category="admin" code="en">Tuesday</phrase>
+		<phrase key="wednesday" category="admin" code="en">Wednesday</phrase>
+		<phrase key="thursday" category="admin" code="en">Thursday</phrase>
+		<phrase key="friday" category="admin" code="en">Friday</phrase>
+		<phrase key="saturday" category="admin" code="en">Saturday</phrase>
+		<phrase key="sunday" category="admin" code="en">Sunday</phrase>
+		
+		<phrase key="january" category="admin" code="en">January</phrase>
+		<phrase key="february" category="admin" code="en">February</phrase>
+		<phrase key="march" category="admin" code="en">March</phrase>
+		<phrase key="april" category="admin" code="en">April</phrase>
+		<phrase key="may" category="admin" code="en">May</phrase>
+		<phrase key="june" category="admin" code="en">June</phrase>
+		<phrase key="july" category="admin" code="en">July</phrase>
+		<phrase key="august" category="admin" code="en">August</phrase>
+		<phrase key="september" category="admin" code="en">September</phrase>
+		<phrase key="october" category="admin" code="en">October</phrase>
+		<phrase key="november" category="admin" code="en">November</phrase>
+		<phrase key="december" category="admin" code="en">December</phrase>
+	</phrases>
+</plugin>

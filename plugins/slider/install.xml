@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="slider">
+	<title>Slider</title>
+	<summary>Slider plugin allows to add slides to categories in the block.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.2.0</version>
+	<date>2014-03-12</date>
+	<compatibility>3.2</compatibility>
+	<status>active</status>
+
+	<adminpages>
+		<page block="plugins" menus="main">Manage Slides</page>
+	</adminpages>
+
+	<phrases>
+		<phrase key="manage_slide" category="admin" code="en">Manage Slides</phrase>
+		<phrase key="slider_category" category="admin" code="en">Slider category</phrase>
+		<phrase key="slide_added" category="admin" code="en">Slide has been added successfully.</phrase>
+		<phrase key="slide" category="common" code="en">Slide</phrase>
+		<phrase key="tab_title" category="common" code="en">Tab title</phrase>
+		<phrase key="slides" category="common" code="en">Slides</phrase>
+		<phrase key="no_slide" category="admin" code="en"><![CDATA[No slide. <a href="controller.php?plugin=slider&amp;action=add">Click here</a> to add a slide.]]></phrase>
+		<phrase key="view_slide" category="common" code="en">View slide</phrase>
+		<phrase key="view_all_slide" category="frontend" code="en">View All slides</phrase>
+		<phrase key="slides_deleted" category="admin" code="en">Slides have been deleted.</phrase>
+		<phrase key="slide_deleted" category="admin" code="en">Slide has been deleted.</phrase>
+		<phrase key="add_slide" category="admin" code="en">Add Slide</phrase>
+		<phrase key="edit_slide" category="admin" code="en">Edit Slide</phrase>
+		<phrase key="slide_title" category="common" code="en">Title of slide</phrase>
+		<phrase key="slide_text" category="common" code="en">Slide Text</phrase>
+		<phrase key="error_title" category="common" code="en">Title is a required field.</phrase>
+		<phrase key="error_description" category="common" code="en">Description is a required field.</phrase>
+		<phrase key="are_you_sure_to_delete_this_slide" category="admin" code="en">Are you sure you wish to delete this slide?</phrase>
+		<phrase key="slide_category" category="common" code="en">Category</phrase>
+		<phrase key="slider_image_desc" category="admin" code="en">For better displaying of slider, please upload images with same width and height. Best proportions are 2x1. They may differ for different templates.</phrase>
+	</phrases>
+
+	<config configgroup="miscellaneous" name="div_slider" type="divider" description="Slider">Slider</config>
+	<config configgroup="miscellaneous" name="display_slider" type="radio" description="Slider functionality" multiplevalues="1,0">1</config>
+	<config configgroup="miscellaneous" name="num_slides" type="text" description="Number of displayed slides">5</config>
+	<config configgroup="miscellaneous" name="slideshow_speed" type="text" description="Slideshow cycling speed (millisec)">7000</config>
+	<config configgroup="miscellaneous" name="animation_speed" type="text" description="Animations speed (millisec)">600</config>
+	<config configgroup="miscellaneous" name="slider_animation" type="select" multiplevalues="slide,fade" description="Animation type">slide</config>
+	<config configgroup="miscellaneous" name="slider_direction" type="select" multiplevalues="horizontal,vertical" description="Sliding direction">horizontal</config>
+
+	<blocks>
+		<block name="slider" title="Slides" status="active" showheader="0" position="top" classname="slider-block" type="smarty" sticky="1" external="1"><![CDATA[]]></block>
+	</blocks>
+
+	<hooks>
+		<hook name="bootstrap" type="php" page_type="front">
+			<![CDATA[
+global $eSyndiCat, $esynSmarty, $esynConfig, $category;
+
+if ($esynConfig->getConfig('display_slider'))
+{
+	$categoryId = isset($category['id']) ? (int)$category['id'] : 0;
+
+	$eSyndiCat->setTable("slides");
+	$slides = $eSyndiCat->all("*", "`category_id` = {$categoryId} AND `status` = 'active' ORDER BY `order` ASC", array(), 0, $esynConfig->getConfig('num_slides'));
+	$eSyndiCat->resetTable();
+
+	$esynSmarty->assign('slides', $slides);
+}
+			]]>
+		</hook>
+	</hooks>
+
+	<installsql>
+		<sql>
+			<![CDATA[
+CREATE TABLE IF NOT EXISTS `{prefix}slides` (
+	`id` int(4) NOT NULL auto_increment,
+	`title` varchar(255) NOT NULL default '',
+	`classname` varchar(255) NOT NULL default '',
+	`image` varchar(255) NOT NULL default '',
+	`description` text NULL,
+	`tab_title` text NULL,
+	`order` int(4) NOT NULL,
+	`category_id` int(11) NOT NULL,
+	`status` enum('inactive','active') NOT NULL default 'inactive',
+	PRIMARY KEY  (`id`),
+	KEY `status` (`status`),
+	KEY `category_id` (`category_id`)
+) {mysql_version};
+			]]>
+		</sql>
+	</installsql>
+
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}slides`;
+			]]>
+		</sql>
+	</uninstallsql>
+</plugin>

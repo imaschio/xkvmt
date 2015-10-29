@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="kayako">
+	<title>Kayako Integration</title>
+	<summary>Allows to add kayako code in the appropriate place via admin panel.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.1.0</version>
+	<date>2013-11-19</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<hooks>
+		<hook name="beforeCloseTag" type="smarty">
+			<![CDATA[
+{$config.kayako_footer}
+			]]>
+		</hook>
+		<hook name="headSection" type="smarty">
+			<![CDATA[
+{$config.kayako_header}
+			]]>
+		</hook>
+	</hooks>
+
+	<config group="miscellaneous" name="kayako_div" type="divider" description="Kayako">Kayako</config>
+	<config group="miscellaneous" name="kayako_header" type="textarea" description="Kayako header code"><![CDATA[]]></config>
+	<config group="miscellaneous" name="kayako_footer" type="textarea" description="Kayako footer code"><![CDATA[]]></config>
+</plugin>

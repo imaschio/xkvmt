@@ -1,0 +1,52 @@
+/* system mode */
+div.managemode
+{
+	background-color: #F00;
+	color: #FFF;
+	margin: 0;
+	padding: 10px 5px;
+	position: fixed;
+	text-align: right;
+	top: 200px;
+	right: 0;
+	width:100px;
+}
+div.managemode > p
+{
+	font-size: 16px;
+	margin: 10px 0;
+	text-align: center;
+}
+div.managemode > p > a
+{
+	color: #FFF;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+div.js-groupWrapper {
+	background-color: #90EE90;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px 0;
+}
+div.js-groupWrapper div.box h4 {
+	cursor: move;
+}
+div.js-groupWrapper div.manage-block-name {
+	font-size: 16px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+div.js-groupWrapper div.manage-block-name:last-of-type {
+	margin-bottom: 0;
+}
+div.js-groupWrapper div.box:last-of-type {
+	margin-bottom: 10px;
+}
+.sortable-placeholder {
+	border: 2px dashed #333;
+	background: none;
+	height: 40px;
+	margin: 10px 0;
+}

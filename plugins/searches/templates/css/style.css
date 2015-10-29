@@ -1,0 +1,28 @@
+.search-log .item {
+	margin-bottom:10px;
+}
+.search-log .item .count {
+	background: #f5f5f5;
+	border-bottom: 1px solid #e5e5e5;
+	padding: 3px 5px;
+}
+.search-log .item .count span {
+	font-size: 12px;
+	color: #808080;
+}
+.search-log .item .results p {
+	float:left;
+	width:46%;
+	padding: 3px 0 3px 5px;
+	margin: 3px 0 1px 2px;
+	font-size: 11px;
+	color: #4d4d4d;
+}
+.search-log .item .results p:first-child {
+	margin-left: 0;
+}
+.results:after {
+	clear: both;
+	display: table;
+	content: '';
+}

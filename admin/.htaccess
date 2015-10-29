@@ -1,0 +1,15 @@
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresDefault "access plus 1 year"
+</IfModule>
+
+# compresses text, html, javascript, css and xml
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+	AddOutputFilterByType DEFLATE application/xml application/xhtml+xml application/rss+xml
+	AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+</IfModule>
+
+<IfModule mod_rewrite.c>
+	RewriteEngine Off
+</IfModule>

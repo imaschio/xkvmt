@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="alternate_payment">
+	<title>Alternate Payment</title>
+	<summary>Alternate Payment Method</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.1</version>
+	<date>2014-04-29</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<hooks>
+		<hook name="paymentButtons" type="smarty">
+			<![CDATA[
+{include file="{$smarty.const.IA_HOME}plugins/alternate_payment/templates/payment_buttons.tpl"}
+			]]>
+		</hook>
+	</hooks>
+
+	<phrases>
+		<phrase key="alternate_payment_method" category="common" code="en">Alternate Payment Method</phrase>
+		<phrase key="email_group_alternate_payment" category="admin" code="en"><![CDATA[Alternate Payment Plugin Templates]]></phrase>
+		<phrase key="tpl_off_line_payment_subject" category="email" code="en"><![CDATA[Bank account]]></phrase>
+		<phrase key="tpl_off_line_payment_body" category="email" code="en"><![CDATA[Your Bank Account details {url_listing} - {currency_symbol}{payment_for_submit}]]></phrase>
+	</phrases>
+
+	<config group="financial" name="alternate_payment" type="divider" description="Alternate Payment Configuration">Alternate Payment Configuration</config>
+	<config group="financial" name="off_line_payment_send_email" type="radio" multiple_values="0,1" description="Email sending">1</config>
+	<config group="financial" name="off_line_payment_msg" type="textarea" description="After Suggest Listing  Message"><![CDATA[Your Bank Account details {url_listing} {payment_for_submit}]]></config>
+	<config group="email_templates" name="off_line_payment_subjects" type="divider" value="Payment details template">Alternate Payment details sends to user</config>
+	<config group="email_templates" name="off_line_payment" type="radio" multiplevalues="1,0" description="Email sending">1</config>
+
+	<pages>
+		<page status="active" uniqueurl="mod/alternate_payment/off-line-payment.html" nofollow="1" name="off-line-payment"><![CDATA[]]></page>
+	</pages>
+</plugin>

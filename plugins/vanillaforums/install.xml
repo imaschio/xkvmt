@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="vanillaforums">
+	<title>Vanilla Single Sign-On</title>
+	<summary>Vanilla forums members integration plugin.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.1.0</version>
+	<date>2014-02-20</date>
+	<compatibility>3.1</compatibility>
+	<status>active</status>
+
+	<config group="miscellaneous" name="vanilla_separator" type="divider">Vanilla forums</config>
+	<config group="miscellaneous" name="vanilla_client_id" type="text" description="Vanilla client ID"><![CDATA[]]></config>
+	<config group="miscellaneous" name="vanilla_secret_key" type="text" description="Vanilla secret"><![CDATA[]]></config>
+
+	<pages>
+		<page name="vanillasso" status="active" title="Vanilla SSO" uniqueurl="mod/vanillaforums/" service="1"><![CDATA[]]></page>
+	</pages>
+</plugin>

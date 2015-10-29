@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="tagcloud">
+	<title>Tag Cloud</title>
+	<summary>Allows to create tags cloud for a directory.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.6</version>
+	<date>2013-05-28</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+
+	<hooks>
+		<hook name="editListingValidation">
+			<![CDATA[
+global $eSyndiCat, $data;
+
+$eSyndiCat->loadPluginClass("Tags", "tagcloud", "esyn");
+$esynTags = new esynTags();
+$data['tag'] = $esynTags->process_listing($data);
+			]]>
+		</hook>
+
+		<hook name="phpAdminSuggestListingBeforeListingUpdate">
+			<![CDATA[
+global $id, $listing;
+
+require_once IA_PLUGINS . 'tagcloud/includes/classes/esynTags.php';
+$esynTags = new esynTags();
+$listing['tag'] = $esynTags->process_listing($listing, $id);
+			]]>
+		</hook>
+
+		<hook name="phpAdminSuggestListingBeforeListingInsert">
+			<![CDATA[
+global $listing, $esynAdmin;
+
+$info_table = $esynAdmin->getAll("SHOW TABLE STATUS like '{$esynAdmin->mPrefix}listings'");
+$id = $info_table[0]['Auto_increment'];
+
+require_once(IA_PLUGINS . 'tagcloud/includes/classes/esynTags.php');
+$esynTags = new esynTags();
+$listing['tag'] = $esynTags->process_listing($listing, $id);
+			]]>
+		</hook>
+
+		<hook name="tplAdminSuggestListingAfterIncludeJs" type="smarty">
+			<![CDATA[
+{include_file js='js/jquery/plugins/tagsinput/jquery.tagsinput.min'}
+{include_file css='js/jquery/plugins/tagsinput/jquery.tagsinput'}
+
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$("input[name='tag']").tagsInput(
+	{
+		'defaultText': '',
+		'height': 'auto',
+		'placeholderColor': '#AAA',
+		'width': '75%'
+	});
+});
+</script>
+			]]>
+		</hook>	
+
+		<hook name="adminDatabaseConsistency" type="smarty">
+			<![CDATA[
+<li style="margin:5px;">
+	<span style="display:block; float:left; width:210px; margin-right:10px;"><b>{$esynI18N.rebuild_tags}</b>:</span>
+	<a href="controller.php?file=database&amp;page=consistency&amp;type=recounttags" id="tagcloud_recounttags">{$esynI18N.recount|upper}</a>
+</li>
+			]]>
+		</hook>
+
+		<hook name="phpAdminDatabaseConsistencyType" type="php">
+			<![CDATA[
+global $esynI18N;
+if ('recounttags' == $_GET['type'])
+{
+	require_once(IA_PLUGINS . 'tagcloud/includes/classes/esynTags.php');
+	$esynTags = new esynTags();
+	$esynTags->auto_build_tags();
+	esynMessages::setMessage($esynI18N['done'], false);
+	esynUtil::reload(array("type"=>null));
+}
+			]]>
+		</hook>
+
+		<hook name="listingDisplayFieldsArea" type="smarty">
+			<![CDATA[
+{if !empty($listing.tag)}
+	<div class="tags">{lang key='tags'}
+		{foreach ", "|explode:$listing.tag as $one_tag}
+			{if $one_tag@iteration <= $config.num_tags_display}
+				<a href="{$smarty.const.IA_URL}mod/tagcloud/{$one_tag|urlencode}" title="{$one_tag}">{$one_tag|htmlspecialchars}</a>
+			{/if}
+		{/foreach}
+	</div>
+{/if}
+			]]>
+		</hook>
+
+		<hook name="viewListingAfterMainFieldsDisplay" type="smarty">
+			<![CDATA[
+{if !empty($listing.tag)}
+	<dt>{lang key='tags'}</dt>
+	<dd>
+		{foreach ", "|explode:$listing.tag as $one_tag}
+			<a href="{$smarty.const.IA_URL}mod/tagcloud/{$one_tag|urlencode}" title="{$one_tag}">{$one_tag|htmlspecialchars}</a>{if !$one_tag@last}, {/if}
+		{/foreach}
+	</dd>
+{/if}
+			]]>
+		</hook>
+
+		<hook name="suggestListingBeforeFooter" type="smarty">
+			<![CDATA[
+{ia_add_media files='js:js/jquery/plugins/tagsinput/jquery.tagsinput.min, css:js/jquery/plugins/tagsinput/jquery.tagsinput'}
+
+{ia_add_js}
+$(document).ready(function()
+{
+	if ($('#f_tag').length > 0)
+	{
+		$('#f_tag').tagsInput(
+		{
+			'defaultText': '',
+			'height': 'auto',
+			'placeholderColor': '#AAA',
+			'width': '75%'
+		});
+	}
+
+	$("#fields").on('updated', function()
+	{
+		$('#f_tag').tagsInput(
+		{
+			'defaultText': $(this).val(),
+			'height': 'auto',
+			'placeholderColor': '#AAA',
+			'width': '75%'
+		});
+	});
+});
+{/ia_add_js}
+			]]>
+		</hook>
+	</hooks>
+
+	<phrases>
+		<phrase key="tags" category="common" code="en">Tags</phrase>
+		<phrase key="tag" category="common" code="en">Tag</phrase>
+		<phrase key="all_tags" category="frontend" code="en">All Tags</phrase>
+		<phrase key="no_tags" category="frontend" code="en">No Tags</phrase>
+		<phrase key="page_title_tags" category="frontend" code="en">Tag Cloud</phrase>
+		<phrase key="rebuild_tags" category="admin" code="en">Rebuild Tags</phrase>
+		<phrase key="tags_no_listings" category="common" code="en">No listings yet created with this tag.</phrase>
+	</phrases>
+
+	<blocks>
+		<block title="Tags" showheader="1" collapsible="1" lang="en" position="right" status="active" type="php" sticky="1">
+			<![CDATA[
+global $eSyndiCat, $esynI18N, $esynConfig;
+$eSyndiCat->loadPluginClass("Tags", "tagcloud", "esyn");
+$esynTags = new esynTags();
+$tags = $esynTags->top_tags($esynConfig->getConfig('tags_count'));
+
+shuffle($tags);
+
+// DISPLAY
+$url = IA_URL . 'mod/tagcloud/';
+
+if ($tags)
+{
+	foreach ($tags as $key => $t)
+	{
+		$lastItem = '';
+		if ($key != count($tags) - 1)
+		{
+			$lastItem = ', ';
+		}
+		printf('<a href="%s" style="font-size:%d%%">%s</a>' . $lastItem, $url . urlencode($t['tag']), $t['size'], htmlspecialchars($t['tag']));
+	}
+	printf('<p class="text-right"><a href="%s" class="btn btn-mini btn-success">%s</a></p>', IA_URL . 'mod/tagcloud/', $esynI18N['all_tags']);
+}
+			]]>
+		</block>
+	</blocks>
+	
+	<config group="miscellaneous" name="tagcloud_div" type="divider" description="Tag Cloud Configuration">Tag Cloud Configuration</config>
+	<config group="miscellaneous" name="tags_convert_utf_ascii" type="radio" multiplevalues="0,1" description="Convert UTF8 to ASCII">0</config>
+	<config group="miscellaneous" name="use_title_for_tags" type="radio" multiplevalues="0,1" description="Use listing title if empty tags">0</config>
+	<config group="miscellaneous" name="use_description_for_tags" type="radio" multiplevalues="0,1" description="Use listing description if empty tags">0</config>
+	<config group="miscellaneous" name="tags_count" type="text" description="Number of displayed tags in the block">30</config>
+	<config group="miscellaneous" name="num_tags_display" type="text" description="Number of displayed tags in the brief listing ">6</config>
+	<config group="miscellaneous" name="tags_count_all" type="text" description="Max number of tags on All Tags page">500</config>
+	<config group="miscellaneous" name="tags_size" type="hidden" description="Tag size in % (min-max)">80-240</config>
+
+	<fields>
+		<field name="tag" title="Tags" type="text" pages="suggest,edit" length="255"><![CDATA[Please input tags for your listing]]></field>
+	</fields>
+	
+	<pages>
+		<page menus="bottom" title="Tag Cloud" status="active" uniqueurl="mod/tagcloud/" nofollow="0" name="tagcloud"><![CDATA[]]></page>
+	</pages>
+
+	<installsql>
+		<sql>
+			<![CDATA[
+CREATE TABLE IF NOT EXISTS `{prefix}tags` (
+	`id` int(11) NOT NULL auto_increment,
+	`id_listing` mediumint(8) unsigned NOT NULL default '0',
+	`tag` varchar(255) NOT NULL default '',
+	PRIMARY KEY  (`id`),
+	UNIQUE KEY `id_listing` (`id_listing`,`tag`)
+) {mysql_version}
+			]]>
+		</sql>
+
+		<sql>
+			<![CDATA[
+CREATE TABLE IF NOT EXISTS `{prefix}tags_sum` (
+	`id` int(11) NOT NULL auto_increment,
+	`tag` varchar(255) NOT NULL default '',
+	`count` mediumint(8) unsigned NOT NULL default '0',
+	PRIMARY KEY  (`id`),
+	KEY `count` (`count`),
+	KEY `tag` (`tag`)
+) {mysql_version}
+			]]>
+		</sql>
+	</installsql>
+	
+	<uninstallsql>
+		<sql>DROP TABLE `{prefix}tags`</sql>
+		<sql>DROP TABLE `{prefix}tags_sum`</sql>
+	</uninstallsql>
+</plugin>

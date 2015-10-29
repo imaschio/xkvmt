@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="personal_blog">
+	<title>Personal Blog</title>
+	<summary>This plugin allows to conduct a personal blog on your eSyndiCat powered website.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.3</version>
+	<date>2013-04-08</date>
+	<compatibility>3.2</compatibility>
+	<status>active</status>
+	<url>blog</url>
+
+	<adminpages>
+		<page block="plugins" menus="main">Admin Blog</page>
+	</adminpages>
+
+	<configgroup name="blog">Blog Configuration</configgroup>
+
+	<config group="blog" name="div_comments" type="divider" description="Admin Blog Configuration">Admin Blog Configuration</config>
+	<config group="blog" name="num_latest_articles" type="text" description="Number of displayed latest articles into block">10</config>
+	<config group="blog" name="blogs_number" type="text" description="Number of displayed articles">2</config>
+	<config group="blog" name="blogs_order" type="select" description="Order articles" multiplevalues="date,title">title</config>
+	<config group="blog" name="blogs_comment_max" type="text" description="Max chars for comments">1000</config>
+	<config group="blog" name="blogs_comment_min" type="text" description="Min chars for comments">10</config>
+
+	<pages>
+		<page menus="main" title="Blog" status="active" uniqueurl="mod/blog/" name="admin_blog" nofollow="0"><![CDATA[ ]]></page>
+	</pages>
+
+	<phrases>
+		<phrase key="error_comment" category="frontend" code="en">Make sure you entered valid comment.</phrase>
+		<phrase key="error_comment_author" category="frontend" code="en">Make sure you entered valid comment author.</phrase>
+		<phrase key="error_comment_email" category="frontend" code="en">Make sure you entered valid author email.</phrase>
+		<phrase key="blog_error_max_comment" category="frontend" code="en">Your comment length should be less than {maxLength} symbols.</phrase>
+		<phrase key="blog_error_min_comment" category="frontend" code="en">Your comment length should be more than {minLength} symbols.</phrase>
+		<phrase key="are_you_sure_to_delete_this_comment" category="common" code="en">Are you sure to delete this comment</phrase>
+		<phrase key="are_you_sure_to_delete_this_article" category="common" code="en">Are you sure to delete this article</phrase>
+		<phrase key="page_title_admin_blog" category="common" code="en">Admin Blog</phrase>
+		<phrase key="newly_added_articles" category="common" code="en">Newly added articles</phrase>
+		<phrase key="manage_comments" category="common" code="en">Manage Comments</phrase>
+		<phrase key="comment_article" category="common" code="en">Comment for this article</phrase>
+		<phrase key="view_all_blogs" category="common" code="en">View all blogposts</phrase>
+		<phrase key="article_added" category="common" code="en">Article added</phrase>
+		<phrase key="edit_article" category="common" code="en">Edit Article</phrase>
+		<phrase key="manage_blog" category="common" code="en">Manage Blog</phrase>
+		<phrase key="add_article" category="common" code="en">Add Article</phrase>
+		<phrase key="no_articles" category="frontend" code="en"><![CDATA[No articles. <a href="mod/blog/add.html">Click here</a> to add article.]]></phrase>
+		<phrase key="body_empty" category="common" code="en">Body empty </phrase>
+		<phrase key="title_empty" category="common" code="en">Title empty </phrase>
+		<phrase key="admin_blog" category="common" code="en">Admin Blog</phrase>
+		<phrase key="no_admin_blog_entries" category="common" code="en">Admin has not made any blog posts.</phrase>
+		<phrase key="date_added" category="common" code="en">Date Added</phrase>
+		<phrase key="blog_comment_author_name" category="common" code="en">Name</phrase>
+		<phrase key="blog_comment_author_email" category="common" code="en">Email</phrase>
+		<phrase key="chars_max" category="common" code="en">chars max</phrase>
+		<phrase key="chars_min" category="common" code="en">chars min</phrase>
+		<phrase key="comment" category="common" code="en">Comment</phrase>
+		<phrase key="article" category="common" code="en">Article</phrase>
+	</phrases>
+
+	<hooks>
+		<hook name="headSection" type="smarty">
+			<![CDATA[
+{if 'admin_blog' == $smarty.const.IA_REALM}
+	<link rel="alternate" type="application/rss+xml" title="Blog" href="{$smarty.const.IA_URL}feed.php?from=blog" />
+{/if}
+			]]>
+		</hook>
+
+		<hook name="tplFrontHeaderAfterRSS" type="smarty">
+			<![CDATA[
+{if 'admin_blog' == $smarty.const.IA_REALM}
+	<li class="xml">
+		<a href="{$smarty.const.IA_URL}feed.php?from=blog"><i class="icon-rss-sign"></i></a>
+	</li>
+{/if}
+			]]>
+		</hook>
+
+		<hook name="feed" type="php">
+			<![CDATA[
+global $from,$esynConfig,$eSyndiCat,$esynI18N,$out;
+
+if ((is_array($from) && in_array('blog', $from)) || ('blog' == $from))
+{
+    require_once IA_CLASSES . 'esynUtf8.php';
+
+	esynUtf8::loadUTF8Core();
+	esynUtf8::loadUTF8Util('utf8_to_ascii');
+
+    $out .= '<title>'.$esynI18N['admin_blog'].'</title>';
+    $out .= '<description>'.$esynI18N['newly_added_articles'].'</description>';
+    $out .= '<link>'.IA_URL . 'mod/blog/' . '</link>';
+
+    $eSyndiCat->setTable('article_blog');
+	$latestBlogs = $eSyndiCat->all("*", "1 order by `date`", array(), "0", $esynConfig->getConfig('num_latest_articles'));
+	$eSyndiCat->resetTable();
+
+	if (!empty($latestBlogs))
+	{
+		foreach ($latestBlogs as $key => $value)
+		{
+			$item['title'] = $value['title'];
+
+			$value['title'] = utf8_to_ascii($value['title']);
+			$value['title'] = preg_replace('/[^A-Za-z0-9]+/u', '-', $value['title']);
+			$value['title'] = preg_replace('/\-+/', '-', $value['title']);
+			$value['title'] = trim($value['title'], '-');
+
+			$item['link'] = IA_URL . 'mod/blog/' . $value['id'] . '-' . $value['alias'] . '.html';
+
+			$item['description'] = $value['body'];
+			$item['date'] = $value['date'];
+
+			$out .= create_rss_item($item);
+		}
+	}
+}
+			]]>
+		</hook>
+
+		<hook name="bootstrap">
+		<![CDATA[
+global $eSyndiCat,$esynConfig,$esynSmarty;
+if(!defined('IA_NOUTF'))
+{
+	require_once(IA_CLASSES.'esynUtf8.php');
+
+	esynUtf8::loadUTF8Core();
+	esynUtf8::loadUTF8Util('ascii', 'validation', 'bad', 'utf8_to_ascii');
+}
+$eSyndiCat->setTable('article_blog');
+$latestBlogs = $eSyndiCat->all("*", "`status`='active' AND `lang`='".IA_LANGUAGE."' order by `date` DESC", array(), "0", $esynConfig->getConfig('num_latest_articles'));
+$eSyndiCat->resetTable();
+
+$esynSmarty->assignByRef('latestBlogs', $latestBlogs);
+		]]>
+		</hook>
+	</hooks>
+
+	<blocks>
+		<block name="latest_blogposts" title="Latest Blogposts" status="active" showheader="1" collapsible="1" lang="en" position="left" type="smarty" sticky="1" external="1"><![CDATA[]]></block>
+	</blocks>
+
+	<installsql>
+		<sql>
+			<![CDATA[
+CREATE TABLE IF NOT EXISTS `{prefix}article_blog` (
+	`id` int(11) NOT NULL auto_increment,
+	`title` varchar(200) collate utf8_unicode_ci NOT NULL default '',
+	`body` text collate utf8_unicode_ci NOT NULL,
+	`meta_description` text collate utf8_unicode_ci NOT NULL default '',
+	`meta_keywords` text collate utf8_unicode_ci NOT NULL default '',
+	`alias` varchar(255) collate utf8_unicode_ci NOT NULL default '',
+	`date` timestamp NOT NULL default '0000-00-00 00:00:00',
+	`status` enum('inactive','active') NOT NULL default 'inactive',
+	`lang` char(2) NOT NULL default '',
+	`tags` text collate utf8_unicode_ci,
+	PRIMARY KEY  (`id`)
+) {mysql_version};
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+CREATE TABLE IF NOT EXISTS `{prefix}article_blog_comment` (
+	`id` int(11) NOT NULL auto_increment,
+	`id_blog` int(11) NOT NULL default '0',
+	`comment` text collate utf8_unicode_ci NOT NULL,
+	`author` varchar(200) collate utf8_unicode_ci NOT NULL default '',
+	`email` varchar(200) NOT NULL default '',
+	`status` enum('approval','active') NOT NULL default 'approval',
+	`date` date NOT NULL default '0000-00-00',
+	PRIMARY KEY  (`id`)
+) {mysql_version};
+			]]>
+		</sql>
+	</installsql>
+
+	<uninstallsql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}article_blog_coment`;
+			]]>
+		</sql>
+		<sql>
+			<![CDATA[
+DROP TABLE IF EXISTS `{prefix}article_blog`;
+			]]>
+		</sql>
+	</uninstallsql>
+</plugin>

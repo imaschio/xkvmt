@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="pageranks">
+	<title>Pageranks Block</title>
+	<summary>Creates a new block to display listings by pagerank.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.0.1</version>
+	<date>2013-04-20</date>
+	<compatibility>3.0</compatibility>
+	<status>active</status>
+	
+	<htaccess>
+		<rules section="2">
+			<![CDATA[
+# mod_rewrite rule for pageranks listing page
+RewriteRule ^pagerank([0-9]+)-listings.html$ controller.php?plugin=pageranks&pr=$1 [QSA,L]
+RewriteRule ^pagerank([0-9]+)-listings([0-9]+).html$ controller.php?plugin=pageranks&pr=$1&page=$2 [QSA,L]
+			]]>
+		</rules>
+	</htaccess>
+
+	<hooks>
+		<hook name="bootstrap">
+			<![CDATA[
+global $eSyndiCat,$esynSmarty;
+
+$sql = "SELECT `pagerank`, COUNT(*) as `val`";
+$sql .= "FROM `{$eSyndiCat->mPrefix}listings` ";
+$sql .= "WHERE `pagerank` > '0' ";
+$sql .= "AND `status` = 'active' ";
+$sql .= "GROUP BY `pagerank`";
+$sql .= "ORDER BY `pagerank` DESC";
+$pageranks = $eSyndiCat->getAll($sql);
+
+$esynSmarty->assign('pageranks', $pageranks);
+			]]>
+		</hook>
+	</hooks>
+
+	<pages>
+		<page title="Pagerank Listings" menus="" status="active" uniqueurl="pagerank-listings.html" nofollow="0" name="pagerank_listings"><![CDATA[]]></page>
+	</pages>
+
+	<phrases>
+		<phrase key="pagerank_listings" category="frontend" code="en">Listings with PR</phrase>
+		<phrase key="no_pagerank_listings" category="frontend" code="en">No listings with pagerank yet.</phrase>
+	</phrases>
+	
+	<blocks>
+		<block name="pagerank_listings" title="PageRanks" showheader="1" sticky="1" status="active" collapsible="1" lang="en" position="left" type="smarty" external="1"><![CDATA[]]></block>
+	</blocks>
+</plugin>

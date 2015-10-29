@@ -1,0 +1,295 @@
+// MinMax
+.collapsible {
+  position: relative;
+
+  &.collapsed {
+    .collapsible-content {
+      display: none;
+    }
+    .minmax {
+      background-position: center -160px;
+    }
+  }
+}
+
+.minmax {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  background-image: url(../img/sprite.png);
+  background-repeat: no-repeat;
+  background-position: center -180px;
+  cursor: pointer;
+  .opacity(20);
+  .transition(all .3s ease);
+
+  &:hover {
+    .opacity(70);    
+  }
+}
+
+// Info panel
+
+.info-panel {
+  color: @grayLight;
+  display: block;
+  margin: 6px 0;
+  clear: both;
+  padding: 4px 8px;
+  background: #f5f5f5;
+  font-size: @fontSizeSmall;
+  font-style: italic;
+
+  span {
+    margin-right: 8px;
+  }
+}
+
+// Captcha
+
+.captcha-simple {
+  // background: #f7f7f7;
+  padding: 10px 0;
+  margin-bottom: 14px;
+
+  input {
+    margin: 0;
+  }
+}
+
+// Alphabetic search
+
+.content-wrap .alphabetic-search {
+  margin-bottom: 20px;
+}
+
+// Charachter counter
+input[type="text"].char-counter,
+input[readonly].char-counter {
+  border: 0 none;
+  background: none;
+  .box-shadow(none);
+  font-size: 12px;
+  font-style: italic;
+  color: #333;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  vertical-align: inherit;
+}
+
+// Plans
+.plan-radio {
+  border: 1px solid #eee;
+  .border-radius(3px);
+  padding: 4px 6px;
+
+  input {
+    margin-left: 0 !important;
+    margin-right: 6px !important;
+  }
+}
+.plan-description {
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+
+// Utility class to reset margins, padding, border, line-height
+.ia-reset {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  line-height: inherit;
+}
+
+// Chushkan style
+.chushkan .box-content {
+  overflow: hidden;
+}
+
+// Back to top button
+#backToTop {
+  position: fixed;
+  display: none;
+  bottom: 0;
+  right: 100px;
+  width: 60px;
+  font-size: @fontSizeSmall;
+  text-align: center;
+  height: 40px;
+  line-height: 16px;
+  font-weight: bold;
+
+  a {
+    display: block;
+    width: 40px;
+    border-radius: 3px 3px 0 0;
+    height: 28px;
+    padding: 4px 10px 8px;
+    color: #444;
+    background: #ccc;
+    text-decoration: none;
+    &:hover {
+      background: darken(#ccc, 10%);
+    }
+  }
+}
+
+.tree-col i.icon-random,
+.tree-col i.icon-lock {
+  vertical-align: middle;
+}
+
+// loader
+.fields-loader {
+  background: url('../img/ajax-loader2.gif') center 0 no-repeat;
+  display: none;
+  height: 32px;
+}
+
+// icon colors
+.icon-blue {
+  color: @linkColor;
+}
+.icon-white {
+  color: #fff;
+}
+.icon-red {
+  color: #990000;
+}
+.icon-green {
+  color: #54b220;
+}
+
+// Fixe for google maps
+#google_map img {
+  max-width: none;
+}
+
+.avatar {
+  width: 60px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+// PLANS
+//---------------------------
+
+@planAccentColor: #52be7f;
+
+.b-plan {
+  border: 1px solid #eee;
+  padding: 10px;
+  .border-radius(3px);
+  margin-bottom: 10px;
+
+  &.selected {
+    border-color: @planAccentColor;
+
+    .b-plan__title {
+      background: lighten(@planAccentColor, 40%);
+      border-bottom-color: lighten(@planAccentColor, 30%);
+    }
+
+    .b-plan__footer {
+      border-top-color: lighten(@planAccentColor, 30%);
+    }
+  }
+
+  &__title {
+    background: #f5f5f5;
+    padding: 10px 10px 10px 30px;
+    .border-radius(3px 3px 0 0);
+    margin: -10px -10px 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  &__description {
+    font-size: 12px;
+    font-style: italic;
+    color: #999;
+  }
+
+  &__visual-options {
+
+    &__radios {
+      .clearfix();
+
+      label {
+        font-size: 12px;
+        width: 180px;
+        float: left;
+      }
+      
+    }
+    
+    &__preview {
+      float: right;
+      text-decoration: none;
+      border-bottom: 1px dashed @linkColor;
+
+      &:hover {
+        text-decoration: none;
+        border-bottom-color: @linkColorHover;
+      }
+    }
+  }
+
+  &__footer {
+    .clearfix();
+    .border-radius(0 0 3px 3px);
+    border-top: 1px solid #eee;
+    padding: 10px 10px 10px 10px;
+    margin: 10px -10px -10px;
+  }
+
+  &__total-sum {
+    float: left;
+  }
+}
+
+
+// VISUAL OPTIONS
+//---------------------------
+
+#previeListingModal {
+  width: 700px;
+  margin-left: -350px;
+}
+
+.ia-visual-option {
+
+  &--border {
+    border: 2px solid #e74c3c !important;
+  }
+
+  &--badge {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    z-index: 5000;
+  }
+
+  &--star {
+    vertical-align: text-bottom;
+  }
+
+  &--italic-link {
+    font-style: italic !important;
+  }
+
+  &--bold-desc {
+    font-weight: bold !important;
+  }
+
+  &--italic-desc {
+    font-style: italic !important;
+  }
+}
